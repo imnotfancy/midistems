@@ -1,0 +1,15833 @@
+
+
+// File: basic_pitch_fork\LICENSE
+----------------------------------------
+Copyright 2022 Spotify AB
+
+                                 Apache License
+                           Version 2.0, January 2004
+                        http://www.apache.org/licenses/
+
+   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
+
+   1. Definitions.
+
+      "License" shall mean the terms and conditions for use, reproduction,
+      and distribution as defined by Sections 1 through 9 of this document.
+
+      "Licensor" shall mean the copyright owner or entity authorized by
+      the copyright owner that is granting the License.
+
+      "Legal Entity" shall mean the union of the acting entity and all
+      other entities that control, are controlled by, or are under common
+      control with that entity. For the purposes of this definition,
+      "control" means (i) the power, direct or indirect, to cause the
+      direction or management of such entity, whether by contract or
+      otherwise, or (ii) ownership of fifty percent (50%) or more of the
+      outstanding shares, or (iii) beneficial ownership of such entity.
+
+      "You" (or "Your") shall mean an individual or Legal Entity
+      exercising permissions granted by this License.
+
+      "Source" form shall mean the preferred form for making modifications,
+      including but not limited to software source code, documentation
+      source, and configuration files.
+
+      "Object" form shall mean any form resulting from mechanical
+      transformation or translation of a Source form, including but
+      not limited to compiled object code, generated documentation,
+      and conversions to other media types.
+
+      "Work" shall mean the work of authorship, whether in Source or
+      Object form, made available under the License, as indicated by a
+      copyright notice that is included in or attached to the work
+      (an example is provided in the Appendix below).
+
+      "Derivative Works" shall mean any work, whether in Source or Object
+      form, that is based on (or derived from) the Work and for which the
+      editorial revisions, annotations, elaborations, or other modifications
+      represent, as a whole, an original work of authorship. For the purposes
+      of this License, Derivative Works shall not include works that remain
+      separable from, or merely link (or bind by name) to the interfaces of,
+      the Work and Derivative Works thereof.
+
+      "Contribution" shall mean any work of authorship, including
+      the original version of the Work and any modifications or additions
+      to that Work or Derivative Works thereof, that is intentionally
+      submitted to Licensor for inclusion in the Work by the copyright owner
+      or by an individual or Legal Entity authorized to submit on behalf of
+      the copyright owner. For the purposes of this definition, "submitted"
+      means any form of electronic, verbal, or written communication sent
+      to the Licensor or its representatives, including but not limited to
+      communication on electronic mailing lists, source code control systems,
+      and issue tracking systems that are managed by, or on behalf of, the
+      Licensor for the purpose of discussing and improving the Work, but
+      excluding communication that is conspicuously marked or otherwise
+      designated in writing by the copyright owner as "Not a Contribution."
+
+      "Contributor" shall mean Licensor and any individual or Legal Entity
+      on behalf of whom a Contribution has been received by Licensor and
+      subsequently incorporated within the Work.
+
+   2. Grant of Copyright License. Subject to the terms and conditions of
+      this License, each Contributor hereby grants to You a perpetual,
+      worldwide, non-exclusive, no-charge, royalty-free, irrevocable
+      copyright license to reproduce, prepare Derivative Works of,
+      publicly display, publicly perform, sublicense, and distribute the
+      Work and such Derivative Works in Source or Object form.
+
+   3. Grant of Patent License. Subject to the terms and conditions of
+      this License, each Contributor hereby grants to You a perpetual,
+      worldwide, non-exclusive, no-charge, royalty-free, irrevocable
+      (except as stated in this section) patent license to make, have made,
+      use, offer to sell, sell, import, and otherwise transfer the Work,
+      where such license applies only to those patent claims licensable
+      by such Contributor that are necessarily infringed by their
+      Contribution(s) alone or by combination of their Contribution(s)
+      with the Work to which such Contribution(s) was submitted. If You
+      institute patent litigation against any entity (including a
+      cross-claim or counterclaim in a lawsuit) alleging that the Work
+      or a Contribution incorporated within the Work constitutes direct
+      or contributory patent infringement, then any patent licenses
+      granted to You under this License for that Work shall terminate
+      as of the date such litigation is filed.
+
+   4. Redistribution. You may reproduce and distribute copies of the
+      Work or Derivative Works thereof in any medium, with or without
+      modifications, and in Source or Object form, provided that You
+      meet the following conditions:
+
+      (a) You must give any other recipients of the Work or
+          Derivative Works a copy of this License; and
+
+      (b) You must cause any modified files to carry prominent notices
+          stating that You changed the files; and
+
+      (c) You must retain, in the Source form of any Derivative Works
+          that You distribute, all copyright, patent, trademark, and
+          attribution notices from the Source form of the Work,
+          excluding those notices that do not pertain to any part of
+          the Derivative Works; and
+
+      (d) If the Work includes a "NOTICE" text file as part of its
+          distribution, then any Derivative Works that You distribute must
+          include a readable copy of the attribution notices contained
+          within such NOTICE file, excluding those notices that do not
+          pertain to any part of the Derivative Works, in at least one
+          of the following places: within a NOTICE text file distributed
+          as part of the Derivative Works; within the Source form or
+          documentation, if provided along with the Derivative Works; or,
+          within a display generated by the Derivative Works, if and
+          wherever such third-party notices normally appear. The contents
+          of the NOTICE file are for informational purposes only and
+          do not modify the License. You may add Your own attribution
+          notices within Derivative Works that You distribute, alongside
+          or as an addendum to the NOTICE text from the Work, provided
+          that such additional attribution notices cannot be construed
+          as modifying the License.
+
+      You may add Your own copyright statement to Your modifications and
+      may provide additional or different license terms and conditions
+      for use, reproduction, or distribution of Your modifications, or
+      for any such Derivative Works as a whole, provided Your use,
+      reproduction, and distribution of the Work otherwise complies with
+      the conditions stated in this License.
+
+   5. Submission of Contributions. Unless You explicitly state otherwise,
+      any Contribution intentionally submitted for inclusion in the Work
+      by You to the Licensor shall be under the terms and conditions of
+      this License, without any additional terms or conditions.
+      Notwithstanding the above, nothing herein shall supersede or modify
+      the terms of any separate license agreement you may have executed
+      with Licensor regarding such Contributions.
+
+   6. Trademarks. This License does not grant permission to use the trade
+      names, trademarks, service marks, or product names of the Licensor,
+      except as required for reasonable and customary use in describing the
+      origin of the Work and reproducing the content of the NOTICE file.
+
+   7. Disclaimer of Warranty. Unless required by applicable law or
+      agreed to in writing, Licensor provides the Work (and each
+      Contributor provides its Contributions) on an "AS IS" BASIS,
+      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
+      implied, including, without limitation, any warranties or conditions
+      of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A
+      PARTICULAR PURPOSE. You are solely responsible for determining the
+      appropriateness of using or redistributing the Work and assume any
+      risks associated with Your exercise of permissions under this License.
+
+   8. Limitation of Liability. In no event and under no legal theory,
+      whether in tort (including negligence), contract, or otherwise,
+      unless required by applicable law (such as deliberate and grossly
+      negligent acts) or agreed to in writing, shall any Contributor be
+      liable to You for damages, including any direct, indirect, special,
+      incidental, or consequential damages of any character arising as a
+      result of this License or out of the use or inability to use the
+      Work (including but not limited to damages for loss of goodwill,
+      work stoppage, computer failure or malfunction, or any and all
+      other commercial damages or losses), even if such Contributor
+      has been advised of the possibility of such damages.
+
+   9. Accepting Warranty or Additional Liability. While redistributing
+      the Work or Derivative Works thereof, You may choose to offer,
+      and charge a fee for, acceptance of support, warranty, indemnity,
+      or other liability obligations and/or rights consistent with this
+      License. However, in accepting such obligations, You may act only
+      on Your own behalf and on Your sole responsibility, not on behalf
+      of any other Contributor, and only if You agree to indemnify,
+      defend, and hold each Contributor harmless for any liability
+      incurred by, or claims asserted against, such Contributor by reason
+      of your accepting any such warranty or additional liability.
+
+   END OF TERMS AND CONDITIONS
+
+   APPENDIX: How to apply the Apache License to your work.
+
+      To apply the Apache License to your work, attach the following
+      boilerplate notice, with the fields enclosed by brackets "[]"
+      replaced with your own identifying information. (Don't include
+      the brackets!)  The text should be enclosed in the appropriate
+      comment syntax for the file format. We also recommend that a
+      file or class name and description of purpose be included on the
+      same "printed page" as the copyright notice for easier
+      identification within third-party archives.
+
+   Copyright [yyyy] [name of copyright owner]
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+
+// File: basic_pitch_fork\MANIFEST.in
+----------------------------------------
+include *.txt tox.ini *.rst *.md LICENSE
+include catalog-info.yaml
+include Dockerfile .dockerignore
+recursive-include tests *.py *.wav *.npz *.jams *.zip *.mid *.flac *.yaml *.json
+recursive-include basic_pitch *.py *.md
+recursive-include basic_pitch/saved_models *.index *.pb variables.data* *.mlmodel *.json *.onnx *.tflite *.bin
+
+
+// File: basic_pitch_fork\NOTICE
+----------------------------------------
+Basic Pitch
+Copyright 2022 Spotify AB
+
+This product includes software developed at
+Spotify AB (http://www.spotify.com/).
+
+This product includes software from Librosa (ISC).
+* Copyright (C) 2013--2017, librosa development team.
+
+This product includes software from mir_eval (MIT)
+* Copyright (C) 2014 Colin Raffel
+
+This product includes software from numpy (BSD)
+* Copyright (C) 2005-2022, NumPy Developers.
+
+This product includes software from pretty-midi (MIT)
+* Copyright (C) 2014 Colin Raffel
+
+This product includes software from resampy (ISC)
+* Copyright (C) 2016, Brian McFee
+
+This product includes software from scipy (BSD)
+* Copyright (C) 2001-2002 Enthought, Inc. 2003-2022, SciPy Developers
+
+This product includes software from tensorflow (Apache 2.0)
+* Copyright (C) 2019 Google, LLC <packages@tensorflow.org>
+
+The tests for `basic-pitch` include audio files from the
+Vocadito dataset liscened under Creative Commons
+Attribution 4.0 International. The dataset can be found at:
+https://zenodo.org/record/5578807#.YnRm5vPMKDU
+
+
+// File: basic_pitch_fork\OWNERS.md
+----------------------------------------
+# Owners
+
+- See [CONTRIBUTING.md](CONTRIBUTING.md) for general contribution guidelines.
+
+## Core Developers
+
+- David Rubinstein (@drubinstein, Spotify)
+- Rachel Bittner (@rabitt, Spotify)
+
+## Triagers
+
+- David Rubinstein (@drubinstein, Spotify)
+- Rachel Bittner (@rabitt, Spotify)
+- Charae Tongg (@charaizlabs, Spotify)
+- Peter Sobot (@psobot, Spotify)
+- Juanjo Bosch (@juanjobosch, Spotify)
+- Vincent Degroote (@vinzentt, Spotify)
+
+## Contributors
+
+- Rachel Bittner (@rabitt, Spotify)
+- Juanjo Bosch (@juanjobosch, Spotify)
+- Vincent Degroote (@vinzentt, Spotify)
+- Simon Durand (@simondurand, Spotify)
+- David Rubinstein (@drubinstein, Spotify)
+- Gabriel Meseguer-Brocal (@gabolsgabs, Deezer)
+- Nicola Montecchio (@nicolamontecchio, Spotify)
+- Scott Sheffield (@scottsheffield, Spotify)
+- Peter Sobot (@psobot, Spotify)
+- Daniel Stoller (@f90, Spotify)
+- Ching Sung (@chingsungx, Spotify)
+- Charae Tongg (@charaizlabs, Spotify)
+- Jan Van Balen (@jvbalen, Spotify)
+
+The research and development of this project is led by [Spotify's Audio Intelligence Lab](https://research.atspotify.com/audio-intelligence/).
+
+
+// File: basic_pitch_fork\pyproject.toml
+----------------------------------------
+[project]
+name = "basic-pitch"
+version = "0.4.0"
+description = "Basic Pitch, a lightweight yet powerful audio-to-MIDI converter with pitch bend detection."
+readme = "README.md"
+keywords = []
+classifiers = [
+	"Development Status :: 5 - Production/Stable",
+	"Natural Language :: English",
+	"Operating System :: POSIX :: Linux",
+	"Operating System :: MacOS :: MacOS X",
+	"Operating System :: Microsoft :: Windows",
+	"Programming Language :: Python",
+	"Programming Language :: Python :: 3.8",
+	"Programming Language :: Python :: 3.9",
+	"Programming Language :: Python :: 3.10",
+	"Programming Language :: Python :: 3.11",
+	"Programming Language :: Python :: Implementation :: CPython",
+]
+dependencies = [
+	"coremltools; platform_system == 'Darwin'",
+	"librosa>=0.8.0",
+	"mir_eval>=0.6",
+	"numpy>=1.18",
+	"onnxruntime; platform_system == 'Windows' and python_version < '3.11'",
+	"pretty_midi>=0.2.9",
+	"resampy>=0.2.2,<0.4.3",
+	"scikit-learn",
+	"scipy>=1.4.1",
+	"tensorflow>=2.4.1; platform_system != 'Darwin' and python_version >= '3.11'",
+	"tensorflow-macos>=2.4.1; platform_system == 'Darwin' and python_version > '3.11'",
+	"tflite-runtime; platform_system == 'Linux' and python_version < '3.11'",
+	"typing_extensions",
+]
+
+[metadata]
+author = "Spotify"
+author_email = "basic-pitch@spotify.com"
+maintainer = "Spotify"
+maintainer_email = "basic-pitch@spotify.com"
+url = "https://github.com/spotify/basic-pitch"
+long_description = "Basic Pitch, a lightweight yet powerful audio-to-MIDI converter with pitch bend detection. See https://github.com/spotify/basic-pitch for more details."
+license = { file = "LICENSE" }
+
+[tool.setuptools.packages.find]
+where = ["."]
+exclude = ["tests"]
+namespaces = false
+
+[project.scripts]
+basic-pitch = "basic_pitch.predict:main"
+bp-download = "basic_pitch.data.download:main"
+
+[project.optional-dependencies]
+data = [
+    "apache_beam",
+    "mirdata",
+    "smart_open",
+    "sox",
+    "ffmpeg-python"
+]
+test = [
+	"basic_pitch[data]",
+	"coverage>=5.0.2",
+	"pytest>=6.1.1",
+	"pytest-mock",
+	"wave",
+	"mido"
+]
+tf = [
+	"tensorflow>=2.4.1,<2.15.1; platform_system != 'Darwin'",
+	"tensorflow-macos>=2.4.1,<2.15.1; platform_system == 'Darwin' and python_version > '3.7'",
+]
+coreml = ["coremltools"] 
+onnx = ["onnxruntime"]
+docs = ["mkdocs>=1.0.4"]
+dev = [
+	"basic_pitch[data,test,tf,coreml,onnx,docs]",
+	"mypy",
+	"tox",
+]
+
+[tool.distutils.bdist_wheel]
+universal = true
+
+[build-system]
+requires = [
+	"setuptools>=40.8.0",
+	"wheel",
+	"cython",
+]
+
+
+// File: basic_pitch_fork\README.md
+----------------------------------------
+![Basic Pitch Logo](https://user-images.githubusercontent.com/213293/167478083-de988de2-9137-4325-8a5f-ceeb51233753.png)
+
+
+
+[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/basic-pitch)
+![Supported Platforms](https://img.shields.io/badge/platforms-macOS%20%7C%20Windows%20%7C%20Linux-green)
+
+
+Basic Pitch is a Python library for Automatic Music Transcription (AMT), using lightweight neural network developed by [Spotify's Audio Intelligence Lab](https://research.atspotify.com/audio-intelligence/). It's small, easy-to-use, `pip install`-able and `npm install`-able via its [sibling repo](https://github.com/spotify/basic-pitch-ts).
+
+Basic Pitch may be simple, but it's is far from "basic"! `basic-pitch` is efficient and easy to use, and its multipitch support, its ability to generalize across instruments, and its note accuracy competes with much larger and more resource-hungry AMT systems.
+
+Provide a compatible audio file and basic-pitch will generate a MIDI file, complete with pitch bends. Basic pitch is instrument-agnostic and supports polyphonic instruments, so you can freely enjoy transcription of all your favorite music, no matter what instrument is used.  Basic pitch works best on one instrument at a time.
+
+### Research Paper
+This library was released in conjunction with Spotify's publication at [ICASSP 2022](https://2022.ieeeicassp.org/). You can read more about this research in the paper, [A Lightweight Instrument-Agnostic Model for Polyphonic Note Transcription and Multipitch Estimation](https://arxiv.org/abs/2203.09893).
+
+If you use this library in academic research, consider citing it:
+```bibtex
+@inproceedings{2022_BittnerBRME_LightweightNoteTranscription_ICASSP,
+  author= {Bittner, Rachel M. and Bosch, Juan Jos\'e and Rubinstein, David and Meseguer-Brocal, Gabriel and Ewert, Sebastian},
+  title= {A Lightweight Instrument-Agnostic Model for Polyphonic Note Transcription and Multipitch Estimation},
+  booktitle= {Proceedings of the IEEE International Conference on Acoustics, Speech, and Signal Processing (ICASSP)},
+  address= {Singapore},
+  year= 2022,
+}
+```
+
+**Note that we have improved Basic Pitch beyond what was presented in this paper. Therefore, if you use the output of Basic Pitch in academic research,
+we recommend that you cite the version of the code that was used.**
+
+### Demo
+If, for whatever reason, you're not yet completely inspired, or you're just like so totally over the general vibe and stuff, checkout our snappy demo website, [basicpitch.io](https://basicpitch.io), to experiment with our model on whatever music audio you provide!
+
+
+## Installation
+
+`basic-pitch` is available via PyPI. To install the current release:
+
+    pip install basic-pitch
+
+To update Basic Pitch to the latest version, add `--upgrade` to the above command.
+
+#### Compatible Environments:
+- MacOS, Windows and Ubuntu operating systems
+- Python versions 3.7, 3.8, 3.9, 3.10, 3.11
+- **For Mac M1 hardware, we currently only support python version 3.10. Otherwise, we suggest using a virtual machine.**
+
+
+### Model Runtime
+
+Basic Pitch comes with the original TensorFlow model and the TensorFlow model converted to [CoreML](https://developer.apple.com/documentation/coreml), [TensorFlowLite](https://www.tensorflow.org/lite), and [ONNX](https://onnx.ai/). By default, Basic Pitch will _not_ install TensorFlow as a dependency *unless you are using Python>=3.11*. Instead, by default, CoreML will be installed on MacOS, TensorFlowLite will be installed on Linux and ONNX will be installed on Windows. If you want to install TensorFlow along with the default model inference runtime, you can install TensorFlow via `pip install basic-pitch[tf]`.
+
+## Usage
+
+### Model Prediction
+
+### Model Runtime
+
+By default, Basic Pitch will attempt to load a model in the following order:
+
+1. TensorFlow
+2. CoreML
+3. TensorFlowLite
+4. ONNX
+
+Additionally, the module variable ICASSP_2022_MODEL_PATH will default to the first available version in the list.
+
+We will explain how to override this priority list below. Because all other model serializations were converted from TensorFlow, we recommend using TensorFlow when possible. N.B. Basic Pitch does not install TensorFlow by default to save the user time when installing and running Basic Pitch.
+
+#### Command Line Tool
+
+This library offers a command line tool interface. A basic prediction command will generate and save a MIDI file transcription of audio at the `<input-audio-path>` to the `<output-directory>`:
+
+```bash
+basic-pitch <output-directory> <input-audio-path>
+```
+
+For example: 
+```
+basic-pitch /output/directory/path /input/audio/path
+```
+
+To process more than one audio file at a time:
+
+```bash
+basic-pitch <output-directory> <input-audio-path-1> <input-audio-path-2> <input-audio-path-3>
+```
+
+Optionally, you may append any of the following flags to your prediction command to save additional formats of the prediction output to the `<output-directory>`:
+
+- `--sonify-midi` to additionally save a `.wav` audio rendering of the MIDI file.
+- `--save-model-outputs` to additionally save raw model outputs as an NPZ file.
+- `--save-note-events` to additionally save the predicted note events as a CSV file.
+
+If you want to use a non-default model type (e.g., use CoreML instead of TF), use the `--model-serialization` argument. The CLI will change the loaded model to the type you prefer.
+
+To discover more parameter control, run:
+```bash
+basic-pitch --help
+```
+
+#### Programmatic
+
+**predict()**
+
+Import `basic-pitch` into your own Python code and run the [`predict`](basic_pitch/inference.py) functions directly, providing an `<input-audio-path>` and returning the model's prediction results:
+
+```python
+from basic_pitch.inference import predict
+from basic_pitch import ICASSP_2022_MODEL_PATH
+
+model_output, midi_data, note_events = predict(<input-audio-path>)
+```
+
+- `<minimum-frequency>` & `<maximum-frequency>` (*float*s) set the maximum and minimum allowed note frequency, in Hz, returned by the model. Pitch events with frequencies outside of this range will be excluded from the prediction results.
+- `model_output` is the raw model inference output
+- `midi_data` is the transcribed MIDI data derived from the `model_output`
+- `note_events` is a list of note events derived from the `model_output`
+
+Note: As mentioned previously, ICASSP_2022_MODEL_PATH will default to the runtime first supported in the list TensorFlow, CoreML, TensorFlowLite, ONNX.
+
+**predict() in a loop**
+
+To run prediction within a loop, you'll want to load the model yourself and provide `predict()` with the loaded model object itself to be used for repeated prediction calls, in order to avoid redundant and sluggish model loading.
+
+```python
+import tensorflow as tf
+
+from basic_pitch.inference import predict, Model
+from basic_pitch import ICASSP_2022_MODEL_PATH
+
+basic_pitch_model = Model(ICASSP_2022_MODEL_PATH))
+
+for x in range():
+    ...
+    model_output, midi_data, note_events = predict(
+        <loop-x-input-audio-path>,
+        basic_pitch_model,
+    )
+    ...
+```
+
+**predict_and_save()**
+
+If you would like `basic-pitch` orchestrate the generation and saving of our various supported output file types, you may use [`predict_and_save`](basic_pitch/inference.py) instead of using [`predict`](basic_pitch/inference.py) directly:
+
+```python
+from basic_pitch.inference import predict_and_save
+
+predict_and_save(
+    <input-audio-path-list>,
+    <output-directory>,
+    <save-midi>,
+    <sonify-midi>,
+    <save-model-outputs>,
+    <save-notes>,
+)
+```
+
+where:
+   - `<input-audio-path-list>` & `<output-directory>`
+        - directory paths for `basic-pitch` to read from/write to.
+   - `<save-midi>`
+        - *bool* to control generating and saving a MIDI file to the `<output-directory>`
+   - `<sonify-midi>`
+        - *bool* to control saving a WAV audio rendering of the MIDI file to the `<output-directory>`
+   - `<save-model-outputs>`
+        - *bool* to control saving the raw model output as a NPZ file to the `<output-directory>`
+   - `<save-notes>`
+        - *bool* to control saving predicted note events as a CSV file `<output-directory>`
+
+
+
+### Model Input
+
+**Supported Audio Codecs**
+
+   `basic-pitch` accepts all sound files that are compatible with its version of [`librosa`](https://librosa.org/doc/latest/index.html), including:
+
+- `.mp3`
+- `.ogg`
+- `.wav`
+- `.flac`
+- `.m4a`
+
+**Mono Channel Audio Only**
+
+While you may use stereo audio as an input to our model, at prediction time, the channels of the input will be down-mixed to mono, and then analyzed and transcribed.
+
+**File Size/Audio Length**
+
+This model can process any size or length of audio, but processing of larger/longer audio files could be limited by your machine's available disk space. To process these files, we recommend streaming the audio of the file, processing windows of audio at a time.
+
+**Sample Rate**
+
+Input audio maybe be of any sample rate, however, all audio will be resampled to 22050 Hz before processing.
+
+### VST
+
+Thanks to DamRsn for developing this working VST version of basic-pitch! - https://github.com/DamRsn/NeuralNote
+
+
+## Contributing
+
+Contributions to `basic-pitch` are welcomed! See [CONTRIBUTING.md](CONTRIBUTING.md) for details.
+
+## Copyright and License
+`basic-pitch` is Copyright 2022 Spotify AB.
+
+This software is licensed under the Apache License, Version 2.0 (the "Apache License"). You may choose either license to govern your use of this software only upon the condition that you accept all of the terms of either the Apache License.
+
+You may obtain a copy of the Apache License at:
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+
+Unless required by applicable law or agreed to in writing, software distributed under the Apache License or the GPL License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the Apache License for the specific language governing permissions and limitations under the Apache License.
+
+
+
+// File: basic_pitch_fork\SECURITY.md
+----------------------------------------
+# Security Policy
+
+We're big believers in protecting your privacy and security. As a company, we not only have a vested interest, but also a deep desire to see the Internet remain as safe as possible for us all.
+
+So, needless to say, we take security issues very seriously.
+
+In our opinion, the practice of 'responsible disclosure' is the best way to safeguard the Internet. It allows individuals to notify companies like Spotify of any security threats before going public with the information. This gives us a fighting chance to resolve the problem before the criminally-minded become aware of it.
+
+Responsible disclosure is the industry best practice, and we recommend it as a procedure to anyone researching security vulnerabilities.
+
+## Reporting a Vulnerability
+
+If you have discovered a vulnerability in this open source project or another serious security issue,
+please submit it to the Spotify bounty program hosted by HackerOne.
+
+https://hackerone.com/spotify
+
+
+// File: basic_pitch_fork\setup.py
+----------------------------------------
+#!/usr/bin/env python
+# encoding: utf-8
+#
+# Copyright 2022 Spotify AB
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+from setuptools import setup
+
+if __name__ == "__main__":
+    setup()
+
+
+// File: basic_pitch_fork\tests\data\test_guitarset.py
+----------------------------------------
+#!/usr/bin/env python
+# encoding: utf-8
+#
+# Copyright 2022 Spotify AB
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+import apache_beam as beam
+import itertools
+import os
+import pathlib
+import shutil
+
+from apache_beam.testing.test_pipeline import TestPipeline
+from typing import List
+
+from basic_pitch.data.datasets.guitarset import (
+    GuitarSetToTfExample,
+    GuitarSetInvalidTracks,
+    create_input_data,
+)
+from basic_pitch.data.pipeline import WriteBatchToTfRecord
+
+from utils import create_mock_wav
+
+RESOURCES_PATH = pathlib.Path(__file__).parent.parent / "resources"
+TRACK_ID = "00_BN1-129-Eb_comp"
+
+
+def test_guitarset_to_tf_example(tmp_path: pathlib.Path) -> None:
+    mock_guitarset_home = tmp_path / "guitarset"
+    mock_guitarset_audio = mock_guitarset_home / "audio_mono-mic"
+    mock_guitarset_annotations = mock_guitarset_home / "annotation"
+    output_dir = tmp_path / "output"
+
+    mock_guitarset_audio.mkdir(parents=True)
+    mock_guitarset_annotations.mkdir(parents=True)
+    output_dir.mkdir()
+
+    create_mock_wav(mock_guitarset_audio / f"{TRACK_ID}_mic.wav", duration_min=1)
+    shutil.copy(
+        RESOURCES_PATH / "data" / "guitarset" / "annotation" / f"{TRACK_ID}.jams",
+        mock_guitarset_annotations / f"{TRACK_ID}.jams",
+    )
+
+    input_data: List[str] = [TRACK_ID]
+    with TestPipeline() as p:
+        (
+            p
+            | "Create PCollection of track IDs" >> beam.Create([input_data])
+            | "Create tf.Example" >> beam.ParDo(GuitarSetToTfExample(str(mock_guitarset_home), download=False))
+            | "Write to tfrecord" >> beam.ParDo(WriteBatchToTfRecord(str(output_dir)))
+        )
+
+    listdir = os.listdir(output_dir)
+    assert len(listdir) == 1
+    assert os.path.splitext(listdir[0])[-1] == ".tfrecord"
+    with open(output_dir / listdir[0], "rb") as fp:
+        data = fp.read()
+        assert len(data) != 0
+
+
+def test_guitarset_invalid_tracks(tmpdir: str) -> None:
+    split_labels = ["train", "test", "validation"]
+    input_data = [(str(i), split) for i, split in enumerate(split_labels)]
+    with TestPipeline() as p:
+        splits = (
+            p
+            | "Create PCollection" >> beam.Create(input_data)
+            | "Tag it" >> beam.ParDo(GuitarSetInvalidTracks()).with_outputs(*split_labels)
+        )
+
+        for split in split_labels:
+            (
+                getattr(splits, split)
+                | f"Write {split} to text"
+                >> beam.io.WriteToText(os.path.join(tmpdir, f"output_{split}.txt"), shard_name_template="")
+            )
+
+    for i, split in enumerate(split_labels):
+        with open(os.path.join(tmpdir, f"output_{split}.txt"), "r") as fp:
+            assert fp.read().strip() == str(i)
+
+
+def test_guitarset_create_input_data() -> None:
+    data = create_input_data(train_percent=0.33, validation_percent=0.33)
+    data.sort(key=lambda el: el[1])  # sort by split
+    tolerance = 0.1
+    for _, group in itertools.groupby(data, lambda el: el[1]):
+        assert (0.33 - tolerance) * len(data) <= len(list(group)) <= (0.33 + tolerance) * len(data)
+
+
+def test_guitarset_create_input_data_overallocate() -> None:
+    try:
+        create_input_data(train_percent=0.6, validation_percent=0.6)
+    except AssertionError:
+        assert True
+    else:
+        assert False
+
+
+// File: basic_pitch_fork\tests\data\test_ikala.py
+----------------------------------------
+#!/usr/bin/env python
+# encoding: utf-8
+#
+# Copyright 2024 Spotify AB
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+import apache_beam as beam
+import itertools
+import os
+
+from apache_beam.testing.test_pipeline import TestPipeline
+
+from basic_pitch.data.datasets.ikala import (
+    IkalaInvalidTracks,
+    create_input_data,
+)
+
+
+# TODO: Create test_ikala_to_tf_example
+
+
+def test_ikala_invalid_tracks(tmpdir: str) -> None:
+    split_labels = ["train", "validation"]
+    input_data = [(str(i), split) for i, split in enumerate(split_labels)]
+    with TestPipeline() as p:
+        splits = (
+            p
+            | "Create PCollection" >> beam.Create(input_data)
+            | "Tag it" >> beam.ParDo(IkalaInvalidTracks()).with_outputs(*split_labels)
+        )
+
+        for split in split_labels:
+            (
+                getattr(splits, split)
+                | f"Write {split} to text"
+                >> beam.io.WriteToText(os.path.join(tmpdir, f"output_{split}.txt"), shard_name_template="")
+            )
+
+    for i, split in enumerate(split_labels):
+        with open(os.path.join(tmpdir, f"output_{split}.txt"), "r") as fp:
+            assert fp.read().strip() == str(i)
+
+
+def test_ikala_create_input_data() -> None:
+    data = create_input_data(train_percent=0.5)
+    data.sort(key=lambda el: el[1])  # sort by split
+    tolerance = 0.1
+    for _, group in itertools.groupby(data, lambda el: el[1]):
+        assert (0.5 - tolerance) * len(data) <= len(list(group)) <= (0.5 + tolerance) * len(data)
+
+
+def test_ikala_create_input_data_overallocate() -> None:
+    try:
+        create_input_data(train_percent=1.1)
+    except AssertionError:
+        assert True
+    else:
+        assert False
+
+
+// File: basic_pitch_fork\tests\data\test_maestro.py
+----------------------------------------
+#!/usr/bin/env python
+# encoding: utf-8
+#
+# Copyright 2024 Spotify AB
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+import os
+import pathlib
+
+from typing import List
+
+import apache_beam as beam
+from apache_beam.testing.test_pipeline import TestPipeline
+
+from basic_pitch.data.datasets.maestro import (
+    MaestroToTfExample,
+    MaestroInvalidTracks,
+    create_input_data,
+)
+from basic_pitch.data.pipeline import WriteBatchToTfRecord
+
+from utils import create_mock_wav, create_mock_midi
+
+RESOURCES_PATH = pathlib.Path(__file__).parent.parent / "resources"
+MAESTRO_TEST_DATA_PATH = RESOURCES_PATH / "data" / "maestro"
+
+TRAIN_TRACK_ID = "2004/MIDI-Unprocessed_SMF_05_R1_2004_01_ORIG_MID--AUDIO_05_R1_2004_03_Track03_wav"
+VALID_TRACK_ID = "2004/MIDI-Unprocessed_SMF_02_R1_2004_01-05_ORIG_MID--AUDIO_02_R1_2004_06_Track06_wav"
+TEST_TRACK_ID = "2004/MIDI-Unprocessed_SMF_02_R1_2004_01-05_ORIG_MID--AUDIO_02_R1_2004_08_Track08_wav"
+GT_15M_TRACK_ID = "2004/MIDI-Unprocessed_SMF_02_R1_2004_01-05_ORIG_MID--AUDIO_02_R1_2004_05_Track05_wav"
+
+
+def test_maestro_to_tf_example(tmp_path: pathlib.Path) -> None:
+    mock_maestro_home = tmp_path / "maestro"
+    mock_maestro_ext = mock_maestro_home / "2004"
+    mock_maestro_ext.mkdir(parents=True, exist_ok=True)
+
+    create_mock_wav(mock_maestro_ext / f"{TRAIN_TRACK_ID.split('/')[1]}.wav", 3)
+    create_mock_midi(mock_maestro_ext / f"{TRAIN_TRACK_ID.split('/')[1]}.midi")
+
+    output_dir = tmp_path / "outputs"
+    output_dir.mkdir(parents=True, exist_ok=True)
+
+    input_data: List[str] = [TRAIN_TRACK_ID]
+    with TestPipeline() as p:
+        (
+            p
+            | "Create PCollection of track IDs" >> beam.Create([input_data])
+            | "Create tf.Example" >> beam.ParDo(MaestroToTfExample(str(mock_maestro_home), download=False))
+            | "Write to tfrecord" >> beam.ParDo(WriteBatchToTfRecord(str(output_dir)))
+        )
+
+    listdir = os.listdir(str(output_dir))
+    assert len(listdir) == 1
+    assert os.path.splitext(listdir[0])[-1] == ".tfrecord"
+    with open(os.path.join(str(output_dir), os.listdir(str(output_dir))[0]), "rb") as fp:
+        data = fp.read()
+        assert len(data) != 0
+
+
+def test_maestro_invalid_tracks(tmp_path: pathlib.Path) -> None:
+    mock_maestro_home = tmp_path / "maestro"
+    mock_maestro_ext = mock_maestro_home / "2004"
+    mock_maestro_ext.mkdir(parents=True, exist_ok=True)
+
+    input_data = [(TRAIN_TRACK_ID, "train"), (VALID_TRACK_ID, "validation"), (TEST_TRACK_ID, "test")]
+
+    for track_id, _ in input_data:
+        create_mock_wav(mock_maestro_ext / f"{track_id.split('/')[1]}.wav", 3)
+
+    split_labels = set([e[1] for e in input_data])
+    with TestPipeline() as p:
+        splits = (
+            p
+            | "Create PCollection" >> beam.Create(input_data)
+            | "Tag it" >> beam.ParDo(MaestroInvalidTracks(str(mock_maestro_home))).with_outputs(*split_labels)
+        )
+
+        for split in split_labels:
+            (
+                getattr(splits, split)
+                | f"Write {split} to text"
+                >> beam.io.WriteToText(str(tmp_path / f"output_{split}.txt"), shard_name_template="")
+            )
+
+    for track_id, split in input_data:
+        with open(tmp_path / f"output_{split}.txt", "r") as fp:
+            assert fp.read().strip() == track_id
+
+
+def test_maestro_invalid_tracks_over_15_min(tmp_path: pathlib.Path) -> None:
+    """
+    The track id used here is a real track id in maestro, and it is part of the train split, but we mock the data so as
+    not to store a large file in git, hence the variable name.
+    """
+
+    mock_maestro_home = tmp_path / "maestro"
+    mock_maestro_ext = mock_maestro_home / "2004"
+    mock_maestro_ext.mkdir(parents=True, exist_ok=True)
+
+    create_mock_wav(mock_maestro_ext / f"{GT_15M_TRACK_ID.split('/')[1]}.wav", 16)
+
+    input_data = [(GT_15M_TRACK_ID, "train")]
+    split_labels = set([e[1] for e in input_data])
+    with TestPipeline() as p:
+        splits = (
+            p
+            | "Create PCollection" >> beam.Create(input_data)
+            | "Tag it" >> beam.ParDo(MaestroInvalidTracks(str(mock_maestro_home))).with_outputs(*split_labels)
+        )
+
+        for split in split_labels:
+            (
+                getattr(splits, split)
+                | f"Write {split} to text"
+                >> beam.io.WriteToText(str(tmp_path / f"output_{split}.txt"), shard_name_template="")
+            )
+
+    for _, split in input_data:
+        with open(tmp_path / f"output_{split}.txt", "r") as fp:
+            assert fp.read().strip() == ""
+
+
+def test_maestro_create_input_data() -> None:
+    """
+    A commuted metadata file is included in the repo for testing. mirdata references the metadata file to
+    populate the tracklist with metadata. Since the file is commuted to only the filenames referenced here,
+    we only consider these when testing the metadata.
+    """
+    data = create_input_data(str(MAESTRO_TEST_DATA_PATH))
+    assert len(data)
+
+    test_fnames = {TRAIN_TRACK_ID, VALID_TRACK_ID, TEST_TRACK_ID, GT_15M_TRACK_ID}
+    splits = {d[1] for d in data if d[0].split(".")[0] in test_fnames}
+    assert splits == set(["train", "validation", "test"])
+
+
+// File: basic_pitch_fork\tests\data\test_medleydb_pitch.py
+----------------------------------------
+#!/usr/bin/env python
+# encoding: utf-8
+#
+# Copyright 2024 Spotify AB
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+import apache_beam as beam
+import itertools
+import os
+
+from apache_beam.testing.test_pipeline import TestPipeline
+
+from basic_pitch.data.datasets.medleydb_pitch import (
+    MedleyDbPitchInvalidTracks,
+    create_input_data,
+)
+
+
+# TODO: Create test_medleydb_pitch_to_tf_example
+
+
+def test_medleydb_pitch_invalid_tracks(tmpdir: str) -> None:
+    split_labels = ["train", "validation"]
+    input_data = [(str(i), split) for i, split in enumerate(split_labels)]
+    with TestPipeline() as p:
+        splits = (
+            p
+            | "Create PCollection" >> beam.Create(input_data)
+            | "Tag it" >> beam.ParDo(MedleyDbPitchInvalidTracks()).with_outputs(*split_labels)
+        )
+
+        for split in split_labels:
+            (
+                getattr(splits, split)
+                | f"Write {split} to text"
+                >> beam.io.WriteToText(os.path.join(tmpdir, f"output_{split}.txt"), shard_name_template="")
+            )
+
+    for i, split in enumerate(split_labels):
+        with open(os.path.join(tmpdir, f"output_{split}.txt"), "r") as fp:
+            assert fp.read().strip() == str(i)
+
+
+def test_medleydb_create_input_data() -> None:
+    data = create_input_data(train_percent=0.5)
+    data.sort(key=lambda el: el[1])  # sort by split
+    tolerance = 0.01
+    for _, group in itertools.groupby(data, lambda el: el[1]):
+        assert (0.5 - tolerance) * len(data) <= len(list(group)) <= (0.5 + tolerance) * len(data)
+
+
+def test_create_input_data_overallocate() -> None:
+    try:
+        create_input_data(train_percent=1.1)
+    except AssertionError:
+        assert True
+    else:
+        assert False
+
+
+// File: basic_pitch_fork\tests\data\test_pipeline.py
+----------------------------------------
+#!/usr/bin/env python
+# encoding: utf-8
+#
+# Copyright 2022 Spotify AB
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+import csv
+import os
+
+from itertools import islice
+
+import apache_beam as beam
+import numpy as np
+import tensorflow as tf
+
+from apache_beam.testing.test_pipeline import TestPipeline
+
+from basic_pitch.data.tf_example_serialization import bytes_feature, int64_feature
+from basic_pitch.data.pipeline import (
+    Batch,
+    WriteBatchToTfRecord,
+    transcription_dataset_writer,
+)
+
+
+def test_batch() -> None:
+    element_size = 10
+    batch_size = 3
+
+    element = np.random.random([element_size])
+    batcher = Batch(batch_size)
+    batches = list(batcher.process(element))
+    for batch in batches[:-1]:
+        assert len(batch) == element_size // batch_size
+
+    assert len(batches[-1]) == element_size % batch_size
+
+
+def test_write_batch_to_tf_record(tmpdir: str) -> None:
+    data = np.random.random([10, 10])
+    features = {f"feat{i}": bytes_feature(tf.io.serialize_tensor(vec)) for i, vec in enumerate(list(data))}
+    example = tf.train.Example(features=tf.train.Features(feature=features))
+
+    writer = WriteBatchToTfRecord(tmpdir)
+    writer.process([example])
+    assert len(os.listdir(tmpdir)) == 1
+    dataset = tf.data.TFRecordDataset([os.path.join(tmpdir, f) for f in os.listdir(tmpdir)])
+
+    for d in dataset:
+        ex = tf.train.Example()
+        ex.ParseFromString(d.numpy())
+
+    assert ex == example
+
+
+def test_transcription_dataset_writer(tmpdir: str) -> None:
+    input_data = [(f"track{i}", ("train", "test", "validation")[i % 3]) for i in range(9)] + [("foo", "bar")]
+    batch_size = 2
+
+    with TestPipeline() as p:
+        transcription_dataset_writer(
+            p=p,
+            input_data=input_data,
+            to_tf_example=lambda el: [tf.train.Example(features=tf.train.Features(feature={"foo": int64_feature(1)}))],
+            filter_invalid_tracks=lambda el: [beam.pvalue.TaggedOutput(el[1], el[0])],
+            destination=tmpdir,
+            batch_size=batch_size,
+        )
+
+    for i, split in enumerate(["train", "test", "validation"]):
+        assert os.path.exists(os.path.join(tmpdir, split, "index.csv"))
+        with open(os.path.join(tmpdir, split, "index.csv")) as fp:
+            reader = csv.reader(fp, delimiter=",")
+            for row in islice(reader, 1, None):
+                assert int(row[0][-1]) % 3 == i
+
+
+// File: basic_pitch_fork\tests\data\test_slakh.py
+----------------------------------------
+#!/usr/bin/env python
+# encoding: utf-8
+#
+# Copyright 2024 Spotify AB
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+import apache_beam as beam
+import itertools
+import os
+import pathlib
+import shutil
+
+from typing import List, Tuple
+
+from apache_beam.testing.test_pipeline import TestPipeline
+
+from basic_pitch.data.datasets.slakh import (
+    SlakhFilterInvalidTracks,
+    SlakhToTfExample,
+    create_input_data,
+)
+from basic_pitch.data.pipeline import WriteBatchToTfRecord
+
+from utils import create_mock_flac, create_mock_midi
+
+RESOURCES_PATH = pathlib.Path(__file__).parent.parent / "resources"
+SLAKH_PATH = RESOURCES_PATH / "data" / "slakh" / "slakh2100_flac_redux"
+
+TRAIN_PIANO_TRACK_ID = "Track00001-S02"
+TRAIN_DRUMS_TRACK_ID = "Track00001-S01"
+
+VALID_PIANO_TRACK_ID = "Track01501-S06"
+VALID_DRUMS_TRACK_ID = "Track01501-S03"
+
+TEST_PIANO_TRACK_ID = "Track01876-S01"
+TEST_DRUMS_TRACK_ID = "Track01876-S08"
+
+OMITTED_PIANO_TRACK_ID = "Track00049-S05"
+OMITTED_DRUMS_TRACK_ID = "Track00049-S06"
+
+
+# Function to generate a sine wave
+def create_mock_input_data(data_home: pathlib.Path, input_data: List[Tuple[str, str]]) -> None:
+    for track_id, split in input_data:
+        track_num, inst_num = track_id.split("-")
+        track_dir = data_home / split / track_num
+
+        stems_dir = track_dir / "stems"
+        stems_dir.mkdir(parents=True, exist_ok=True)
+        create_mock_flac(stems_dir / (inst_num + ".flac"))
+
+        midi_dir = track_dir / "MIDI"
+        midi_dir.mkdir(parents=True, exist_ok=True)
+        create_mock_midi(midi_dir / (inst_num + ".mid"))
+
+        shutil.copy(SLAKH_PATH / split / track_num / "metadata.yaml", track_dir / "metadata.yaml")
+
+
+def test_slakh_to_tf_example(tmp_path: pathlib.Path) -> None:
+    mock_slakh_home = tmp_path / "slakh"
+    mock_slakh_ext = mock_slakh_home / "slakh2100_flac_redux"
+
+    input_data: List[Tuple[str, str]] = [(TRAIN_PIANO_TRACK_ID, "train")]
+    create_mock_input_data(mock_slakh_ext, input_data)
+
+    output_dir = tmp_path / "outputs"
+    output_dir.mkdir(parents=True, exist_ok=True)
+
+    with TestPipeline() as p:
+        (
+            p
+            | "Create PCollection of track IDs" >> beam.Create([[track_id for track_id, _ in input_data]])
+            | "Create tf.Example" >> beam.ParDo(SlakhToTfExample(str(mock_slakh_home), download=False))
+            | "Write to tfrecord" >> beam.ParDo(WriteBatchToTfRecord(str(output_dir)))
+        )
+
+    listdir = os.listdir(output_dir)
+    assert len(listdir) == 1
+    assert os.path.splitext(listdir[0])[-1] == ".tfrecord"
+    with open(output_dir / listdir[0], "rb") as fp:
+        data = fp.read()
+        assert len(data) != 0
+
+
+def test_slakh_invalid_tracks(tmp_path: pathlib.Path) -> None:
+    mock_slakh_home = tmp_path / "slakh"
+    mock_slakh_ext = mock_slakh_home / "slakh2100_flac_redux"
+
+    split_labels = ["train", "validation", "test"]
+    input_data = [(TRAIN_PIANO_TRACK_ID, "train"), (VALID_PIANO_TRACK_ID, "validation"), (TEST_PIANO_TRACK_ID, "test")]
+    create_mock_input_data(mock_slakh_ext, input_data)
+
+    with TestPipeline() as p:
+        splits = (
+            p
+            | "Create PCollection" >> beam.Create(input_data)
+            | "Tag it" >> beam.ParDo(SlakhFilterInvalidTracks(str(mock_slakh_home))).with_outputs(*split_labels)
+        )
+
+        for split in split_labels:
+            (
+                getattr(splits, split)
+                | f"Write {split} to text"
+                >> beam.io.WriteToText(str(tmp_path / f"output_{split}.txt"), shard_name_template="")
+            )
+
+    for track_id, split in input_data:
+        with open(tmp_path / f"output_{split}.txt", "r") as fp:
+            assert fp.read().strip() == track_id
+
+
+def test_slakh_invalid_tracks_omitted(tmp_path: pathlib.Path) -> None:
+    mock_slakh_home = tmp_path / "slakh"
+    mock_slakh_ext = mock_slakh_home / "slakh2100_flac_redux"
+
+    split_labels = ["train", "omitted"]
+    input_data = [(TRAIN_PIANO_TRACK_ID, "train"), (OMITTED_PIANO_TRACK_ID, "omitted")]
+    create_mock_input_data(mock_slakh_ext, input_data)
+
+    with TestPipeline() as p:
+        splits = (
+            p
+            | "Create PCollection" >> beam.Create(input_data)
+            | "Tag it" >> beam.ParDo(SlakhFilterInvalidTracks(str(mock_slakh_home))).with_outputs(*split_labels)
+        )
+
+        for split in split_labels:
+            (
+                getattr(splits, split)
+                | f"Write {split} to text"
+                >> beam.io.WriteToText(str(tmp_path / f"output_{split}.txt"), shard_name_template="")
+            )
+
+    with open(tmp_path / "output_train.txt", "r") as fp:
+        assert fp.read().strip() == TRAIN_PIANO_TRACK_ID
+
+    with open(tmp_path / "output_omitted.txt", "r") as fp:
+        assert fp.read().strip() == ""
+
+
+def test_slakh_invalid_tracks_drums(tmp_path: pathlib.Path) -> None:
+    mock_slakh_home = tmp_path / "slakh"
+    mock_slakh_ext = mock_slakh_home / "slakh2100_flac_redux"
+
+    split_labels = ["train", "validation", "test"]
+    input_data = [(TRAIN_DRUMS_TRACK_ID, "train"), (VALID_DRUMS_TRACK_ID, "validation"), (TEST_DRUMS_TRACK_ID, "test")]
+    create_mock_input_data(mock_slakh_ext, input_data)
+
+    with TestPipeline() as p:
+        splits = (
+            p
+            | "Create PCollection" >> beam.Create(input_data)
+            | "Tag it" >> beam.ParDo(SlakhFilterInvalidTracks(str(mock_slakh_home))).with_outputs(*split_labels)
+        )
+
+        for split in split_labels:
+            (
+                getattr(splits, split)
+                | f"Write {split} to text"
+                >> beam.io.WriteToText(str(tmp_path / f"output_{split}.txt"), shard_name_template="")
+            )
+
+    for _, split in input_data:
+        with open(tmp_path / f"output_{split}.txt", "r") as fp:
+            assert fp.read().strip() == ""
+
+
+def test_create_input_data() -> None:
+    data = create_input_data()
+    for _, group in itertools.groupby(data, lambda el: el[1]):
+        assert len(list(group))
+
+
+// File: basic_pitch_fork\tests\data\test_tf_example_deserialization.py
+----------------------------------------
+#!/usr/bin/env python
+# encoding: utf-8
+#
+# Copyright 2024 Spotify AB
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+import apache_beam as beam
+import numpy as np
+import pathlib
+import shutil
+import tensorflow as tf
+
+from apache_beam.testing.test_pipeline import TestPipeline
+from typing import List
+
+from basic_pitch.constants import Split
+from basic_pitch.data.datasets.guitarset import GuitarSetToTfExample
+from basic_pitch.data.pipeline import WriteBatchToTfRecord
+from basic_pitch.data.tf_example_deserialization import (
+    prepare_datasets,
+    prepare_visualization_datasets,
+    sample_datasets,
+    transcription_file_generator,
+)
+
+from utils import create_mock_wav
+
+RESOURCES_PATH = pathlib.Path(__file__).parent.parent / "resources"
+TRAIN_TRACK_ID = "00_BN1-129-Eb_comp"
+VALID_TRACK_ID = "00_BN1-147-Gb_comp"
+
+
+def create_empty_tfrecord(filepath: pathlib.Path) -> None:
+    assert filepath.suffix == ".tfrecord"
+    with tf.io.TFRecordWriter(str(filepath)) as writer:
+        writer.write("")
+
+
+def create_tfrecord(input_data: List[str], dataset_home: str, output_dir: str) -> None:
+    with TestPipeline() as p:
+        (
+            p
+            | "Create PCollection of track IDs" >> beam.Create([input_data])
+            | "Create tf.Example" >> beam.ParDo(GuitarSetToTfExample(dataset_home, download=False))
+            | "Write to tfrecord" >> beam.ParDo(WriteBatchToTfRecord(output_dir))
+        )
+
+
+def setup_test_resources(tmp_path: pathlib.Path) -> pathlib.Path:
+    mock_guitarset_home = tmp_path / "guitarset"
+    mock_guitarset_audio = mock_guitarset_home / "audio_mono-mic"
+    mock_guitarset_annotations = mock_guitarset_home / "annotation"
+
+    mock_guitarset_audio.mkdir(parents=True)
+    mock_guitarset_annotations.mkdir(parents=True)
+
+    output_home = tmp_path / "data" / "basic_pitch"
+    output_splits_dir = output_home / "guitarset" / "splits"
+
+    def mock_and_process(split: str, track_id: str) -> None:
+        create_mock_wav(mock_guitarset_audio / f"{track_id}_mic.wav", duration_min=1)
+        shutil.copy(
+            RESOURCES_PATH / "data" / "guitarset" / "annotation" / f"{track_id}.jams",
+            mock_guitarset_annotations / f"{track_id}.jams",
+        )
+
+        output_dir = output_splits_dir / split
+        output_dir.mkdir(parents=True)
+
+        create_tfrecord(input_data=[track_id], dataset_home=str(mock_guitarset_home), output_dir=str(output_dir))
+
+    mock_and_process("train", TRAIN_TRACK_ID)
+    mock_and_process("validation", VALID_TRACK_ID)
+
+    return output_home
+
+
+def test_prepare_datasets(tmp_path: pathlib.Path) -> None:
+    datasets_home = setup_test_resources(tmp_path)
+
+    ds_train, ds_valid = prepare_datasets(
+        datasets_base_path=str(datasets_home),
+        training_shuffle_buffer_size=1,
+        batch_size=1,
+        validation_steps=1,
+        datasets_to_use=["guitarset"],
+        dataset_sampling_frequency=np.array([1]),
+    )
+
+    assert ds_train is not None and isinstance(ds_train, tf.data.Dataset)
+    assert ds_valid is not None and isinstance(ds_valid, tf.data.Dataset)
+
+
+def test_prepare_visualization_dataset(tmp_path: pathlib.Path) -> None:
+    datasets_home = setup_test_resources(tmp_path)
+
+    ds_train, ds_valid = prepare_visualization_datasets(
+        datasets_base_path=str(datasets_home),
+        batch_size=1,
+        validation_steps=1,
+        datasets_to_use=["guitarset"],
+        dataset_sampling_frequency=np.array([1]),
+    )
+
+    assert ds_train is not None and isinstance(ds_train, tf.data.Dataset)
+    assert ds_valid is not None and isinstance(ds_train, tf.data.Dataset)
+
+
+def test_sample_datasets(tmp_path: pathlib.Path) -> None:
+    """touches the following methods:
+    - transcription_dataset
+        - parse_transcription_tfexample
+        - is_not_bad_shape
+        - sparse2dense
+        - reduce_transcription_inputs
+        - get_sample_weights
+            - _infer_time_size
+        - get_transcription_chunks
+            - extract_random_window
+                - extract_window
+                    - trim_time
+        - is_not_all_silent_annotations
+        - to_transcription_training_input
+    """
+    datasets_home = setup_test_resources(tmp_path)
+
+    ds = sample_datasets(
+        split=Split.train,
+        datasets_base_path=str(datasets_home),
+        datasets=["guitarset"],
+        dataset_sampling_frequency=np.array([1]),
+        n_shuffle=1,
+        n_samples_per_track=1,
+        pairs=True,
+    )
+
+    assert ds is not None and isinstance(ds, tf.data.Dataset)
+
+
+def test_transcription_file_generator_train(tmp_path: pathlib.Path) -> None:
+    dataset_path = tmp_path / "test_ds" / "splits" / Split.train.name
+    dataset_path.mkdir(parents=True)
+    create_empty_tfrecord(dataset_path / "test.tfrecord")
+
+    file_gen, random_seed = transcription_file_generator(
+        Split.train, ["test_ds"], datasets_base_path=str(tmp_path), sample_weights=np.array([1])
+    )
+
+    assert random_seed is False
+
+    generator = file_gen()
+    assert next(generator).numpy().decode("utf-8") == str(dataset_path / "test.tfrecord")
+    try:
+        next(generator)
+    except Exception as e:
+        assert isinstance(e, StopIteration)
+
+
+def test_transcription_file_generator_valid(tmp_path: pathlib.Path) -> None:
+    dataset_path = tmp_path / "test_ds" / "splits" / Split.validation.name
+    dataset_path.mkdir(parents=True)
+    create_empty_tfrecord(dataset_path / "test.tfrecord")
+
+    file_gen, random_seed = transcription_file_generator(
+        Split.validation, ["test_ds"], datasets_base_path=str(tmp_path), sample_weights=np.array([1])
+    )
+
+    assert random_seed is True
+
+    generator = file_gen()
+    assert next(generator).numpy().decode("utf-8") == str(dataset_path / "test.tfrecord")
+    try:
+        next(generator)
+    except Exception as e:
+        assert isinstance(e, StopIteration)
+
+
+// File: basic_pitch_fork\tests\data\test_tf_example_serialization.py
+----------------------------------------
+#!/usr/bin/env python
+# encoding: utf-8
+#
+# Copyright 2024 Spotify AB
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+import pathlib
+import sox
+import tensorflow as tf
+
+from basic_pitch.constants import AUDIO_N_CHANNELS, AUDIO_SAMPLE_RATE
+from basic_pitch.data.tf_example_serialization import to_transcription_tfexample
+
+RESOURCES_PATH = pathlib.Path(__file__).parent.parent / "resources"
+
+
+def test_to_transcription_tfexample(tmpdir: str) -> None:
+    file_id = "test"
+    source = "maestro"
+    tmpfile = str(pathlib.Path(tmpdir) / "test.wav")
+    notes_indices = [(0, 1), (1, 2)]
+    notes_values = [30.0, 31.0]
+    onsets_indices = [1, 2]
+    onsets_values = [0.1, 0.2]
+    contours_indices = [1, 2]
+    contours_values = [0.1, 0.2]
+    notes_onsets_shape = (1, 1)
+    contours_shape = (1, 1)
+
+    tfm = sox.Transformer()
+    tfm.rate(AUDIO_SAMPLE_RATE)
+    tfm.channels(AUDIO_N_CHANNELS)
+    tfm.build(str(RESOURCES_PATH / "vocadito_10.wav"), tmpfile)
+    example = to_transcription_tfexample(
+        file_id=file_id,
+        source=source,
+        audio_wav_file_path=tmpfile,
+        notes_indices=notes_indices,
+        notes_values=notes_values,
+        onsets_indices=onsets_indices,
+        onsets_values=onsets_values,
+        contours_indices=contours_indices,
+        contours_values=contours_values,
+        notes_onsets_shape=notes_onsets_shape,
+        contours_shape=contours_shape,
+    )
+    assert type(example) is tf.train.Example
+    assert example.features.feature["file_id"].bytes_list.value[0].decode("utf-8") == file_id
+    assert example.features.feature["source"].bytes_list.value[0].decode("utf-8") == source
+    assert example.features.feature["audio_wav"].bytes_list.value[0] == open(tmpfile, "rb").read()
+    assert tf.reduce_all(
+        tf.io.parse_tensor(example.features.feature["notes_indices"].bytes_list.value[0], out_type=tf.int64)
+        == notes_indices
+    )
+    assert tf.reduce_all(
+        tf.io.parse_tensor(example.features.feature["notes_values"].bytes_list.value[0], out_type=tf.float32)
+        == notes_values
+    )
+    assert tf.reduce_all(
+        tf.io.parse_tensor(example.features.feature["onsets_indices"].bytes_list.value[0], out_type=tf.int64)
+        == onsets_indices
+    )
+    assert tf.reduce_all(
+        tf.io.parse_tensor(example.features.feature["onsets_values"].bytes_list.value[0], out_type=tf.float32)
+        == onsets_values
+    )
+    assert tf.reduce_all(
+        tf.io.parse_tensor(example.features.feature["contours_indices"].bytes_list.value[0], out_type=tf.int64)
+        == contours_indices
+    )
+    assert tf.reduce_all(
+        tf.io.parse_tensor(example.features.feature["contours_values"].bytes_list.value[0], out_type=tf.float32)
+        == contours_values
+    )
+    assert tf.reduce_all(
+        tf.io.parse_tensor(example.features.feature["notes_onsets_shape"].bytes_list.value[0], out_type=tf.int64)
+        == notes_onsets_shape
+    )
+    assert tf.reduce_all(
+        tf.io.parse_tensor(example.features.feature["contours_shape"].bytes_list.value[0], out_type=tf.int64)
+        == contours_shape
+    )
+
+
+// File: basic_pitch_fork\tests\data\utils.py
+----------------------------------------
+#!/usr/bin/env python
+# encoding: utf-8
+#
+# Copyright 2024 Spotify AB
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+import logging
+import numpy as np
+import pathlib
+import soundfile as sf
+import wave
+
+from mido import MidiFile, MidiTrack, Message
+
+
+def create_mock_wav(output_fpath: pathlib.Path, duration_min: int) -> None:
+    assert output_fpath.suffix == ".wav"
+
+    duration_seconds = duration_min * 60
+    sample_rate = 44100
+    n_channels = 2  # Stereo
+    sampwidth = 2  # 2 bytes per sample (16-bit audio)
+
+    # Generate a silent audio data array
+    num_samples = duration_seconds * sample_rate
+    audio_data = np.zeros((num_samples, n_channels), dtype=np.int16)
+
+    # Create the WAV file
+    with wave.open(str(output_fpath), "w") as wav_file:
+        wav_file.setnchannels(n_channels)
+        wav_file.setsampwidth(sampwidth)
+        wav_file.setframerate(sample_rate)
+        wav_file.writeframes(audio_data.tobytes())
+
+    logging.info(f"Mock {duration_min}-minute WAV file '{output_fpath}' created successfully.")
+
+
+def create_mock_flac(output_fpath: pathlib.Path) -> None:
+    assert output_fpath.suffix == ".flac"
+
+    frequency = 440  # A4
+    duration = 2  # seconds
+    sample_rate = 44100  # standard
+    amplitude = 0.5
+
+    t = np.linspace(0, duration, int(sample_rate * duration), endpoint=False)
+    sin_wave = amplitude * np.sin(duration * np.pi * frequency * t)
+
+    # Save as a FLAC file
+    sf.write(str(output_fpath), sin_wave, frequency, format="FLAC")
+
+    logging.info(f"Mock FLAC file {str(output_fpath)} created successfully.")
+
+
+def create_mock_midi(output_fpath: pathlib.Path) -> None:
+    assert output_fpath.suffix in (".mid", ".midi")
+    # Create a new MIDI file with one track
+    mid = MidiFile()
+    track = MidiTrack()
+    mid.tracks.append(track)
+
+    # Define a sequence of notes (time, type, note, velocity)
+    notes = [
+        (0, "note_on", 60, 64),  # C4
+        (500, "note_off", 60, 64),
+        (0, "note_on", 62, 64),  # D4
+        (500, "note_off", 62, 64),
+    ]
+
+    # Add the notes to the track
+    for time, type, note, velocity in notes:
+        track.append(Message(type, note=note, velocity=velocity, time=time))
+
+    # Save the MIDI file
+    mid.save(output_fpath)
+
+    logging.info(f"Mock MIDI file '{output_fpath}' created successfully.")
+
+
+// File: basic_pitch_fork\tests\resources\data\slakh\slakh2100_flac_redux\omitted\Track00049\metadata.yaml
+----------------------------------------
+UUID: 763348b79ed855fa294a7c980392178b
+audio_dir: Track00049/stems
+lmd_midi_dir: lmd_matched/G/J/U/TRGJUQY12903CF4754/763348b79ed855fa294a7c980392178b.mid
+midi_dir: Track00049/MIDI
+normalization_factor: -13.0
+normalized: true
+overall_gain: 0.22431102283631815
+stems:
+  S00:
+    audio_rendered: true
+    inst_class: Bass
+    integrated_loudness: -25.98403373639739
+    is_drum: false
+    midi_program_name: Electric Bass (finger)
+    midi_saved: true
+    plugin_name: funk_bass.nkm
+    program_num: 33
+  S01:
+    audio_rendered: true
+    inst_class: Guitar
+    integrated_loudness: -25.983388175138032
+    is_drum: false
+    midi_program_name: Acoustic Guitar (steel)
+    midi_saved: true
+    plugin_name: /Library/Audio/Plug-Ins/Components/AGML2.component
+    program_num: 25
+  S02:
+    audio_rendered: true
+    inst_class: Guitar
+    integrated_loudness: -25.984039857293364
+    is_drum: false
+    midi_program_name: Acoustic Guitar (steel)
+    midi_saved: true
+    plugin_name: /Library/Audio/Plug-Ins/Components/AGML2.component
+    program_num: 25
+  S03:
+    audio_rendered: true
+    inst_class: Synth Pad
+    integrated_loudness: -25.98327751795764
+    is_drum: false
+    midi_program_name: Pad 7 (halo)
+    midi_saved: true
+    plugin_name: dawn_chorus.nkm
+    program_num: 94
+  S04:
+    audio_rendered: true
+    inst_class: Synth Pad
+    integrated_loudness: -25.983253024644508
+    is_drum: false
+    midi_program_name: Pad 7 (halo)
+    midi_saved: true
+    plugin_name: dawn_chorus.nkm
+    program_num: 94
+  S05:
+    audio_rendered: true
+    inst_class: Piano
+    integrated_loudness: -25.984036521364235
+    is_drum: false
+    midi_program_name: Honky-tonk Piano
+    midi_saved: true
+    plugin_name: the_giant_vibrant.nkm
+    program_num: 3
+  S06:
+    audio_rendered: true
+    inst_class: Drums
+    integrated_loudness: -25.98383151293373
+    is_drum: true
+    midi_program_name: Drums
+    midi_saved: true
+    plugin_name: ar_modern_white_kit_full.nkm
+    program_num: 128
+target_peak: -1.0
+
+
+// File: basic_pitch_fork\tests\resources\data\slakh\slakh2100_flac_redux\test\Track01876\metadata.yaml
+----------------------------------------
+UUID: 0f12ae105c1dc821c287b74632748b4e
+audio_dir: Track01876/stems
+lmd_midi_dir: lmd_matched/D/K/S/TRDKSKE128F930A28A/0f12ae105c1dc821c287b74632748b4e.mid
+midi_dir: Track01876/MIDI
+normalization_factor: -13.0
+normalized: true
+overall_gain: 0.16864749590706057
+stems:
+  S00:
+    audio_rendered: true
+    inst_class: Bass
+    integrated_loudness: -28.460073236430883
+    is_drum: false
+    midi_program_name: Electric Bass (finger)
+    midi_saved: true
+    plugin_name: classic_bass.nkm
+    program_num: 33
+  S01:
+    audio_rendered: true
+    inst_class: Piano
+    integrated_loudness: -28.460021772170457
+    is_drum: false
+    midi_program_name: Electric Piano 2
+    midi_saved: true
+    plugin_name: scarbee_clavinet_full.nkm
+    program_num: 5
+  S02:
+    audio_rendered: true
+    inst_class: Guitar
+    integrated_loudness: -28.458875797653054
+    is_drum: false
+    midi_program_name: Overdriven Guitar
+    midi_saved: true
+    plugin_name: elektrik_guitar.nkm
+    program_num: 29
+  S03:
+    audio_rendered: true
+    inst_class: Guitar
+    integrated_loudness: -28.46020902027719
+    is_drum: false
+    midi_program_name: Electric Guitar (clean)
+    midi_saved: true
+    plugin_name: jazz_guitar4.nkm
+    program_num: 27
+  S04:
+    audio_rendered: true
+    inst_class: Guitar
+    integrated_loudness: -28.458899773214167
+    is_drum: false
+    midi_program_name: Electric Guitar (clean)
+    midi_saved: true
+    plugin_name: jazz_guitar4.nkm
+    program_num: 27
+  S05:
+    audio_rendered: true
+    inst_class: Organ
+    integrated_loudness: -28.46066978854643
+    is_drum: false
+    midi_program_name: Rock Organ
+    midi_saved: true
+    plugin_name: jazz_organ.nkm
+    program_num: 18
+  S06:
+    audio_rendered: true
+    inst_class: Strings (continued)
+    integrated_loudness: -28.460204931648803
+    is_drum: false
+    midi_program_name: Choir Aahs
+    midi_saved: true
+    plugin_name: choir_o.nkm
+    program_num: 52
+  S07:
+    audio_rendered: true
+    inst_class: Strings (continued)
+    integrated_loudness: -28.45890130413067
+    is_drum: false
+    midi_program_name: String Ensemble 1
+    midi_saved: true
+    plugin_name: session_strings_pro_2_ensemble_traditional.nkm
+    program_num: 48
+  S08:
+    audio_rendered: true
+    inst_class: Drums
+    integrated_loudness: -28.45937728423205
+    is_drum: true
+    midi_program_name: Drums
+    midi_saved: true
+    plugin_name: pop_kit.nkm
+    program_num: 128
+  S09:
+    audio_rendered: true
+    inst_class: Piano
+    integrated_loudness: -28.459772665926405
+    is_drum: false
+    midi_program_name: Acoustic Grand Piano
+    midi_saved: true
+    plugin_name: ragtime_piano.nkm
+    program_num: 0
+  S10:
+    audio_rendered: true
+    inst_class: Synth Pad
+    integrated_loudness: -28.458901985175242
+    is_drum: false
+    midi_program_name: Pad 1 (new age)
+    midi_saved: true
+    plugin_name: ambibella.nkm
+    program_num: 88
+  S11:
+    audio_rendered: true
+    inst_class: Guitar
+    integrated_loudness: -28.459927387976304
+    is_drum: false
+    midi_program_name: Electric Guitar (jazz)
+    midi_saved: true
+    plugin_name: jazz_guitar3.nkm
+    program_num: 26
+  S12:
+    audio_rendered: false
+    inst_class: Sound effects
+    is_drum: false
+    midi_program_name: Gunshot
+    midi_saved: false
+    plugin_name: None
+    program_num: 127
+  S13:
+    audio_rendered: false
+    inst_class: Sound effects
+    is_drum: false
+    midi_program_name: Bird Tweet
+    midi_saved: false
+    plugin_name: None
+    program_num: 123
+  S14:
+    audio_rendered: true
+    inst_class: Guitar
+    integrated_loudness: -28.458908904982668
+    is_drum: false
+    midi_program_name: Distortion Guitar
+    midi_saved: true
+    plugin_name: rock_guitar.nkm
+    program_num: 30
+target_peak: -1.0
+
+
+// File: basic_pitch_fork\tests\resources\data\slakh\slakh2100_flac_redux\train\Track00001\metadata.yaml
+----------------------------------------
+UUID: 1a81ae092884234f3264e2f45927f00a
+audio_dir: Track00001/stems
+lmd_midi_dir: lmd_matched/O/O/H/TROOHTB128F931F9DF/1a81ae092884234f3264e2f45927f00a.mid
+midi_dir: Track00001/MIDI
+normalization_factor: -13.0
+normalized: true
+overall_gain: 0.18270259567062658
+stems:
+  S00:
+    audio_rendered: true
+    inst_class: Guitar
+    integrated_loudness: -12.82074180245363
+    is_drum: false
+    midi_program_name: Distortion Guitar
+    midi_saved: true
+    plugin_name: elektrik_guitar.nkm
+    program_num: 30
+  S01:
+    audio_rendered: true
+    inst_class: Drums
+    integrated_loudness: -27.129534164015215
+    is_drum: true
+    midi_program_name: Drums
+    midi_saved: true
+    plugin_name: session_kit_full.nkm
+    program_num: 128
+  S02:
+    audio_rendered: true
+    inst_class: Piano
+    integrated_loudness: -16.590526818369444
+    is_drum: false
+    midi_program_name: Bright Acoustic Piano
+    midi_saved: true
+    plugin_name: the_giant_modern_studio.nkm
+    program_num: 1
+  S03:
+    audio_rendered: true
+    inst_class: Bass
+    integrated_loudness: -21.67617862105858
+    is_drum: false
+    midi_program_name: Electric Bass (finger)
+    midi_saved: true
+    plugin_name: scarbee_rickenbacker_bass_palm_muted.nkm
+    program_num: 33
+  S04:
+    audio_rendered: true
+    inst_class: Strings (continued)
+    integrated_loudness: -17.157877893943464
+    is_drum: false
+    midi_program_name: Choir Aahs
+    midi_saved: true
+    plugin_name: choir_o.nkm
+    program_num: 52
+  S05:
+    audio_rendered: true
+    inst_class: Organ
+    integrated_loudness: -16.600870078462915
+    is_drum: false
+    midi_program_name: Percussive Organ
+    midi_saved: true
+    plugin_name: fever.nkm
+    program_num: 17
+  S06:
+    audio_rendered: false
+    inst_class: Sound Effects
+    is_drum: false
+    midi_program_name: FX 8 (sci-fi)
+    midi_saved: false
+    plugin_name: None
+    program_num: 103
+  S07:
+    audio_rendered: true
+    inst_class: Guitar
+    integrated_loudness: -16.397404352891574
+    is_drum: false
+    midi_program_name: Electric Guitar (jazz)
+    midi_saved: true
+    plugin_name: jazz_guitar2.nkm
+    program_num: 26
+  S08:
+    audio_rendered: true
+    inst_class: Guitar
+    integrated_loudness: -14.950213772441467
+    is_drum: false
+    midi_program_name: Distortion Guitar
+    midi_saved: true
+    plugin_name: elektrik_guitar.nkm
+    program_num: 30
+  S09:
+    audio_rendered: true
+    inst_class: Organ
+    integrated_loudness: -15.014937669817032
+    is_drum: false
+    midi_program_name: Harmonica
+    midi_saved: true
+    plugin_name: transistor_compact.nkm
+    program_num: 22
+  S10:
+    audio_rendered: true
+    inst_class: Organ
+    integrated_loudness: -17.26720499762028
+    is_drum: false
+    midi_program_name: Harmonica
+    midi_saved: true
+    plugin_name: transistor_compact.nkm
+    program_num: 22
+target_peak: -1.0
+
+
+// File: basic_pitch_fork\tests\resources\data\slakh\slakh2100_flac_redux\validation\Track01501\metadata.yaml
+----------------------------------------
+UUID: 52dc589baea0c387807aa964094e0cba
+audio_dir: Track01501/stems
+lmd_midi_dir: lmd_matched/Y/C/E/TRYCEEK128F42A2C7B/52dc589baea0c387807aa964094e0cba.mid
+midi_dir: Track01501/MIDI
+normalization_factor: -13.0
+normalized: true
+overall_gain: 0.15755727075730824
+stems:
+  S00:
+    audio_rendered: true
+    inst_class: Piano
+    integrated_loudness: -22.121310057465305
+    is_drum: false
+    midi_program_name: Bright Acoustic Piano
+    midi_saved: true
+    plugin_name: ragtime_piano.nkm
+    program_num: 1
+  S01:
+    audio_rendered: true
+    inst_class: Strings (continued)
+    integrated_loudness: -24.49914258227348
+    is_drum: false
+    midi_program_name: String Ensemble 1
+    midi_saved: true
+    plugin_name: string_ensemble.nkm
+    program_num: 48
+  S02:
+    audio_rendered: true
+    inst_class: Chromatic Percussion
+    integrated_loudness: -26.533255386228614
+    is_drum: false
+    midi_program_name: Xylophone
+    midi_saved: true
+    plugin_name: hybrid_keys_futurebells.nkm
+    program_num: 13
+  S03:
+    audio_rendered: true
+    inst_class: Drums
+    integrated_loudness: -24.128849800212254
+    is_drum: true
+    midi_program_name: Drums
+    midi_saved: true
+    plugin_name: session_kit_full.nkm
+    program_num: 128
+  S04:
+    audio_rendered: true
+    inst_class: Bass
+    integrated_loudness: -18.10473562363928
+    is_drum: false
+    midi_program_name: Fretless Bass
+    midi_saved: true
+    plugin_name: scarbee_rickenbacker_bass_palm_muted.nkm
+    program_num: 35
+  S05:
+    audio_rendered: true
+    inst_class: Pipe
+    integrated_loudness: -13.90182238157093
+    is_drum: false
+    midi_program_name: Flute
+    midi_saved: true
+    plugin_name: flute_essential.nkm
+    program_num: 73
+  S06:
+    audio_rendered: true
+    inst_class: Piano
+    integrated_loudness: -19.73242818313494
+    is_drum: false
+    midi_program_name: Electric Piano 1
+    midi_saved: true
+    plugin_name: scarbee_pianet.nkm
+    program_num: 4
+  S07:
+    audio_rendered: true
+    inst_class: Pipe
+    integrated_loudness: -16.951648378470882
+    is_drum: false
+    midi_program_name: Flute
+    midi_saved: true
+    plugin_name: flute_essential.nkm
+    program_num: 73
+  S08:
+    audio_rendered: true
+    inst_class: Guitar
+    integrated_loudness: -14.33787711924181
+    is_drum: false
+    midi_program_name: Overdriven Guitar
+    midi_saved: true
+    plugin_name: elektrik_guitar.nkm
+    program_num: 29
+  S09:
+    audio_rendered: false
+    inst_class: Strings
+    is_drum: false
+    midi_program_name: Timpani
+    midi_saved: true
+    plugin_name: timpani.nkm
+    program_num: 47
+  S10:
+    audio_rendered: true
+    inst_class: Pipe
+    integrated_loudness: -11.448306981147374
+    is_drum: false
+    midi_program_name: Pan Flute
+    midi_saved: true
+    plugin_name: flutes_essential.nkm
+    program_num: 75
+target_peak: -1.0
+
+
+// File: basic_pitch_fork\tests\test_callbacks.py
+----------------------------------------
+#!/usr/bin/env python
+# encoding: utf-8
+#
+# Copyright 2024 Spotify AB
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+import numpy as np
+import tensorflow as tf
+
+from typing import Dict
+
+from basic_pitch.callbacks import VisualizeCallback
+from basic_pitch.constants import AUDIO_N_SAMPLES, ANNOTATIONS_N_SEMITONES, ANNOT_N_FRAMES
+
+
+class MockModel(tf.keras.Model):
+    def __init__(self) -> None:
+        super(MockModel, self).__init__()
+
+    def call(self, inputs: tf.Tensor) -> Dict[str, tf.Tensor]:
+        return {
+            key: tf.random.normal((1, ANNOTATIONS_N_SEMITONES, ANNOT_N_FRAMES)) for key in ["onset", "contour", "note"]
+        }
+
+
+def create_mock_dataset() -> tf.data.Dataset:
+    batch_size = 1
+    inputs = tf.random.normal((batch_size, AUDIO_N_SAMPLES, 1))
+    targets = {
+        key: tf.random.normal((batch_size, ANNOTATIONS_N_SEMITONES, ANNOT_N_FRAMES))
+        for key in ["onset", "contour", "note"]
+    }
+    dataset = tf.data.Dataset.from_tensor_slices((inputs, targets))
+    dataset = dataset.batch(batch_size)
+    return dataset
+
+
+def test_visualize_callback_on_epoch_end(tmpdir: str) -> None:
+
+    vc = VisualizeCallback(
+        train_ds=create_mock_dataset(),
+        validation_ds=create_mock_dataset(),
+        tensorboard_dir=str(tmpdir),
+        sonify=True,
+        contours=True,
+    )
+
+    vc.model = MockModel()
+
+    vc.on_epoch_end(1, {"loss": np.random.random(), "val_loss": np.random.random()})
+
+
+// File: basic_pitch_fork\tests\test_inference.py
+----------------------------------------
+#!/usr/bin/env python
+# encoding: utf-8
+#
+# Copyright 2022 Spotify AB
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+import faulthandler
+import os
+import pathlib
+import tempfile
+from typing import Dict, List
+
+import librosa
+import pretty_midi
+import numpy as np
+import numpy.typing as npt
+
+from basic_pitch import ICASSP_2022_MODEL_PATH, inference
+from basic_pitch.constants import (
+    AUDIO_SAMPLE_RATE,
+    AUDIO_N_SAMPLES,
+    ANNOTATIONS_N_SEMITONES,
+    FFT_HOP,
+)
+
+RESOURCES_PATH = pathlib.Path(__file__).parent / "resources"
+
+faulthandler.enable()
+
+
+def test_predict() -> None:
+    test_audio_path = RESOURCES_PATH / "vocadito_10.wav"
+    model_output, midi_data, note_events = inference.predict(
+        test_audio_path,
+        inference.Model(ICASSP_2022_MODEL_PATH),
+    )
+    assert set(model_output.keys()) == set(["note", "onset", "contour"])
+    assert model_output["note"].shape == model_output["onset"].shape
+    assert isinstance(midi_data, pretty_midi.PrettyMIDI)
+    lowest_supported_midi = 21
+    note_pitch_min = [n[2] >= lowest_supported_midi for n in note_events]
+    note_pitch_max = [n[2] <= lowest_supported_midi + ANNOTATIONS_N_SEMITONES for n in note_events]
+    assert all(note_pitch_min)
+    assert all(note_pitch_max)
+    assert isinstance(note_events, list)
+
+    expected_model_output = np.load(RESOURCES_PATH / "vocadito_10" / "model_output.npz", allow_pickle=True)[
+        "arr_0"
+    ].item()
+    for k in expected_model_output.keys():
+        np.testing.assert_allclose(expected_model_output[k], model_output[k], atol=1e-4, rtol=0)
+
+    expected_note_events = np.load(RESOURCES_PATH / "vocadito_10" / "note_events.npz", allow_pickle=True)["arr_0"]
+    assert len(expected_note_events) == len(note_events)
+    for expected, calculated in zip(expected_note_events, note_events):
+        for i in range(len(expected)):
+            np.testing.assert_allclose(expected[i], calculated[i], atol=1e-4, rtol=0)
+
+
+def test_predict_with_saves() -> None:
+    test_audio_path = RESOURCES_PATH / "vocadito_10.wav"
+    with tempfile.TemporaryDirectory() as tmpdir:
+        inference.predict_and_save(
+            [test_audio_path],
+            tmpdir,
+            True,
+            True,
+            True,
+            True,
+            model_or_model_path=ICASSP_2022_MODEL_PATH,
+        )
+        expected_midi_path = tmpdir / pathlib.Path("vocadito_10_basic_pitch.mid")
+        expected_csv_path = tmpdir / pathlib.Path("vocadito_10_basic_pitch.csv")
+        expected_npz_path = tmpdir / pathlib.Path("vocadito_10_basic_pitch.npz")
+        expected_sonif_path = tmpdir / pathlib.Path("vocadito_10_basic_pitch.wav")
+
+        for output_path in [
+            expected_midi_path,
+            expected_csv_path,
+            expected_npz_path,
+            expected_sonif_path,
+        ]:
+            assert os.path.exists(output_path)
+
+
+def test_predict_onset_threshold() -> None:
+    test_audio_path = RESOURCES_PATH / "vocadito_10.wav"
+    for onset_threshold in [0, 0.3, 0.8, 1]:
+        inference.predict(
+            test_audio_path,
+            ICASSP_2022_MODEL_PATH,
+            onset_threshold=onset_threshold,
+        )
+
+
+def test_predict_frame_threshold() -> None:
+    test_audio_path = RESOURCES_PATH / "vocadito_10.wav"
+    for frame_threshold in [0, 0.3, 0.8, 1]:
+        inference.predict(
+            test_audio_path,
+            ICASSP_2022_MODEL_PATH,
+            frame_threshold=frame_threshold,
+        )
+
+
+def test_predict_min_note_length() -> None:
+    test_audio_path = RESOURCES_PATH / "vocadito_10.wav"
+    for minimum_note_length in [10, 100, 1000]:
+        _, _, note_events = inference.predict(
+            test_audio_path,
+            ICASSP_2022_MODEL_PATH,
+            minimum_note_length=minimum_note_length,
+        )
+        min_len_s = minimum_note_length / 1000.0
+        note_lengths = [n[1] - n[0] >= min_len_s for n in note_events]
+        assert all(note_lengths)
+
+
+def test_predict_min_freq() -> None:
+    test_audio_path = RESOURCES_PATH / "vocadito_10.wav"
+    for minimum_frequency in [40, 80, 200, 2000]:
+        _, _, note_events = inference.predict(
+            test_audio_path,
+            ICASSP_2022_MODEL_PATH,
+            minimum_frequency=minimum_frequency,
+        )
+        min_freq_midi = np.round(librosa.hz_to_midi(minimum_frequency))
+        note_pitch = [n[2] >= min_freq_midi for n in note_events]
+        assert all(note_pitch)
+
+
+def test_predict_max_freq() -> None:
+    test_audio_path = RESOURCES_PATH / "vocadito_10.wav"
+    for maximum_frequency in [40, 80, 200, 2000]:
+        _, _, note_events = inference.predict(
+            test_audio_path,
+            ICASSP_2022_MODEL_PATH,
+            maximum_frequency=maximum_frequency,
+        )
+        max_freq_midi = np.round(librosa.hz_to_midi(maximum_frequency))
+        note_pitch = [n[2] <= max_freq_midi for n in note_events]
+        assert all(note_pitch)
+
+
+def test_window_audio_file() -> None:
+    test_audio_path = RESOURCES_PATH / "vocadito_10.wav"
+    audio, _ = librosa.load(str(test_audio_path), sr=AUDIO_SAMPLE_RATE, mono=True)
+    audio_windowed, window_times = zip(*inference.window_audio_file(audio, AUDIO_N_SAMPLES - 30 * FFT_HOP))
+    assert len(audio_windowed) == 6
+    assert len(window_times) == 6
+    for time in window_times:
+        assert time["start"] <= time["end"]
+    np.testing.assert_equal(audio[:AUDIO_N_SAMPLES], np.squeeze(audio_windowed[0]))
+
+
+def test_get_audio_input() -> None:
+    test_audio_path = RESOURCES_PATH / "vocadito_10.wav"
+    audio, _ = librosa.load(str(test_audio_path), sr=AUDIO_SAMPLE_RATE, mono=True)
+    overlap_len = 30 * FFT_HOP
+    audio = np.concatenate([np.zeros((overlap_len // 2,), dtype=np.float32), audio])
+    audio_windowed: List[npt.NDArray[np.float32]] = []
+    window_times: List[Dict[str, float]] = []
+    for audio_window, window_time, original_length in inference.get_audio_input(
+        test_audio_path, overlap_len, AUDIO_N_SAMPLES - overlap_len
+    ):
+        audio_windowed.append(audio_window)
+        window_times.append(window_time)
+    audio_windowed = np.array(audio_windowed)
+    assert len(audio_windowed) == 6
+    assert len(window_times) == 6
+    for time in window_times:
+        assert time["start"] <= time["end"]
+    np.testing.assert_equal(audio[:AUDIO_N_SAMPLES], np.squeeze(audio_windowed[0]))
+
+    assert original_length == 200607
+
+
+// File: basic_pitch_fork\tests\test_nn.py
+----------------------------------------
+#!/usr/bin/env python
+# encoding: utf-8
+#
+# Copyright 2022 Spotify AB
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+from typing import Iterator, Tuple
+import unittest
+
+import numpy as np
+import tensorflow as tf
+
+from basic_pitch import models, nn
+from basic_pitch.constants import (
+    ANNOT_N_FRAMES,
+    ANNOTATIONS_N_SEMITONES,
+    AUDIO_N_SAMPLES,
+    N_FREQ_BINS_CONTOURS,
+)
+
+BATCH_SIZE = 3
+
+tfkl = tf.keras.layers
+
+
+class TestHarmonicStacking(unittest.TestCase):
+    def _audio_data_gen(self) -> Iterator[Tuple[np.array, np.array]]:
+        while True:
+            audio = np.random.uniform(size=(BATCH_SIZE, AUDIO_N_SAMPLES, 1)).astype(np.float32)
+            output = np.random.uniform(size=(BATCH_SIZE, ANNOT_N_FRAMES, ANNOTATIONS_N_SEMITONES * 3, 1)).astype(
+                np.float32
+            )
+            yield (audio, output)
+
+    def _dummy_dataset(self) -> tf.data.Dataset:
+        ds = tf.data.Dataset.from_generator(
+            self._audio_data_gen,
+            (tf.float32, tf.float32),
+            (
+                tf.TensorShape([BATCH_SIZE, AUDIO_N_SAMPLES, 1]),
+                tf.TensorShape([BATCH_SIZE, ANNOT_N_FRAMES, ANNOTATIONS_N_SEMITONES * 3, 1]),
+            ),
+        )
+        return ds
+
+    def test_defaults(self) -> None:
+        inputs = tf.keras.Input(shape=(AUDIO_N_SAMPLES, 1))
+        x = models.get_cqt(inputs, 5, True)
+        conv = nn.HarmonicStacking(3, [1, 2, 3, 4, 5], N_FREQ_BINS_CONTOURS)(x)
+        outputs = tfkl.Conv2D(1, (3, 3), padding="same")(conv)
+        model = tf.keras.Model(inputs=inputs, outputs=outputs)
+
+        train_ds = self._dummy_dataset()
+        valid_ds = self._dummy_dataset()
+
+        model.compile(
+            loss="binary_crossentropy",
+            optimizer=tf.keras.optimizers.Adam(0.1),
+            sample_weight_mode=None,
+        )
+
+        model.fit(
+            train_ds,
+            epochs=2,
+            steps_per_epoch=2,
+            validation_data=valid_ds,
+            validation_steps=1,
+        )
+
+        for element in train_ds:
+            in_vals = element[0]
+            out_vals = model(in_vals)
+            assert out_vals.shape == (
+                BATCH_SIZE,
+                ANNOT_N_FRAMES,
+                ANNOTATIONS_N_SEMITONES * 3,
+                1,
+            )
+            break
+
+    def test_fractions(self) -> None:
+        inputs = tf.keras.Input(shape=(AUDIO_N_SAMPLES, 1))
+        x = models.get_cqt(inputs, 2, True)
+        conv = nn.HarmonicStacking(3, [0.5, 1, 2], N_FREQ_BINS_CONTOURS)(x)
+        outputs = tfkl.Conv2D(1, (3, 3), padding="same")(conv)
+        model = tf.keras.Model(inputs=inputs, outputs=outputs)
+
+        train_ds = self._dummy_dataset()
+        valid_ds = self._dummy_dataset()
+
+        model.compile(
+            loss="binary_crossentropy",
+            optimizer=tf.keras.optimizers.Adam(0.1),
+            sample_weight_mode=None,
+        )
+
+        model.fit(
+            train_ds,
+            epochs=2,
+            steps_per_epoch=2,
+            validation_data=valid_ds,
+            validation_steps=1,
+        )
+
+        for element in train_ds:
+            inputs = element[0]
+            output = model(inputs)
+            assert output.shape == (
+                BATCH_SIZE,
+                ANNOT_N_FRAMES,
+                ANNOTATIONS_N_SEMITONES * 3,
+                1,
+            )
+            break
+
+
+// File: basic_pitch_fork\tests\test_note_creation.py
+----------------------------------------
+#!/usr/bin/env python
+# encoding: utf-8
+#
+# Copyright 2022 Spotify AB
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+from basic_pitch.note_creation import drop_overlapping_pitch_bends
+
+
+def test_drop_overlapping_pitch_bends() -> None:
+    # events are: (start, end, pitch, amplitude, pitch_bend)
+    note_events_with_pitch_bends = [
+        (0.0, 0.1, 60, 1.0, None),
+        (2.0, 2.1, 62, 1.0, [0, 1, 2]),  # οverlaps w next
+        (2.0, 2.1, 64, 1.0, [0, 1, 2]),  # overlaps w prev
+        (1.0, 1.1, 65, 1.0, [0, 1, 2]),
+        (1.1, 1.2, 67, 1.0, [0, 1, 2]),
+        (3.0, 3.2, 69, 1.0, [0, 1, 2]),  # overlaps w next
+        (3.1, 3.3, 71, 1.0, [0, 1, 2]),  # overlaps w prev
+        (5.0, 5.1, 72, 1.0, [0, 1, 2]),  # overlaps w next
+        (5.0, 5.2, 74, 1.0, [0, 1, 2]),  # overlaps w prev
+        (4.0, 4.2, 76, 1.0, [0, 1, 2]),  # overlaps w next
+        (4.1, 4.2, 77, 1.0, [0, 1, 2]),  # overlaps w prev
+    ]
+    expected = [
+        (0.0, 0.1, 60, 1.0, None),
+        (2.0, 2.1, 62, 1.0, None),  # overlaps w next
+        (2.0, 2.1, 64, 1.0, None),  # overlaps w prev
+        (1.0, 1.1, 65, 1.0, [0, 1, 2]),
+        (1.1, 1.2, 67, 1.0, [0, 1, 2]),
+        (3.0, 3.2, 69, 1.0, None),  # overlaps w next
+        (3.1, 3.3, 71, 1.0, None),  # overlaps w prev
+        (5.0, 5.1, 72, 1.0, None),  # overlaps w next
+        (5.0, 5.2, 74, 1.0, None),  # overlaps w prev
+        (4.0, 4.2, 76, 1.0, None),  # overlaps w next
+        (4.1, 4.2, 77, 1.0, None),  # overlaps w prev
+    ]
+    result = drop_overlapping_pitch_bends(note_events_with_pitch_bends)
+    assert sorted(result) == sorted(expected)
+
+
+// File: basic_pitch_fork\tox.ini
+----------------------------------------
+[tox]
+envlist = py38,py39,py310,py311,full,data,manifest,check-formatting,lint,mypy
+skipsdist = True
+usedevelop = True
+requires =
+    setuptools>=60
+    wheel
+    pip>=24
+
+# Tests with the minimal package (either coreml/onnx/tflite)
+[testenv]
+deps = -e .[test]
+commands =
+    pytest tests --ignore tests/test_nn.py --ignore tests/data {posargs}
+setenv =
+    SOURCE = {toxinidir}/basic_pitch
+    TEST_SOURCE = {toxinidir}/tests
+    LINE_LENGTH = "120"
+
+# Tests with TF
+[testenv:full]
+deps = -e .[dev]
+commands =
+    pytest tests {posargs}
+setenv =
+    SOURCE = {toxinidir}/basic_pitch
+    TEST_SOURCE = {toxinidir}/tests
+    LINE_LENGTH = "120"
+
+[testenv:data]
+deps = -e .[data]
+commands = 
+    pytest tests/data {posargs}
+
+[testenv:manifest]
+deps = check-manifest
+skip_install = true
+commands = check-manifest --ignore 'tests'
+
+[testenv:check-formatting]
+basepython = python3.10
+deps = black
+skip_install = true
+commands =
+    black {env:SOURCE} tests --line-length {env:LINE_LENGTH} --diff --check
+
+[testenv:format]
+basepython = python3.10
+deps = black
+skip_install = true
+commands =
+    black {env:SOURCE} tests --line-length {env:LINE_LENGTH}
+
+[testenv:lint]
+basepython = python3.10
+deps = flake8
+skip_install = true
+commands = flake8
+
+[testenv:mypy]
+basepython = python3.10
+deps =
+    mypy
+commands = mypy basic_pitch tests --strict --ignore-missing-imports --allow-subclassing-any
+
+[flake8]
+show-source = true
+max-line-length = 120
+exclude = .venv,.tox,.git,dist,doc,*.egg,build
+ignore = E203,E731,W503,E231
+per-file-ignores = __init__.py:F401
+
+[pytest]
+addopts = -v
+testpaths = tests
+
+
+// File: create_test_audio.py
+----------------------------------------
+import numpy as np
+import soundfile as sf
+
+# Generate a simple sine wave
+duration = 2.0  # seconds
+sample_rate = 44100
+t = np.linspace(0, duration, int(sample_rate * duration))
+frequency = 440.0  # A4 note
+amplitude = 0.5
+
+# Create sine wave
+audio_data = amplitude * np.sin(2 * np.pi * frequency * t)
+
+# Create test directory if it doesn't exist
+import os
+os.makedirs('test/resources', exist_ok=True)
+
+# Save as WAV file
+sf.write('test/resources/test_audio.wav', audio_data, sample_rate)
+print("Created test audio file: test/resources/test_audio.wav")
+
+// File: midi_extractor.py
+----------------------------------------
+import os
+import sys
+import json
+import numpy as np
+import librosa
+import pretty_midi
+from basic_pitch.inference import predict_and_save
+from basic_pitch import ICASSP_2022_MODEL_PATH
+from basic_pitch import ICASSP_2022_MODEL_PATH
+
+def log_info(message):
+    """Log info message to stderr for Flutter to capture"""
+    print(f"INFO: {message}", file=sys.stderr)
+
+def extract_midi_from_audio(audio_path, output_path):
+    """Extract MIDI data from audio file using Basic Pitch"""
+    try:
+        log_info(f"Loading audio file: {audio_path}")
+        
+        # Create output directory if it doesn't exist
+        output_dir = os.path.dirname(output_path)
+        if not os.path.exists(output_dir):
+            os.makedirs(output_dir)
+            log_info(f"Created output directory: {output_dir}")
+
+        # Use Basic Pitch's predict_and_save function
+        log_info("Starting MIDI extraction...")
+        predict_and_save(
+            audio_path_list=[audio_path],  # List of audio files
+            output_directory=output_dir,    # Output directory
+            model_or_model_path=ICASSP_2022_MODEL_PATH,  # Model path
+            minimum_note_length=0.05,
+            minimum_frequency=20,
+            maximum_frequency=2000,
+            multiple_pitch_bends=False,
+            melodia_trick=True,
+            save_midi=True,
+            sonify_midi=False,
+            save_model_outputs=False,
+            save_notes=False
+        )
+
+        # Get the generated MIDI file path
+        midi_filename = os.path.splitext(os.path.basename(audio_path))[0] + '.mid'
+        generated_midi_path = os.path.join(output_dir, midi_filename)
+
+        # Move the file to the requested output path if different
+        if generated_midi_path != output_path:
+            os.rename(generated_midi_path, output_path)
+            log_info(f"Moved MIDI file to requested location: {output_path}")
+
+        # Load and validate the MIDI file
+        midi_data = pretty_midi.PrettyMIDI(output_path)
+        total_notes = sum(len(instrument.notes) for instrument in midi_data.instruments)
+        
+        log_info(f"Successfully generated MIDI file with {total_notes} notes")
+        log_info(f"MIDI duration: {midi_data.get_end_time():.2f} seconds")
+        
+        # Return success response
+        result = {
+            "status": "success",
+            "result": {
+                "midi_path": output_path,
+                "details": {
+                    "num_notes": total_notes,
+                    "duration": midi_data.get_end_time(),
+                    "instruments": len(midi_data.instruments)
+                }
+            }
+        }
+        
+        print(json.dumps(result))
+        return 0
+        
+    except Exception as e:
+        # Log error and return error response
+        log_info(f"Error during MIDI extraction: {str(e)}")
+        error_result = {
+            "status": "error",
+            "error": str(e)
+        }
+        print(json.dumps(error_result))
+        return 1
+
+def check_capabilities():
+    """Check if all required libraries are available"""
+    try:
+        import torch
+        log_info("PyTorch loaded successfully")
+        
+        import soundfile
+        log_info("SoundFile loaded successfully")
+        
+        import tensorflow
+        log_info("TensorFlow loaded successfully")
+        
+        # Test Basic Pitch model loading
+        from basic_pitch.inference import load_model
+        model = load_model(ICASSP_2022_MODEL_PATH)
+        log_info("Basic Pitch model loaded successfully")
+        
+        log_info("All required libraries loaded successfully")
+        return 0
+    except Exception as e:
+        log_info(f"Error checking capabilities: {str(e)}")
+        return 1
+
+if __name__ == "__main__":
+    if len(sys.argv) < 2:
+        print("Error: No command specified")
+        sys.exit(1)
+        
+    command = sys.argv[1]
+    
+    if command == "check_capabilities":
+        sys.exit(check_capabilities())
+    elif command == "extract_midi":
+        if len(sys.argv) < 4:
+            print("Error: Missing required arguments for MIDI extraction")
+            sys.exit(1)
+            
+        # Parse arguments
+        args = {}
+        for arg in sys.argv[2:]:
+            if "=" in arg:
+                key, value = arg.split("=", 1)
+                # Remove quotes if present
+                value = value.strip('"')
+                args[key] = value
+        
+        if "input_path" not in args or "output_path" not in args:
+            print("Error: Missing input_path or output_path argument")
+            sys.exit(1)
+            
+        sys.exit(extract_midi_from_audio(args["input_path"], args["output_path"]))
+    else:
+        print(f"Error: Unknown command '{command}'")
+        sys.exit(1)
+
+// File: processor.py
+----------------------------------------
+import os
+import json
+import sys
+import logging
+import tempfile
+from typing import Dict, Any, List
+
+# Set up logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(levelname)s: %(message)s',
+    stream=sys.stderr  # Send logs to stderr to keep stdout clean for JSON
+)
+logger = logging.getLogger(__name__)
+
+def write_json_response(data: Dict[str, Any]) -> None:
+    """Write JSON response using a temporary file to ensure proper formatting."""
+    with tempfile.NamedTemporaryFile(mode='w', delete=False, suffix='.json') as f:
+        json.dump(data, f)
+        temp_path = f.name
+    
+    try:
+        with open(temp_path, 'r') as f:
+            print(f.read().strip(), flush=True)
+    finally:
+        try:
+            os.unlink(temp_path)
+        except:
+            pass
+
+def format_json_response(status: str, data: Any = None, error: str = None) -> Dict[str, Any]:
+    """Format response as JSON object."""
+    response = {'status': status}
+    if data is not None:
+        response['result'] = data
+    if error is not None:
+        response['error'] = error
+    return response
+
+def parse_args(args: List[str]) -> Dict[str, str]:
+    """Parse command line arguments in the format key=value."""
+    result = {}
+    for arg in args:
+        if '=' in arg:
+            key, value = arg.split('=', 1)
+            # Handle quoted paths more robustly
+            value = value.strip()
+            if value.startswith('"') and value.endswith('"'):
+                value = value[1:-1]  # Remove surrounding quotes
+            # Unescape any escaped quotes within the path
+            value = value.replace('\\"', '"')
+            # Log the parsed argument
+            logger.info(f"Parsed argument - {key}: {value}")
+            result[key] = value
+    return result
+
+class DependencyManager:
+    def __init__(self):
+        self.torch_available = False
+        self.torchaudio_available = False
+        self.demucs_available = False
+        self.soundfile_available = False
+        self._check_dependencies()
+        
+    def _check_dependencies(self):
+        """Check which dependencies are available."""
+        try:
+            import torch
+            import torchaudio
+            self.torch_available = True
+            self.torchaudio_available = True
+            logger.info(f"PyTorch loaded successfully (device: {torch.device('cuda' if torch.cuda.is_available() else 'cpu')})")
+        except ImportError as e:
+            logger.error(f"Failed to import PyTorch/torchaudio: {e}")
+            
+        try:
+            import soundfile
+            self.soundfile_available = True
+            logger.info("SoundFile loaded successfully")
+        except ImportError:
+            logger.error("Failed to import soundfile")
+            
+        try:
+            from demucs.pretrained import get_model
+            from demucs.apply import apply_model
+            self.demucs_available = True
+            logger.info("Demucs loaded successfully")
+        except ImportError:
+            logger.error("Failed to import demucs")
+
+    def get_missing_dependencies(self) -> List[str]:
+        """Get list of missing dependencies."""
+        missing = []
+        if not self.torch_available or not self.torchaudio_available:
+            missing.extend(['torch', 'torchaudio'])
+        if not self.soundfile_available:
+            missing.append('soundfile')
+        if not self.demucs_available:
+            missing.append('demucs')
+        return missing
+
+    def can_separate_stems(self) -> bool:
+        """Check if stem separation is possible."""
+        return all([
+            self.torch_available,
+            self.torchaudio_available,
+            self.soundfile_available,
+            self.demucs_available
+        ])
+
+class AudioProcessor:
+    def __init__(self):
+        self.deps = DependencyManager()
+        self.device = None
+        self.demucs_model = None
+        
+        if self.deps.torch_available:
+            import torch
+            self.device = 'cuda' if torch.cuda.is_available() else 'cpu'
+            logger.info(f"AudioProcessor initialized (device: {self.device})")
+        
+    def load_models(self):
+        """Load all required models."""
+        if not self.deps.can_separate_stems():
+            raise ImportError("Required dependencies for stem separation not available")
+            
+        if self.demucs_model is None:
+            from demucs.pretrained import get_model
+            logger.info("Loading Demucs model...")
+            self.demucs_model = get_model('htdemucs')
+            self.demucs_model.to(self.device)
+            logger.info("Demucs model loaded successfully")
+    
+    def load_audio(self, audio_path: str):
+        """Load audio file with proper format handling."""
+        import soundfile as sf
+        import torch
+        import numpy as np
+        
+        logger.info(f"Attempting to load audio file: {audio_path}")
+        logger.info(f"File exists: {os.path.exists(audio_path)}")
+        logger.info(f"File size: {os.path.getsize(audio_path) if os.path.exists(audio_path) else 'N/A'} bytes")
+        
+        if not os.path.exists(audio_path):
+            raise FileNotFoundError(f"Audio file not found: {audio_path}")
+        
+        if not os.access(audio_path, os.R_OK):
+            raise PermissionError(f"Cannot read audio file: {audio_path}")
+        
+        try:
+            # Try loading with soundfile first
+            data, sr = sf.read(audio_path)
+            # Convert to float32 tensor
+            if data.dtype != np.float32:
+                data = data.astype(np.float32)
+            # Ensure stereo format
+            if len(data.shape) == 1:  # Mono
+                data = np.stack([data, data])  # Duplicate channel for stereo
+            elif len(data.shape) == 2:
+                if data.shape[1] == 2:  # Already stereo with channels as second dim
+                    data = data.T  # Transpose to get channels first
+                elif data.shape[0] == 2:  # Already stereo with channels as first dim
+                    pass  # Already in correct format
+                else:  # Mono as column vector
+                    data = np.stack([data[:, 0], data[:, 0]])  # Duplicate channel for stereo
+            # Convert to torch tensor (channels, samples)
+            wav = torch.from_numpy(data)
+            logger.info(f"Audio loaded successfully with soundfile (sample rate: {sr}Hz)")
+            return wav, sr
+        except Exception as e:
+            logger.error(f"Failed to load audio with soundfile: {e}")
+            try:
+                # Fallback to torchaudio
+                import torchaudio
+                wav, sr = torchaudio.load(audio_path)
+                if wav.shape[0] == 1:  # Convert mono to stereo
+                    wav = wav.repeat(2, 1)  # Duplicate mono channel for stereo
+                logger.info(f"Audio loaded successfully with torchaudio (sample rate: {sr}Hz)")
+                return wav, sr
+            except Exception as e:
+                logger.error(f"Failed to load audio with torchaudio: {e}")
+                raise ValueError(f"Could not load audio file {audio_path}. Supported formats: WAV, FLAC, OGG, MP3")
+    
+    def separate_stems(self, audio_path: str, output_dir: str) -> dict:
+        """Separate audio into stems using Demucs."""
+        if not self.deps.can_separate_stems():
+            raise ImportError("Required dependencies for stem separation not available")
+            
+        import torch
+        import torchaudio
+        from demucs.apply import apply_model
+        
+        logger.info("=== Starting Stem Separation ===")
+        logger.info(f"Input file: {audio_path}")
+        logger.info(f"Output directory: {output_dir}")
+        logger.info(f"Device: {self.device}")
+        logger.info(f"Available memory: {torch.cuda.get_device_properties(0).total_memory if torch.cuda.is_available() else 'N/A'}")
+        
+        # Verify output directory
+        try:
+            os.makedirs(output_dir, exist_ok=True)
+            logger.info(f"Created output directory: {output_dir}")
+            if not os.access(output_dir, os.W_OK):
+                raise PermissionError(f"Cannot write to output directory: {output_dir}")
+        except Exception as e:
+            logger.error(f"Error creating output directory: {e}")
+            raise
+        
+        self.load_models()
+        
+        # Load audio
+        wav, sr = self.load_audio(audio_path)
+        wav = wav.to(self.device)
+        
+        # Apply separation
+        logger.info("Starting source separation...")
+        logger.info(f"Input audio shape: {wav.shape}")
+        
+        try:
+            # Ensure wav is in the correct shape (batch, channels, samples)
+            if len(wav.shape) == 2:  # (channels, samples)
+                wav = wav.unsqueeze(0)  # Add batch dimension
+                logger.info("Added batch dimension to audio")
+            
+            logger.info(f"Processed audio shape: {wav.shape}")
+            logger.info("Applying Demucs model...")
+            
+            sources = apply_model(self.demucs_model, wav, shifts=1, split=True, overlap=0.25)
+            sources = sources.cpu()
+            
+            logger.info(f"Separation complete. Output shape: {sources.shape}")
+            
+            # Save stems
+            stem_paths = {}
+            stem_names = ['drums', 'bass', 'other', 'vocals']
+            
+            try:
+                # sources shape should be (batch, stems, channels, samples)
+                sources = sources.squeeze(0)  # Remove batch dimension
+                logger.info(f"Processing stems. Shape after squeeze: {sources.shape}")
+                
+                for i, (source, name) in enumerate(zip(sources, stem_names)):
+                    output_path = os.path.join(output_dir, f"{name}.wav")
+                    logger.info(f"Saving {name} stem ({i+1}/{len(stem_names)})")
+                    logger.info(f"Stem shape: {source.shape}, Sample rate: {sr}")
+                    
+                    try:
+                        torchaudio.save(output_path, source, sr)
+                        stem_paths[name] = output_path
+                        logger.info(f"Successfully saved {name} stem to {output_path}")
+                    except Exception as e:
+                        logger.error(f"Error saving {name} stem: {e}")
+                        raise
+                
+                # Convert paths to use forward slashes for consistency
+                stem_paths = {
+                    name: path.replace('\\', '/')
+                    for name, path in stem_paths.items()
+                }
+                logger.info("All stems saved successfully")
+                logger.info(f"Final stem paths: {stem_paths}")
+                return stem_paths
+                
+            except Exception as e:
+                logger.error(f"Error processing stems: {e}")
+                raise
+                
+        except RuntimeError as e:
+            if "out of memory" in str(e):
+                logger.error("GPU out of memory error. Try processing a shorter audio file or using CPU.")
+                raise MemoryError("Not enough GPU memory for audio processing")
+            raise
+        except Exception as e:
+            logger.error(f"Error during source separation: {e}")
+            raise
+
+def get_capabilities() -> Dict[str, Any]:
+    """Get current capabilities based on available dependencies."""
+    deps = DependencyManager()
+    return {
+        'can_separate_stems': deps.can_separate_stems(),
+        'missing_dependencies': deps.get_missing_dependencies()
+    }
+
+def process_command(action: str, args: Dict[str, str]) -> Dict[str, Any]:
+    """Process command and return response object."""
+    try:
+        processor = AudioProcessor()
+        
+        if action == 'get_capabilities':
+            return format_json_response('success', get_capabilities())
+        elif action == 'separate_stems':
+            if not processor.deps.can_separate_stems():
+                missing_deps = processor.deps.get_missing_dependencies()
+                error_msg = {
+                    'message': 'Stem separation not available due to missing dependencies',
+                    'details': {
+                        'missing_dependencies': missing_deps
+                    }
+                }
+                return format_json_response('error', error=error_msg)
+                
+            if 'input_path' not in args or 'output_dir' not in args:
+                error_msg = {
+                    'message': 'Missing required arguments',
+                    'details': {
+                        'required': ['input_path', 'output_dir'],
+                        'provided': list(args.keys())
+                    }
+                }
+                return format_json_response('error', error=error_msg)
+            
+            try:
+                result = processor.separate_stems(args['input_path'], args['output_dir'])
+                return format_json_response('success', {
+                    'stems': result,
+                    'details': {
+                        'input_file': args['input_path'],
+                        'output_directory': args['output_dir']
+                    }
+                })
+            except Exception as e:
+                error_msg = {
+                    'message': str(e),
+                    'details': {
+                        'input_file': args['input_path'],
+                        'output_directory': args['output_dir'],
+                        'error_type': e.__class__.__name__
+                    }
+                }
+                return format_json_response('error', error=error_msg)
+        else:
+            error_msg = {
+                'message': 'Invalid action specified',
+                'details': {
+                    'provided_action': action,
+                    'valid_actions': ['get_capabilities', 'separate_stems']
+                }
+            }
+            return format_json_response('error', error=error_msg)
+    except Exception as e:
+        logger.exception("Error processing command")
+        error_msg = {
+            'message': str(e),
+            'details': {
+                'error_type': e.__class__.__name__,
+                'action': action,
+                'args': args
+            }
+        }
+        return format_json_response('error', error=error_msg)
+
+if __name__ == '__main__':
+    if len(sys.argv) > 1:
+        action = sys.argv[1]
+        kwargs = parse_args(sys.argv[2:])
+        write_json_response(process_command(action, kwargs))
+    else:
+        write_json_response(format_json_response('error', error='No arguments provided'))
+
+// File: requirements.txt
+----------------------------------------
+# Build tools
+setuptools>=65.5.1
+wheel>=0.38.4
+
+# Core dependencies - using pre-built wheels
+numpy==1.26.4
+scipy>=1.12.0
+librosa>=0.10.1
+pretty_midi>=0.2.10
+
+# ML dependencies - CPU versions
+tensorflow==2.16.1
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch==2.2.0+cpu
+
+# Audio processing
+soundfile>=0.12.1
+resampy==0.4.2
+scikit-learn>=1.4.0
+
+# Additional dependencies
+joblib>=1.3.2
+numba>=0.58.1
+
+# Basic Pitch dependencies
+mir_eval>=0.7
+
+
+
+---
+## Summary
+
+Total included files: 73
+Total excluded files: 54
+Total included content size: 356886 bytes
+
+# Introduction
+
+This file was automatically generated by the ProjectContextGenerator script.
+It scans the current codebase, excludes certain files/directories (e.g. binary files, large files, or those explicitly ignored),
+and includes the content of text-based files that fit within a specified size limit.
+
+Below is a tree view of all files (showing included or excluded status), followed by the content of included files.
+Finally, a summary provides the total number of files included/excluded and the total size of included content.
+
+lib/
+   main.dart [Included]
+   project_context.txt [Excluded: ignored by name/dir]
+   script4.py [Excluded: ignored by name/dir]
+
+---
+## Included Files Content
+
+// File: core\midi_engine\IMPLEMENTATION.md
+----------------------------------------
+# MIDI Engine Implementation
+
+## Overview
+The MIDI engine will be responsible for extracting MIDI data from audio files, providing a crucial feature alongside the existing stem separation functionality. This document outlines the technical implementation details for the MIDI extraction and processing capabilities.
+
+## Architecture Components
+
+### 1. Core Components
+- **MidiExtractor**: Main class responsible for audio-to-MIDI conversion
+- **MidiProcessor**: Handles post-processing of extracted MIDI data
+- **MidiPlayer**: Manages MIDI playback functionality
+- **MidiExporter**: Handles exporting MIDI to standard MIDI file format (.mid)
+
+### 2. Integration Points
+- Integration with `AudioService` for synchronized audio/MIDI playback
+- Connection to `MultiStemPlayer` for visual MIDI track representation
+- FFI bridge for Python-based MIDI extraction (similar to current audio processing)
+
+## Technical Requirements
+
+### 1. Dependencies
+- **Python Libraries**
+  - `librosa`: Audio processing and feature extraction
+  - `pretty_midi`: MIDI file creation and manipulation
+  - `basic_pitch` (Spotify's ML model): For monophonic pitch detection
+  - `tensorflow`: Required for ML-based MIDI extraction
+
+### 2. Flutter Dependencies
+```yaml
+dependencies:
+  flutter_midi: ^1.0.0  # For MIDI playback
+  midi_util: ^1.0.0    # MIDI file manipulation
+```
+
+## Implementation Progress
+
+### Completed Components
+1. **Core Architecture**
+   - Implemented data models with JSON serialization
+   - Created FFI bridge structure for Dart-Python communication
+   - Added progress reporting system
+   - Implemented MIDI file writer
+   - Set up test infrastructure
+
+2. **Data Models**
+   - MidiProject: Top-level container with JSON support
+   - MidiTrack: Represents individual MIDI tracks
+   - MidiNote: Contains note data (pitch, velocity, timing)
+   - Settings models for extraction and playback
+   - Progress reporting models
+
+3. **Test Infrastructure**
+   - Integration test framework
+   - Test audio file generation
+   - MIDI extraction test cases
+   - Mock audio files for testing
+
+### Current Issues
+1. **Python Environment Setup**
+   ```
+   ModuleNotFoundError: No module named 'basic_pitch'
+   ```
+   - Basic Pitch module not found during initialization
+   - Need to install Basic Pitch from forked repository
+   - Python virtual environment needs proper setup
+
+2. **Path Resolution**
+   - Fixed script path resolution in MidiExtractorBridge
+   - Now using project's working directory for Python scripts
+
+3. **Integration Testing**
+   - Tests failing due to Python module issues
+   - Need to ensure consistent test environment
+   - Add more comprehensive test cases
+
+### Next Immediate Steps
+1. Fix Python environment:
+   ```bash
+   cd python/basic_pitch_fork
+   pip install -e .
+   ```
+
+2. Complete MIDI extraction implementation:
+   - Finish Python extractor implementation
+   - Add proper error handling
+   - Implement progress reporting
+
+3. Enhance test coverage:
+   - Add unit tests for all components
+   - Implement integration tests
+   - Add performance benchmarks
+
+### TODO List
+
+1. **Code Issues to Fix**
+   - midi_engine.dart (6 issues)
+     - [x] Fix unused import: 'dart:typed_data'
+     - [x] Implement usage of _extractionSettings field in MIDI extraction
+     - [x] Implement usage of _playbackSettings field in playback
+     - [x] Use midiPath variable in extractFromAudio method
+     - [x] Implement MIDI file parsing for note extraction
+     - [x] Implement MIDI file export functionality
+
+   - midi_extractor_bridge.dart (4 issues)
+     - [x] Review and optimize FFI memory management
+     - [x] Add error handling for Python initialization failures
+     - [x] Add proper cleanup of Python resources
+     - [x] Implement progress reporting for long operations
+
+   - midi_parser.dart (New Component)
+     - [x] Implement MIDI file header parsing
+     - [x] Implement MIDI track chunk parsing
+     - [x] Extract note data with timing information
+     - [x] Handle variable-length quantities
+     - [x] Add error handling and validation
+
+   - midi_writer.dart (New Component)
+     - [x] Implement MIDI file header writing
+     - [x] Implement MIDI track chunk writing
+     - [x] Support tempo and time signature metadata
+     - [x] Handle variable-length quantities
+     - [x] Add error handling and validation
+
+   - progress_reporter.dart (New Component)
+     - [x] Implement progress update stream
+     - [x] Add progress reporting for MIDI extraction
+     - [x] Add progress reporting for MIDI playback
+     - [x] Add progress reporting for MIDI export
+     - [x] Handle error reporting and completion states
+     - [x] Implement MIDI file header writing
+     - [x] Implement MIDI track chunk writing
+     - [x] Support tempo and time signature metadata
+     - [x] Handle variable-length quantities
+     - [x] Add error handling and validation
+
+   - home_screen.dart (15 issues)
+     - [x] Add MidiEngine initialization
+     - [x] Handle MIDI generation errors
+     - [x] Add progress reporting for MIDI operations
+     - [x] Implement proper error handling
+
+   - multi_stem_player.dart (22 issues)
+     - [x] Integrate MIDI controls with audio playback
+     - [x] Add MIDI visualization
+     - [x] Implement MIDI track controls
+     - [x] Add export functionality
+
+   - stem_midi_controls.dart (3 issues)
+     - [x] Add progress indicators
+     - [x] Implement error handling
+     - [x] Add MIDI preview functionality
+
+   - midi_engine_test.dart (2 issues)
+     - [ ] Implement comprehensive test suite
+     - [ ] Add mock audio files for testing
+
+2. **Feature Implementation**
+    - [x] Implement piano roll visualization
+    - [x] Add MIDI file parsing
+    - [x] Add MIDI export functionality
+    - [x] Implement playback parameter controls
+    - [ ] Add batch processing support
+
+3. **Integration Tasks**
+    - [x] Synchronize audio and MIDI playback
+    - [x] Add MIDI visualization to stem player
+    - [x] Implement export settings dialog
+    - [x] Add progress reporting system
+
+4. **UI Components**
+    - [x] Piano roll visualization widget
+    - [x] MIDI controls integration
+    - [x] Progress reporting UI
+    - [x] Error handling and feedback
+    - [x] File export dialogs
+
+4. **Testing and Optimization**
+   - [ ] Add unit tests for all components
+   - [ ] Add integration tests
+   - [ ] Optimize memory usage
+   - [ ] Add performance benchmarks
+
+## Next Steps
+1. Fix code issues in order of dependency (bottom-up):
+   1. Fix midi_engine.dart core functionality
+   2. Implement midi_extractor_bridge.dart improvements
+   3. Add UI components and integration
+   4. Complete testing infrastructure
+
+2. Focus on essential features first:
+   - MIDI file parsing and export
+   - Basic piano roll visualization
+   - Progress reporting
+   - Error handling
+
+3. Then move to enhancement features:
+   - Advanced visualization
+   - Batch processing
+   - Performance optimization
+
+## Notes
+- Using Spotify's Basic Pitch model for initial implementation
+- Need to implement proper error handling for failed extractions
+- Add progress reporting for long-running operations
+- Consider adding batch processing for multiple files
+
+// File: core\midi_engine\midi_engine.dart
+----------------------------------------
+import 'dart:async';
+import 'dart:io';
+import 'package:path/path.dart' as path;
+import 'midi_extractor_bridge.dart';
+import 'midi_writer.dart';
+import 'models.dart';
+import 'progress_reporter.dart';
+
+/// Main MIDI engine class
+class MidiEngine {
+  final _extractorBridge = MidiExtractorBridge();
+  final _progressReporter = ProgressReporter();
+  final _projectController = StreamController<MidiProject>.broadcast();
+  
+  MidiProject? _currentProject;
+  MidiExtractionSettings _extractionSettings = const MidiExtractionSettings();
+  MidiPlaybackSettings _playbackSettings = const MidiPlaybackSettings();
+
+  /// Stream of project updates
+  Stream<MidiProject> get projectUpdates => _projectController.stream;
+
+  /// Stream of progress updates
+  Stream<ProgressUpdate> get progress => _progressReporter.updates;
+
+  /// Initialize the MIDI engine
+  Future<void> initialize() async {
+    try {
+      await _extractorBridge.initialize();
+    } catch (e) {
+      throw Exception('Failed to initialize MIDI engine: $e');
+    }
+  }
+
+  /// Extract MIDI data from audio file
+  Future<MidiProject> extractFromAudio(String audioPath) async {
+    _progressReporter.start();
+    _progressReporter.report('Starting MIDI extraction...', 0.0);
+
+    try {
+      // Create output directory if it doesn't exist
+      final outputDir = path.join(
+        path.dirname(audioPath),
+        'midi_output',
+      );
+      await Directory(outputDir).create(recursive: true);
+
+      // Generate output path
+      final outputPath = path.join(
+        outputDir,
+        '${path.basenameWithoutExtension(audioPath)}.mid',
+      );
+
+      // Extract MIDI
+      final result = await _extractorBridge.extractMidi(
+        audioPath,
+        outputPath,
+        onProgress: (message) {
+          _progressReporter.report(message, 0.5);
+        },
+      );
+
+      // Create project from extraction result
+      final project = MidiProject(
+        id: DateTime.now().millisecondsSinceEpoch.toString(),
+        tracks: [
+          MidiTrack(
+            id: 'track-1',
+            name: path.basenameWithoutExtension(audioPath),
+            notes: _parseNotes(result['result']['details']['notes']),
+            channel: 0,
+          ),
+        ],
+        metadata: MidiMetadata(
+          title: path.basenameWithoutExtension(audioPath),
+          tempo: result['result']['details']['tempo'] ?? 120,
+        ),
+      );
+
+      _currentProject = project;
+      _projectController.add(project);
+      _progressReporter.complete('MIDI extraction complete');
+
+      return project;
+    } catch (e) {
+      _progressReporter.error('Failed to extract MIDI: $e');
+      rethrow;
+    }
+  }
+
+  /// Play a specific track
+  Future<void> playTrack(String trackId) async {
+    if (_currentProject == null) {
+      throw Exception('No project loaded');
+    }
+
+    final track = _currentProject!.tracks
+        .firstWhere((t) => t.id == trackId);
+
+    // TODO: Implement MIDI playback
+    throw UnimplementedError('MIDI playback not implemented');
+  }
+
+  /// Stop playback
+  Future<void> stopPlayback() async {
+    // TODO: Implement MIDI playback
+    throw UnimplementedError('MIDI playback not implemented');
+  }
+
+  /// Export project to MIDI file
+  Future<void> exportToFile(String outputPath) async {
+    if (_currentProject == null) {
+      throw Exception('No project loaded');
+    }
+
+    try {
+      await MidiWriter.writeFile(_currentProject!, outputPath);
+    } catch (e) {
+      throw Exception('Failed to export MIDI file: $e');
+    }
+  }
+
+  /// Update extraction settings
+  void setExtractionSettings(MidiExtractionSettings settings) {
+    _extractionSettings = settings;
+  }
+
+  /// Update playback settings
+  void setPlaybackSettings(MidiPlaybackSettings settings) {
+    _playbackSettings = settings;
+  }
+
+  /// Parse notes from extraction result
+  List<MidiNote> _parseNotes(List<dynamic> noteData) {
+    return noteData.map((note) => MidiNote(
+      pitch: note['pitch'] as int,
+      velocity: note['velocity'] as int,
+      startTime: (note['start_time'] as num).toDouble(),
+      duration: (note['duration'] as num).toDouble(),
+    )).toList();
+  }
+
+  /// Clean up resources
+  void dispose() {
+    _extractorBridge.dispose();
+    _progressReporter.dispose();
+    _projectController.close();
+  }
+}
+
+// File: core\midi_engine\midi_extractor_bridge.dart
+----------------------------------------
+import 'dart:async';
+import 'dart:convert';
+import 'dart:io';
+import 'package:path/path.dart' as path;
+
+/// Bridge for communicating with Python MIDI extractor
+class MidiExtractorBridge {
+  String get _pythonScript {
+    // During tests, use the current working directory
+    final workingDir = Directory.current.path;
+    return path.join(workingDir, 'python', 'midi_extractor.py');
+  }
+  Process? _process;
+  bool _isInitialized = false;
+
+  /// Initialize the MIDI extractor
+  Future<void> initialize() async {
+    if (_isInitialized) return;
+
+    try {
+      // Check Python environment
+      print('Checking Python environment...');
+      final result = await Process.run('python', ['--version']);
+      print('Python version check result: ${result.stdout}');
+      if (result.exitCode != 0) {
+        print('Python version check failed: ${result.stderr}');
+        throw Exception('Python not found');
+      }
+
+      // Verify capabilities
+      print('Verifying MIDI extractor capabilities...');
+      print('Script path: $_pythonScript');
+      final process = await Process.start('python', [
+        _pythonScript,
+        'check_capabilities',
+      ]);
+
+      // Capture output for debugging
+      process.stdout.transform(utf8.decoder).listen((data) {
+        print('MIDI extractor stdout: $data');
+      });
+      process.stderr.transform(utf8.decoder).listen((data) {
+        print('MIDI extractor stderr: $data');
+      });
+
+      final exitCode = await process.exitCode;
+      if (exitCode != 0) {
+        print('MIDI extractor capability check failed with exit code: $exitCode');
+        throw Exception('Failed to initialize MIDI extractor');
+      }
+      print('MIDI extractor initialized successfully');
+
+      _isInitialized = true;
+    } catch (e) {
+      throw Exception('Failed to initialize MIDI extractor: $e');
+    }
+  }
+
+  /// Extract MIDI data from audio file
+  Future<Map<String, dynamic>> extractMidi(
+    String inputPath,
+    String outputPath, {
+    void Function(String)? onProgress,
+  }) async {
+    if (!_isInitialized) {
+      throw Exception('MIDI extractor not initialized');
+    }
+
+    try {
+      // Start Python process
+      _process = await Process.start('python', [
+        _pythonScript,
+        'extract_midi',
+        'input_path=$inputPath',
+        'output_path=$outputPath',
+      ]);
+
+      // Listen for progress updates
+      _process!.stderr.transform(utf8.decoder).listen((data) {
+        if (data.startsWith('INFO: ')) {
+          onProgress?.call(data.substring(6).trim());
+        }
+      });
+
+      // Get result
+      final output = await _process!.stdout
+          .transform(utf8.decoder)
+          .transform(const LineSplitter())
+          .where((line) => line.isNotEmpty)
+          .last;
+
+      final result = json.decode(output) as Map<String, dynamic>;
+
+      if (result['status'] == 'error') {
+        throw Exception(result['error']);
+      }
+
+      return result;
+    } catch (e) {
+      throw Exception('Failed to extract MIDI: $e');
+    } finally {
+      _process?.kill();
+      _process = null;
+    }
+  }
+
+  /// Clean up resources
+  void dispose() {
+    _process?.kill();
+    _process = null;
+    _isInitialized = false;
+  }
+}
+
+// File: core\midi_engine\midi_parser.dart
+----------------------------------------
+import 'dart:io';
+import 'dart:typed_data';
+import 'models.dart';
+
+/// Class responsible for parsing MIDI files and extracting note data
+class MidiParser {
+  /// Parse a MIDI file and extract note data
+  static Future<List<MidiNote>> parseFile(String filePath) async {
+    final file = File(filePath);
+    if (!await file.exists()) {
+      throw Exception('MIDI file not found: $filePath');
+    }
+
+    final bytes = await file.readAsBytes();
+    final data = ByteData.view(bytes.buffer);
+    final notes = <MidiNote>[];
+
+    try {
+      var offset = 0;
+      
+      // Read MIDI header
+      final headerChunk = _readChunk(data, offset);
+      offset = headerChunk.nextOffset;
+
+      // Verify MIDI format
+      if (headerChunk.id != 'MThd') {
+        throw Exception('Invalid MIDI file: Missing MThd header');
+      }
+
+      // Read track chunks
+      while (offset < data.lengthInBytes) {
+        final trackChunk = _readChunk(data, offset);
+        if (trackChunk.id == 'MTrk') {
+          final trackNotes = _parseTrackChunk(data, trackChunk);
+          notes.addAll(trackNotes);
+        }
+        offset = trackChunk.nextOffset;
+      }
+
+      return notes;
+    } catch (e) {
+      throw Exception('Failed to parse MIDI file: $e');
+    }
+  }
+
+  /// Read a MIDI chunk header
+  static ({String id, int length, int nextOffset}) _readChunk(ByteData data, int offset) {
+    final id = String.fromCharCodes([
+      data.getUint8(offset),
+      data.getUint8(offset + 1),
+      data.getUint8(offset + 2),
+      data.getUint8(offset + 3),
+    ]);
+
+    final length = data.getUint32(offset + 4);
+    final nextOffset = offset + 8 + length;
+
+    return (
+      id: id,
+      length: length,
+      nextOffset: nextOffset,
+    );
+  }
+
+  /// Parse a MIDI track chunk and extract notes
+  static List<MidiNote> _parseTrackChunk(ByteData data, ({String id, int length, int nextOffset}) chunk) {
+    final notes = <MidiNote>[];
+    var offset = chunk.nextOffset - chunk.length;
+    var time = 0.0;
+    final activeNotes = <int, ({int pitch, int velocity, double startTime})>{};
+
+    while (offset < chunk.nextOffset) {
+      // Read delta time
+      final deltaTime = _readVariableLengthQuantity(data, offset);
+      offset = deltaTime.nextOffset;
+      time += deltaTime.value / 480; // Assuming standard PPQN
+
+      // Read event
+      final status = data.getUint8(offset++);
+      final isNoteOn = (status & 0xF0) == 0x90;
+      final isNoteOff = (status & 0xF0) == 0x80;
+      
+      // Note on/off events
+      if (isNoteOn || isNoteOff) {
+        final pitch = data.getUint8(offset++);
+        final velocity = data.getUint8(offset++);
+        
+        // Note on with velocity > 0
+        if (isNoteOn && velocity > 0) {
+          activeNotes[pitch] = (
+            pitch: pitch,
+            velocity: velocity,
+            startTime: time,
+          );
+        }
+        // Note off or note on with velocity 0
+        else {
+          final startNote = activeNotes.remove(pitch);
+          if (startNote != null) {
+            notes.add(MidiNote(
+              pitch: startNote.pitch,
+              velocity: startNote.velocity,
+              startTime: startNote.startTime,
+              duration: time - startNote.startTime,
+            ));
+          }
+        }
+      }
+      // Skip other events
+      else if (status == 0xFF) {
+        // Meta event
+        offset++; // Skip type
+        final length = data.getUint8(offset++);
+        offset += length;
+      }
+      else if ((status & 0xF0) == 0xC0 || (status & 0xF0) == 0xD0) {
+        // Program change or Channel pressure
+        offset++;
+      }
+      else {
+        // Other events with 2 data bytes
+        offset += 2;
+      }
+    }
+
+    return notes;
+  }
+
+  /// Read a variable-length quantity from MIDI data
+  static ({int value, int nextOffset}) _readVariableLengthQuantity(ByteData data, int offset) {
+    var value = 0;
+    var currentByte = 0;
+    
+    do {
+      currentByte = data.getUint8(offset++);
+      value = (value << 7) | (currentByte & 0x7F);
+    } while ((currentByte & 0x80) != 0);
+
+    return (
+      value: value,
+      nextOffset: offset,
+    );
+  }
+}
+
+// File: core\midi_engine\midi_writer.dart
+----------------------------------------
+import 'dart:io';
+import 'dart:typed_data';
+import 'models.dart';
+
+/// Class responsible for writing MIDI files
+class MidiWriter {
+  static const int _midiFormat = 1; // Multiple tracks
+  static const int _division = 480; // Standard PPQN
+
+  /// Write a MidiProject to a MIDI file
+  static Future<void> writeFile(MidiProject project, String filePath) async {
+    final builder = BytesBuilder();
+    
+    try {
+      // Write header chunk
+      _writeHeaderChunk(builder, project.tracks.length);
+
+      // Write track chunks
+      for (final track in project.tracks) {
+        _writeTrackChunk(builder, track, project.metadata);
+      }
+
+      // Write to file
+      final file = File(filePath);
+      await file.writeAsBytes(builder.takeBytes());
+    } catch (e) {
+      throw Exception('Failed to write MIDI file: $e');
+    }
+  }
+
+  /// Write MIDI header chunk
+  static void _writeHeaderChunk(BytesBuilder builder, int numTracks) {
+    // Chunk ID: MThd
+    builder.add([0x4D, 0x54, 0x68, 0x64]);
+    
+    // Chunk length: 6
+    builder.add([0x00, 0x00, 0x00, 0x06]);
+    
+    // Format: 1 (multiple tracks)
+    builder.add([0x00, _midiFormat]);
+    
+    // Number of tracks
+    builder.add([0x00, numTracks]);
+    
+    // Division (PPQN)
+    builder.add([(_division >> 8) & 0xFF, _division & 0xFF]);
+  }
+
+  /// Write MIDI track chunk
+  static void _writeTrackChunk(
+    BytesBuilder builder,
+    MidiTrack track,
+    MidiMetadata metadata,
+  ) {
+    final trackBuilder = BytesBuilder();
+    
+    // Write tempo meta event
+    _writeMetaEvent(
+      trackBuilder,
+      0, // Delta time
+      0x51, // Tempo
+      _tempoToBytes(metadata.tempo),
+    );
+
+    // Write time signature if specified
+    final numerator = metadata.timeSignatureNumerator;
+    final denominator = metadata.timeSignatureDenominator;
+    if (numerator != null && denominator != null &&
+        numerator > 0 && denominator > 0) {
+      _writeMetaEvent(
+        trackBuilder,
+        0,
+        0x58, // Time signature
+        [
+          numerator,
+          _log2(denominator),
+          24, // MIDI clocks per metronome click
+          8,  // 32nd notes per quarter note
+        ],
+      );
+    }
+
+    // Sort notes by start time
+    final sortedNotes = List<MidiNote>.from(track.notes)
+      ..sort((a, b) => a.startTime.compareTo(b.startTime));
+
+    // Write note events
+    var currentTime = 0.0;
+    for (final note in sortedNotes) {
+      final deltaTime = (note.startTime - currentTime) * _division;
+      currentTime = note.startTime;
+
+      // Note on
+      _writeVarLength(trackBuilder, deltaTime.round());
+      trackBuilder.add([
+        0x90 | (track.channel & 0x0F), // Note on, channel
+        note.pitch & 0x7F,
+        note.velocity & 0x7F,
+      ]);
+
+      // Note off
+      final duration = note.duration * _division;
+      _writeVarLength(trackBuilder, duration.round());
+      trackBuilder.add([
+        0x80 | (track.channel & 0x0F), // Note off, channel
+        note.pitch & 0x7F,
+        0x40, // Release velocity
+      ]);
+    }
+
+    // Write end of track
+    _writeMetaEvent(trackBuilder, 0, 0x2F, []);
+
+    // Write track chunk header
+    builder.add([0x4D, 0x54, 0x72, 0x6B]); // MTrk
+    final length = trackBuilder.length;
+    builder.add([
+      (length >> 24) & 0xFF,
+      (length >> 16) & 0xFF,
+      (length >> 8) & 0xFF,
+      length & 0xFF,
+    ]);
+
+    // Write track data
+    builder.add(trackBuilder.takeBytes());
+  }
+
+  /// Write variable length value
+  static void _writeVarLength(BytesBuilder builder, int value) {
+    if (value < 0) value = 0;
+    
+    final bytes = <int>[];
+    bytes.add(value & 0x7F);
+    
+    while ((value >>= 7) > 0) {
+      bytes.add((value & 0x7F) | 0x80);
+    }
+
+    // Convert reversed bytes to list
+    builder.add(bytes.reversed.toList());
+  }
+
+  /// Write meta event
+  static void _writeMetaEvent(
+    BytesBuilder builder,
+    int deltaTime,
+    int type,
+    List<int> data,
+  ) {
+    _writeVarLength(builder, deltaTime);
+    builder.add([0xFF, type]); // Meta event marker and type
+    _writeVarLength(builder, data.length);
+    builder.add(data);
+  }
+
+  /// Convert tempo (BPM) to MIDI tempo bytes (microseconds per quarter note)
+  static List<int> _tempoToBytes(int bpm) {
+    final microsecondsPerBeat = (60000000 / bpm).round();
+    return [
+      (microsecondsPerBeat >> 16) & 0xFF,
+      (microsecondsPerBeat >> 8) & 0xFF,
+      microsecondsPerBeat & 0xFF,
+    ];
+  }
+
+  /// Calculate log base 2 of a number (for time signature)
+  static int _log2(int value) {
+    var result = 0;
+    while (value > 1) {
+      value ~/= 2;
+      result++;
+    }
+    return result;
+  }
+}
+
+// File: core\midi_engine\models.dart
+----------------------------------------
+/// Settings for MIDI extraction
+class MidiExtractionSettings {
+  /// Onset detection threshold (0.0 to 1.0)
+  final double onsetThreshold;
+
+  /// Frame-level threshold (0.0 to 1.0)
+  final double frameThreshold;
+
+  /// Minimum note length in milliseconds
+  final double minNoteLength;
+
+  /// Minimum frequency in Hz
+  final double minimumFrequency;
+
+  /// Maximum frequency in Hz
+  final double maximumFrequency;
+
+  /// Whether to use multiple pitch bends
+  final bool multiplePitchBends;
+
+  /// Whether to use the Melodia trick for better melody extraction
+  final bool melodiaTrick;
+
+  const MidiExtractionSettings({
+    this.onsetThreshold = 0.5,
+    this.frameThreshold = 0.3,
+    this.minNoteLength = 50.0,
+    this.minimumFrequency = 20.0,
+    this.maximumFrequency = 2000.0,
+    this.multiplePitchBends = false,
+    this.melodiaTrick = true,
+  });
+}
+
+/// Settings for MIDI playback
+class MidiPlaybackSettings {
+  /// Playback tempo in BPM
+  final double tempo;
+
+  /// Whether to loop playback
+  final bool loopEnabled;
+
+  /// Playback volume (0.0 to 1.0)
+  final double volume;
+
+  const MidiPlaybackSettings({
+    this.tempo = 120.0,
+    this.loopEnabled = false,
+    this.volume = 1.0,
+  });
+}
+
+/// Represents a MIDI project containing multiple tracks
+class MidiProject {
+  /// Unique identifier for the project
+  final String id;
+
+  /// List of MIDI tracks in the project
+  final List<MidiTrack> tracks;
+
+  /// Project metadata
+  final MidiMetadata metadata;
+
+  const MidiProject({
+    required this.id,
+    required this.tracks,
+    required this.metadata,
+  });
+
+  /// Create a MidiProject from JSON
+  factory MidiProject.fromJson(Map<String, dynamic> json) {
+    return MidiProject(
+      id: json['id'] as String,
+      tracks: (json['tracks'] as List)
+          .map((track) => MidiTrack.fromJson(track as Map<String, dynamic>))
+          .toList(),
+      metadata: MidiMetadata.fromJson(json['metadata'] as Map<String, dynamic>),
+    );
+  }
+
+  /// Convert MidiProject to JSON
+  Map<String, dynamic> toJson() {
+    return {
+      'id': id,
+      'tracks': tracks.map((track) => track.toJson()).toList(),
+      'metadata': metadata.toJson(),
+    };
+  }
+}
+
+/// Represents a single MIDI track
+class MidiTrack {
+  /// Unique identifier for the track
+  final String id;
+
+  /// Track name
+  final String name;
+
+  /// List of MIDI notes in the track
+  final List<MidiNote> notes;
+
+  /// MIDI channel (0-15)
+  final int channel;
+
+  /// Whether the track is muted
+  final bool muted;
+
+  /// Whether the track is soloed
+  final bool soloed;
+
+  const MidiTrack({
+    required this.id,
+    required this.name,
+    required this.notes,
+    this.channel = 0,
+    this.muted = false,
+    this.soloed = false,
+  });
+
+  /// Create a MidiTrack from JSON
+  factory MidiTrack.fromJson(Map<String, dynamic> json) {
+    return MidiTrack(
+      id: json['id'] as String,
+      name: json['name'] as String,
+      notes: (json['notes'] as List)
+          .map((note) => MidiNote.fromJson(note as Map<String, dynamic>))
+          .toList(),
+      channel: json['channel'] as int? ?? 0,
+      muted: json['muted'] as bool? ?? false,
+      soloed: json['soloed'] as bool? ?? false,
+    );
+  }
+
+  /// Convert MidiTrack to JSON
+  Map<String, dynamic> toJson() {
+    return {
+      'id': id,
+      'name': name,
+      'notes': notes.map((note) => note.toJson()).toList(),
+      'channel': channel,
+      'muted': muted,
+      'soloed': soloed,
+    };
+  }
+}
+
+/// Represents a single MIDI note
+class MidiNote {
+  /// MIDI note number (0-127)
+  final int pitch;
+
+  /// Note velocity (0-127)
+  final int velocity;
+
+  /// Start time in seconds
+  final double startTime;
+
+  /// Duration in seconds
+  final double duration;
+
+  const MidiNote({
+    required this.pitch,
+    required this.velocity,
+    required this.startTime,
+    required this.duration,
+  });
+
+  /// Create a MidiNote from JSON
+  factory MidiNote.fromJson(Map<String, dynamic> json) {
+    return MidiNote(
+      pitch: json['pitch'] as int,
+      velocity: json['velocity'] as int,
+      startTime: (json['startTime'] as num).toDouble(),
+      duration: (json['duration'] as num).toDouble(),
+    );
+  }
+
+  /// Convert MidiNote to JSON
+  Map<String, dynamic> toJson() {
+    return {
+      'pitch': pitch,
+      'velocity': velocity,
+      'startTime': startTime,
+      'duration': duration,
+    };
+  }
+}
+
+/// Metadata for a MIDI project
+class MidiMetadata {
+  /// Project title
+  final String title;
+
+  /// Artist name
+  final String? artist;
+
+  /// Project tempo in BPM
+  final int tempo;
+
+  /// Time signature numerator
+  final int? timeSignatureNumerator;
+
+  /// Time signature denominator
+  final int? timeSignatureDenominator;
+
+  const MidiMetadata({
+    required this.title,
+    this.artist,
+    this.tempo = 120,
+    this.timeSignatureNumerator,
+    this.timeSignatureDenominator,
+  });
+
+  /// Create MidiMetadata from JSON
+  factory MidiMetadata.fromJson(Map<String, dynamic> json) {
+    return MidiMetadata(
+      title: json['title'] as String,
+      artist: json['artist'] as String?,
+      tempo: json['tempo'] as int? ?? 120,
+      timeSignatureNumerator: json['timeSignatureNumerator'] as int?,
+      timeSignatureDenominator: json['timeSignatureDenominator'] as int?,
+    );
+  }
+
+  /// Convert MidiMetadata to JSON
+  Map<String, dynamic> toJson() {
+    return {
+      'title': title,
+      'artist': artist,
+      'tempo': tempo,
+      'timeSignatureNumerator': timeSignatureNumerator,
+      'timeSignatureDenominator': timeSignatureDenominator,
+    };
+  }
+}
+
+
+// File: core\midi_engine\progress_reporter.dart
+----------------------------------------
+import 'dart:async';
+
+/// Progress reporter for MIDI operations
+class ProgressReporter {
+  final StreamController<ProgressUpdate> _controller = StreamController<ProgressUpdate>.broadcast();
+  bool _isActive = false;
+
+  /// Stream of progress updates
+  Stream<ProgressUpdate> get updates => _controller.stream;
+
+  /// Start a new operation
+  void start() {
+    _isActive = true;
+  }
+
+  /// Report progress for the current operation
+  void report(String message, double progress) {
+    if (!_isActive) return;
+    
+    _controller.add(ProgressUpdate(
+      message: message,
+      progress: progress.clamp(0.0, 1.0),
+    ));
+  }
+
+  /// Report an error
+  void error(String message) {
+    if (!_isActive) return;
+    
+    _controller.add(ProgressUpdate(
+      message: message,
+      progress: 1.0,
+      error: message,
+    ));
+    _isActive = false;
+  }
+
+  /// Mark the current operation as complete
+  void complete(String message) {
+    if (!_isActive) return;
+    
+    _controller.add(ProgressUpdate(
+      message: message,
+      progress: 1.0,
+      isComplete: true,
+    ));
+    _isActive = false;
+  }
+
+  /// Clean up resources
+  void dispose() {
+    _controller.close();
+  }
+}
+
+/// Progress update for MIDI operations
+class ProgressUpdate {
+  /// Current status message
+  final String message;
+
+  /// Progress value (0.0 to 1.0)
+  final double progress;
+
+  /// Error message if operation failed
+  final String? error;
+
+  /// Whether the operation is complete
+  final bool isComplete;
+
+  const ProgressUpdate({
+    required this.message,
+    required this.progress,
+    this.error,
+    this.isComplete = false,
+  });
+}
+
+// File: data\lol_taglines.dart
+----------------------------------------
+import 'dart:math';
+
+/// A collection of random domain + tagline combos from the .lol multiverse.
+final List<String> domainTaglines = [
+  'Disclosure.lol => "We disclose everything except the important parts"',
+  'Whistleblower.lol => "We blow whistles—loudly—so you can\'t ignore it"',
+  'NHI.lol => "Non-Human Intelligence? Sure, we\'ll try anything once"',
+  'NRK.lol => "Norwegian Ridiculous Komedy, streaming 24/7"',
+  'Sticknation.lol => "We\'re building a nation. Out of sticks. Duh"',
+  'elonwyd.lol => "The world\'s biggest question: why, Elon, why?"'
+];
+
+/// Extract domain from a tagline.
+String getDomain(String tagline) {
+  return tagline.split(' => ').first;
+}
+
+/// Extract message from a tagline.
+String getMessage(String tagline) {
+  return tagline.split(' => ').last.replaceAll('"', '');
+}
+
+/// Fetch a random domain + tagline string from [domainTaglines].
+String getRandomLolTagline() {
+  final random = Random();
+  return domainTaglines[random.nextInt(domainTaglines.length)];
+}
+
+// File: main.dart
+----------------------------------------
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:window_manager/window_manager.dart';
+import 'package:just_audio/just_audio.dart';
+import 'package:audio_session/audio_session.dart';
+import 'dart:io';
+import 'ui/app.dart';
+
+Future<void> main() async {
+  // Ensure Flutter is initialized
+  WidgetsFlutterBinding.ensureInitialized();
+  
+  // Initialize audio session
+  try {
+    final session = await AudioSession.instance;
+    await session.configure(const AudioSessionConfiguration.music());
+    debugPrint('Audio session configured successfully');
+  } catch (e) {
+    debugPrint('Failed to configure audio session: $e');
+  }
+  
+  // Initialize window settings for desktop
+  await windowManager.ensureInitialized();
+  await windowManager.setTitle('MidiStems');
+  await windowManager.setMinimumSize(const Size(800, 600));
+  await windowManager.setSize(const Size(1200, 800));
+
+  runApp(const MidiStemsApp());
+}
+
+
+// File: services\audio_processing\audio_service.dart
+----------------------------------------
+import 'dart:convert';
+import 'dart:io';
+import 'package:path/path.dart' as path;
+import 'package:path_provider/path_provider.dart';
+
+class AudioService {
+  static const String _pythonScript = 'processor.py';
+  static const String _pythonCommand = 'python';
+  static const String _venvPath = 'venv';
+
+  Future<void> _verifyPythonSetup() async {
+    try {
+      final result = await _runPythonCommand(['--version']);
+      print('Python version check result: $result');
+
+      // Check Python capabilities
+      final capabilities = await _runPythonCommand([
+        path.join(Directory.current.path, 'python', _pythonScript),
+        'check_capabilities',
+      ]);
+      print('Capabilities check result: $capabilities');
+
+      if (capabilities.contains('ERROR:')) {
+        throw Exception('Failed to verify Python capabilities: $capabilities');
+      }
+    } catch (e) {
+      print('Error verifying Python setup: $e');
+      // Don't throw here, just log the error
+      // This allows the app to continue even if verification fails
+    }
+  }
+
+  Future<String> _runPythonCommand(List<String> args) async {
+    String pythonPath;
+    if (Platform.isWindows) {
+      pythonPath = path.join(Directory.current.path, _venvPath, 'Scripts', 'python.exe');
+    } else {
+      pythonPath = path.join(Directory.current.path, _venvPath, 'bin', 'python');
+    }
+
+    try {
+      final result = await Process.run(pythonPath, args);
+      if (result.exitCode != 0) {
+        throw Exception('Command failed with exit code ${result.exitCode}: ${result.stderr}');
+      }
+      return result.stdout.toString();
+    } catch (e) {
+      print('Error running Python command: $e');
+      rethrow;
+    }
+  }
+
+  Future<Map<String, dynamic>> separateStems({
+    required String inputPath,
+    required String outputDir,
+  }) async {
+    try {
+      // Verify Python setup (but don't fail if it fails)
+      await _verifyPythonSetup();
+
+      print('Input file: $inputPath');
+      print('Output directory: $outputDir');
+
+      // Prepare command arguments
+      final args = [
+        path.join(Directory.current.path, 'python', _pythonScript),
+        'separate_stems',
+        'input_path="$inputPath"',
+        'output_dir="$outputDir"',
+      ];
+
+      print('Processing audio file: "$inputPath"');
+      print('Output directory: "$outputDir"');
+      print('\n=== Audio Processing Debug Info ===');
+      print('Command: ${[pythonPath, ...args].join(' ')}');
+      print('\nWorking directory: ${Directory.current.path}');
+
+      // Run the command and capture output
+      final result = await Process.run(pythonPath, args);
+      
+      print('\nPython stderr output:');
+      print(result.stderr);
+      print('\nPython stdout output:');
+      print(result.stdout);
+      print('\nExit code: ${result.exitCode}');
+      print('================================\n');
+
+      if (result.exitCode != 0) {
+        throw Exception(result.stderr.toString());
+      }
+
+      // Parse JSON output
+      final jsonStr = result.stdout.toString().trim();
+      final jsonResult = json.decode(jsonStr);
+
+      if (jsonResult['status'] != 'success') {
+        throw Exception(jsonResult['error'] ?? 'Unknown error during stem separation');
+      }
+
+      return jsonResult['result'] as Map<String, dynamic>;
+    } catch (e) {
+      print('Error during stem separation: $e');
+      rethrow;
+    }
+  }
+
+  String get pythonPath {
+    if (Platform.isWindows) {
+      return path.join(Directory.current.path, _venvPath, 'Scripts', 'python.exe');
+    } else {
+      return path.join(Directory.current.path, _venvPath, 'bin', 'python');
+    }
+  }
+}
+
+// File: ui\app.dart
+----------------------------------------
+import 'package:flutter/material.dart';
+import 'screens/home_screen.dart';
+
+class MidiStemsApp extends StatelessWidget {
+  const MidiStemsApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'MidiStems',
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Colors.blue,
+          brightness: Brightness.dark,
+        ),
+        useMaterial3: true,
+      ),
+      home: const HomeScreen(),
+    );
+  }
+}
+
+// File: ui\screens\home_screen.dart
+----------------------------------------
+import 'package:flutter/material.dart';
+import 'package:file_picker/file_picker.dart';
+import 'package:path_provider/path_provider.dart';
+import 'package:path/path.dart' as path;
+import 'dart:io';
+import '../../services/audio_processing/audio_service.dart';
+import '../../core/midi_engine/midi_engine.dart';
+import '../widgets/lol_loading_dialog.dart';
+import '../widgets/multi_stem_player.dart';
+import '../../data/lol_taglines.dart';
+
+const _processingMessages = [
+  'Loading PyTorch engine...',
+  'Initializing SoundFile processor...',
+  'Loading Demucs model...',
+  'Starting stem separation...',
+  'Processing audio file...',
+  'Applying source separation...',
+  'Almost there, hang tight...',
+];
+
+class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key});
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  final AudioService _audioService = AudioService();
+  final MidiEngine _midiEngine = MidiEngine();
+  String? _selectedFilePath;
+  String _statusMessage = '';
+
+  @override
+  void initState() {
+    super.initState();
+    _initializeMidiEngine();
+  }
+
+  Future<void> _initializeMidiEngine() async {
+    try {
+      await _midiEngine.initialize();
+    } catch (e) {
+      setState(() {
+        _statusMessage = 'Error initializing MIDI engine: $e';
+      });
+    }
+  }
+
+  @override
+  void dispose() {
+    _midiEngine.dispose();
+    super.dispose();
+  }
+
+  Future<void> _selectFile() async {
+    try {
+      FilePickerResult? result = await FilePicker.platform.pickFiles(
+        type: FileType.custom,
+        allowedExtensions: ['wav', 'mp3', 'flac', 'ogg'],
+      );
+
+      if (result != null) {
+        final filePath = result.files.single.path;
+        // Normalize the file path
+        final normalizedPath = path.normalize(filePath!);
+        
+        // Verify file exists and is readable
+        final file = File(normalizedPath);
+        if (!await file.exists()) {
+          setState(() {
+            _statusMessage = 'Error: Selected file does not exist';
+          });
+          return;
+        }
+
+        setState(() {
+          _selectedFilePath = normalizedPath;
+          _statusMessage = 'Selected file: ${result.files.single.name}';
+        });
+      }
+    } catch (e) {
+      setState(() {
+        _statusMessage = 'Error selecting file: $e';
+      });
+    }
+  }
+
+  Future<void> _showStemPlayer(Map<String, dynamic> result) async {
+    try {
+      print('Preparing to show stem player with result: $result');
+      final Map<String, String> stems = (result['stems']! as Map<String, dynamic>).cast<String, String>();
+      print('Converted stems map: $stems');
+      
+      final stemsList = stems.entries.map((e) {
+        final name = path.basenameWithoutExtension(e.key);
+        // Convert forward slashes to platform-specific separator
+        final stemPath = e.value.replaceAll('/', Platform.pathSeparator);
+        print('Processing stem - name: $name, path: $stemPath');
+        
+        // Verify the stem file exists
+        final stemFile = File(stemPath);
+        if (!stemFile.existsSync()) {
+          throw Exception('Stem file not found: $stemPath');
+        }
+        
+        // Verify the file is readable
+        if (!stemFile.lengthSync().isFinite) {
+          throw Exception('Invalid stem file: $stemPath');
+        }
+        
+        return {
+          'name': name,
+          'path': stemPath
+        };
+      }).toList();
+
+      print('Created stemsList with ${stemsList.length} items: $stemsList');
+
+      if (!mounted) {
+        print('Widget no longer mounted before showing dialog');
+        return;
+      }
+
+      print('Showing stem player dialog');
+      await showDialog(
+        context: context,
+        barrierDismissible: true,
+        builder: (_) => Dialog(
+          child: LayoutBuilder(
+            builder: (context, constraints) {
+              return Container(
+                width: constraints.maxWidth * 0.8,
+                height: constraints.maxHeight * 0.8,
+                padding: const EdgeInsets.all(16.0),
+                child: Column(
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        const Text(
+                          'Separated Stems',
+                          style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        IconButton(
+                          icon: const Icon(Icons.close),
+                          onPressed: () => Navigator.of(context).pop(),
+                        ),
+                      ],
+                    ),
+                    const Divider(),
+                    Expanded(
+                      child: MultiStemPlayer(
+                        stemPaths: stemsList,
+                        midiEngine: _midiEngine,
+                      ),
+                    ),
+                  ],
+                ),
+              );
+            },
+          ),
+        ),
+      );
+    } catch (e) {
+      print('Error showing stem player: $e');
+      setState(() {
+        _statusMessage = 'Error showing stem player: $e';
+      });
+    }
+  }
+
+  Future<void> _processStemSeparation() async {
+    if (_selectedFilePath == null) {
+      setState(() {
+        _statusMessage = 'Please select an audio file first';
+      });
+      return;
+    }
+
+    // Show the loading dialog
+    if (!mounted) return;
+    showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (_) => LolLoadingDialog(
+        title: 'Separating Stems',
+        messages: [
+          ...domainTaglines,
+          ..._processingMessages,
+        ],
+      ),
+    );
+
+    setState(() {
+      _statusMessage = 'Starting stem separation...';
+    });
+
+    String? errorMessage;
+    String? resultMessage;
+    Map<String, dynamic>? result;
+    
+    try {
+      // Get application documents directory and create stems subdirectory
+      final appDir = await getApplicationDocumentsDirectory();
+      final stemsBaseDir = Directory(path.join(appDir.path, 'stems'));
+      await stemsBaseDir.create(recursive: true);
+
+      // Create a unique directory for this file's stems
+      final fileName = path.basenameWithoutExtension(_selectedFilePath!);
+      final timestamp = DateTime.now().millisecondsSinceEpoch;
+      final stemsDir = path.join(stemsBaseDir.path, '${fileName}_$timestamp');
+      
+      print('Input file: $_selectedFilePath');
+      print('Output directory: $stemsDir');
+
+      result = await _audioService.separateStems(
+        inputPath: _selectedFilePath!,
+        outputDir: stemsDir,
+      );
+
+      resultMessage = 'Stem separation complete!\n'
+          'Stems saved to: $stemsDir\n'
+          'Generated stems: ${(result['stems'] as Map).keys.join(', ')}';
+    } catch (e) {
+      // Extract actual error message from the full exception
+      final fullError = e.toString();
+      final errorMatch = RegExp(r'Exception: (.+?)\nINFO:').firstMatch(fullError);
+      errorMessage = errorMatch?.group(1) ?? 'Failed to separate stems';
+      
+      // Extract progress messages
+      final infoMessages = RegExp(r'INFO: ([^\n]+)')
+          .allMatches(fullError)
+          .map((m) => m.group(1) ?? '')
+          .where((msg) => msg.isNotEmpty)
+          .toList();
+
+      if (!mounted) return;
+
+      // Close the current dialog
+      Navigator.of(context).pop();
+
+      // Show error dialog with progress info
+      showDialog(
+        context: context,
+        barrierDismissible: false,
+        builder: (_) => LolLoadingDialog(
+          title: 'Separation Failed',
+          messages: [
+            ...infoMessages,
+            'Oops! Something went wrong...',
+            'Checking the error logs...',
+            'Attempting to recover...',
+          ],
+          errorMessage: errorMessage,
+          onClose: () {
+            Navigator.of(context).pop();
+            setState(() {
+              _statusMessage = 'Error processing audio: $errorMessage';
+            });
+          },
+        ),
+      );
+      return;
+    }
+
+    if (!mounted) return;
+
+    // Close the current dialog and wait for animation
+    Navigator.of(context).pop();
+    await Future.delayed(const Duration(milliseconds: 300));
+
+    setState(() {
+      _statusMessage = resultMessage ?? 'Stem separation completed';
+    });
+
+    print('Loading dialog dismissed, preparing to show stem player');
+    // Show the MultiStemPlayer dialog
+    if (!mounted || result == null || result['stems'] == null) {
+      print('Cannot show stem player - mounted: $mounted, result: ${result?.toString()}, stems: ${result?['stems']}');
+      return;
+    }
+
+    await _showStemPlayer(result);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('MidiStems'),
+        centerTitle: true,
+      ),
+      body: Center(
+        child: Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Text(
+                'Separate Audio into Stems',
+                style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              const SizedBox(height: 10),
+              const Text(
+                'Supported formats: WAV, MP3, FLAC, OGG',
+                style: TextStyle(
+                  fontSize: 14,
+                  color: Colors.grey,
+                ),
+              ),
+              const SizedBox(height: 30),
+              ElevatedButton.icon(
+                icon: const Icon(Icons.audio_file),
+                label: const Text('Select Audio File'),
+                onPressed: _selectFile,
+                style: ElevatedButton.styleFrom(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 30,
+                    vertical: 15,
+                  ),
+                ),
+              ),
+              const SizedBox(height: 20),
+              ElevatedButton.icon(
+                icon: const Icon(Icons.splitscreen),
+                label: const Text('Separate Stems'),
+                onPressed: _selectedFilePath == null ? null : _processStemSeparation,
+                style: ElevatedButton.styleFrom(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 30,
+                    vertical: 15,
+                  ),
+                ),
+              ),
+              const SizedBox(height: 30),
+              if (_statusMessage.isNotEmpty)
+                Container(
+                  margin: const EdgeInsets.only(top: 20),
+                  padding: const EdgeInsets.all(16.0),
+                  decoration: BoxDecoration(
+                    color: Theme.of(context).colorScheme.surfaceVariant,
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  child: Text(
+                    _statusMessage,
+                    textAlign: TextAlign.center,
+                    style: Theme.of(context).textTheme.bodyLarge,
+                  ),
+                ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+// File: ui\widgets\lol_loading_dialog.dart
+----------------------------------------
+import 'dart:async';
+import 'package:flutter/material.dart';
+import 'package:flutter/gestures.dart';
+import 'package:url_launcher/url_launcher.dart';
+import '../../data/lol_taglines.dart';
+
+class LolLoadingDialog extends StatefulWidget {
+  final String title;
+  final Duration messageInterval;
+  final List<String> messages;
+  final String? errorMessage;
+  final VoidCallback? onClose;
+
+  const LolLoadingDialog({
+    Key? key,
+    required this.title,
+    required this.messages,
+    this.messageInterval = const Duration(seconds: 3),
+    this.errorMessage,
+    this.onClose,
+  }) : super(key: key);
+
+  @override
+  _LolLoadingDialogState createState() => _LolLoadingDialogState();
+}
+
+class _LolLoadingDialogState extends State<LolLoadingDialog> {
+  late Timer _timer;
+  int _currentMessageIndex = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    // Cycle through the messages periodically
+    _timer = Timer.periodic(widget.messageInterval, (timer) {
+      setState(() {
+        _currentMessageIndex = (_currentMessageIndex + 1) % widget.messages.length;
+      });
+    });
+  }
+
+  @override
+  void dispose() {
+    _timer.cancel();
+    super.dispose();
+  }
+
+  Future<void> _launchUrl(String domain) async {
+    final url = Uri.parse('https://$domain');
+    if (!await launchUrl(url, mode: LaunchMode.externalApplication)) {
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Could not launch $domain')),
+        );
+      }
+    }
+  }
+
+  Widget _buildMessage(String message, ThemeData theme) {
+    if (message.contains('=>')) {
+      final domain = getDomain(message);
+      final text = getMessage(message);
+      
+      return RichText(
+        textAlign: TextAlign.center,
+        text: TextSpan(
+          children: [
+            TextSpan(
+              text: domain,
+              style: theme.textTheme.titleMedium?.copyWith(
+                color: Colors.lightBlueAccent,
+                decoration: TextDecoration.underline,
+              ),
+              recognizer: TapGestureRecognizer()
+                ..onTap = () => _launchUrl(domain),
+            ),
+            TextSpan(
+              text: ' => $text',
+              style: theme.textTheme.titleMedium?.copyWith(
+                color: Colors.white70,
+                fontStyle: FontStyle.italic,
+              ),
+            ),
+          ],
+        ),
+      );
+    }
+
+    return Text(
+      message,
+      textAlign: TextAlign.center,
+      style: theme.textTheme.titleMedium?.copyWith(
+        color: Colors.white70,
+        fontStyle: FontStyle.italic,
+      ),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final hasError = widget.errorMessage != null;
+
+    return Dialog(
+      elevation: 10,
+      backgroundColor: Colors.black87,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+      child: Padding(
+        padding: const EdgeInsets.all(24.0),
+        child: IntrinsicHeight(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text(
+                widget.title,
+                textAlign: TextAlign.center,
+                style: theme.textTheme.titleLarge?.copyWith(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
+                ),
+              ),
+              const SizedBox(height: 16),
+              if (!hasError) ...[
+                // Custom progress indicator
+                const _LolProgressIndicator(),
+                const SizedBox(height: 16),
+                // The rotating message with clickable domain
+                _buildMessage(widget.messages[_currentMessageIndex], theme),
+              ] else ...[
+                const Icon(
+                  Icons.error_outline,
+                  color: Colors.redAccent,
+                  size: 48,
+                ),
+                const SizedBox(height: 16),
+                Text(
+                  widget.errorMessage!,
+                  textAlign: TextAlign.center,
+                  style: theme.textTheme.titleMedium?.copyWith(
+                    color: Colors.redAccent,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+                const SizedBox(height: 16),
+                TextButton(
+                  onPressed: widget.onClose ?? () => Navigator.of(context).pop(),
+                  child: Text(
+                    'Close',
+                    style: theme.textTheme.bodyMedium?.copyWith(
+                      color: Colors.redAccent,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+              ],
+              if (!hasError) ...[
+                const SizedBox(height: 16),
+                Text(
+                  'A proud product of the lol multiverse!',
+                  textAlign: TextAlign.center,
+                  style: theme.textTheme.bodySmall?.copyWith(color: Colors.white54),
+                ),
+                TextButton(
+                  onPressed: () => _launchUrl('loltiverse.com/lol'),
+                  child: Text(
+                    'Visit loltiverse.com/lol',
+                    style: theme.textTheme.bodyMedium?.copyWith(
+                      color: Colors.lightBlueAccent,
+                      decoration: TextDecoration.underline,
+                    ),
+                  ),
+                ),
+              ],
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+/// A custom progress indicator that stands out visually.
+class _LolProgressIndicator extends StatelessWidget {
+  const _LolProgressIndicator();
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: 50,
+      width: 50,
+      child: Stack(
+        alignment: Alignment.center,
+        children: [
+          CircularProgressIndicator(
+            strokeWidth: 6,
+            valueColor: AlwaysStoppedAnimation<Color>(
+              Colors.pinkAccent,
+            ),
+            backgroundColor: Colors.white24,
+          ),
+          const Icon(
+            Icons.tag_faces,
+            color: Colors.pinkAccent,
+            size: 24,
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+// File: ui\widgets\multi_stem_player.dart
+----------------------------------------
+import 'package:flutter/material.dart';
+import 'package:just_audio/just_audio.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'dart:async';
+import 'dart:io';
+import '../../core/midi_engine/midi_engine.dart';
+import 'stem_midi_controls.dart';
+
+class MultiStemPlayer extends StatefulWidget {
+  final List<Map<String, String>> stemPaths;
+  final MidiEngine midiEngine;
+
+  const MultiStemPlayer({
+    Key? key,
+    required this.stemPaths,
+    required this.midiEngine,
+  }) : super(key: key);
+
+  @override
+  State<MultiStemPlayer> createState() => _MultiStemPlayerState();
+}
+
+class _MultiStemPlayerState extends State<MultiStemPlayer> {
+  final List<AudioPlayer> _players = [];
+  StreamSubscription<Duration>? _positionSubscription;
+  String? _error;
+  bool _isInitialized = false;
+  String? _currentlyLoadingStem;
+
+  AudioPlayer? get masterPlayer => _players.isNotEmpty ? _players[0] : null;
+  Duration _currentPosition = Duration.zero;
+
+  @override
+  void initState() {
+    super.initState();
+    _initializePlayers();
+  }
+
+  Future<void> _initializePlayers() async {
+    try {
+      print('Starting player initialization');
+      print('Number of stems to load: ${widget.stemPaths.length}');
+
+      for (var i = 0; i < widget.stemPaths.length; i++) {
+        final stem = widget.stemPaths[i];
+        setState(() {
+          _currentlyLoadingStem = stem['name'];
+        });
+        
+        try {
+          print('Initializing stem ${i + 1}/${widget.stemPaths.length}: ${stem['name']}');
+          await _initializePlayer(stem).timeout(
+            const Duration(seconds: 10),
+            onTimeout: () {
+              throw TimeoutException('Audio initialization timed out');
+            },
+          );
+          
+          if (i < widget.stemPaths.length - 1) {
+            print('Adding delay before next stem');
+            await Future.delayed(const Duration(milliseconds: 300));
+          }
+        } catch (e) {
+          print('Error initializing player: $e');
+          rethrow;
+        }
+      }
+
+      print('All players loaded successfully');
+
+      if (masterPlayer != null) {
+        print('Setting up master player position subscription');
+        _positionSubscription = masterPlayer!.positionStream.listen((Duration newPos) {
+          if (mounted) {
+            setState(() {
+              _currentPosition = newPos;
+              for (int i = 1; i < _players.length; i++) {
+                final isPlaying = _players[i].playing;
+                if (isPlaying) {
+                  _players[i].seek(_currentPosition);
+                }
+              }
+            });
+          }
+        });
+      }
+
+      if (mounted) {
+        setState(() {
+          _isInitialized = true;
+          _currentlyLoadingStem = null;
+          print('Player initialization complete');
+        });
+      } else {
+        print('Widget no longer mounted after initialization');
+      }
+    } catch (e) {
+      print('Error initializing audio players: $e');
+      if (mounted) {
+        setState(() {
+          _error = 'Error loading audio files: $e';
+          _currentlyLoadingStem = null;
+        });
+      }
+    }
+  }
+
+  Future<void> _initializePlayer(Map<String, String> stem) async {
+    final player = AudioPlayer();
+    try {
+      final filePath = stem['path']!.replaceAll(r'\', '/');
+      
+      final file = File(filePath);
+      if (!await file.exists()) {
+        throw Exception('Audio file not found: $filePath');
+      }
+
+      final uri = Uri.file(filePath, windows: Platform.isWindows);
+      print('Creating audio source for: ${uri.toFilePath()}');
+      
+      final completer = Completer<void>();
+      
+      player.playbackEventStream.listen(
+        (event) {},
+        onError: (Object e, StackTrace st) {
+          if (!completer.isCompleted) {
+            completer.completeError(e);
+          }
+        },
+      );
+      
+      Timer(const Duration(seconds: 10), () {
+        if (!completer.isCompleted) {
+          completer.completeError(TimeoutException('Audio initialization timed out'));
+        }
+      });
+
+      final audioSource = AudioSource.uri(uri);
+      print('Setting audio source with initial position');
+      
+      await player.setAudioSource(
+        audioSource,
+        initialPosition: Duration.zero,
+      ).then((_) {
+        if (!completer.isCompleted) {
+          completer.complete();
+        }
+      }).catchError((e) {
+        if (!completer.isCompleted) {
+          completer.completeError(e);
+        }
+      });
+
+      await completer.future;
+      
+      final duration = await player.duration;
+      if (duration == null) {
+        throw Exception('Failed to load audio file - invalid format or corrupted file');
+      }
+      
+      print('Successfully loaded audio file: ${uri.toFilePath()}');
+      print('Duration: $duration');
+      
+      if (Platform.isWindows && !player.playing) {
+        await player.seek(Duration.zero);
+      }
+      
+      _players.add(player);
+    } catch (e) {
+      await player.dispose();
+      print('Error loading individual audio file: $e');
+      throw Exception('Failed to load audio file: ${stem['path']} - $e');
+    }
+  }
+
+  @override
+  void dispose() {
+    _positionSubscription?.cancel();
+    for (var player in _players) {
+      player.dispose();
+    }
+    super.dispose();
+  }
+
+  Future<void> _togglePlay(int index) async {
+    if (!_isInitialized) return;
+
+    try {
+      final player = _players[index];
+      final isPlaying = player.playing;
+
+      if (!isPlaying) {
+        if (masterPlayer != null && masterPlayer!.playing) {
+          await player.seek(_currentPosition);
+        }
+        await player.play();
+      } else {
+        await player.pause();
+      }
+      setState(() {});
+    } catch (e) {
+      print('Error toggling playback: $e');
+      setState(() {
+        _error = 'Error playing audio: $e';
+      });
+    }
+  }
+
+  Future<void> _openFileLocation(String filePath) async {
+    try {
+      if (Platform.isWindows) {
+        await Process.run('explorer', ['/select,', filePath]);
+      } else {
+        final uri = Uri.file(filePath);
+        if (!await launchUrl(uri)) {
+          debugPrint("Could not open file location: $filePath");
+        }
+      }
+    } catch (e) {
+      print('Error opening file location: $e');
+      setState(() {
+        _error = 'Error opening file location: $e';
+      });
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    if (_error != null) {
+      return Center(
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              const Icon(Icons.error_outline, color: Colors.red, size: 48),
+              const SizedBox(height: 16),
+              Text(
+                _error!,
+                textAlign: TextAlign.center,
+                style: const TextStyle(color: Colors.red),
+              ),
+              const SizedBox(height: 24),
+              ElevatedButton.icon(
+                onPressed: () {
+                  setState(() {
+                    _error = null;
+                    _isInitialized = false;
+                    _players.clear();
+                  });
+                  _initializePlayers();
+                },
+                icon: const Icon(Icons.refresh),
+                label: const Text('Retry Loading'),
+              ),
+            ],
+          ),
+        ),
+      );
+    }
+
+    if (!_isInitialized) {
+      return Center(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            const CircularProgressIndicator(),
+            const SizedBox(height: 16),
+            Text(
+              'Loading audio files...',
+              style: Theme.of(context).textTheme.titleMedium,
+            ),
+            const SizedBox(height: 16),
+            ...widget.stemPaths.asMap().entries.map((entry) {
+              final index = entry.key;
+              final stem = entry.value;
+              final isLoaded = index < _players.length;
+              final isLoading = index == _players.length;
+              
+              return Padding(
+                padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 16),
+                child: Row(
+                  children: [
+                    SizedBox(
+                      width: 24,
+                      height: 24,
+                      child: isLoaded
+                          ? const Icon(Icons.check_circle, color: Colors.green)
+                          : isLoading
+                              ? const SizedBox(
+                                  width: 20,
+                                  height: 20,
+                                  child: CircularProgressIndicator(strokeWidth: 2),
+                                )
+                              : const Icon(Icons.pending, color: Colors.grey),
+                    ),
+                    const SizedBox(width: 12),
+                    Text(
+                      '${stem['name']} stem',
+                      style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                        color: isLoaded
+                            ? null
+                            : Theme.of(context).textTheme.bodySmall?.color,
+                      ),
+                    ),
+                  ],
+                ),
+              );
+            }).toList(),
+          ],
+        ),
+      );
+    }
+
+    if (widget.stemPaths.isEmpty) {
+      return const Center(child: Text('No stems to play.'));
+    }
+    
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        return SingleChildScrollView(
+          child: ConstrainedBox(
+            constraints: BoxConstraints(
+              minHeight: constraints.maxHeight,
+              maxWidth: constraints.maxWidth,
+            ),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: List.generate(widget.stemPaths.length, (index) {
+                final stem = widget.stemPaths[index];
+                final isPlaying = _players[index].playing;
+                final name = stem['name']!;
+                final path = stem['path']!;
+                
+                return Card(
+                  margin: const EdgeInsets.symmetric(vertical: 6, horizontal: 16),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      ListTile(
+                        title: Text('$name stem'),
+                        subtitle: Text(File(path).path),
+                        trailing: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            IconButton(
+                              icon: Icon(isPlaying ? Icons.pause : Icons.play_arrow),
+                              onPressed: () => _togglePlay(index),
+                              tooltip: 'Play/Pause Audio',
+                            ),
+                            IconButton(
+                              icon: const Icon(Icons.folder_open),
+                              onPressed: () => _openFileLocation(path),
+                              tooltip: 'Open File Location',
+                            ),
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: StemMidiControls(
+                          stemPath: path,
+                          stemName: name,
+                          midiEngine: widget.midiEngine,
+                        ),
+                      ),
+                    ],
+                  ),
+                );
+              }),
+            ),
+          ),
+        );
+      },
+    );
+  }
+}
+
+// File: ui\widgets\piano_roll_view.dart
+----------------------------------------
+import 'package:flutter/material.dart';
+import '../../core/midi_engine/models.dart';
+
+/// Widget for displaying MIDI notes in a piano roll format
+class PianoRollView extends StatelessWidget {
+  final MidiTrack track;
+  final bool isPlaying;
+  final double currentTime;
+  final double height;
+  final double pixelsPerSecond;
+  final double noteHeight;
+
+  const PianoRollView({
+    Key? key,
+    required this.track,
+    this.isPlaying = false,
+    this.currentTime = 0.0,
+    this.height = 300.0,
+    this.pixelsPerSecond = 100.0,
+    this.noteHeight = 8.0,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: height,
+      decoration: BoxDecoration(
+        color: Theme.of(context).colorScheme.surface,
+        border: Border.all(
+          color: Theme.of(context).colorScheme.outline,
+        ),
+        borderRadius: BorderRadius.circular(8),
+      ),
+      child: Stack(
+        children: [
+          // Piano keys background
+          _buildPianoKeys(context),
+          
+          // Grid lines
+          _buildGridLines(context),
+          
+          // MIDI notes
+          _buildNotes(context),
+          
+          // Playhead
+          if (isPlaying) _buildPlayhead(context),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildPianoKeys(BuildContext context) {
+    return Row(
+      children: [
+        Container(
+          width: 40,
+          decoration: BoxDecoration(
+            color: Theme.of(context).colorScheme.surfaceVariant,
+            border: Border(
+              right: BorderSide(
+                color: Theme.of(context).colorScheme.outline,
+              ),
+            ),
+          ),
+          child: Column(
+            children: List.generate(128, (index) {
+              final isBlackKey = [1, 3, 6, 8, 10].contains(index % 12);
+              return Container(
+                height: noteHeight,
+                color: isBlackKey
+                    ? Colors.black87
+                    : Colors.white,
+                child: index % 12 == 0
+                    ? Center(
+                        child: Text(
+                          'C${index ~/ 12 - 1}',
+                          style: TextStyle(
+                            fontSize: 8,
+                            color: isBlackKey ? Colors.white : Colors.black,
+                          ),
+                        ),
+                      )
+                    : null,
+              );
+            }),
+          ),
+        ),
+        Expanded(
+          child: Container(
+            color: Theme.of(context).colorScheme.surface,
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildGridLines(BuildContext context) {
+    return CustomPaint(
+      painter: GridPainter(
+        color: Theme.of(context).colorScheme.outlineVariant.withOpacity(0.3),
+        pixelsPerSecond: pixelsPerSecond,
+        noteHeight: noteHeight,
+      ),
+    );
+  }
+
+  Widget _buildNotes(BuildContext context) {
+    return Positioned.fill(
+      left: 40, // Piano keys width
+      child: CustomPaint(
+        painter: NotesPainter(
+          notes: track.notes,
+          pixelsPerSecond: pixelsPerSecond,
+          noteHeight: noteHeight,
+          color: Theme.of(context).colorScheme.primary,
+        ),
+      ),
+    );
+  }
+
+  Widget _buildPlayhead(BuildContext context) {
+    return Positioned(
+      left: 40 + currentTime * pixelsPerSecond,
+      top: 0,
+      bottom: 0,
+      child: Container(
+        width: 2,
+        color: Theme.of(context).colorScheme.primary,
+      ),
+    );
+  }
+}
+
+/// Painter for grid lines
+class GridPainter extends CustomPainter {
+  final Color color;
+  final double pixelsPerSecond;
+  final double noteHeight;
+
+  GridPainter({
+    required this.color,
+    required this.pixelsPerSecond,
+    required this.noteHeight,
+  });
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    final paint = Paint()
+      ..color = color
+      ..strokeWidth = 1;
+
+    // Vertical lines (time divisions)
+    for (var x = 0.0; x < size.width; x += pixelsPerSecond / 4) {
+      canvas.drawLine(
+        Offset(x, 0),
+        Offset(x, size.height),
+        paint,
+      );
+    }
+
+    // Horizontal lines (note divisions)
+    for (var y = 0.0; y < size.height; y += noteHeight) {
+      canvas.drawLine(
+        Offset(0, y),
+        Offset(size.width, y),
+        paint,
+      );
+    }
+  }
+
+  @override
+  bool shouldRepaint(GridPainter oldDelegate) =>
+      color != oldDelegate.color ||
+      pixelsPerSecond != oldDelegate.pixelsPerSecond ||
+      noteHeight != oldDelegate.noteHeight;
+}
+
+/// Painter for MIDI notes
+class NotesPainter extends CustomPainter {
+  final List<MidiNote> notes;
+  final double pixelsPerSecond;
+  final double noteHeight;
+  final Color color;
+
+  NotesPainter({
+    required this.notes,
+    required this.pixelsPerSecond,
+    required this.noteHeight,
+    required this.color,
+  });
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    final paint = Paint()
+      ..color = color
+      ..style = PaintingStyle.fill;
+
+    for (final note in notes) {
+      final rect = Rect.fromLTWH(
+        note.startTime * pixelsPerSecond,
+        (127 - note.pitch) * noteHeight,
+        note.duration * pixelsPerSecond,
+        noteHeight,
+      );
+
+      canvas.drawRRect(
+        RRect.fromRectAndRadius(rect, const Radius.circular(2)),
+        paint,
+      );
+    }
+  }
+
+  @override
+  bool shouldRepaint(NotesPainter oldDelegate) =>
+      notes != oldDelegate.notes ||
+      pixelsPerSecond != oldDelegate.pixelsPerSecond ||
+      noteHeight != oldDelegate.noteHeight ||
+      color != oldDelegate.color;
+}
+
+// File: ui\widgets\stem_midi_controls.dart
+----------------------------------------
+import 'dart:async';
+import 'package:flutter/material.dart';
+import '../../core/midi_engine/midi_engine.dart';
+import '../../core/midi_engine/models.dart';
+import '../../core/midi_engine/progress_reporter.dart';
+import 'piano_roll_view.dart';
+
+class StemMidiControls extends StatefulWidget {
+  final String stemPath;
+  final String stemName;
+  final MidiEngine midiEngine;
+
+  const StemMidiControls({
+    Key? key,
+    required this.stemPath,
+    required this.stemName,
+    required this.midiEngine,
+  }) : super(key: key);
+
+  @override
+  State<StemMidiControls> createState() => _StemMidiControlsState();
+}
+
+class _StemMidiControlsState extends State<StemMidiControls> {
+  MidiProject? _midiProject;
+  bool _isGenerating = false;
+  bool _isPlaying = false;
+  String? _error;
+  double _currentTime = 0.0;
+  StreamSubscription? _progressSubscription;
+
+  @override
+  void initState() {
+    super.initState();
+    _subscribeToProgress();
+  }
+
+  @override
+  void dispose() {
+    _progressSubscription?.cancel();
+    super.dispose();
+  }
+
+  void _subscribeToProgress() {
+    _progressSubscription = widget.midiEngine.progress.listen(
+      (update) {
+        setState(() {
+          if (update.error?.isNotEmpty == true) {
+            _error = update.error;
+            _isGenerating = false;
+          } else if (update.isComplete == true) {
+            _isGenerating = false;
+          }
+        });
+      },
+    );
+  }
+
+  Future<void> _generateMidi() async {
+    if (_isGenerating) return;
+
+    setState(() {
+      _isGenerating = true;
+      _error = null;
+    });
+
+    try {
+      final project = await widget.midiEngine.extractFromAudio(widget.stemPath);
+      if (mounted) {
+        setState(() {
+          _midiProject = project;
+          _isGenerating = false;
+        });
+      }
+    } catch (e) {
+      if (mounted) {
+        setState(() {
+          _error = 'Failed to generate MIDI: $e';
+          _isGenerating = false;
+        });
+      }
+    }
+  }
+
+  Future<void> _togglePlayback() async {
+    if (_midiProject == null || _midiProject!.tracks.isEmpty) return;
+
+    try {
+      if (_isPlaying) {
+        await widget.midiEngine.stopPlayback();
+        setState(() {
+          _isPlaying = false;
+        });
+      } else {
+        setState(() {
+          _isPlaying = true;
+          _currentTime = 0.0;
+        });
+        await widget.midiEngine.playTrack(_midiProject!.tracks.first.id);
+        setState(() {
+          _isPlaying = false;
+        });
+      }
+    } catch (e) {
+      setState(() {
+        _error = 'Playback error: $e';
+        _isPlaying = false;
+      });
+    }
+  }
+
+  Future<void> _exportMidi() async {
+    if (_midiProject == null) return;
+
+    try {
+      final outputPath = '${widget.stemPath}_generated.mid';
+      await widget.midiEngine.exportToFile(outputPath);
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text('MIDI exported to: $outputPath'),
+          ),
+        );
+      }
+    } catch (e) {
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text('Failed to export MIDI: $e'),
+            backgroundColor: Colors.red,
+          ),
+        );
+      }
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        // MIDI Generation Button
+        if (_midiProject == null)
+          ElevatedButton.icon(
+            onPressed: _isGenerating ? null : _generateMidi,
+            icon: _isGenerating
+                ? const SizedBox(
+                    width: 20,
+                    height: 20,
+                    child: CircularProgressIndicator(strokeWidth: 2),
+                  )
+                : const Icon(Icons.music_note),
+            label: Text(_isGenerating ? 'Generating MIDI...' : 'Generate MIDI'),
+          ),
+
+        // Error Display
+        if (_error != null)
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text(
+              _error!,
+              style: const TextStyle(color: Colors.red),
+              textAlign: TextAlign.center,
+            ),
+          ),
+
+        // MIDI Controls and Piano Roll
+        if (_midiProject != null && _midiProject!.tracks.isNotEmpty) ...[
+          const Divider(),
+          // Playback Controls
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              IconButton(
+                icon: Icon(_isPlaying ? Icons.pause : Icons.play_arrow),
+                onPressed: _togglePlayback,
+                tooltip: _isPlaying ? 'Pause' : 'Play',
+              ),
+              IconButton(
+                icon: const Icon(Icons.stop),
+                onPressed: _isPlaying ? () => widget.midiEngine.stopPlayback() : null,
+                tooltip: 'Stop',
+              ),
+              IconButton(
+                icon: const Icon(Icons.download),
+                onPressed: _exportMidi,
+                tooltip: 'Export MIDI',
+              ),
+            ],
+          ),
+          const SizedBox(height: 8),
+          // Piano Roll View
+          PianoRollView(
+            track: _midiProject!.tracks.first,
+            isPlaying: _isPlaying,
+            currentTime: _currentTime,
+            height: 200,
+          ),
+        ],
+      ],
+    );
+  }
+}
+
+
+
+---
+## Summary
+
+Total included files: 16
+Total excluded files: 2
+Total included content size: 79561 bytes
+
+# Introduction
+
+This file was automatically generated by the ProjectContextGenerator script.
+It scans the current codebase, excludes certain files/directories (e.g. binary files, large files, or those explicitly ignored),
+and includes the content of text-based files that fit within a specified size limit.
+
+Below is a tree view of all files (showing included or excluded status), followed by the content of included files.
+Finally, a summary provides the total number of files included/excluded and the total size of included content.
+
+python/
+   create_test_audio.py [Included]
+   midi_extractor.py [Included]
+   processor.py [Included]
+   requirements.txt [Included]
+   script4.py [Excluded: ignored by name/dir]
+
+---
+## Included Files Content
+
+// File: basic_pitch_fork\.dockerignore
+----------------------------------------
+.git
+.tox
+**/.mypy_cache
+**/.pytest_cache
+**/__pycache__
+**/*.wav
+**/saved_models
+**/basic-pitch/saved_models
+
+
+// File: basic_pitch_fork\.github\ISSUE_TEMPLATE\bug_report.md
+----------------------------------------
+---
+name: Bug report
+about: Create a report to help us improve
+title: ''
+labels: ''
+assignees: ''
+
+---
+
+**Describe the bug**
+A clear and concise description of what the bug is.
+
+**To Reproduce**
+Steps to reproduce the behavior:
+1. Go to '...'
+2. Click on '....'
+3. Scroll down to '....'
+4. See error
+
+**Expected behavior**
+A clear and concise description of what you expected to happen.
+
+**Screenshots**
+If applicable, add screenshots to help explain your problem.
+
+**Desktop (please complete the following information):**
+ - OS: [e.g. iOS]
+ - Browser [e.g. chrome, safari]
+ - Version [e.g. 22]
+
+**Smartphone (please complete the following information):**
+ - Device: [e.g. iPhone6]
+ - OS: [e.g. iOS8.1]
+ - Browser [e.g. stock browser, safari]
+ - Version [e.g. 22]
+
+**Additional context**
+Add any other context about the problem here.
+
+
+// File: basic_pitch_fork\.github\workflows\publish.yml
+----------------------------------------
+name: publish
+on:
+  push:
+    tags:
+     - 'v*'
+
+jobs:
+  publish-tag:
+    name: Build and publish Python distributions to PyPI
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+
+      - name: Build source and wheel distributions
+        run: |
+          python -m pip install --upgrade build twine
+          python -m build
+          twine check dist/*
+      - name: Publish distribution to PyPI
+        uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          user: __token__
+          password: ${{ secrets.PYPI_API_TOKEN }}
+
+
+// File: basic_pitch_fork\.github\workflows\tox.yml
+----------------------------------------
+name: tox
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    name: test ${{ matrix.py }} - ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os:
+          - ubuntu-latest
+          - windows-latest
+        py:
+          - "3.11"
+          - "3.10"
+          - "3.9"
+          - "3.8"
+        include:
+          - os: macos-latest-xlarge
+            py: "3.10.11"
+          - os: macos-latest-xlarge
+            py: "3.11.8"
+    steps:
+      - name: Setup python for test ${{ matrix.py }}
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.py }}
+      - uses: actions/checkout@v3
+      - name: Install soundlibs Ubuntu
+        run: sudo apt-get update && sudo apt-get install --no-install-recommends -y --fix-missing pkg-config libsndfile1 sox ffmpeg
+        if: matrix.os == 'ubuntu-latest'
+      - name: Install soundlibs MacOs
+        run: brew install libsndfile llvm libomp sox ffmpeg
+        if: matrix.os == 'macos-latest-xlarge'
+      - name: Install soundlibs Windows
+        run: choco install libsndfile sox.portable flac ffmpeg
+        if: matrix.os == 'windows-latest'
+      - name: Upgrade pip
+        run: python -m pip install -U pip
+      - name: Install tox
+        run: python -m pip install tox
+      # We will only check this on the minimum python version
+      - name: Check formatting, lint and mypy
+        run: tox -c tox.ini -e check-formatting,lint,mypy
+        if: matrix.py == '3.10'
+      - name: Run test suite
+        run: tox -c tox.ini -e py,manifest,full
+      - name: Check that basic-pitch can be run as a commandline
+        run: pip3 install -e . && basic-pitch --help
+
+
+// File: basic_pitch_fork\.gitignore
+----------------------------------------
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+#  Usually these files are written by a python script from a template
+#  before PyInstaller builds the exe, so as to inject date/other infos into it.
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff:
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+# Scrapy stuff:
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+.pybuilder/
+target/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+#   For a library or package, you might want to ignore these files since the code is
+#   intended to run in multiple environments; otherwise, check them in:
+# .python-version
+
+# pipenv
+#   According to pypa/pipenv#598, it is recommended to include Pipfile.lock in version control.
+#   However, in case of collaboration, if having platform-specific dependencies or dependencies
+#   having no cross-platform support, pipenv may install dependencies that don't work, or not
+#   install all needed dependencies.
+#Pipfile.lock
+
+# PEP 582; used by e.g. github.com/David-OConnor/pyflow
+__pypackages__/
+
+# Celery stuff
+celerybeat-schedule
+celerybeat.pid
+
+# SageMath parsed files
+*.sage.py
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# pytype static type analyzer
+.pytype/
+
+# Cython debug symbols
+cython_debug/
+
+# For macbooks...
+**/.DS_Store
+
+# pyenv
+.python-version
+
+# junit
+junit.xml
+
+# intellij
+.idea/
+
+
+// File: basic_pitch_fork\basic_pitch\__init__.py
+----------------------------------------
+#!/usr/bin/env python
+# encoding: utf-8
+#
+# Copyright 2022 Spotify AB
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+import enum
+import logging
+import pathlib
+
+
+try:
+    import coremltools
+
+    CT_PRESENT = True
+except ImportError:
+    CT_PRESENT = False
+    logging.warning(
+        "Coremltools is not installed. "
+        "If you plan to use a CoreML Saved Model, "
+        "reinstall basic-pitch with `pip install 'basic-pitch[coreml]'`"
+    )
+
+try:
+    import tflite_runtime.interpreter
+
+    TFLITE_PRESENT = True
+except ImportError:
+    TFLITE_PRESENT = False
+    logging.warning(
+        "tflite-runtime is not installed. "
+        "If you plan to use a TFLite Model, "
+        "reinstall basic-pitch with `pip install 'basic-pitch tflite-runtime'` or "
+        "`pip install 'basic-pitch[tf]'"
+    )
+
+try:
+    import onnxruntime
+
+    ONNX_PRESENT = True
+except ImportError:
+    ONNX_PRESENT = False
+    logging.warning(
+        "onnxruntime is not installed. "
+        "If you plan to use an ONNX Model, "
+        "reinstall basic-pitch with `pip install 'basic-pitch[onnx]'`"
+    )
+
+
+try:
+    import tensorflow
+
+    TF_PRESENT = True
+except ImportError:
+    TF_PRESENT = False
+    logging.warning(
+        "Tensorflow is not installed. "
+        "If you plan to use a TF Saved Model, "
+        "reinstall basic-pitch with `pip install 'basic-pitch[tf]'`"
+    )
+
+
+class FilenameSuffix(enum.Enum):
+    tf = "nmp"
+    coreml = "nmp.mlpackage"
+    tflite = "nmp.tflite"
+    onnx = "nmp.onnx"
+
+
+if TFLITE_PRESENT:
+    _default_model_type = FilenameSuffix.tflite
+elif CT_PRESENT:
+    _default_model_type = FilenameSuffix.coreml
+elif ONNX_PRESENT:
+    _default_model_type = FilenameSuffix.onnx
+elif TF_PRESENT:
+    _default_model_type = FilenameSuffix.tf
+
+
+def build_icassp_2022_model_path(suffix: FilenameSuffix) -> pathlib.Path:
+    return pathlib.Path(__file__).parent / "saved_models/icassp_2022" / suffix.value
+
+
+ICASSP_2022_MODEL_PATH = build_icassp_2022_model_path(_default_model_type)
+
+
+// File: basic_pitch_fork\basic_pitch\callbacks.py
+----------------------------------------
+#!/usr/bin/env python
+# encoding: utf-8
+#
+# Copyright 2024 Spotify AB
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+import os
+
+from typing import Any, Dict
+
+import tensorflow as tf
+
+from basic_pitch import visualize
+
+
+class VisualizeCallback(tf.keras.callbacks.Callback):
+    # TODO RACHEL make this WAY faster
+    """
+    Callback to run during training to create tensorboard visualizations per epoch.
+
+        Attributes:
+            train_ds: training dataset to use for prediction / visualization / sonification / summarization
+            valid_ds: validation dataset to use for "" ""
+            tensorboard_dir: directory to output "" ""
+            sonify: whether to include sonifications in tensorboard
+            contours: whether to plot note contours in tensorboard
+    """
+
+    def __init__(
+        self,
+        train_ds: tf.data.Dataset,
+        validation_ds: tf.data.Dataset,
+        tensorboard_dir: str,
+        sonify: bool,
+        contours: bool,
+    ):
+        super().__init__()
+        self.train_iter = iter(train_ds)
+        self.validation_iter = iter(validation_ds)
+        self.tensorboard_dir = os.path.join(tensorboard_dir, "tensorboard_logs")
+        self.file_writer = tf.summary.create_file_writer(tensorboard_dir)
+        self.sonify = sonify
+        self.contours = contours
+
+    def on_epoch_end(self, epoch: int, logs: Dict[Any, Any]) -> None:
+        # the first two outputs of generator needs to be the input and the targets
+        train_inputs, train_targets = next(self.train_iter)[:2]
+        validation_inputs, validation_targets = next(self.validation_iter)[:2]
+        for stage, inputs, targets, loss in [
+            ("train", train_inputs, train_targets, logs["loss"]),
+            ("validation", validation_inputs, validation_targets, logs["val_loss"]),
+        ]:
+            outputs = self.model.predict(inputs)
+            visualize.visualize_transcription(
+                self.file_writer,
+                stage,
+                inputs,
+                targets,
+                outputs,
+                loss,
+                epoch,
+                sonify=self.sonify,
+                contours=self.contours,
+            )
+
+
+// File: basic_pitch_fork\basic_pitch\commandline_printing.py
+----------------------------------------
+#!/usr/bin/env python
+# encoding: utf-8
+#
+# Copyright 2022 Spotify AB
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+import os
+import pathlib
+import threading
+from contextlib import contextmanager
+from typing import Iterator, Union
+
+TF_LOG_LEVEL_KEY = "TF_CPP_MIN_LOG_LEVEL"
+TF_LOG_LEVEL_NO_WARNINGS_VALUE = "3"
+s_print_lock = threading.Lock()
+OUTPUT_EMOJIS = {
+    "MIDI": "💅",
+    "MODEL_OUTPUT_NPZ": "💁‍♀️",
+    "MIDI_SONIFICATION": "🎧",
+    "NOTE_EVENTS": "🌸",
+}
+
+
+def generating_file_message(output_type: str) -> None:
+    """Print a message that a file is being generated
+
+    Args:
+        output_type: string indicating which kind of file is being generated
+
+    """
+    print(f"\n\n  Creating {output_type.replace('_', ' ').lower()}...")
+
+
+def file_saved_confirmation(output_type: str, save_path: Union[pathlib.Path, str]) -> None:
+    """Print a confirmation that the file was saved succesfully
+
+    Args:
+        output_type: The kind of file that is being generated.
+        save_path: The path to output file.
+
+    """
+    print(f"  {OUTPUT_EMOJIS[output_type]} Saved to {save_path}")
+
+
+def failed_to_save(output_type: str, save_path: Union[pathlib.Path, str]) -> None:
+    """Print a failure to save message
+
+    Args:
+        output_type: The kind of file that is being generated.
+        save_path: The path to output file.
+
+    """
+    print(f"\n🚨 Failed to save {output_type.replace('_', ' ').lower()} to {save_path} \n")
+
+
+@contextmanager
+def no_tf_warnings() -> Iterator[None]:
+    """
+    Supress tensorflow warnings in this context
+    """
+    tf_logging_level = os.environ.get(TF_LOG_LEVEL_KEY, TF_LOG_LEVEL_NO_WARNINGS_VALUE)
+    os.environ[TF_LOG_LEVEL_KEY] = TF_LOG_LEVEL_NO_WARNINGS_VALUE
+    yield
+    os.environ[TF_LOG_LEVEL_KEY] = tf_logging_level
+
+
+// File: basic_pitch_fork\basic_pitch\constants.py
+----------------------------------------
+#!/usr/bin/env python
+# encoding: utf-8
+#
+# Copyright 2024 Spotify AB
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+import numpy as np
+
+from enum import Enum
+
+FFT_HOP = 256
+N_FFT = 8 * FFT_HOP
+
+NOTES_BINS_PER_SEMITONE = 1
+CONTOURS_BINS_PER_SEMITONE = 3
+# base frequency of the CENTRAL bin of the first semitone (i.e., the
+# second bin if annotations_bins_per_semitone is 3)
+ANNOTATIONS_BASE_FREQUENCY = 27.5  # lowest key on a piano
+ANNOTATIONS_N_SEMITONES = 88  # number of piano keys
+AUDIO_SAMPLE_RATE = 22050
+AUDIO_N_CHANNELS = 1
+N_FREQ_BINS_NOTES = ANNOTATIONS_N_SEMITONES * NOTES_BINS_PER_SEMITONE
+N_FREQ_BINS_CONTOURS = ANNOTATIONS_N_SEMITONES * CONTOURS_BINS_PER_SEMITONE
+
+AUDIO_WINDOW_LENGTH = 2  # duration in seconds of training examples - original 1
+
+ANNOTATIONS_FPS = AUDIO_SAMPLE_RATE // FFT_HOP
+ANNOTATION_HOP = 1.0 / ANNOTATIONS_FPS
+
+# ANNOT_N_TIME_FRAMES is the number of frames in the time-frequency representations we compute
+ANNOT_N_FRAMES = ANNOTATIONS_FPS * AUDIO_WINDOW_LENGTH
+
+# AUDIO_N_SAMPLES is the number of samples in the (clipped) audio that we use as input to the models
+AUDIO_N_SAMPLES = AUDIO_SAMPLE_RATE * AUDIO_WINDOW_LENGTH - FFT_HOP
+
+DATASET_SAMPLING_FREQUENCY = {
+    "MAESTRO": 5,
+    "GuitarSet": 2,
+    "MedleyDB-Pitch": 2,
+    "iKala": 2,
+    "slakh": 2,
+}
+
+
+def _freq_bins(bins_per_semitone: int, base_frequency: float, n_semitones: int) -> np.array:
+    d = 2.0 ** (1.0 / (12 * bins_per_semitone))
+    bin_freqs = base_frequency * d ** np.arange(bins_per_semitone * n_semitones)
+    return bin_freqs
+
+
+FREQ_BINS_NOTES = _freq_bins(NOTES_BINS_PER_SEMITONE, ANNOTATIONS_BASE_FREQUENCY, ANNOTATIONS_N_SEMITONES)
+FREQ_BINS_CONTOURS = _freq_bins(CONTOURS_BINS_PER_SEMITONE, ANNOTATIONS_BASE_FREQUENCY, ANNOTATIONS_N_SEMITONES)
+
+
+class Split(Enum):
+    train = "train"
+    validation = "validation"
+    test = "test"
+
+
+// File: basic_pitch_fork\basic_pitch\data\__init__.py
+----------------------------------------
+
+
+// File: basic_pitch_fork\basic_pitch\data\commandline.py
+----------------------------------------
+#!/usr/bin/env python
+# encoding: utf-8
+#
+# Cos.pathyright 2024 Spotify AB
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a cos.pathy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+import argparse
+import os
+
+from pathlib import Path
+from typing import Optional
+
+
+def add_default(parser: argparse.ArgumentParser, dataset_name: str = "") -> None:
+    default_source = str(Path.home() / "mir_datasets" / dataset_name)
+    default_destination = str(Path.home() / "data" / "basic_pitch" / dataset_name)
+    parser.add_argument(
+        "--source",
+        default=default_source,
+        type=str,
+        help=f"Source directory for mir data. Defaults to {default_source}",
+    )
+    parser.add_argument(
+        "--destination",
+        default=default_destination,
+        type=str,
+        help=f"Output directory to write results to. Defaults to {default_destination}",
+    )
+    parser.add_argument(
+        "--runner",
+        choices=["DataflowRunner", "DirectRunner", "PortableRunner"],
+        default="DirectRunner",
+        help="Whether to run the download and process locally or on GCP Dataflow",
+    )
+    parser.add_argument(
+        "--timestamped",
+        default=False,
+        action="store_true",
+        help="If passed, the dataset will be put into a timestamp directory instead of 'splits'",
+    )
+    parser.add_argument("--batch-size", default=5, type=int, help="Number of examples per tfrecord")
+    parser.add_argument(
+        "--sdk_container_image",
+        default="",
+        help="Container image to run dataset generation job with. \
+                        Required due to non-python dependencies.",
+    )
+    parser.add_argument("--job_endpoint", default="embed", help="")
+
+
+def resolve_destination(namespace: argparse.Namespace, time_created: int) -> str:
+    return os.path.join(namespace.destination, str(time_created) if namespace.timestamped else "splits")
+
+
+def add_split(
+    parser: argparse.ArgumentParser,
+    train_percent: float = 0.8,
+    validation_percent: float = 0.1,
+    split_seed: Optional[int] = None,
+) -> None:
+    parser.add_argument(
+        "--train-percent",
+        type=float,
+        default=train_percent,
+        help="Percentage of tracks to mark as train",
+    )
+    parser.add_argument(
+        "--validation-percent",
+        type=float,
+        default=validation_percent,
+        help="Percentage of tracks to mark as validation",
+    )
+    parser.add_argument(
+        "--split-seed",
+        type=int,
+        default=split_seed,
+        help="Seed for random number generator used in split generation",
+    )
+
+
+// File: basic_pitch_fork\basic_pitch\data\datasets\__init__.py
+----------------------------------------
+
+
+// File: basic_pitch_fork\basic_pitch\data\datasets\guitarset.py
+----------------------------------------
+#!/usr/bin/env python
+# encoding: utf-8
+#
+# Copyright 2024 Spotify AB
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+import argparse
+import logging
+import os
+import random
+import time
+
+from typing import Any, List, Dict, Tuple, Optional
+
+import apache_beam as beam
+import mirdata
+
+from basic_pitch.data import commandline, pipeline
+
+
+class GuitarSetInvalidTracks(beam.DoFn):
+    def process(self, element: Tuple[str, str], *args: Tuple[Any, Any], **kwargs: Dict[str, Any]) -> Any:
+        track_id, split = element
+        yield beam.pvalue.TaggedOutput(split, track_id)
+
+
+class GuitarSetToTfExample(beam.DoFn):
+    DOWNLOAD_ATTRIBUTES = ["audio_mic_path", "jams_path"]
+
+    def __init__(self, source: str, download: bool) -> None:
+        self.source = source
+        self.download = download
+
+    def setup(self) -> None:
+        import apache_beam as beam
+        import mirdata
+
+        self.guitarset_remote = mirdata.initialize("guitarset", data_home=self.source)
+        self.filesystem = beam.io.filesystems.FileSystems()  # TODO: replace with fsspec
+        if self.download:
+            self.guitarset_remote.download()
+
+    def process(self, element: List[str], *args: Tuple[Any, Any], **kwargs: Dict[str, Any]) -> List[Any]:
+        import tempfile
+
+        import mirdata
+        import numpy as np
+        import sox
+
+        from basic_pitch.constants import (
+            AUDIO_N_CHANNELS,
+            AUDIO_SAMPLE_RATE,
+            FREQ_BINS_CONTOURS,
+            FREQ_BINS_NOTES,
+            ANNOTATION_HOP,
+            N_FREQ_BINS_NOTES,
+            N_FREQ_BINS_CONTOURS,
+        )
+        from basic_pitch.data import tf_example_serialization
+
+        logging.info(f"Processing {element}")
+        batch = []
+
+        for track_id in element:
+            track_remote = self.guitarset_remote.track(track_id)
+            with tempfile.TemporaryDirectory() as local_tmp_dir:
+                guitarset_local = mirdata.initialize("guitarset", local_tmp_dir)
+                track_local = guitarset_local.track(track_id)
+
+                for attribute in self.DOWNLOAD_ATTRIBUTES:
+                    source = getattr(track_remote, attribute)
+                    destination = getattr(track_local, attribute)
+                    os.makedirs(os.path.dirname(destination), exist_ok=True)
+                    with self.filesystem.open(source) as s, open(destination, "wb") as d:
+                        d.write(s.read())
+
+                local_wav_path = f"{track_local.audio_mic_path}_tmp.wav"
+
+                tfm = sox.Transformer()
+                tfm.rate(AUDIO_SAMPLE_RATE)
+                tfm.channels(AUDIO_N_CHANNELS)
+                tfm.build(track_local.audio_mic_path, local_wav_path)
+
+                duration = sox.file_info.duration(local_wav_path)
+                time_scale = np.arange(0, duration + ANNOTATION_HOP, ANNOTATION_HOP)
+                n_time_frames = len(time_scale)
+                note_indices, note_values = track_local.notes_all.to_sparse_index(
+                    time_scale, "s", FREQ_BINS_NOTES, "hz"
+                )
+                onset_indices, onset_values = track_local.notes_all.to_sparse_index(
+                    time_scale, "s", FREQ_BINS_NOTES, "hz", onsets_only=True
+                )
+                contour_indices, contour_values = track_local.multif0.to_sparse_index(
+                    time_scale, "s", FREQ_BINS_CONTOURS, "hz"
+                )
+
+                batch.append(
+                    tf_example_serialization.to_transcription_tfexample(
+                        track_local.track_id,
+                        "guitarset",
+                        local_wav_path,
+                        note_indices,
+                        note_values,
+                        onset_indices,
+                        onset_values,
+                        contour_indices,
+                        contour_values,
+                        (n_time_frames, N_FREQ_BINS_NOTES),
+                        (n_time_frames, N_FREQ_BINS_CONTOURS),
+                    )
+                )
+        return [batch]
+
+
+def create_input_data(
+    train_percent: float, validation_percent: float, seed: Optional[int] = None
+) -> List[Tuple[str, str]]:
+    assert train_percent + validation_percent < 1.0, "Don't over allocate the data!"
+
+    # Test percent is 1 - train - validation
+    validation_bound = train_percent
+    test_bound = validation_bound + validation_percent
+
+    if seed:
+        random.seed(seed)
+
+    def determine_split(index: int) -> str:
+        if index < len(track_ids) * validation_bound:
+            return "train"
+        elif index < len(track_ids) * test_bound:
+            return "validation"
+        else:
+            return "test"
+
+    guitarset = mirdata.initialize("guitarset")
+    track_ids = guitarset.track_ids
+    random.shuffle(track_ids)
+
+    return [(track_id, determine_split(i)) for i, track_id in enumerate(track_ids)]
+
+
+def main(known_args: argparse.Namespace, pipeline_args: List[str]) -> None:
+    time_created = int(time.time())
+    destination = commandline.resolve_destination(known_args, time_created)
+    input_data = create_input_data(known_args.train_percent, known_args.validation_percent, known_args.split_seed)
+
+    pipeline_options = {
+        "runner": known_args.runner,
+        "job_name": f"guitarset-tfrecords-{time_created}",
+        "machine_type": "e2-standard-4",
+        "num_workers": 25,
+        "disk_size_gb": 128,
+        "experiments": ["use_runner_v2"],
+        "save_main_session": True,
+        "sdk_container_image": known_args.sdk_container_image,
+        "job_endpoint": known_args.job_endpoint,
+        "environment_type": "DOCKER",
+        "environment_config": known_args.sdk_container_image,
+    }
+    pipeline.run(
+        pipeline_options,
+        pipeline_args,
+        input_data,
+        GuitarSetToTfExample(known_args.source, download=True),
+        GuitarSetInvalidTracks(),
+        destination,
+        known_args.batch_size,
+    )
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    commandline.add_default(parser, os.path.basename(os.path.splitext(__file__)[0]))
+    commandline.add_split(parser)
+    known_args, pipeline_args = parser.parse_known_args()
+
+    main(known_args, pipeline_args)
+
+
+// File: basic_pitch_fork\basic_pitch\data\datasets\ikala.py
+----------------------------------------
+#!/usr/bin/env python
+# encoding: utf-8
+#
+# Copyright 2024 Spotify AB
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+import argparse
+import logging
+import os
+import random
+import sys
+import time
+from typing import Any, Dict, List, Tuple, Optional
+
+import apache_beam as beam
+import mirdata
+
+from basic_pitch.data import commandline, pipeline
+
+
+class IkalaInvalidTracks(beam.DoFn):
+    def process(self, element: Tuple[str, str], *args: Tuple[Any, Any], **kwargs: Dict[str, Any]) -> Any:
+        track_id, split = element
+        yield beam.pvalue.TaggedOutput(split, track_id)
+
+
+class IkalaToTfExample(beam.DoFn):
+    DOWNLOAD_ATTRIBUTES = ["audio_path", "notes_pyin_path", "f0_path"]
+
+    def __init__(self, source: str, download: bool) -> None:
+        self.source = source
+        self.download = download
+
+    def setup(self) -> None:
+        import apache_beam as beam
+        import os
+        import mirdata
+
+        self.ikala_remote = mirdata.initialize("ikala", data_home=os.path.join(self.source, "iKala"))
+        self.filesystem = beam.io.filesystems.FileSystems()  # TODO: replace with fsspec
+        if self.download:
+            self.ikala_remote.download()
+
+    def process(self, element: List[str], *args: Tuple[Any, Any], **kwargs: Dict[str, Any]) -> List[Any]:
+        import tempfile
+
+        import numpy as np
+        import sox
+
+        from basic_pitch.constants import (
+            AUDIO_N_CHANNELS,
+            AUDIO_SAMPLE_RATE,
+            FREQ_BINS_CONTOURS,
+            FREQ_BINS_NOTES,
+            ANNOTATION_HOP,
+            N_FREQ_BINS_CONTOURS,
+            N_FREQ_BINS_NOTES,
+        )
+        from basic_pitch.data import tf_example_serialization
+
+        logging.info(f"Processing {element}")
+        batch = []
+
+        for track_id in element:
+            track_remote = self.ikala_remote.track(track_id)
+            with tempfile.TemporaryDirectory() as local_tmp_dir:
+                ikala_local = mirdata.initialize("ikala", local_tmp_dir)
+                track_local = ikala_local.track(track_id)
+
+                for attr in self.DOWNLOAD_ATTRIBUTES:
+                    source = getattr(track_remote, attr)
+                    dest = getattr(track_local, attr)
+                    os.makedirs(os.path.dirname(dest), exist_ok=True)
+                    with self.filesystem.open(source) as s, open(dest, "wb") as d:
+                        d.write(s.read())
+
+                local_wav_path = "{}_tmp.wav".format(track_local.audio_path)
+
+                tfm = sox.Transformer()
+                tfm.rate(AUDIO_SAMPLE_RATE)
+                tfm.remix({1: [2]})
+                tfm.channels(AUDIO_N_CHANNELS)
+                tfm.build(track_local.audio_path, local_wav_path)
+
+                duration = sox.file_info.duration(local_wav_path)
+                time_scale = np.arange(0, duration + ANNOTATION_HOP, ANNOTATION_HOP)
+                n_time_frames = len(time_scale)
+
+                if track_local.notes_pyin is not None:
+                    note_indices, note_values = track_local.notes_pyin.to_sparse_index(
+                        time_scale, "s", FREQ_BINS_NOTES, "hz"
+                    )
+                    onset_indices, onset_values = track_local.notes_pyin.to_sparse_index(
+                        time_scale, "s", FREQ_BINS_NOTES, "hz", onsets_only=True
+                    )
+                    note_shape = (n_time_frames, N_FREQ_BINS_NOTES)
+                # if there are no notes, return empty note indices
+                else:
+                    note_indices = []
+                    onset_indices = []
+                    note_values = []
+                    onset_values = []
+                    note_shape = (0, 0)
+
+                contour_indices, contour_values = track_local.f0.to_sparse_index(
+                    time_scale, "s", FREQ_BINS_CONTOURS, "hz"
+                )
+
+                batch.append(
+                    tf_example_serialization.to_transcription_tfexample(
+                        track_id,
+                        "ikala",
+                        local_wav_path,
+                        note_indices,
+                        note_values,
+                        onset_indices,
+                        onset_values,
+                        contour_indices,
+                        contour_values,
+                        note_shape,
+                        (n_time_frames, N_FREQ_BINS_CONTOURS),
+                    )
+                )
+        return [batch]
+
+
+def create_input_data(train_percent: float, seed: Optional[int] = None) -> List[Tuple[str, str]]:
+    assert train_percent < 1.0, "Don't over allocate the data!"
+
+    if seed:
+        random.seed(seed)
+
+    ikala = mirdata.initialize("ikala")
+    track_ids = ikala.track_ids
+    random.shuffle(track_ids)
+
+    def determine_split(index: int) -> str:
+        return "train" if index < len(track_ids) * train_percent else "validation"
+
+    return [(track_id, determine_split(i)) for i, track_id in enumerate(track_ids)]
+
+
+def main(known_args: argparse.Namespace, pipeline_args: List[str]) -> None:
+    time_created = int(time.time())
+    destination = commandline.resolve_destination(known_args, time_created)
+
+    pipeline_options = {
+        "runner": known_args.runner,
+        "job_name": f"ikala-tfrecords-{time_created}",
+        "machine_type": "e2-standard-4",
+        "num_workers": 25,
+        "disk_size_gb": 128,
+        "experiments": ["use_runner_v2", "no_use_multiple_sdk_containers"],
+        "save_main_session": True,
+        "sdk_container_image": known_args.sdk_container_image,
+        "job_endpoint": known_args.job_endpoint,
+        "environment_type": "DOCKER",
+        "environment_config": known_args.sdk_container_image,
+    }
+    input_data = create_input_data(known_args.train_percent, known_args.split_seed)
+    pipeline.run(
+        pipeline_options,
+        pipeline_args,
+        input_data,
+        IkalaToTfExample(known_args.source, download=True),
+        IkalaInvalidTracks(known_args.source),
+        destination,
+        known_args.batch_size,
+    )
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    commandline.add_default(parser, os.path.basename(os.path.splitext(__file__)[0]))
+    commandline.add_split(parser)
+    known_args, pipeline_args = parser.parse_known_args(sys.argv)
+
+    main(known_args, pipeline_args)
+
+
+// File: basic_pitch_fork\basic_pitch\data\datasets\maestro.py
+----------------------------------------
+#!/usr/bin/env python
+# encoding: utf-8
+#
+# Copyright 2024 Spotify AB
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+import argparse
+import logging
+import os
+import sys
+import tempfile
+import time
+from typing import Any, Dict, List, TextIO, Tuple
+
+import apache_beam as beam
+import mirdata
+
+from basic_pitch.data import commandline, pipeline
+
+
+def read_in_chunks(file_object: TextIO, chunk_size: int = 1024) -> Any:
+    """Lazy function (generator) to read a file piece by piece.
+    Default chunk size: 1k."""
+    while True:
+        data = file_object.read(chunk_size)
+        if not data:
+            break
+        yield data
+
+
+class MaestroInvalidTracks(beam.DoFn):
+    DOWNLOAD_ATTRIBUTES = ["audio_path"]
+
+    def __init__(self, source: str) -> None:
+        self.source = source
+
+    def setup(self) -> None:
+        # Oddly enough we dont want to include the gcs bucket uri.
+        # Just the path within the bucket
+        self.maestro_remote = mirdata.initialize("maestro", data_home=self.source)
+        self.filesystem = beam.io.filesystems.FileSystems()
+
+    def process(self, element: Tuple[str, str], *args: Tuple[Any, Any], **kwargs: Dict[str, Any]) -> Any:
+        import tempfile
+        import sox
+
+        track_id, split = element
+        logging.info(f"Processing (track_id, split): ({track_id}, {split})")
+
+        track_remote = self.maestro_remote.track(track_id)
+        with tempfile.TemporaryDirectory() as local_tmp_dir:
+            maestro_local = mirdata.initialize("maestro", local_tmp_dir)
+            track_local = maestro_local.track(track_id)
+
+            for attribute in self.DOWNLOAD_ATTRIBUTES:
+                source = getattr(track_remote, attribute)
+                destination = getattr(track_local, attribute)
+                os.makedirs(os.path.dirname(destination), exist_ok=True)
+                with self.filesystem.open(source) as s, open(destination, "wb") as d:
+                    for piece in read_in_chunks(s):
+                        d.write(piece)
+
+            # 15 minutes * 60 seconds/minute
+            if sox.file_info.duration(track_local.audio_path) >= 15 * 60:
+                return None
+
+        yield beam.pvalue.TaggedOutput(split, track_id)
+
+
+class MaestroToTfExample(beam.DoFn):
+    DOWNLOAD_ATTRIBUTES = ["audio_path", "midi_path"]
+
+    def __init__(self, source: str, download: bool):
+        self.source = source
+        self.download = download
+
+    def setup(self) -> None:
+        import apache_beam as beam
+        import mirdata
+
+        # Oddly enough we dont want to include the gcs bucket uri.
+        # Just the path within the bucket
+        self.maestro_remote = mirdata.initialize("maestro", data_home=self.source)
+        self.filesystem = beam.io.filesystems.FileSystems()
+        if self.download:
+            self.maestro_remote.download()
+
+    def process(self, element: List[str], *args: Tuple[Any, Any], **kwargs: Dict[str, Any]) -> List[Any]:
+        import tempfile
+
+        import numpy as np
+        import sox
+
+        from basic_pitch.constants import (
+            AUDIO_N_CHANNELS,
+            AUDIO_SAMPLE_RATE,
+            FREQ_BINS_CONTOURS,
+            FREQ_BINS_NOTES,
+            ANNOTATION_HOP,
+            N_FREQ_BINS_NOTES,
+            N_FREQ_BINS_CONTOURS,
+        )
+        from basic_pitch.data import tf_example_serialization
+
+        logging.info(f"Processing {element}")
+        batch = []
+
+        for track_id in element:
+            track_remote = self.maestro_remote.track(track_id)
+            with tempfile.TemporaryDirectory() as local_tmp_dir:
+                maestro_local = mirdata.initialize("maestro", local_tmp_dir)
+                track_local = maestro_local.track(track_id)
+
+                for attribute in self.DOWNLOAD_ATTRIBUTES:
+                    source = getattr(track_remote, attribute)
+                    destination = getattr(track_local, attribute)
+                    os.makedirs(os.path.dirname(destination), exist_ok=True)
+                    with self.filesystem.open(source) as s, open(destination, "wb") as d:
+                        # d.write(s.read())
+                        for piece in read_in_chunks(s):
+                            d.write(piece)
+
+                local_wav_path = f"{track_local.audio_path}_tmp.wav"
+
+                tfm = sox.Transformer()
+                tfm.rate(AUDIO_SAMPLE_RATE)
+                tfm.channels(AUDIO_N_CHANNELS)
+                tfm.build(track_local.audio_path, local_wav_path)
+
+                duration = sox.file_info.duration(local_wav_path)
+                time_scale = np.arange(0, duration + ANNOTATION_HOP, ANNOTATION_HOP)
+                n_time_frames = len(time_scale)
+
+                note_indices, note_values = track_local.notes.to_sparse_index(time_scale, "s", FREQ_BINS_NOTES, "hz")
+                onset_indices, onset_values = track_local.notes.to_sparse_index(
+                    time_scale, "s", FREQ_BINS_NOTES, "hz", onsets_only=True
+                )
+                contour_indices, contour_values = track_local.notes.to_sparse_index(
+                    time_scale, "s", FREQ_BINS_CONTOURS, "hz"
+                )
+
+                batch.append(
+                    tf_example_serialization.to_transcription_tfexample(
+                        track_local.track_id,
+                        "maestro",
+                        local_wav_path,
+                        note_indices,
+                        note_values,
+                        onset_indices,
+                        onset_values,
+                        contour_indices,
+                        contour_values,
+                        (n_time_frames, N_FREQ_BINS_NOTES),
+                        (n_time_frames, N_FREQ_BINS_CONTOURS),
+                    )
+                )
+        return [batch]
+
+
+def create_input_data(source: str) -> List[Tuple[str, str]]:
+    import apache_beam as beam
+
+    filesystem = beam.io.filesystems.FileSystems()
+
+    with tempfile.TemporaryDirectory() as tmpdir:
+        maestro = mirdata.initialize("maestro", data_home=tmpdir)
+        metadata_path = maestro._index["metadata"]["maestro-v2.0.0"][0]
+        with filesystem.open(
+            os.path.join(source, metadata_path),
+        ) as s, open(os.path.join(tmpdir, metadata_path), "wb") as d:
+            d.write(s.read())
+
+        return [(track_id, track.split) for track_id, track in maestro.load_tracks().items()]
+
+
+def main(known_args: argparse.Namespace, pipeline_args: List[str]) -> None:
+    time_created = int(time.time())
+    destination = commandline.resolve_destination(known_args, time_created)
+
+    # TODO: Remove  or abstract for foss
+    pipeline_options = {
+        "runner": known_args.runner,
+        "job_name": f"maestro-tfrecords-{time_created}",
+        "machine_type": "e2-highmem-4",
+        "num_workers": 25,
+        "disk_size_gb": 128,
+        "experiments": ["use_runner_v2", "no_use_multiple_sdk_containers"],
+        "save_main_session": True,
+        "sdk_container_image": known_args.sdk_container_image,
+        "job_endpoint": known_args.job_endpoint,
+        "environment_type": "DOCKER",
+        "environment_config": known_args.sdk_container_image,
+    }
+    input_data = create_input_data(known_args.source)
+    pipeline.run(
+        pipeline_options,
+        pipeline_args,
+        input_data,
+        MaestroToTfExample(known_args.source, download=True),
+        MaestroInvalidTracks(known_args.source),
+        destination,
+        known_args.batch_size,
+    )
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    commandline.add_default(parser, os.path.basename(os.path.splitext(__file__)[0]))
+    commandline.add_split(parser)
+    known_args, pipeline_args = parser.parse_known_args(sys.argv)
+
+    main(known_args, pipeline_args)
+
+
+// File: basic_pitch_fork\basic_pitch\data\datasets\medleydb_pitch.py
+----------------------------------------
+#!/usr/bin/env python
+# encoding: utf-8
+#
+# Copyright 2024 Spotify AB
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+import argparse
+import logging
+import os
+import random
+import time
+from typing import Any, Dict, List, Optional, Tuple
+
+import apache_beam as beam
+import mirdata
+
+from basic_pitch.data import commandline, pipeline
+
+
+class MedleyDbPitchInvalidTracks(beam.DoFn):
+    def process(self, element: Tuple[str, str], *args: Tuple[Any, Any], **kwargs: Dict[str, Any]) -> Any:
+        track_id, split = element
+        yield beam.pvalue.TaggedOutput(split, track_id)
+
+
+class MedleyDbPitchToTfExample(beam.DoFn):
+    DOWNLOAD_ATTRIBUTES = ["audio_path", "notes_pyin_path", "pitch_path"]
+
+    def __init__(self, source: str, download: bool) -> None:
+        self.source = source
+        self.download = download
+
+    def setup(self) -> None:
+        import apache_beam as beam
+        import mirdata
+
+        self.medleydb_pitch_remote = mirdata.initialize("medleydb_pitch", data_home=self.source)
+        self.filesystem = beam.io.filesystems.FileSystems()  # TODO: replace with fsspec
+        if self.download:
+            self.medleydb_pitch_remote.download()
+
+    def process(self, element: List[str], *args: Tuple[Any, Any], **kwargs: Dict[str, Any]) -> List[Any]:
+        import tempfile
+
+        import numpy as np
+        import sox
+
+        from basic_pitch.constants import (
+            AUDIO_N_CHANNELS,
+            AUDIO_SAMPLE_RATE,
+            FREQ_BINS_CONTOURS,
+            FREQ_BINS_NOTES,
+            ANNOTATION_HOP,
+            N_FREQ_BINS_NOTES,
+            N_FREQ_BINS_CONTOURS,
+        )
+        from basic_pitch.dataset import tf_example_serialization
+
+        logging.info(f"Processing {element}")
+        batch = []
+
+        for track_id in element:
+            track_remote = self.medleydb_pitch_remote.track(track_id)
+
+            with tempfile.TemporaryDirectory() as local_tmp_dir:
+                medleydb_pitch_local = mirdata.initialize("medleydb_pitch", local_tmp_dir)
+                track_local = medleydb_pitch_local.track(track_id)
+
+                for attr in self.DOWNLOAD_ATTRIBUTES:
+                    source = getattr(track_remote, attr)
+                    dest = getattr(track_local, attr)
+                    os.makedirs(os.path.dirname(dest), exist_ok=True)
+                    with self.filesystem.open(source) as s, open(dest, "wb") as d:
+                        d.write(s.read())
+
+                # will be in temp dir and get cleaned up
+                local_wav_path = "{}_tmp.wav".format(track_local.audio_path)
+                tfm = sox.Transformer()
+                tfm.rate(AUDIO_SAMPLE_RATE)
+                tfm.channels(AUDIO_N_CHANNELS)
+                tfm.build(track_local.audio_path, local_wav_path)
+
+                duration = sox.file_info.duration(local_wav_path)
+                time_scale = np.arange(0, duration + ANNOTATION_HOP, ANNOTATION_HOP)
+                n_time_frames = len(time_scale)
+
+                if track_local.notes_pyin is not None:
+                    note_indices, note_values = track_local.notes_pyin.to_sparse_index(
+                        time_scale, "s", FREQ_BINS_NOTES, "hz"
+                    )
+                    onset_indices, onset_values = track_local.notes_pyin.to_sparse_index(
+                        time_scale, "s", FREQ_BINS_NOTES, "hz", onsets_only=True
+                    )
+                    note_shape = (n_time_frames, N_FREQ_BINS_NOTES)
+                # if there are no notes, return empty note indices
+                else:
+                    note_shape = (0, 0)
+                    note_indices = []
+                    onset_indices = []
+                    note_values = []
+                    onset_values = []
+
+                contour_indices, contour_values = track_local.pitch.to_sparse_index(
+                    time_scale, "s", FREQ_BINS_CONTOURS, "hz"
+                )
+
+                batch.append(
+                    tf_example_serialization.to_transcription_tfexample(
+                        track_id,
+                        "medleydb_pitch",
+                        local_wav_path,
+                        note_indices,
+                        note_values,
+                        onset_indices,
+                        onset_values,
+                        contour_indices,
+                        contour_values,
+                        note_shape,
+                        (n_time_frames, N_FREQ_BINS_CONTOURS),
+                    )
+                )
+        return [batch]
+
+
+def create_input_data(train_percent: float, seed: Optional[int] = None) -> List[Tuple[str, str]]:
+    assert train_percent < 1.0, "Don't over allocate the data!"
+
+    if seed:
+        random.seed(seed)
+
+    medleydb_pitch = mirdata.initialize("medleydb_pitch")
+    track_ids = medleydb_pitch.track_ids
+    random.shuffle(track_ids)
+
+    def determine_split(index: int) -> str:
+        return "train" if index < len(track_ids) * train_percent else "validation"
+
+    return [(track_id, determine_split(i)) for i, track_id in enumerate(track_ids)]
+
+
+def main(known_args: argparse.Namespace, pipeline_args: List[str]) -> None:
+    time_created = int(time.time())
+    destination = commandline.resolve_destination(known_args, time_created)
+    input_data = create_input_data(known_args.train_percent, known_args.split_seed)
+
+    pipeline_options = {
+        "runner": known_args.runner,
+        "job_name": f"medleydb-pitch-tfrecords-{time_created}",
+        "machine_type": "e2-standard-4",
+        "num_workers": 25,
+        "disk_size_gb": 128,
+        "experiments": ["use_runner_v2"],
+        "save_main_session": True,
+        "sdk_container_image": known_args.sdk_container_image,
+        "job_endpoint": known_args.job_endpoint,
+        "environment_type": "DOCKER",
+        "environment_config": known_args.sdk_container_image,
+    }
+    pipeline.run(
+        pipeline_options,
+        pipeline_args,
+        input_data,
+        MedleyDbPitchToTfExample(known_args.source, download=True),
+        MedleyDbPitchInvalidTracks(),
+        destination,
+        known_args.batch_size,
+    )
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    commandline.add_default(parser, os.path.basename(os.path.splitext(__file__)[0]))
+    commandline.add_split(parser)
+    known_args, pipeline_args = parser.parse_known_args()
+
+    main(known_args, pipeline_args)
+
+
+// File: basic_pitch_fork\basic_pitch\data\datasets\slakh.py
+----------------------------------------
+#!/usr/bin/env python
+# encoding: utf-8
+#
+# Copyright 2024 Spotify AB
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+import argparse
+import logging
+import os
+import time
+
+from typing import List, Tuple, Any
+
+import apache_beam as beam
+import mirdata
+
+from basic_pitch.data import commandline, pipeline
+
+
+class SlakhFilterInvalidTracks(beam.DoFn):
+    DOWNLOAD_ATTRIBUTES = ["audio_path", "metadata_path", "midi_path"]
+
+    def __init__(self, source: str):
+        self.source = source
+
+    def setup(self) -> None:
+        import mirdata
+
+        self.slakh_remote = mirdata.initialize("slakh", data_home=self.source)
+        self.filesystem = beam.io.filesystems.FileSystems()
+
+    def process(self, element: Tuple[str, str]) -> Any:
+        import tempfile
+
+        import apache_beam as beam
+        import ffmpeg
+
+        from basic_pitch.constants import (
+            AUDIO_N_CHANNELS,
+            AUDIO_SAMPLE_RATE,
+        )
+
+        track_id, split = element
+        if split == "omitted":
+            return None
+
+        logging.info(f"Processing (track_id, split): ({track_id}, {split})")
+
+        track_remote = self.slakh_remote.track(track_id)
+
+        with tempfile.TemporaryDirectory() as local_tmp_dir:
+            slakh_local = mirdata.initialize("slakh", local_tmp_dir)
+            track_local = slakh_local.track(track_id)
+
+            for attr in self.DOWNLOAD_ATTRIBUTES:
+                source = getattr(track_remote, attr)
+                dest = getattr(track_local, attr)
+                if not dest:
+                    return None
+                logging.info(f"Downloading {attr} from {source} to {dest}")
+                os.makedirs(os.path.dirname(dest), exist_ok=True)
+                with self.filesystem.open(source) as s, open(dest, "wb") as d:
+                    d.write(s.read())
+
+            if track_local.is_drum:
+                return None
+
+            local_wav_path = "{}_tmp.wav".format(track_local.audio_path)
+            try:
+                ffmpeg.input(track_local.audio_path).output(
+                    local_wav_path, ar=AUDIO_SAMPLE_RATE, ac=AUDIO_N_CHANNELS
+                ).run()
+            except Exception as e:
+                logging.info(f"Could not process {local_wav_path}. Exception: {e}")
+                return None
+
+            # if there are no notes, skip this track
+            if track_local.notes is None or len(track_local.notes.intervals) == 0:
+                return None
+
+            yield beam.pvalue.TaggedOutput(split, track_id)
+
+
+class SlakhToTfExample(beam.DoFn):
+    DOWNLOAD_ATTRIBUTES = ["audio_path", "metadata_path", "midi_path"]
+
+    def __init__(self, source: str, download: bool) -> None:
+        self.source = source
+        self.download = download
+
+    def setup(self) -> None:
+        import apache_beam as beam
+        import mirdata
+
+        self.slakh_remote = mirdata.initialize("slakh", data_home=self.source)
+        self.filesystem = beam.io.filesystems.FileSystems()  # TODO: replace with fsspec
+        if self.download:
+            self.slakh_remote.download()
+
+    def process(self, element: List[str]) -> List[Any]:
+        import tempfile
+
+        import numpy as np
+        import ffmpeg
+
+        from basic_pitch.constants import (
+            AUDIO_N_CHANNELS,
+            AUDIO_SAMPLE_RATE,
+            FREQ_BINS_CONTOURS,
+            FREQ_BINS_NOTES,
+            ANNOTATION_HOP,
+            N_FREQ_BINS_NOTES,
+            N_FREQ_BINS_CONTOURS,
+        )
+        from basic_pitch.data import tf_example_serialization
+
+        logging.info(f"Processing {element}")
+        batch = []
+
+        for track_id in element:
+            track_remote = self.slakh_remote.track(track_id)
+
+            with tempfile.TemporaryDirectory() as local_tmp_dir:
+                slakh_local = mirdata.initialize("slakh", local_tmp_dir)
+                track_local = slakh_local.track(track_id)
+
+                for attr in self.DOWNLOAD_ATTRIBUTES:
+                    source = getattr(track_remote, attr)
+                    dest = getattr(track_local, attr)
+                    logging.info(f"Downloading {attr} from {source} to {dest}")
+                    os.makedirs(os.path.dirname(dest), exist_ok=True)
+                    with self.filesystem.open(source) as s, open(dest, "wb") as d:
+                        d.write(s.read())
+
+                local_wav_path = "{}_tmp.wav".format(track_local.audio_path)
+                ffmpeg.input(track_local.audio_path).output(
+                    local_wav_path, ar=AUDIO_SAMPLE_RATE, ac=AUDIO_N_CHANNELS
+                ).run()
+
+                duration = float(ffmpeg.probe(local_wav_path)["format"]["duration"])
+                time_scale = np.arange(0, duration + ANNOTATION_HOP, ANNOTATION_HOP)
+                n_time_frames = len(time_scale)
+
+                note_indices, note_values = track_local.notes.to_sparse_index(time_scale, "s", FREQ_BINS_NOTES, "hz")
+                onset_indices, onset_values = track_local.notes.to_sparse_index(
+                    time_scale, "s", FREQ_BINS_NOTES, "hz", onsets_only=True
+                )
+                contour_indices, contour_values = track_local.multif0.to_sparse_index(
+                    time_scale, "s", FREQ_BINS_CONTOURS, "hz"
+                )
+
+                batch.append(
+                    tf_example_serialization.to_transcription_tfexample(
+                        track_id,
+                        "slakh",
+                        local_wav_path,
+                        note_indices,
+                        note_values,
+                        onset_indices,
+                        onset_values,
+                        contour_indices,
+                        contour_values,
+                        (n_time_frames, N_FREQ_BINS_NOTES),
+                        (n_time_frames, N_FREQ_BINS_CONTOURS),
+                    )
+                )
+
+        logging.info(f"Finished processing batch of length {len(batch)}")
+        return [batch]
+
+
+def create_input_data() -> List[Tuple[str, str]]:
+    slakh = mirdata.initialize("slakh")
+    return [(track_id, track.data_split) for track_id, track in slakh.load_tracks().items()]
+
+
+def main(known_args: argparse.Namespace, pipeline_args: List[str]) -> None:
+    time_created = int(time.time())
+    destination = commandline.resolve_destination(known_args, time_created)
+    input_data = create_input_data()
+
+    pipeline_options = {
+        "runner": known_args.runner,
+        "job_name": f"slakh-tfrecords-{time_created}",
+        "machine_type": "e2-standard-4",
+        "num_workers": 25,
+        "disk_size_gb": 128,
+        "experiments": ["use_runner_v2"],
+        "save_main_session": True,
+        "sdk_container_image": known_args.sdk_container_image,
+        "job_endpoint": known_args.job_endpoint,
+        "environment_type": "DOCKER",
+        "environment_config": known_args.sdk_container_image,
+    }
+    pipeline.run(
+        pipeline_options,
+        pipeline_args,
+        input_data,
+        SlakhToTfExample(known_args.source, download=True),
+        SlakhFilterInvalidTracks(known_args.source),
+        destination,
+        known_args.batch_size,
+    )
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    commandline.add_default(parser, os.path.basename(os.path.splitext(__file__)[0]))
+    commandline.add_split(parser)
+    known_args, pipeline_args = parser.parse_known_args()  # sys.argv)
+
+    main(known_args, pipeline_args)
+
+
+// File: basic_pitch_fork\basic_pitch\data\download.py
+----------------------------------------
+#!/usr/bin/env python
+# encoding: utf-8
+#
+# Copyright 2024 Spotify AB
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a cos.pathy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+
+import argparse
+import logging
+
+from basic_pitch.data import commandline
+from basic_pitch.data.datasets.guitarset import main as guitarset_main
+from basic_pitch.data.datasets.ikala import main as ikala_main
+from basic_pitch.data.datasets.maestro import main as maestro_main
+from basic_pitch.data.datasets.medleydb_pitch import main as medleydb_pitch_main
+from basic_pitch.data.datasets.slakh import main as slakh_main
+
+logger = logging.getLogger()
+logger.setLevel(logging.INFO)
+
+DATASET_DICT = {
+    "guitarset": guitarset_main,
+    "ikala": ikala_main,
+    "maestro": maestro_main,
+    "medleydb_pitch": medleydb_pitch_main,
+    "slakh": slakh_main,
+}
+
+
+def main() -> None:
+    dataset_parser = argparse.ArgumentParser()
+    dataset_parser.add_argument(
+        "dataset",
+        choices=list(DATASET_DICT.keys()),
+        help="The dataset to download / process.",
+    )
+    args, remaining_args = dataset_parser.parse_known_args()
+    dataset = args.dataset
+    logger.info(f"Downloading and processing {dataset}")
+
+    cl_parser = argparse.ArgumentParser()
+    commandline.add_default(cl_parser, dataset)
+    commandline.add_split(cl_parser)
+    known_args, pipeline_args = cl_parser.parse_known_args(remaining_args)
+    for arg in vars(known_args):
+        logger.info(f"known_args:: {arg} = {getattr(known_args, arg)}")
+    logger.info(f"pipeline_args = {pipeline_args}")
+    DATASET_DICT[dataset](known_args, pipeline_args)
+
+
+if __name__ == "__main__":
+    main()
+
+
+// File: basic_pitch_fork\basic_pitch\data\pipeline.py
+----------------------------------------
+#!/usr/bin/env python
+# encoding: utf-8
+#
+# Copyright 2024 Spotify AB
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+import logging
+import os
+import uuid
+from typing import Any, Dict, List, Tuple, Callable, Union
+
+import apache_beam as beam
+import tensorflow as tf
+from apache_beam.options.pipeline_options import PipelineOptions
+
+
+# Beacase beam.GroupIntoBatches isn't supported as of 2.29
+class Batch(beam.DoFn):
+    def __init__(self, batch_size: int) -> None:
+        self.batch_size = batch_size
+
+    def process(self, element: List[Any], *args: Tuple[Any, Any], **kwargs: Dict[str, Any]) -> Any:
+        for i in range(0, len(element), self.batch_size):
+            yield element[i : i + self.batch_size]
+
+
+class WriteBatchToTfRecord(beam.DoFn):
+    def __init__(self, destination: str) -> None:
+        self.destination = destination
+
+    def process(self, element: Any, *args: Tuple[Any, Any], **kwargs: Dict[str, Any]) -> None:
+        if not isinstance(element, list):
+            element = [element]
+
+        logging.info(f"Writing to file batch of length {len(element)}")
+        # hopefully uuids are unique enough
+        with tf.io.TFRecordWriter(os.path.join(self.destination, f"{uuid.uuid4()}.tfrecord")) as writer:
+            for example in element:
+                writer.write(example.SerializeToString())
+
+
+def transcription_dataset_writer(
+    p: beam.Pipeline,
+    input_data: List[Tuple[str, str]],
+    to_tf_example: Union[beam.DoFn, Callable[[List[Any]], Any]],
+    filter_invalid_tracks: beam.PTransform,
+    destination: str,
+    batch_size: int,
+) -> None:
+    valid_track_ids = (
+        p
+        | "Create PCollection of track IDS" >> beam.Create(input_data)
+        | "Remove invalid track IDs"
+        >> beam.ParDo(filter_invalid_tracks).with_outputs(
+            "train",
+            "test",
+            "validation",
+        )
+    )
+    for split in ["train", "test", "validation"]:
+        (
+            getattr(valid_track_ids, split)
+            | f"Batch {split}" >> beam.BatchElements(min_batch_size=batch_size, max_batch_size=batch_size)
+            | f"Reshuffle {split}" >> beam.Reshuffle()  # To prevent fuses
+            | f"Create tf.Example {split} batch" >> beam.ParDo(to_tf_example)
+            | f"Write {split} batch to tfrecord" >> beam.ParDo(WriteBatchToTfRecord(os.path.join(destination, split)))
+        )
+        getattr(valid_track_ids, split) | f"Write {split} index file" >> beam.io.textio.WriteToText(
+            os.path.join(destination, split, "index.csv"),
+            num_shards=1,
+            header="track_id",
+            shard_name_template="",
+        )
+
+
+def run(
+    pipeline_options: Dict[str, str],
+    pipeline_args: List[str],
+    input_data: List[Tuple[str, str]],
+    to_tf_example: beam.DoFn,
+    filter_invalid_tracks: beam.DoFn,
+    destination: str,
+    batch_size: int,
+) -> None:
+    logging.info(f"pipeline_options = {pipeline_options}")
+    logging.info(f"pipeline_args = {pipeline_args}")
+    with beam.Pipeline(options=PipelineOptions(flags=pipeline_args, **pipeline_options)) as p:
+        transcription_dataset_writer(p, input_data, to_tf_example, filter_invalid_tracks, destination, batch_size)
+
+
+// File: basic_pitch_fork\basic_pitch\data\README.md
+----------------------------------------
+# Data / Training
+The code and scripts in this section deal with training basic pitch on your own. Scripts in the `datasets` folder allow one to download and process a selection of the datasets used to train the original model. Each of these download scripts has the following keyword arguments:
+* **--source**: Source directory to download raw data to. It defaults to `$HOME/mir_datasets/{dataset_name}`
+* **--destination**: Directory to write processed data to. It defaults to `$HOME/data/basic_pitch/{dataset_name}`.
+* **--runner**: The method used to run the Beam Pipeline for processing the dataset. Options include `DirectRunner`, running directly in the code process running the pipeline, `PortableRunner`, which can be used to run the pipeline in a docker container locally, and `DataflowRunner`, which can be used to run the pipeline in a docker container on Dataflow. 
+* **--timestamped**: If passed, the dataset will be put into a timestamp directory instead of 'splits'.
+* **--batch-size**: Number of examples per tfrecord when partitioning the dataset.
+* **--sdk_container_image**: The Docker container image used to process the data if using `PortableRunner` or `DirectRunner` .
+* **--job_endpoint**: the endpoint where the job is running. It defaults to `embed` which works for `PortableRunner`. 
+
+Additional arguments that work with Beam in general can be used as well, and will be passed along and used by the pipeline. If using `DataflowRunner`, you will be required to pass `--temp_location={Path to GCS Bucket}`, `--staging_location={Path to GCS Bucket}`, `--project={Name of GCS Project}` and `--region={GCS region}`. 
+
+
+// File: basic_pitch_fork\basic_pitch\data\tf_example_deserialization.py
+----------------------------------------
+#!/usr/bin/env python
+# encoding: utf-8
+#
+# Copyright 2024 Spotify AB
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+import os
+import uuid
+from typing import Any, Callable, Dict, Iterator, List, Optional, Tuple
+
+import numpy as np
+import tensorflow as tf
+
+# import tensorflow_addons as tfa
+
+from basic_pitch.constants import (
+    ANNOTATIONS_FPS,
+    ANNOT_N_FRAMES,
+    AUDIO_N_CHANNELS,
+    AUDIO_N_SAMPLES,
+    AUDIO_SAMPLE_RATE,
+    AUDIO_WINDOW_LENGTH,
+    N_FREQ_BINS_NOTES,
+    N_FREQ_BINS_CONTOURS,
+    Split,
+)
+
+N_SAMPLES_PER_TRACK = 20
+
+
+def prepare_datasets(
+    datasets_base_path: str,
+    training_shuffle_buffer_size: int,
+    batch_size: int,
+    validation_steps: int,
+    datasets_to_use: List[str],
+    dataset_sampling_frequency: np.ndarray,
+) -> Tuple[tf.data.Dataset, tf.data.Dataset]:
+    """
+    Return a training and a testing dataset.
+
+    Args:
+        datasets_base_path: path to tfrecords for input data
+        training_shuffle_buffer_size: size of shuffle buffer (only for training set)
+        batch_size: batch size for training and validation
+        validation_steps: number of batches to use for validation
+        datasets_to_use: the underlying datasets to use for creating training and validation sets e.g. guitarset
+        dataset_sampling_frequency: distribution weighting vector corresponding to datasets determining how they
+            are sampled from during training / validation dataset creation.
+
+    Returns:
+        training and validation datasets derived from the underlying tfrecord data
+    """
+    assert batch_size > 0
+    assert validation_steps is not None and validation_steps > 0
+    assert training_shuffle_buffer_size is not None
+
+    # init both
+    ds_train = sample_datasets(
+        Split.train,
+        datasets_base_path,
+        datasets=datasets_to_use,
+        dataset_sampling_frequency=dataset_sampling_frequency,
+    )
+    ds_validation = sample_datasets(
+        Split.validation,
+        datasets_base_path,
+        datasets=datasets_to_use,
+        dataset_sampling_frequency=dataset_sampling_frequency,
+    )
+
+    # check that the base dataset returned by ds_function is FINITE
+    for ds in [ds_train, ds_validation]:
+        assert tf.cast(tf.data.experimental.cardinality(ds), tf.int32) != tf.data.experimental.INFINITE_CARDINALITY
+
+    # training dataset
+    if training_shuffle_buffer_size > 0:
+        # Lets try to cache before the shuffle. This is the entire training dataset so we'll cache
+        # to memory
+        ds_train = (
+            ds_train.shuffle(training_shuffle_buffer_size, reshuffle_each_iteration=True)
+            .repeat()
+            .batch(batch_size)
+            .prefetch(tf.data.AUTOTUNE)
+        )
+
+    # validation dataset
+    ds_validation = (
+        ds_validation.repeat()
+        .batch(batch_size)
+        .take(validation_steps)
+        .cache(f"validation_set_cache_{str(uuid.uuid4())}")
+        .repeat()
+        .prefetch(tf.data.AUTOTUNE)
+    )
+
+    return ds_train, ds_validation
+
+
+def prepare_visualization_datasets(
+    datasets_base_path: str,
+    batch_size: int,
+    validation_steps: int,
+    datasets_to_use: List[str],
+    dataset_sampling_frequency: np.ndarray,
+) -> Tuple[tf.data.Dataset, tf.data.Dataset]:
+    """
+    Return a training and a testing dataset for visualization
+
+    Args:
+        datasets_base_path: path to tfrecord datasets for input data
+        batch_size: batch size for training and validation
+        validation_steps: number of batches to use for validation
+        datasets_to_use: the underlying datasets to use for creating training and validation sets e.g. guitarset
+        dataset_sampling_frequency: distribution weighting vector corresponding to datasets determining how they
+            are sampled from during training / validation dataset creation.
+
+    Returns:
+        training and validation datasets derived from the underlying tfrecord data
+    """
+
+    assert batch_size > 0
+    assert validation_steps is not None and validation_steps > 0
+
+    ds_train = sample_datasets(
+        Split.train,
+        datasets_base_path,
+        datasets=datasets_to_use,
+        dataset_sampling_frequency=dataset_sampling_frequency,
+        n_samples_per_track=1,
+    )
+    ds_validation = sample_datasets(
+        Split.validation,
+        datasets_base_path,
+        datasets=datasets_to_use,
+        dataset_sampling_frequency=dataset_sampling_frequency,
+        n_samples_per_track=1,
+    )
+
+    # check that the base dataset returned by ds_function is FINITE
+    for ds in [ds_train, ds_validation]:
+        assert tf.cast(tf.data.experimental.cardinality(ds), tf.int32) != tf.data.experimental.INFINITE_CARDINALITY
+
+    # training dataset
+    ds_train = ds_train.repeat().batch(batch_size).prefetch(tf.data.AUTOTUNE)
+
+    # validation dataset
+    ds_validation = (
+        ds_validation.repeat()
+        .batch(batch_size)
+        .take(validation_steps)
+        .cache(f"validation_set_cache_{str(uuid.uuid4())}")
+        .repeat()
+        .prefetch(tf.data.AUTOTUNE)
+    )
+
+    return ds_train, ds_validation
+
+
+def sample_datasets(
+    split: Split,
+    datasets_base_path: str,
+    datasets: List[str],
+    dataset_sampling_frequency: np.ndarray,
+    n_shuffle: int = 1000,
+    n_samples_per_track: int = N_SAMPLES_PER_TRACK,
+    pairs: bool = False,
+) -> tf.data.Dataset:
+    """samples tfrecord data to create a dataset
+
+    Args:
+        split: whether to use training or validation data
+        dataset_base_path: directory storing source datasets as tfrecord files
+        datasets: names of datasets to sample from e.g. guitarset
+        dataset_sampling_frequency: distribution weighting vector corresponding to datasets determining how they
+            are sampled from during training / validation dataset creation.
+        n_shuffle: size of shuffle buffer (only used for training ds)
+        n_samples_per_track: the number of samples to take from a track
+        pairs: generate pairs of samples from the dataset rather than individual samples
+
+    Returns
+        dataset of samples
+    """
+    if split == Split.validation:
+        n_shuffle = 0
+        pairs = False
+        if n_samples_per_track != 1:
+            n_samples_per_track = 5
+
+    ds_list = []
+
+    file_generator, random_seed = transcription_file_generator(
+        split,
+        datasets,
+        datasets_base_path,
+        dataset_sampling_frequency,
+    )
+
+    ds_dataset = transcription_dataset(file_generator, n_samples_per_track, random_seed)
+
+    if n_shuffle > 0:
+        ds_dataset = ds_dataset.shuffle(n_shuffle)
+    ds_list.append(ds_dataset)
+
+    if pairs:
+        pairs_generator, random_seed_pairs = transcription_file_generator(
+            split,
+            datasets,
+            datasets_base_path,
+            dataset_sampling_frequency,
+        )
+        pairs_ds = transcription_dataset(
+            pairs_generator,
+            n_samples_per_track,
+            random_seed_pairs,
+        )
+
+        pairs_ds = pairs_ds.shuffle(n_samples_per_track * 10)  # shuffle so that different tracks get mixed together
+        pairs_ds = pairs_ds.batch(2)
+        pairs_ds = pairs_ds.map(combine_transcription_examples)
+        ds_list.append(pairs_ds)
+
+    n_datasets = len(ds_list)
+    choice_dataset = tf.data.Dataset.range(
+        n_datasets
+    ).repeat()  # this repeat is critical! if not, only n_dataset points will be sampled!!
+    return tf.data.Dataset.choose_from_datasets(ds_list, choice_dataset)
+
+
+def transcription_file_generator(
+    split: Split,
+    dataset_names: List[str],
+    datasets_base_path: str,
+    sample_weights: np.ndarray,
+) -> Tuple[Callable[[], Iterator[tf.Tensor]], bool]:
+    """Reads underlying files and returns file generator
+
+    Args:
+        split: data split to build generator from
+        dataset_names: list of dataset_names to use
+        dataset_base_path: directory storing source datasets as tfrecord files
+        sample_weights: distribution weighting vector corresponding to datasets determining how they
+            are sampled from during training / validation dataset creation.
+    """
+    file_dict = {
+        dataset_name: tf.data.Dataset.list_files(
+            os.path.join(datasets_base_path, dataset_name, "splits", split.name, "*tfrecord")
+        )
+        for dataset_name in dataset_names
+    }
+
+    if split == Split.train:
+        return lambda: _train_file_generator(file_dict, sample_weights), False
+    return lambda: _validation_file_generator(file_dict), True
+
+
+def _train_file_generator(x: Dict[str, tf.data.Dataset], weights: np.ndarray) -> Iterator[tf.Tensor]:
+    """file generator for training sets"""
+    x = {k: list(v) for (k, v) in x.items()}
+    keys = list(x.keys())
+    # shuffle each list
+    for k in keys:
+        np.random.shuffle(x[k])
+
+    while all(x.values()):
+        # choose a random dataset and yield the last file
+        fpath = x[np.random.choice(keys, p=weights)].pop()
+        yield fpath
+
+
+def _validation_file_generator(x: Dict[str, tf.data.Dataset]) -> Iterator[tf.Tensor]:
+    """file generator for validation sets"""
+    x = {k: list(v) for (k, v) in x.items()}
+    # loop until there are no more test files
+    while any(x.values()):
+        # alternate between datasets (dataset 1 elt 1, dataset 2, elt 1, ...)
+        # this is so test files in the tensorboard have 4 different datasets
+        # instead of 4 elements from 1
+        for k in x:
+            # if the list of files for this dataset is empty skip it
+            if x[k]:
+                yield x[k].pop()
+
+
+def combine_transcription_examples(
+    a: tf.Tensor, target: Dict[str, tf.Tensor], w: Dict[str, tf.Tensor]
+) -> Tuple[tf.Tensor, Dict[str, tf.Tensor], Dict[str, tf.Tensor]]:
+    """mix pairs together for paired dataset
+
+    Args:
+        a: audio data
+        target: target data (onset, notes, contours)
+        w: weights
+    """
+    return (
+        # mix the audio snippets
+        tf.math.reduce_mean(a, axis=0),
+        # annotations are the max per bin - active frames stay active
+        {
+            "onset": tf.math.reduce_max(target["onset"], axis=0),
+            "contour": tf.math.reduce_max(target["contour"], axis=0),
+            "note": tf.math.reduce_max(target["note"], axis=0),
+        },
+        # weights are the minimum - if an annotation is missing in one, we should set the weights to zero
+        {
+            "onset": tf.math.reduce_min(w["onset"], axis=0),
+            "contour": tf.math.reduce_min(w["contour"], axis=0),
+            "note": tf.math.reduce_min(w["note"], axis=0),
+        },
+    )
+
+
+def transcription_dataset(
+    file_generator: Callable[[], Iterator[str]], n_samples_per_track: int, random_seed: bool
+) -> tf.data.Dataset:
+    """
+    `fpaths_in` is a list of .tfrecords files
+    return a tf.Dataset with the following fields (as tuple):
+        - audio (shape AUDIO_N_SAMPLES, 1)
+        - {'contours': contours, 'notes': notes, 'onsets': onsets}
+    contours has shape (ANNOT_N_FRAMES, N_FREQ_BINS_CONTOURS)
+    notes and onsets have shape: (ANNOT_N_FRAMES, N_FREQ_BINS_NOTES)
+    """
+    ds = tf.data.Dataset.from_generator(file_generator, output_types=tf.string, output_shapes=())
+    ds = tf.data.TFRecordDataset(ds)
+    ds = ds.map(parse_transcription_tfexample, num_parallel_calls=tf.data.AUTOTUNE)
+    ds = ds.filter(is_not_bad_shape)
+    ds = ds.map(
+        lambda file_id, source, audio_wav, notes_indices, notes_values, onsets_indices, onsets_values, contours_indices, contours_values, notes_onsets_shape, contours_shape: (  # noqa: E501
+            file_id,
+            source,
+            tf.audio.decode_wav(
+                audio_wav,
+                desired_channels=AUDIO_N_CHANNELS,
+                desired_samples=-1,
+                name=None,
+            ),
+            sparse2dense(notes_values, notes_indices, notes_onsets_shape),
+            sparse2dense(onsets_values, onsets_indices, notes_onsets_shape),
+            sparse2dense(contours_values, contours_indices, contours_shape),
+        ),
+        num_parallel_calls=tf.data.AUTOTUNE,
+    )
+    ds = ds.map(reduce_transcription_inputs)
+    ds = ds.map(get_sample_weights, num_parallel_calls=tf.data.AUTOTUNE)
+    ds = ds.flat_map(
+        lambda a, o, c, n, ow, cw, nw, m: get_transcription_chunks(
+            a, o, c, n, ow, cw, nw, n_samples_per_track, random_seed
+        )
+    )
+    ds = ds.filter(is_not_all_silent_annotations)  # remove examples where all annotations are zero
+    ds = ds.map(to_transcription_training_input)
+    ds = ds.apply(tf.data.experimental.ignore_errors(log_warning=True))  # failsafe so training doesn't stop
+    return ds
+
+
+def parse_transcription_tfexample(
+    serialized_example: tf.train.Example,
+) -> Tuple[
+    tf.Tensor,
+    tf.Tensor,
+    tf.Tensor,
+    tf.Tensor,
+    tf.Tensor,
+    tf.Tensor,
+    tf.Tensor,
+    tf.Tensor,
+    tf.Tensor,
+    tf.Tensor,
+    tf.Tensor,
+]:
+    """
+    return a tuple with the following tensors, in order:
+     - file_id
+     - source
+     - audio_wav
+     - notes_indices
+     - notes_values
+     - onsets_indices
+     - onsets_values
+     - contours_indices
+     - contours_values
+     - notes_onsets_shape
+     - contours_shape
+    NB.: notes, onsets and contours are represented as sparse matrices
+    (to be reconstructed using `tf.SparseTensor(...)`). They share the
+    time dimension, while contours have a frequency dimension that is
+    a multiple (`ANNOTATIONS_BINS_PER_SEMITONE`) of that of
+    notes/onsets.
+    """
+    schema = {
+        "file_id": tf.io.FixedLenFeature((), tf.string),
+        "source": tf.io.FixedLenFeature((), tf.string),
+        "audio_wav": tf.io.FixedLenFeature((), tf.string),
+        "notes_indices": tf.io.FixedLenFeature((), tf.string),
+        "notes_values": tf.io.FixedLenFeature((), tf.string),
+        "onsets_indices": tf.io.FixedLenFeature((), tf.string),
+        "onsets_values": tf.io.FixedLenFeature((), tf.string),
+        "contours_indices": tf.io.FixedLenFeature((), tf.string),
+        "contours_values": tf.io.FixedLenFeature((), tf.string),
+        "notes_onsets_shape": tf.io.FixedLenFeature((), tf.string),
+        "contours_shape": tf.io.FixedLenFeature((), tf.string),
+    }
+    example = tf.io.parse_single_example(serialized_example, schema)
+    return (
+        example["file_id"],
+        example["source"],
+        example["audio_wav"],
+        tf.io.parse_tensor(example["notes_indices"], out_type=tf.int64),
+        tf.io.parse_tensor(example["notes_values"], out_type=tf.float32),
+        tf.io.parse_tensor(example["onsets_indices"], out_type=tf.int64),
+        tf.io.parse_tensor(example["onsets_values"], out_type=tf.float32),
+        tf.io.parse_tensor(example["contours_indices"], out_type=tf.int64),
+        tf.io.parse_tensor(example["contours_values"], out_type=tf.float32),
+        tf.io.parse_tensor(example["notes_onsets_shape"], out_type=tf.int64),
+        tf.io.parse_tensor(example["contours_shape"], out_type=tf.int64),
+    )
+
+
+def is_not_bad_shape(
+    _file_id: tf.Tensor,
+    _source: tf.Tensor,
+    _audio_wav: tf.Tensor,
+    _notes_indices: tf.Tensor,
+    notes_values: tf.Tensor,
+    _onsets_indices: tf.Tensor,
+    _onsets_values: tf.Tensor,
+    _contours_indices: tf.Tensor,
+    _contours_values: tf.Tensor,
+    notes_onsets_shape: tf.Tensor,
+    _contours_shape: tf.Tensor,
+) -> tf.Tensor:
+    """checks for improper datashape for note values and onsets"""
+    bad_shape = tf.logical_and(
+        tf.shape(notes_values)[0] == 0,
+        tf.shape(notes_onsets_shape)[0] == 2,
+    )
+    return tf.math.logical_not(bad_shape)
+
+
+def sparse2dense(values: tf.Tensor, indices: tf.Tensor, dense_shape: tf.Tensor) -> tf.Tensor:
+    """converts sparse tensor representation to dense vector"""
+    if tf.rank(indices) != 2 and tf.size(indices) == 0:
+        indices = tf.zeros([0, 1], dtype=indices.dtype)
+    tf.assert_rank(indices, 2)
+    tf.assert_rank(values, 1)
+    tf.assert_rank(dense_shape, 1)
+    sp = tf.SparseTensor(indices=indices, values=values, dense_shape=dense_shape)
+    return tf.sparse.to_dense(sp, validate_indices=False)
+
+
+def reduce_transcription_inputs(
+    file_id: str,
+    src: str,
+    wav: Tuple[tf.Tensor, int],
+    notes: tf.Tensor,
+    onsets: tf.Tensor,
+    contour: tf.Tensor,
+) -> Tuple[tf.Tensor, tf.Tensor, tf.Tensor, tf.Tensor, Dict[str, str]]:
+    """Map tf records data to a tuple
+    If audio is stereo, it is mixed down to mono.
+    This will error if the sample rate of the wav file is different from
+    what we hard code.
+    Args:
+        fid : file id (string)
+        src : name of dataset (string)
+        wav : tensorflow wav obejct (tuple of audio and sample rate)
+            The whole audio file length
+        notes : matrix of note frames (n_frames x N_FREQ_BINS_NOTES)
+            possibly size 0
+        onsets : matrix of note onsets (n_frames x N_FREQ_BINS_NOTES)
+            possibly size 0
+        contours : matrix of contour frames (n_frames x N_FREQ_BINS_CONTOURS)
+            possibly size 0
+    """
+    audio, sample_rate = wav
+    tf.debugging.assert_equal(
+        sample_rate,
+        AUDIO_SAMPLE_RATE,
+        message="audio sample rate {} is inconsistent".format(sample_rate),
+    )
+    return (
+        tf.math.reduce_mean(audio, axis=1, keepdims=True),  # manually mixdown to mono
+        onsets,
+        contour,
+        notes,
+        {"fid": file_id, "src": src},
+    )
+
+
+def _infer_time_size(onsets: tf.Tensor, contour: tf.Tensor, notes: tf.Tensor) -> tf.Tensor:
+    """Some of the targets might be empty, but we need to find out the
+    number of time frames of one of the non-empty ones.
+    Returns
+        number of time frames in the targets
+    """
+    onset_shape = tf.shape(onsets)[0]
+    contour_shape = tf.shape(contour)[0]
+    note_shape = tf.shape(notes)[0]
+    time_size = tf.cast(
+        tf.math.maximum(
+            tf.cast(tf.math.maximum(onset_shape, contour_shape), dtype=tf.int32),
+            note_shape,
+        ),
+        dtype=tf.int32,
+    )
+
+    return time_size
+
+
+def get_sample_weights(
+    audio: tf.Tensor, onsets: np.ndarray, contour: np.ndarray, notes: np.ndarray, metadata: Dict[Any, Any]
+) -> Tuple[tf.Tensor, np.ndarray, np.ndarray, np.ndarray, tf.cond, tf.cond, tf.cond, Dict[Any, Any]]:
+    """Add sample weights based on whether or not the target is empty
+    If it's empty, the weight is 0, otherwise it's 1. Empty targets get filled
+    with matricies of 0's
+    Args:
+        audio : audio signal (full length)
+        notes : matrix of note frames (n_frames x N_FREQ_BINS_NOTES)
+            possibly size 0
+        onsets : matrix of note onsets (n_frames x N_FREQ_BINS_NOTES)
+            possibly size 0
+        contours : matrix of contour frames (n_frames x N_FREQ_BINS_CONTOURS)
+            possibly size 0
+        metadata : dictionary of metadata
+    Returns:
+        audio : audio signal (full length)
+        notes : matrix of note frames (n_frames x N_FREQ_BINS_NOTES)
+        onsets : matrix of note onsets (n_frames x N_FREQ_BINS_NOTES)
+        contours : matrix of contour frames (n_frames x N_FREQ_BINS_CONTOURS)
+        onset_weight : int (0 or 1)
+        note_weight : int (0 or 1)
+        contour_weight : int (0 or 1)
+    """
+    time_size = _infer_time_size(onsets, contour, notes)
+
+    # TODO - if we dont want to worry about batches with no examples for a task
+    # we can add a tiny constant here, but training will be unstable
+    onsets_weight = tf.cast(tf.shape(onsets)[0] != 0, tf.float32)
+    contour_weight = tf.cast(tf.shape(contour)[0] != 0, tf.float32)
+    note_weight = tf.cast(tf.shape(notes)[0] != 0, tf.float32)
+
+    onsets = tf.cond(
+        tf.shape(onsets)[0] == 0,
+        lambda: tf.zeros(
+            tf.stack([time_size, tf.constant(N_FREQ_BINS_NOTES, dtype=tf.int32)], axis=0),
+            dtype=tf.float32,
+        ),
+        lambda: onsets,
+    )
+    contour = tf.cond(
+        tf.shape(contour)[0] == 0,
+        lambda: tf.zeros(
+            tf.stack([time_size, tf.constant(N_FREQ_BINS_CONTOURS, dtype=tf.int32)], axis=0),
+            dtype=tf.float32,
+        ),
+        lambda: contour,
+    )
+    notes = tf.cond(
+        tf.shape(notes)[0] == 0,
+        lambda: tf.zeros(
+            tf.stack([time_size, tf.constant(N_FREQ_BINS_NOTES, dtype=tf.int32)], axis=0),
+            dtype=tf.float32,
+        ),
+        lambda: notes,
+    )
+
+    return (
+        audio,
+        onsets,
+        contour,
+        notes,
+        onsets_weight,
+        contour_weight,
+        note_weight,
+        metadata,
+    )
+
+
+def trim_time(data: np.ndarray, start: int, duration: int, sr: int) -> tf.Tensor:
+    """
+    Slice a data file
+    Args:
+        data: 2D data as (n_time_samples, n_channels) array
+            can be audio or a time-frequency matrix
+        start: trim start time in seconds
+        duration: trim duration in seconds
+        sr: data sample rate
+    Returns:
+        sliced_data (tf.tensor): (trimmed_time, n_channels)
+    """
+    n_start = tf.cast(tf.math.round(sr * start), dtype=tf.int32)
+    n_duration = tf.cast(tf.math.ceil(tf.cast(sr * duration, tf.float32)), dtype=tf.int32)
+    begin = (n_start, 0)
+    size = (n_duration, -1)
+    return tf.slice(data, begin=begin, size=size)
+
+
+def extract_window(
+    audio: tf.Tensor, onsets: np.ndarray, contour: np.ndarray, notes: np.ndarray, t_start: int
+) -> Tuple[tf.Tensor, tf.Tensor, tf.Tensor, tf.Tensor]:
+    """extracts a window of data from the given audio and its associated metadata
+
+    Args:
+        audio: audio signal
+        onsets: note onsets of audio signal
+        contour: pitch on off of audio signal
+        notes: note on off of audio signal
+
+    Returns:
+        tuple of windows of each of the inputs
+    """
+    # needs a hop size extra of samples for good mel spectrogram alignment
+    audio_trim = trim_time(
+        audio,
+        t_start,
+        tf.cast(AUDIO_N_SAMPLES / AUDIO_SAMPLE_RATE, dtype=tf.dtypes.float32),
+        AUDIO_SAMPLE_RATE,
+    )
+    onset_trim = trim_time(onsets, t_start, AUDIO_WINDOW_LENGTH, ANNOTATIONS_FPS)
+    contour_trim = trim_time(contour, t_start, AUDIO_WINDOW_LENGTH, ANNOTATIONS_FPS)
+    note_trim = trim_time(notes, t_start, AUDIO_WINDOW_LENGTH, ANNOTATIONS_FPS)
+    return (audio_trim, onset_trim, contour_trim, note_trim)
+
+
+def extract_random_window(
+    audio: tf.Tensor, onsets: np.ndarray, contour: np.ndarray, notes: np.ndarray, seed: Optional[int]
+) -> Tuple[tf.Tensor, tf.Tensor, tf.Tensor, tf.Tensor]:
+    """Trim transcription data to a fixed length of time
+    starting from a random time index.
+    Args:
+        audio : audio signal (full length)
+        notes : matrix of note frames (n_frames x N_FREQ_BINS_NOTES)
+        onsets : matrix of note onsets (n_frames x N_FREQ_BINS_NOTES)
+        contours : matrix of contour frames (n_frames x N_FREQ_BINS_CONTOURS)
+    Returns:
+        audio : audio signal (AUDIO_WINDOW_LENGTH * AUDIO_SAMPLE_RATE, 1)
+        notes : matrix of note frames (AUDIO_SAMPLE_RATE * ANNOTATIONS_FPS, N_FREQ_BINS_NOTES)
+        onsets : matrix of note onsets (AUDIO_SAMPLE_RATE * ANNOTATIONS_FPS, N_FREQ_BINS_NOTES)
+        contours : matrix of contour frames (AUDIO_SAMPLE_RATE * ANNOTATIONS_FPS, N_FREQ_BINS_CONTOURS)
+    """
+    n_sec = tf.math.divide(
+        tf.cast(tf.shape(audio)[0], dtype=tf.float32),
+        tf.cast(AUDIO_SAMPLE_RATE, dtype=tf.float32),
+    )
+    t_start = tf.random.uniform(
+        (),
+        minval=0.0,
+        maxval=n_sec - (AUDIO_N_SAMPLES / AUDIO_SAMPLE_RATE),
+        dtype=tf.dtypes.float32,
+        seed=seed,
+    )
+    return extract_window(audio, onsets, contour, notes, t_start)
+
+
+def get_transcription_chunks(
+    audio: tf.Tensor,
+    onsets: np.ndarray,
+    contour: np.ndarray,
+    notes: np.ndarray,
+    onset_weight: int,
+    contour_weight: int,
+    note_weight: int,
+    n_samples_per_track: int,
+    seed: bool,
+) -> tf.data.Dataset:
+    """Randomly sample fixed-length time chunks for transcription data
+    Args:
+        audio : audio signal (full length)
+        notes : matrix of note frames (n_frames x N_FREQ_BINS_NOTES)
+        onsets : matrix of note onsets (n_frames x N_FREQ_BINS_NOTES)
+        contours : matrix of contour frames (n_frames x N_FREQ_BINS_CONTOURS)
+        onset_weight : int (0 or 1)
+        note_weight : int (0 or 1)
+        contour_weight : int (0 or 1)
+        n_samples_per_track : int - how many samples to yield per track
+    Returns:
+        batches of size n_samples_per_track of:
+            audio : audio signal (AUDIO_WINDOW_LENGTH * AUDIO_SAMPLE_RATE, 1)
+            notes : matrix of note frames (AUDIO_SAMPLE_RATE * ANNOTATIONS_FPS, N_FREQ_BINS_NOTES)
+            onsets : matrix of note onsets (AUDIO_SAMPLE_RATE * ANNOTATIONS_FPS, N_FREQ_BINS_NOTES)
+            contours : matrix of contour frames (AUDIO_SAMPLE_RATE * ANNOTATIONS_FPS, N_FREQ_BINS_CONTOURS)
+            onset_weight : int (0 or 1)
+            note_weight : int (0 or 1)
+            contour_weight : int (0 or 1)
+    """
+    a = []
+    o = []
+    c = []
+    n = []
+    ow = []
+    cw = []
+    nw = []
+    for i in range(n_samples_per_track):
+        s0, s1, s2, s3 = extract_random_window(audio, onsets, contour, notes, i if seed else None)
+        a.append(s0)
+        o.append(s1)
+        c.append(s2)
+        n.append(s3)
+        ow.append(onset_weight)
+        cw.append(contour_weight)
+        nw.append(note_weight)
+    return tf.data.Dataset.from_tensor_slices((a, o, c, n, ow, cw, nw))
+
+
+def is_not_all_silent_annotations(
+    audio: tf.Tensor,
+    onsets: np.ndarray,
+    contour: np.ndarray,
+    notes: np.ndarray,
+    onset_weight: int,
+    contour_weight: int,
+    note_weight: int,
+) -> tf.Tensor:
+    """returns a boolean value indicating whether the notes and pitch contour are or are not all zero, or silent."""
+    contours_nonsilent = tf.math.reduce_mean(contour) != 0
+    notes_nonsilent = tf.math.reduce_mean(notes) != 0
+    return tf.math.logical_or(contours_nonsilent, notes_nonsilent)
+
+
+def to_transcription_training_input(
+    audio: tf.Tensor,
+    onsets: np.ndarray,
+    contour: np.ndarray,
+    notes: np.ndarray,
+    onset_weight: int,
+    contour_weight: int,
+    note_weight: int,
+) -> Tuple[tf.Tensor, Dict[str, tf.Tensor], Dict[str, int]]:
+    """convert transcription data to the format expected by the model"""
+    return (
+        audio,
+        {
+            "onset": tf.ensure_shape(onsets, (ANNOT_N_FRAMES, N_FREQ_BINS_NOTES)),
+            "contour": tf.ensure_shape(contour, (ANNOT_N_FRAMES, N_FREQ_BINS_CONTOURS)),
+            "note": tf.ensure_shape(notes, (ANNOT_N_FRAMES, N_FREQ_BINS_NOTES)),
+        },
+        {"onset": onset_weight, "contour": contour_weight, "note": note_weight},
+    )
+
+
+// File: basic_pitch_fork\basic_pitch\data\tf_example_serialization.py
+----------------------------------------
+#!/usr/bin/env python
+# encoding: utf-8
+#
+# Copyright 2022 Spotify AB
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+from typing import List, Tuple, Union
+
+import sox
+import numpy as np
+import tensorflow as tf
+from basic_pitch.constants import AUDIO_N_CHANNELS, AUDIO_SAMPLE_RATE
+
+
+def int64_feature(value: Union[List[int], int]) -> tf.train.Feature:
+    if not isinstance(value, list):
+        value = [value]
+    return tf.train.Feature(int64_list=tf.train.Int64List(value=value))
+
+
+def float_feature(value: Union[List[float], float]) -> tf.train.Feature:
+    if not isinstance(value, list):
+        value = [value]
+    return tf.train.Feature(float_list=tf.train.FloatList(value=value))
+
+
+def bytes_feature(value: Union[tf.Tensor, List[bytes], bytes]) -> tf.train.Feature:
+    if isinstance(value, type(tf.constant(0))):
+        value = value.numpy()
+    if not isinstance(value, list):
+        value = [value]
+    return tf.train.Feature(bytes_list=tf.train.BytesList(value=value))
+
+
+def _to_transcription_tfex(
+    file_id: str,
+    source: str,
+    encoded_wav: bytes,
+    notes_indices: List[Tuple[int, int]],
+    notes_values: List[float],
+    onsets_indices: List[int],
+    onsets_values: List[float],
+    contours_indices: List[int],
+    contours_values: List[float],
+    notes_onsets_shape: Tuple[int, int],
+    contours_shape: Tuple[int, int],
+) -> tf.train.Example:
+    return tf.train.Example(
+        features=tf.train.Features(
+            feature={
+                "file_id": bytes_feature(bytes(file_id, "utf-8")),
+                "source": bytes_feature(bytes(source, "utf-8")),
+                "audio_wav": bytes_feature(encoded_wav),
+                "notes_indices": bytes_feature(tf.io.serialize_tensor(np.array(notes_indices, np.int64))),
+                "notes_values": bytes_feature(tf.io.serialize_tensor(np.array(notes_values, np.float32))),
+                "onsets_indices": bytes_feature(tf.io.serialize_tensor(np.array(onsets_indices, np.int64))),
+                "onsets_values": bytes_feature(tf.io.serialize_tensor(np.array(onsets_values, np.float32))),
+                "contours_indices": bytes_feature(tf.io.serialize_tensor(np.array(contours_indices, np.int64))),
+                "contours_values": bytes_feature(tf.io.serialize_tensor(np.array(contours_values, np.float32))),
+                "notes_onsets_shape": bytes_feature(tf.io.serialize_tensor(np.array(notes_onsets_shape, np.int64))),
+                "contours_shape": bytes_feature(tf.io.serialize_tensor(np.array(contours_shape, np.int64))),
+            }
+        )
+    )
+
+
+def to_transcription_tfexample(
+    file_id: str,
+    source: str,
+    audio_wav_file_path: str,
+    notes_indices: List[Tuple[int, int]],
+    notes_values: List[float],
+    onsets_indices: List[int],
+    onsets_values: List[float],
+    contours_indices: List[int],
+    contours_values: List[float],
+    notes_onsets_shape: Tuple[int, int],
+    contours_shape: Tuple[int, int],
+) -> tf.train.Example:
+    """
+    - `file_id` string
+    - `source` string  (e.g., "maestro")
+    - `audio_file_path` path to a local WAV file (must be 22kHz stereo, checked)
+    - `notes_indices` [(time, freq)], integers
+    - `notes_values` [float]
+    - `onsets_indices` same as above
+    - `onsets_values` same as above
+    - `contours_indices` same as above
+    - `contours_values` same as above
+    - `notes_onsets_shape` (time, freq), ints
+    - `contours_onsets_shape` (time, freq), ints
+    """
+    assert sox.file_info.sample_rate(audio_wav_file_path) == AUDIO_SAMPLE_RATE
+    assert sox.file_info.channels(audio_wav_file_path) == AUDIO_N_CHANNELS
+    encoded_wav = open(audio_wav_file_path, "rb").read()
+    return _to_transcription_tfex(
+        file_id,
+        source,
+        encoded_wav,
+        notes_indices,
+        notes_values,
+        onsets_indices,
+        onsets_values,
+        contours_indices,
+        contours_values,
+        notes_onsets_shape,
+        contours_shape,
+    )
+
+
+// File: basic_pitch_fork\basic_pitch\inference.py
+----------------------------------------
+#!/usr/bin/env python
+# encoding: utf-8
+#
+# Copyright 2022 Spotify AB
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+import csv
+import enum
+import json
+import logging
+import os
+import pathlib
+from typing import Any, Dict, Iterable, List, Optional, Sequence, Tuple, Union, cast
+
+
+from basic_pitch import CT_PRESENT, ICASSP_2022_MODEL_PATH, ONNX_PRESENT, TF_PRESENT, TFLITE_PRESENT
+
+try:
+    import tensorflow as tf
+except ImportError:
+    pass
+
+try:
+    import coremltools as ct
+except ImportError:
+    pass
+
+try:
+    import tflite_runtime.interpreter as tflite
+except ImportError:
+    if TF_PRESENT:
+        import tensorflow.lite as tflite
+
+try:
+    import onnxruntime as ort
+except ImportError:
+    pass
+
+import numpy as np
+import numpy.typing as npt
+import librosa
+import pretty_midi
+
+from basic_pitch.constants import (
+    AUDIO_SAMPLE_RATE,
+    AUDIO_N_SAMPLES,
+    ANNOTATIONS_FPS,
+    FFT_HOP,
+)
+from basic_pitch.commandline_printing import (
+    generating_file_message,
+    no_tf_warnings,
+    file_saved_confirmation,
+    failed_to_save,
+)
+import basic_pitch.note_creation as infer
+
+def load_model(model_path):
+    """Load a Basic Pitch model from a path."""
+    return Model(model_path)
+
+
+class Model:
+    class MODEL_TYPES(enum.Enum):
+        TENSORFLOW = enum.auto()
+        COREML = enum.auto()
+        TFLITE = enum.auto()
+        ONNX = enum.auto()
+
+    def __init__(self, model_path: Union[pathlib.Path, str]):
+        present = []
+        if TF_PRESENT:
+            present.append("TensorFlow")
+            try:
+                self.model_type = Model.MODEL_TYPES.TENSORFLOW
+                self.model = tf.saved_model.load(str(model_path))
+                return
+            except Exception as e:
+                if os.path.isdir(model_path) and {"saved_model.pb", "variables"} & set(os.listdir(model_path)):
+                    logging.warning(
+                        "Could not load TensorFlow saved model %s even "
+                        "though it looks like a saved model file with error %s. "
+                        "Are you sure it's a TensorFlow saved model?",
+                        model_path,
+                        e.__repr__(),
+                    )
+
+        if CT_PRESENT:
+            present.append("CoreML")
+            try:
+                self.model_type = Model.MODEL_TYPES.COREML
+                self.model = ct.models.MLModel(str(model_path), compute_units=ct.ComputeUnit.CPU_ONLY)
+                return
+            except Exception as e:
+                if str(model_path).endswith(".mlpackage"):
+                    logging.warning(
+                        "Could not load CoreML file %s even "
+                        "though it looks like a CoreML file with error %s. "
+                        "Are you sure it's a CoreML file?",
+                        model_path,
+                        e.__repr__(),
+                    )
+
+        if TFLITE_PRESENT or TF_PRESENT:
+            present.append("TensorFlowLite")
+            try:
+                self.model_type = Model.MODEL_TYPES.TFLITE
+                self.interpreter = tflite.Interpreter(str(model_path))
+                self.model = self.interpreter.get_signature_runner()
+                return
+            except Exception as e:
+                if str(model_path).endswith(".tflite"):
+                    logging.warning(
+                        "Could not load TensorFlowLite file %s even "
+                        "though it looks like a TFLite file with error %s. "
+                        "Are you sure it's a TFLite file?",
+                        model_path,
+                        e.__repr__(),
+                    )
+
+        if ONNX_PRESENT:
+            present.append("ONNX")
+            try:
+                self.model_type = Model.MODEL_TYPES.ONNX
+                providers = ["CPUExecutionProvider"]
+                if "CUDAExecutionProvider" in ort.get_available_providers():
+                    providers.insert(0, "CUDAExecutionProvider")
+                self.model = ort.InferenceSession(str(model_path), providers=providers)
+                return
+            except Exception as e:
+                if str(model_path).endswith(".onnx"):
+                    logging.warning(
+                        "Could not load ONNX file %s even "
+                        "though it looks like a ONNX file with error %s. "
+                        "Are you sure it's a ONNX file?",
+                        model_path,
+                        e.__repr__(),
+                    )
+
+        raise ValueError(
+            f"File {model_path} cannot be loaded into either "
+            "TensorFlow, CoreML, TFLite or ONNX. "
+            "Please check if it is a supported and valid serialized model "
+            "and that one of these packages are installed. On this system, "
+            f"{present} is installed."
+        )
+
+    def predict(self, x: npt.NDArray[np.float32]) -> Dict[str, npt.NDArray[np.float32]]:
+        if self.model_type == Model.MODEL_TYPES.TENSORFLOW:
+            return {k: v.numpy() for k, v in cast(tf.keras.Model, self.model(x)).items()}
+        elif self.model_type == Model.MODEL_TYPES.COREML:
+            result = cast(ct.models.MLModel, self.model).predict({"input_2": x})
+            return {
+                "note": result["Identity_1"],
+                "onset": result["Identity_2"],
+                "contour": result["Identity"],
+            }
+        elif self.model_type == Model.MODEL_TYPES.TFLITE:
+            return self.model(input_2=x)  # type: ignore
+        elif self.model_type == Model.MODEL_TYPES.ONNX:
+            return {
+                k: v
+                for k, v in zip(
+                    ["note", "onset", "contour"],
+                    cast(ort.InferenceSession, self.model).run(
+                        ["StatefulPartitionedCall:1", "StatefulPartitionedCall:2", "StatefulPartitionedCall:0"],
+                        {"serving_default_input_2:0": x},
+                    ),
+                )
+            }
+
+
+def window_audio_file(
+    audio_original: npt.NDArray[np.float32], hop_size: int
+) -> Iterable[Tuple[npt.NDArray[np.float32], Dict[str, float]]]:
+    """
+    Pad appropriately an audio file, and return as
+    windowed signal, with window length = AUDIO_N_SAMPLES
+
+    Returns:
+        audio_windowed: tensor with shape (n_windows, AUDIO_N_SAMPLES, 1)
+            audio windowed into fixed length chunks
+        window_times: list of {'start':.., 'end':...} objects (times in seconds)
+
+    """
+    for i in range(0, audio_original.shape[0], hop_size):
+        window = audio_original[i : i + AUDIO_N_SAMPLES]
+        if len(window) < AUDIO_N_SAMPLES:
+            window = np.pad(
+                window,
+                pad_width=[[0, AUDIO_N_SAMPLES - len(window)]],
+            )
+        t_start = float(i) / AUDIO_SAMPLE_RATE
+        window_time = {
+            "start": t_start,
+            "end": t_start + (AUDIO_N_SAMPLES / AUDIO_SAMPLE_RATE),
+        }
+        yield np.expand_dims(window, axis=-1), window_time
+
+
+def get_audio_input(
+    audio_path: Union[pathlib.Path, str], overlap_len: int, hop_size: int
+) -> Iterable[Tuple[npt.NDArray[np.float32], Dict[str, float], int]]:
+    """
+    Read wave file (as mono), pad appropriately, and return as
+    windowed signal, with window length = AUDIO_N_SAMPLES
+
+    Returns:
+        audio_windowed: tensor with shape (n_windows, AUDIO_N_SAMPLES, 1)
+            audio windowed into fixed length chunks
+        window_times: list of {'start':.., 'end':...} objects (times in seconds)
+        audio_original_length: int
+            length of original audio file, in frames, BEFORE padding.
+
+    """
+    assert overlap_len % 2 == 0, f"overlap_length must be even, got {overlap_len}"
+
+    audio_original, _ = librosa.load(str(audio_path), sr=AUDIO_SAMPLE_RATE, mono=True)
+
+    original_length = audio_original.shape[0]
+    audio_original = np.concatenate([np.zeros((int(overlap_len / 2),), dtype=np.float32), audio_original])
+    for window, window_time in window_audio_file(audio_original, hop_size):
+        yield np.expand_dims(window, axis=0), window_time, original_length
+
+
+def unwrap_output(
+    output: npt.NDArray[np.float32],
+    audio_original_length: int,
+    n_overlapping_frames: int,
+) -> np.array:
+    """Unwrap batched model predictions to a single matrix.
+
+    Args:
+        output: array (n_batches, n_times_short, n_freqs)
+        audio_original_length: length of original audio signal (in samples)
+        n_overlapping_frames: number of overlapping frames in the output
+
+    Returns:
+        array (n_times, n_freqs)
+    """
+    if len(output.shape) != 3:
+        return None
+
+    n_olap = int(0.5 * n_overlapping_frames)
+    if n_olap > 0:
+        # remove half of the overlapping frames from beginning and end
+        output = output[:, n_olap:-n_olap, :]
+
+    output_shape = output.shape
+    n_output_frames_original = int(np.floor(audio_original_length * (ANNOTATIONS_FPS / AUDIO_SAMPLE_RATE)))
+    unwrapped_output = output.reshape(output_shape[0] * output_shape[1], output_shape[2])
+    return unwrapped_output[:n_output_frames_original, :]  # trim to original audio length
+
+
+def run_inference(
+    audio_path: Union[pathlib.Path, str],
+    model_or_model_path: Union[Model, pathlib.Path, str],
+    debug_file: Optional[pathlib.Path] = None,
+) -> Dict[str, np.array]:
+    """Run the model on the input audio path.
+
+    Args:
+        audio_path: The audio to run inference on.
+        model_or_model_path: A loaded Model or path to a serialized model to load.
+        debug_file: An optional path to output debug data to. Useful for testing/verification.
+
+    Returns:
+       A dictionary with the notes, onsets and contours from model inference.
+    """
+    if isinstance(model_or_model_path, Model):
+        model = model_or_model_path
+    else:
+        model = Model(model_or_model_path)
+
+    # overlap 30 frames
+    n_overlapping_frames = 30
+    overlap_len = n_overlapping_frames * FFT_HOP
+    hop_size = AUDIO_N_SAMPLES - overlap_len
+
+    output: Dict[str, Any] = {"note": [], "onset": [], "contour": []}
+    for audio_windowed, _, audio_original_length in get_audio_input(audio_path, overlap_len, hop_size):
+        for k, v in model.predict(audio_windowed).items():
+            output[k].append(v)
+
+    unwrapped_output = {
+        k: unwrap_output(np.concatenate(output[k]), audio_original_length, n_overlapping_frames) for k in output
+    }
+
+    if debug_file:
+        with open(debug_file, "w") as f:
+            json.dump(
+                {
+                    "audio_windowed": audio_windowed.numpy().tolist(),
+                    "audio_original_length": audio_original_length,
+                    "hop_size_samples": hop_size,
+                    "overlap_length_samples": overlap_len,
+                    "unwrapped_output": {k: v.tolist() for k, v in unwrapped_output.items()},
+                },
+                f,
+            )
+
+    return unwrapped_output
+
+
+class OutputExtensions(enum.Enum):
+    MIDI = "mid"
+    MODEL_OUTPUT_NPZ = "npz"
+    MIDI_SONIFICATION = "wav"
+    NOTE_EVENTS = "csv"
+
+
+def verify_input_path(audio_path: Union[pathlib.Path, str]) -> None:
+    """Verify that an input path is valid and can be processed
+
+    Args:
+        audio_path: Path to an audio file.
+
+    Raises:
+        ValueError: If the audio file is invalid.
+    """
+    if not os.path.isfile(audio_path):
+        raise ValueError(f"🚨 {audio_path} is not a file path.")
+
+    if not os.path.exists(audio_path):
+        raise ValueError(f"🚨 {audio_path} does not exist.")
+
+
+def verify_output_dir(output_dir: Union[pathlib.Path, str]) -> None:
+    """Verify that an output directory is valid and can be processed
+
+    Args:
+        output_dir: Path to an output directory.
+
+    Raises:
+        ValueError: If the output directory is invalid.
+    """
+    if not os.path.isdir(output_dir):
+        raise ValueError(f"🚨 {output_dir} is not a directory.")
+
+    if not os.path.exists(output_dir):
+        raise ValueError(f"🚨 {output_dir} does not exist.")
+
+
+def build_output_path(
+    audio_path: Union[pathlib.Path, str],
+    output_directory: Union[pathlib.Path, str],
+    output_type: OutputExtensions,
+) -> pathlib.Path:
+    """Create an output path and make sure it doesn't already exist.
+
+    Args:
+        audio_path: The original file path.
+        output_directory: The directory we will output to.
+        output_type: The type of output file we are creating.
+
+    Raises:
+        IOError: If the generated path already exists.
+
+    Returns:
+        A new path in the output_directory with the stem audio_path and an extension
+        based on output_type.
+    """
+    audio_path = str(audio_path)
+    if not isinstance(output_directory, pathlib.Path):
+        output_directory = pathlib.Path(output_directory)
+
+    basename, _ = os.path.splitext(os.path.basename(audio_path))
+
+    output_path = output_directory / f"{basename}_basic_pitch.{output_type.value}"
+
+    generating_file_message(output_type.name)
+
+    if output_path.exists():
+        raise IOError(
+            f"  🚨 {str(output_path)} already exists and would be overwritten. Skipping output files for {audio_path}."
+        )
+
+    return output_path
+
+
+def save_note_events(
+    note_events: List[Tuple[float, float, int, float, Optional[List[int]]]],
+    save_path: Union[pathlib.Path, str],
+) -> None:
+    """Save note events to file
+
+    Args:
+        note_events: A list of note event tuples to save. Tuples have the format
+            ("start_time_s", "end_time_s", "pitch_midi", "velocity", "list of pitch bend values")
+        save_path: The location we're saving it
+    """
+
+    with open(save_path, "w") as fhandle:
+        writer = csv.writer(fhandle, delimiter=",")
+        writer.writerow(["start_time_s", "end_time_s", "pitch_midi", "velocity", "pitch_bend"])
+        for start_time, end_time, note_number, amplitude, pitch_bend in note_events:
+            row = [start_time, end_time, note_number, int(np.round(127 * amplitude))]
+            if pitch_bend:
+                row.extend(pitch_bend)
+            writer.writerow(row)
+
+
+def predict(
+    audio_path: Union[pathlib.Path, str],
+    model_or_model_path: Union[Model, pathlib.Path, str] = ICASSP_2022_MODEL_PATH,
+    onset_threshold: float = 0.5,
+    frame_threshold: float = 0.3,
+    minimum_note_length: float = 127.70,
+    minimum_frequency: Optional[float] = None,
+    maximum_frequency: Optional[float] = None,
+    multiple_pitch_bends: bool = False,
+    melodia_trick: bool = True,
+    debug_file: Optional[pathlib.Path] = None,
+    midi_tempo: float = 120,
+) -> Tuple[
+    Dict[str, np.array],
+    pretty_midi.PrettyMIDI,
+    List[Tuple[float, float, int, float, Optional[List[int]]]],
+]:
+    """Run a single prediction.
+
+    Args:
+        audio_path: File path for the audio to run inference on.
+        model_or_model_path: A loaded Model or path to a serialized model to load.
+        onset_threshold: Minimum energy required for an onset to be considered present.
+        frame_threshold: Minimum energy requirement for a frame to be considered present.
+        minimum_note_length: The minimum allowed note length in milliseconds.
+        minimum_freq: Minimum allowed output frequency, in Hz. If None, all frequencies are used.
+        maximum_freq: Maximum allowed output frequency, in Hz. If None, all frequencies are used.
+        multiple_pitch_bends: If True, allow overlapping notes in midi file to have pitch bends.
+        melodia_trick: Use the melodia post-processing step.
+        debug_file: An optional path to output debug data to. Useful for testing/verification.
+    Returns:
+        The model output, midi data and note events from a single prediction
+    """
+
+    with no_tf_warnings():
+        print(f"Predicting MIDI for {audio_path}...")
+
+        model_output = run_inference(audio_path, model_or_model_path, debug_file)
+        min_note_len = int(np.round(minimum_note_length / 1000 * (AUDIO_SAMPLE_RATE / FFT_HOP)))
+        midi_data, note_events = infer.model_output_to_notes(
+            model_output,
+            onset_thresh=onset_threshold,
+            frame_thresh=frame_threshold,
+            min_note_len=min_note_len,  # convert to frames
+            min_freq=minimum_frequency,
+            max_freq=maximum_frequency,
+            multiple_pitch_bends=multiple_pitch_bends,
+            melodia_trick=melodia_trick,
+            midi_tempo=midi_tempo,
+        )
+
+    if debug_file:
+        with open(debug_file) as f:
+            debug_data = json.load(f)
+        with open(debug_file, "w") as f:
+            json.dump(
+                {
+                    **debug_data,
+                    "min_note_length": min_note_len,
+                    "onset_thresh": onset_threshold,
+                    "frame_thresh": frame_threshold,
+                    "estimated_notes": [
+                        (
+                            float(start_time),
+                            float(end_time),
+                            int(pitch),
+                            float(amplitude),
+                            [int(b) for b in pitch_bends] if pitch_bends else None,
+                        )
+                        for start_time, end_time, pitch, amplitude, pitch_bends in note_events
+                    ],
+                },
+                f,
+            )
+
+    return model_output, midi_data, note_events
+
+
+def predict_and_save(
+    audio_path_list: Sequence[Union[pathlib.Path, str]],
+    output_directory: Union[pathlib.Path, str],
+    save_midi: bool,
+    sonify_midi: bool,
+    save_model_outputs: bool,
+    save_notes: bool,
+    model_or_model_path: Union[Model, str, pathlib.Path],
+    onset_threshold: float = 0.5,
+    frame_threshold: float = 0.3,
+    minimum_note_length: float = 127.70,
+    minimum_frequency: Optional[float] = None,
+    maximum_frequency: Optional[float] = None,
+    multiple_pitch_bends: bool = False,
+    melodia_trick: bool = True,
+    debug_file: Optional[pathlib.Path] = None,
+    sonification_samplerate: int = 44100,
+    midi_tempo: float = 120,
+) -> None:
+    """Make a prediction and save the results to file.
+
+    Args:
+        audio_path_list: List of file paths for the audio to run inference on.
+        output_directory: Directory to output MIDI and all other outputs derived from the model to.
+        save_midi: True to save midi.
+        sonify_midi: Whether or not to render audio from the MIDI and output it to a file.
+        save_model_outputs: True to save contours, onsets and notes from the model prediction.
+        save_notes: True to save note events.
+        model_or_model_path: A loaded Model or path to a serialized model to load.
+        onset_threshold: Minimum energy required for an onset to be considered present.
+        frame_threshold: Minimum energy requirement for a frame to be considered present.
+        minimum_note_length: The minimum allowed note length in milliseconds.
+        minimum_freq: Minimum allowed output frequency, in Hz. If None, all frequencies are used.
+        maximum_freq: Maximum allowed output frequency, in Hz. If None, all frequencies are used.
+        multiple_pitch_bends: If True, allow overlapping notes in midi file to have pitch bends.
+        melodia_trick: Use the melodia post-processing step.
+        debug_file: An optional path to output debug data to. Useful for testing/verification.
+        sonification_samplerate: Sample rate for rendering audio from MIDI.
+    """
+    for audio_path in audio_path_list:
+        print("")
+        try:
+            model_output, midi_data, note_events = predict(
+                pathlib.Path(audio_path),
+                model_or_model_path,
+                onset_threshold,
+                frame_threshold,
+                minimum_note_length,
+                minimum_frequency,
+                maximum_frequency,
+                multiple_pitch_bends,
+                melodia_trick,
+                debug_file,
+                midi_tempo,
+            )
+
+            if save_model_outputs:
+                model_output_path = build_output_path(audio_path, output_directory, OutputExtensions.MODEL_OUTPUT_NPZ)
+                try:
+                    np.savez(model_output_path, basic_pitch_model_output=model_output)
+                    file_saved_confirmation(OutputExtensions.MODEL_OUTPUT_NPZ.name, model_output_path)
+                except Exception as e:
+                    failed_to_save(OutputExtensions.MODEL_OUTPUT_NPZ.name, model_output_path)
+                    raise e
+
+            if save_midi:
+                try:
+                    midi_path = build_output_path(audio_path, output_directory, OutputExtensions.MIDI)
+                except IOError as e:
+                    raise e
+                try:
+                    midi_data.write(str(midi_path))
+                    file_saved_confirmation(OutputExtensions.MIDI.name, midi_path)
+                except Exception as e:
+                    failed_to_save(OutputExtensions.MIDI.name, midi_path)
+                    raise e
+
+            if sonify_midi:
+                midi_sonify_path = build_output_path(audio_path, output_directory, OutputExtensions.MIDI_SONIFICATION)
+                try:
+                    infer.sonify_midi(midi_data, midi_sonify_path, sr=sonification_samplerate)
+                    file_saved_confirmation(OutputExtensions.MIDI_SONIFICATION.name, midi_sonify_path)
+                except Exception as e:
+                    failed_to_save(OutputExtensions.MIDI_SONIFICATION.name, midi_sonify_path)
+                    raise e
+
+            if save_notes:
+                note_events_path = build_output_path(audio_path, output_directory, OutputExtensions.NOTE_EVENTS)
+                try:
+                    save_note_events(note_events, note_events_path)
+                    file_saved_confirmation(OutputExtensions.NOTE_EVENTS.name, note_events_path)
+                except Exception as e:
+                    failed_to_save(OutputExtensions.NOTE_EVENTS.name, note_events_path)
+                    raise e
+        except Exception as e:
+            raise e
+
+
+// File: basic_pitch_fork\basic_pitch\layers\__init__.py
+----------------------------------------
+
+
+// File: basic_pitch_fork\basic_pitch\layers\math.py
+----------------------------------------
+#!/usr/bin/env python
+# encoding: utf-8
+#
+# Copyright 2022 Spotify AB
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+import tensorflow as tf
+
+
+def log_base_b(x: tf.Tensor, base: int) -> tf.Tensor:
+    """
+    Compute log_b(x)
+    Args:
+        x : input
+        base : log base. E.g. for log10 base=10
+    Returns:
+        log_base(x)
+    """
+    numerator = tf.math.log(x)
+    denominator = tf.math.log(tf.constant(base, dtype=numerator.dtype))
+    return numerator / denominator
+
+
+// File: basic_pitch_fork\basic_pitch\layers\nnaudio.py
+----------------------------------------
+#!/usr/bin/env python
+# encoding: utf-8
+#
+# Copyright 2022 Spotify AB
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+# This module is comprised of PyTorch layers from NNAudio and ported to TensorFlow:
+# https://github.com/KinWaiCheuk/nnAudio
+# The above code is released under an MIT license.
+
+import warnings
+import tensorflow as tf
+import numpy as np
+from typing import Any, List, Optional, Tuple, Union
+
+import scipy.signal
+
+
+def create_lowpass_filter(
+    band_center: float = 0.5,
+    kernel_length: int = 256,
+    transition_bandwidth: float = 0.03,
+    dtype: tf.dtypes.DType = tf.float32,
+) -> np.ndarray:
+    """
+    Calculate the highest frequency we need to preserve and the lowest frequency we allow
+    to pass through. Note that frequency is on a scale from 0 to 1 where 0 is 0 and 1 is
+    the Nyquist frequency of the signal BEFORE downsampling.
+    """
+
+    passband_max = band_center / (1 + transition_bandwidth)
+    stopband_min = band_center * (1 + transition_bandwidth)
+
+    # We specify a list of key frequencies for which we will require
+    # that the filter match a specific output gain.
+    # From [0.0 to passband_max] is the frequency range we want to keep
+    # untouched and [stopband_min, 1.0] is the range we want to remove
+    key_frequencies = [0.0, passband_max, stopband_min, 1.0]
+
+    # We specify a list of output gains to correspond to the key
+    # frequencies listed above.
+    # The first two gains are 1.0 because they correspond to the first
+    # two key frequencies. the second two are 0.0 because they
+    # correspond to the stopband frequencies
+    gain_at_key_frequencies = [1.0, 1.0, 0.0, 0.0]
+
+    # This command produces the filter kernel coefficients
+    filter_kernel = scipy.signal.firwin2(kernel_length, key_frequencies, gain_at_key_frequencies)
+
+    return tf.constant(filter_kernel, dtype=dtype)
+
+
+def next_power_of_2(A: int) -> int:
+    """A helper function to calculate the next nearest number to the power of 2."""
+    return int(np.ceil(np.log2(A)))
+
+
+def early_downsample(
+    sr: Union[float, int],
+    hop_length: int,
+    n_octaves: int,
+    nyquist_hz: float,
+    filter_cutoff_hz: float,
+) -> Tuple[Union[float, int], int, int]:
+    """Return new sampling rate and hop length after early downsampling"""
+    downsample_count = early_downsample_count(nyquist_hz, filter_cutoff_hz, hop_length, n_octaves)
+    downsample_factor = 2 ** (downsample_count)
+
+    hop_length //= downsample_factor  # Getting new hop_length
+    new_sr = sr / float(downsample_factor)  # Getting new sampling rate
+
+    return new_sr, hop_length, downsample_factor
+
+
+# The following two downsampling count functions are obtained from librosa CQT
+# They are used to determine the number of pre resamplings if the starting and ending frequency
+# are both in low frequency regions.
+def early_downsample_count(nyquist_hz: float, filter_cutoff_hz: float, hop_length: int, n_octaves: int) -> int:
+    """Compute the number of early downsampling operations"""
+
+    downsample_count1 = max(0, int(np.ceil(np.log2(0.85 * nyquist_hz / filter_cutoff_hz)) - 1) - 1)
+    num_twos = next_power_of_2(hop_length)
+    downsample_count2 = max(0, num_twos - n_octaves + 1)
+
+    return min(downsample_count1, downsample_count2)
+
+
+def get_early_downsample_params(
+    sr: Union[float, int],
+    hop_length: int,
+    fmax_t: float,
+    Q: float,
+    n_octaves: int,
+    dtype: tf.dtypes.DType,
+) -> Tuple[Union[float, int], int, float, np.array, bool]:
+    """Compute downsampling parameters used for early downsampling"""
+
+    window_bandwidth = 1.5  # for hann window
+    filter_cutoff = fmax_t * (1 + 0.5 * window_bandwidth / Q)
+    sr, hop_length, downsample_factor = early_downsample(sr, hop_length, n_octaves, sr // 2, filter_cutoff)
+    if downsample_factor != 1:
+        earlydownsample = True
+        early_downsample_filter = create_lowpass_filter(
+            band_center=1 / downsample_factor,
+            kernel_length=256,
+            transition_bandwidth=0.03,
+            dtype=dtype,
+        )
+    else:
+        early_downsample_filter = None
+        earlydownsample = False
+
+    return sr, hop_length, downsample_factor, early_downsample_filter, earlydownsample
+
+
+def get_window_dispatch(window: Union[str, Tuple[str, float]], N: int, fftbins: bool = True) -> np.array:
+    if isinstance(window, str):
+        return scipy.signal.get_window(window, N, fftbins=fftbins)
+    elif isinstance(window, tuple):
+        if window[0] == "gaussian":
+            assert window[1] >= 0
+            sigma = np.floor(-N / 2 / np.sqrt(-2 * np.log(10 ** (-window[1] / 20))))
+            return scipy.signal.get_window(("gaussian", sigma), N, fftbins=fftbins)
+        else:
+            Warning("Tuple windows may have undesired behaviour regarding Q factor")
+    elif isinstance(window, float):
+        Warning("You are using Kaiser window with beta factor " + str(window) + ". Correct behaviour not checked.")
+    else:
+        raise Exception("The function get_window from scipy only supports strings, tuples and floats.")
+
+
+def create_cqt_kernels(
+    Q: float,
+    fs: float,
+    fmin: float,
+    n_bins: int = 84,
+    bins_per_octave: int = 12,
+    norm: int = 1,
+    window: str = "hann",
+    fmax: Optional[float] = None,
+    topbin_check: bool = True,
+) -> Tuple[np.array, int, np.array, np.array]:
+    """
+    Automatically create CQT kernels in time domain
+    """
+
+    fftLen = 2 ** next_power_of_2(np.ceil(Q * fs / fmin))
+
+    if (fmax is not None) and (n_bins is None):
+        n_bins = np.ceil(bins_per_octave * np.log2(fmax / fmin))  # Calculate the number of bins
+        freqs = fmin * 2.0 ** (np.r_[0:n_bins] / float(bins_per_octave))
+
+    elif (fmax is None) and (n_bins is not None):
+        freqs = fmin * 2.0 ** (np.r_[0:n_bins] / float(bins_per_octave))
+
+    else:
+        warnings.warn("If fmax is given, n_bins will be ignored", SyntaxWarning)
+        n_bins = np.ceil(bins_per_octave * np.log2(fmax / fmin))  # Calculate the number of bins
+        freqs = fmin * 2.0 ** (np.r_[0:n_bins] / float(bins_per_octave))
+
+    if np.max(freqs) > fs / 2 and topbin_check is True:
+        raise ValueError(
+            "The top bin {}Hz has exceeded the Nyquist frequency, please reduce the n_bins".format(np.max(freqs))
+        )
+
+    tempKernel = np.zeros((int(n_bins), int(fftLen)), dtype=np.complex64)
+
+    lengths = np.ceil(Q * fs / freqs)
+    for k in range(0, int(n_bins)):
+        freq = freqs[k]
+        _l = np.ceil(Q * fs / freq)
+
+        # Centering the kernels, pad more zeros on RHS
+        start = int(np.ceil(fftLen / 2.0 - _l / 2.0)) - int(_l % 2)
+
+        sig = (
+            get_window_dispatch(window, int(_l), fftbins=True)
+            * np.exp(np.r_[-_l // 2 : _l // 2] * 1j * 2 * np.pi * freq / fs)
+            / _l
+        )
+
+        if norm:  # Normalizing the filter # Trying to normalize like librosa
+            tempKernel[k, start : start + int(_l)] = sig / np.linalg.norm(sig, norm)
+        else:
+            tempKernel[k, start : start + int(_l)] = sig
+
+    return tempKernel, fftLen, lengths, freqs
+
+
+def get_cqt_complex(
+    x: tf.Tensor,
+    cqt_kernels_real: tf.Tensor,
+    cqt_kernels_imag: tf.Tensor,
+    hop_length: int,
+    padding: tf.keras.layers.Layer,
+) -> tf.Tensor:
+    """Multiplying the STFT result with the cqt_kernel, check out the 1992 CQT paper [1]
+    for how to multiple the STFT result with the CQT kernel
+    [2] Brown, Judith C.C. and Miller Puckette. “An efficient algorithm for the calculation of
+    a constant Q transform.” (1992)."""
+
+    try:
+        x = padding(x)  # When center is True, we need padding at the beginning and ending
+    except Exception:
+        warnings.warn(
+            f"\ninput size = {x.shape}\tkernel size = {cqt_kernels_real.shape[-1]}\n"
+            "padding with reflection mode might not be the best choice, try using constant padding",
+            UserWarning,
+        )
+        x = tf.pad(x, (cqt_kernels_real.shape[-1] // 2, cqt_kernels_real.shape[-1] // 2))
+    CQT_real = tf.transpose(
+        tf.nn.conv1d(
+            tf.transpose(x, [0, 2, 1]),
+            tf.transpose(cqt_kernels_real, [2, 1, 0]),
+            padding="VALID",
+            stride=hop_length,
+        ),
+        [0, 2, 1],
+    )
+    CQT_imag = -tf.transpose(
+        tf.nn.conv1d(
+            tf.transpose(x, [0, 2, 1]),
+            tf.transpose(cqt_kernels_imag, [2, 1, 0]),
+            padding="VALID",
+            stride=hop_length,
+        ),
+        [0, 2, 1],
+    )
+
+    return tf.stack((CQT_real, CQT_imag), axis=-1)
+
+
+def downsampling_by_n(x: tf.Tensor, filter_kernel: tf.Tensor, n: float, match_torch_exactly: bool = True) -> tf.Tensor:
+    """
+    Downsample the given tensor using the given filter kernel.
+    The input tensor is expected to have shape `(n_batches, channels, width)`,
+    and the filter kernel is expected to have shape `(num_output_channels,)` (i.e.: 1D)
+
+    If match_torch_exactly is passed, we manually pad the input rather than having TensorFlow do so with "SAME".
+    The result is subtly different than Torch's output, but it is compatible with TensorFlow Lite (as of v2.4.1).
+    """
+
+    if match_torch_exactly:
+        paddings = [
+            [0, 0],
+            [0, 0],
+            [(filter_kernel.shape[-1] - 1) // 2, (filter_kernel.shape[-1] - 1) // 2],
+        ]
+        padded = tf.pad(x, paddings)
+
+        # Store this tensor in the shape `(n_batches, width, channels)`
+        padded_nwc = tf.transpose(padded, [0, 2, 1])
+        result_nwc = tf.nn.conv1d(padded_nwc, filter_kernel[:, None, None], padding="VALID", stride=n)
+    else:
+        x_nwc = tf.transpose(x, [0, 2, 1])
+        result_nwc = tf.nn.conv1d(x_nwc, filter_kernel[:, None, None], padding="SAME", stride=n)
+    result_ncw = tf.transpose(result_nwc, [0, 2, 1])
+    return result_ncw
+
+
+class ReflectionPad1D(tf.keras.layers.Layer):
+    """
+    Replica of Torch's nn.ReflectionPad1D in TF.
+    """
+
+    def __init__(self, padding: Union[int, Tuple[int]] = 1, **kwargs: Any):
+        self.padding = padding
+        self.input_spec = [tf.keras.layers.InputSpec(ndim=3)]
+        super(ReflectionPad1D, self).__init__(**kwargs)
+
+    def compute_output_shape(self, s: List[int]) -> Tuple[int, int, int]:
+        return (s[0], s[1], s[2] + 2 * self.padding if isinstance(self.padding, int) else self.padding[0])
+
+    def call(self, x: tf.Tensor) -> tf.Tensor:
+        return tf.pad(x, [[0, 0], [0, 0], [self.padding, self.padding]], "REFLECT")
+
+
+class ConstantPad1D(tf.keras.layers.Layer):
+    """
+    Replica of Torch's nn.ConstantPad1D in TF.
+    """
+
+    def __init__(self, padding: Union[int, Tuple[int]] = 1, value: int = 0, **kwargs: Any):
+        self.padding = padding
+        self.value = value
+        self.input_spec = [tf.keras.layers.InputSpec(ndim=3)]
+        super(ConstantPad1D, self).__init__(**kwargs)
+
+    def compute_output_shape(self, s: List[int]) -> Tuple[int, int, int]:
+        return (s[0], s[1], s[2] + 2 * self.padding if isinstance(self.padding, int) else self.padding[0])
+
+    def call(self, x: tf.Tensor) -> tf.Tensor:
+        return tf.pad(x, [[0, 0], [0, 0], [self.padding, self.padding]], "CONSTANT", self.value)
+
+
+def pad_center(data: np.ndarray, size: int, axis: int = -1, **kwargs: Any) -> np.ndarray:
+    """Wrapper for np.pad to automatically center an array prior to padding.
+    This is analogous to `str.center()`
+
+    Examples
+    --------
+    >>> # Generate a vector
+    >>> data = np.ones(5)
+    >>> librosa.util.pad_center(data, 10, mode='constant')
+    array([ 0.,  0.,  1.,  1.,  1.,  1.,  1.,  0.,  0.,  0.])
+    >>> # Pad a matrix along its first dimension
+    >>> data = np.ones((3, 5))
+    >>> librosa.util.pad_center(data, 7, axis=0)
+    array([[ 0.,  0.,  0.,  0.,  0.],
+           [ 0.,  0.,  0.,  0.,  0.],
+           [ 1.,  1.,  1.,  1.,  1.],
+           [ 1.,  1.,  1.,  1.,  1.],
+           [ 1.,  1.,  1.,  1.,  1.],
+           [ 0.,  0.,  0.,  0.,  0.],
+           [ 0.,  0.,  0.,  0.,  0.]])
+    >>> # Or its second dimension
+    >>> librosa.util.pad_center(data, 7, axis=1)
+    array([[ 0.,  1.,  1.,  1.,  1.,  1.,  0.],
+           [ 0.,  1.,  1.,  1.,  1.,  1.,  0.],
+           [ 0.,  1.,  1.,  1.,  1.,  1.,  0.]])
+
+    Parameters
+    ----------
+    data : np.ndarray
+        Vector to be padded and centered
+    size : int >= len(data) [scalar]
+        Length to pad `data`
+    axis : int
+        Axis along which to pad and center the data
+    kwargs : additional keyword arguments
+      arguments passed to `np.pad()`
+
+    Returns
+    -------
+    data_padded : np.ndarray
+        `data` centered and padded to length `size` along the
+        specified axis
+
+    Raises
+    ------
+    ValueError
+        If `size < data.shape[axis]`
+
+    See Also
+    --------
+    numpy.pad
+    """
+
+    kwargs.setdefault("mode", "constant")
+
+    n = data.shape[axis]
+
+    lpad = int((size - n) // 2)
+
+    lengths = [(0, 0)] * data.ndim
+    lengths[axis] = (lpad, int(size - n - lpad))
+
+    if lpad < 0:
+        raise ValueError(("Target size ({:d}) must be at least input size ({:d})").format(size, n))
+
+    return np.pad(data, lengths, **kwargs)
+
+
+class CQT2010v2(tf.keras.layers.Layer):
+    """This layer calculates the CQT of the input signal.
+    Input signal should be in either of the following shapes.
+    1. (len_audio)
+    2. (num_audio, len_audio)
+    3. (num_audio, 1, len_audio)
+    The correct shape will be inferred autommatically if the input follows these 3 shapes.
+    Most of the arguments follow the convention from librosa.
+
+    This layer uses about 1MB of memory per second of input audio with its default arguments.
+
+    This alogrithm uses the resampling method proposed in [1].
+    Instead of convoluting the STFT results with a gigantic CQT kernel covering the full frequency
+    spectrum, we make a small CQT kernel covering only the top octave. Then we keep downsampling the
+    input audio by a factor of 2 to convoluting it with the small CQT kernel.
+    Everytime the input audio is downsampled, the CQT relative to the downsampled input is equivalent
+    to the next lower octave.
+    The kernel creation process is still same as the 1992 algorithm. Therefore, we can reuse the
+    code from the 1992 alogrithm [2]
+    [1] Schörkhuber, Christian. “CONSTANT-Q TRANSFORM TOOLBOX FOR MUSIC PROCESSING.” (2010).
+    [2] Brown, Judith C.C. and Miller Puckette. “An efficient algorithm for the calculation of a
+    constant Q transform.” (1992).
+    Early downsampling factor is to downsample the input audio to reduce the CQT kernel size.
+    The result with and without early downsampling are more or less the same except in the very low
+    frequency region where freq < 40Hz.
+    Parameters
+    ----------
+    sr : int
+        The sampling rate for the input audio. It is used to calucate the correct ``fmin`` and ``fmax``.
+        Setting the correct sampling rate is very important for calculating the correct frequency.
+    hop_length : int
+        The hop (or stride) size. Default value is 512.
+    fmin : float
+        The frequency for the lowest CQT bin. Default is 32.70Hz, which coresponds to the note C0.
+    fmax : float
+        The frequency for the highest CQT bin. Default is ``None``, therefore the higest CQT bin is
+        inferred from the ``n_bins`` and ``bins_per_octave``.  If ``fmax`` is not ``None``, then the
+        argument ``n_bins`` will be ignored and ``n_bins`` will be calculated automatically.
+        Default is ``None``
+    n_bins : int
+        The total numbers of CQT bins. Default is 84. Will be ignored if ``fmax`` is not ``None``.
+    bins_per_octave : int
+        Number of bins per octave. Default is 12.
+    norm : bool
+        Normalization for the CQT result.
+    basis_norm : int
+        Normalization for the CQT kernels. ``1`` means L1 normalization, and ``2`` means L2 normalization.
+        Default is ``1``, which is same as the normalization used in librosa.
+    window : str
+        The windowing function for CQT. It uses ``scipy.signal.get_window``, please refer to
+        scipy documentation for possible windowing functions. The default value is 'hann'
+    pad_mode : str
+        The padding method. Default value is 'reflect'.
+    trainable : bool
+        Determine if the CQT kernels are trainable or not. If ``True``, the gradients for CQT kernels
+        will also be caluclated and the CQT kernels will be updated during model training.
+        Default value is ``False``
+    output_format : str
+        Determine the return type.
+        'Magnitude' will return the magnitude of the STFT result, shape = ``(num_samples, freq_bins, time_steps)``;
+        'Complex' will return the STFT result in complex number, shape = ``(num_samples, freq_bins, time_steps, 2)``;
+        'Phase' will return the phase of the STFT reuslt, shape = ``(num_samples, freq_bins,time_steps, 2)``.
+        The complex number is stored as ``(real, imag)`` in the last axis. Default value is 'Magnitude'.
+    verbose : bool
+        If ``True``, it shows layer information. If ``False``, it suppresses all prints.
+    device : str
+        Choose which device to initialize this layer. Default value is 'cpu'.
+    Returns
+    -------
+    spectrogram : tf.Tensor
+
+    It returns a tensor of spectrograms.
+    shape = ``(num_samples, freq_bins,time_steps)`` if ``output_format='Magnitude'``;
+    shape = ``(num_samples, freq_bins,time_steps, 2)`` if ``output_format='Complex' or 'Phase'``;
+    Examples
+    --------
+    >>> spec_layer = Spectrogram.CQT2010v2()
+    >>> specs = spec_layer(x)
+    """
+
+    def __init__(
+        self,
+        sr: int = 22050,
+        hop_length: int = 512,
+        fmin: float = 32.70,
+        fmax: Optional[float] = None,
+        n_bins: int = 84,
+        filter_scale: int = 1,
+        bins_per_octave: int = 12,
+        norm: bool = True,
+        basis_norm: int = 1,
+        window: str = "hann",
+        pad_mode: str = "reflect",
+        earlydownsample: bool = True,
+        trainable: bool = False,
+        output_format: str = "Magnitude",
+        match_torch_exactly: bool = True,
+    ):
+        super().__init__()
+
+        self.sample_rate: Union[float, int] = sr
+        self.hop_length = hop_length
+        self.fmin = fmin
+        self.fmax = fmax
+        self.n_bins = n_bins
+        self.filter_scale = filter_scale
+        self.bins_per_octave = bins_per_octave
+        self.norm = norm
+        self.basis_norm = basis_norm
+        self.window = window
+        self.pad_mode = pad_mode
+        self.earlydownsample = earlydownsample
+        self.trainable = trainable
+        self.output_format = output_format
+        self.match_torch_exactly = match_torch_exactly
+        self.normalization_type = "librosa"
+
+    def get_config(self) -> Any:
+        config = super().get_config().copy()
+        config.update(
+            {
+                "sample_rate": self.sample_rate,
+                "hop_length": self.hop_length,
+                "fmin": self.fmin,
+                "fmax": self.fmax,
+                "n_bins": self.n_bins,
+                "filter_scale": self.filter_scale,
+                "bins_per_octave": self.bins_per_octave,
+                "norm": self.norm,
+                "basis_norm": self.basis_norm,
+                "window": self.window,
+                "pad_mode": self.pad_mode,
+                "output_format": self.output_format,
+                "earlydownsample": self.earlydownsample,
+                "trainable": self.trainable,
+                "match_torch_exactly": self.match_torch_exactly,
+            }
+        )
+        return config
+
+    def build(self, input_shape: tf.TensorShape) -> None:
+        # This will be used to calculate filter_cutoff and creating CQT kernels
+        Q = float(self.filter_scale) / (2 ** (1 / self.bins_per_octave) - 1)
+
+        self.lowpass_filter = create_lowpass_filter(band_center=0.5, kernel_length=256, transition_bandwidth=0.001)
+
+        # Calculate num of filter requires for the kernel
+        # n_octaves determines how many resampling requires for the CQT
+        n_filters = min(self.bins_per_octave, self.n_bins)
+        self.n_octaves = int(np.ceil(float(self.n_bins) / self.bins_per_octave))
+
+        # Calculate the lowest frequency bin for the top octave kernel
+        self.fmin_t = self.fmin * 2 ** (self.n_octaves - 1)
+        remainder = self.n_bins % self.bins_per_octave
+
+        if remainder == 0:
+            # Calculate the top bin frequency
+            fmax_t = self.fmin_t * 2 ** ((self.bins_per_octave - 1) / self.bins_per_octave)
+        else:
+            # Calculate the top bin frequency
+            fmax_t = self.fmin_t * 2 ** ((remainder - 1) / self.bins_per_octave)
+
+        self.fmin_t = fmax_t / 2 ** (1 - 1 / self.bins_per_octave)  # Adjusting the top minium bins
+        if fmax_t > self.sample_rate / 2:
+            raise ValueError(
+                "The top bin {}Hz has exceeded the Nyquist frequency, please reduce the n_bins".format(fmax_t)
+            )
+
+        if self.earlydownsample is True:  # Do early downsampling if this argument is True
+            (
+                self.sample_rate,
+                self.hop_length,
+                self.downsample_factor,
+                early_downsample_filter,
+                self.earlydownsample,
+            ) = get_early_downsample_params(self.sample_rate, self.hop_length, fmax_t, Q, self.n_octaves, self.dtype)
+
+            self.early_downsample_filter = early_downsample_filter
+        else:
+            self.downsample_factor = 1.0
+
+        # Preparing CQT kernels
+        basis, self.n_fft, _, _ = create_cqt_kernels(
+            Q,
+            self.sample_rate,
+            self.fmin_t,
+            n_filters,
+            self.bins_per_octave,
+            norm=self.basis_norm,
+            topbin_check=False,
+        )
+
+        # For the normalization in the end
+        # The freqs returned by create_cqt_kernels cannot be used
+        # Since that returns only the top octave bins
+        # We need the information for all freq bin
+        freqs = self.fmin * 2.0 ** (np.r_[0 : self.n_bins] / float(self.bins_per_octave))
+        self.frequencies = freqs
+
+        self.lengths = np.ceil(Q * self.sample_rate / freqs)
+
+        self.basis = basis
+        # NOTE(psobot): this is where the implementation here starts to differ from CQT2010.
+
+        # These cqt_kernel is already in the frequency domain
+        self.cqt_kernels_real = tf.expand_dims(basis.real.astype(self.dtype), 1)
+        self.cqt_kernels_imag = tf.expand_dims(basis.imag.astype(self.dtype), 1)
+
+        if self.trainable:
+            self.cqt_kernels_real = tf.Variable(initial_value=self.cqt_kernels_real, trainable=True)
+            self.cqt_kernels_imag = tf.Variable(initial_value=self.cqt_kernels_imag, trainable=True)
+
+        # If center==True, the STFT window will be put in the middle, and paddings at the beginning
+        # and ending are required.
+        if self.pad_mode == "constant":
+            self.padding = ConstantPad1D(self.n_fft // 2, 0)
+        elif self.pad_mode == "reflect":
+            self.padding = ReflectionPad1D(self.n_fft // 2)
+
+        rank = len(input_shape)
+        if rank == 2:
+            self.reshape_input = lambda x: x[:, None, :]
+        elif rank == 1:
+            self.reshape_input = lambda x: x[None, None, :]
+        elif rank == 3:
+            self.reshape_input = lambda x: x
+        else:
+            raise ValueError(f"Input shape must be rank <= 3, found shape {input_shape}")
+
+    def call(self, x: tf.Tensor) -> tf.Tensor:
+        x = self.reshape_input(x)  # type: ignore
+
+        if self.earlydownsample is True:
+            x = downsampling_by_n(x, self.early_downsample_filter, self.downsample_factor, self.match_torch_exactly)
+
+        hop = self.hop_length
+
+        # Getting the top octave CQT
+        CQT = get_cqt_complex(x, self.cqt_kernels_real, self.cqt_kernels_imag, hop, self.padding)
+
+        x_down = x  # Preparing a new variable for downsampling
+
+        for _ in range(self.n_octaves - 1):
+            hop = hop // 2
+            x_down = downsampling_by_n(x_down, self.lowpass_filter, 2, self.match_torch_exactly)
+            CQT1 = get_cqt_complex(x_down, self.cqt_kernels_real, self.cqt_kernels_imag, hop, self.padding)
+            CQT = tf.concat((CQT1, CQT), axis=1)
+
+        CQT = CQT[:, -self.n_bins :, :]  # Removing unwanted bottom bins
+
+        # Normalizing the output with the downsampling factor, 2**(self.n_octaves-1) is make it
+        # same mag as 1992
+        CQT = CQT * self.downsample_factor
+
+        # Normalize again to get same result as librosa
+        if self.normalization_type == "librosa":
+            CQT *= tf.math.sqrt(tf.cast(self.lengths.reshape((-1, 1, 1)), self.dtype))
+        elif self.normalization_type == "convolutional":
+            pass
+        elif self.normalization_type == "wrap":
+            CQT *= 2
+        else:
+            raise ValueError("The normalization_type %r is not part of our current options." % self.normalization_type)
+
+        # Transpose the output to match the output of the other spectrogram layers.
+        if self.output_format.lower() == "magnitude":
+            # Getting CQT Amplitude
+            return tf.transpose(tf.math.sqrt(tf.math.reduce_sum(tf.math.pow(CQT, 2), axis=-1)), [0, 2, 1])
+
+        elif self.output_format.lower() == "complex":
+            return CQT
+
+        elif self.output_format.lower() == "phase":
+            phase_real = tf.math.cos(tf.math.atan2(CQT[:, :, :, 1], CQT[:, :, :, 0]))
+            phase_imag = tf.math.sin(tf.math.atan2(CQT[:, :, :, 1], CQT[:, :, :, 0]))
+            return tf.stack((phase_real, phase_imag), axis=-1)
+
+
+CQT = CQT2010v2
+
+
+// File: basic_pitch_fork\basic_pitch\layers\signal.py
+----------------------------------------
+#!/usr/bin/env python
+# encoding: utf-8
+#
+# Copyright 2022 Spotify AB
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+from typing import Any, Callable, Optional
+import tensorflow as tf
+from basic_pitch.layers.math import log_base_b
+
+
+class Stft(tf.keras.layers.Layer):
+    def __init__(
+        self,
+        fft_length: int = 2048,
+        hop_length: Optional[int] = None,
+        window_length: Optional[int] = None,
+        window_fn: Callable[[int, tf.dtypes.DType], tf.Tensor] = tf.signal.hann_window,
+        pad_end: bool = False,
+        center: bool = True,
+        pad_mode: str = "REFLECT",
+        name: Optional[str] = None,
+        dtype: tf.dtypes.DType = tf.float32,
+    ):
+        """
+        A Tensorflow Keras layer that calculates an STFT.
+        The input is real-valued with shape (num_batches, num_samples).
+        The output is complex-valued with shape (num_batches, time, fft_length // 2 + 1)
+
+        Args:
+            hop_length: The "stride" or number of samples to iterate before the start of the next frame.
+            fft_length: FFT length.
+            window_length: Window length. If None, then fft_length is used.
+            window_fn: A callable that takes a window length and a dtype and returns a window.
+            pad_end: Whether to pad the end of signals with zeros when the provided frame length and step produces
+                a frame that lies partially past its end.
+            center:
+                If True, the signal y is padded so that frame D[:, t] is centered at y[t * hop_length].
+                If False, then D[:, t] begins at y[t * hop_length].
+            pad_mode: Padding to use if center is True. One of "CONSTANT", "REFLECT", or "SYMMETRIC" (case-insensitive).
+            name: Name of the layer.
+            dtype: Type used in calcuation.
+        """
+        super().__init__(trainable=False, name=name, dtype=dtype, dynamic=False)
+        self.fft_length = fft_length
+        self.window_length = window_length if window_length else self.fft_length
+        self.hop_length = hop_length if hop_length else self.window_length // 4
+        self.window_fn = window_fn
+        self.final_window_fn = window_fn
+        self.pad_end = pad_end
+        self.center = center
+        self.pad_mode = pad_mode
+
+    def build(self, input_shape: tf.TensorShape) -> None:
+        if self.window_length < self.fft_length:
+            lpad = (self.fft_length - self.window_length) // 2
+            rpad = self.fft_length - self.window_length - lpad
+
+            def padded_window(window_length: int, dtype: tf.dtypes.DType = tf.float32) -> tf.Tensor:
+                # This is a trick to match librosa's way of handling window lengths < their fft_lengths
+                # In that case the window is 0 padded such that the window is centered around 0s
+                # In the Tensorflow case, the window is computed, multiplied against the frame and then
+                # Right padded with 0's.
+                return tf.pad(self.window_fn(self.window_length, dtype=dtype), [[lpad, rpad]])  # type: ignore
+
+            self.final_window_fn = padded_window
+
+        if self.center:
+            self.spec = tf.keras.layers.Lambda(
+                lambda x: tf.pad(
+                    x,
+                    [[0, 0] for _ in range(input_shape.rank - 1)] + [[self.fft_length // 2, self.fft_length // 2]],
+                    mode=self.pad_mode,
+                )
+            )
+        else:
+            self.spec = tf.keras.layers.Lambda(lambda x: x)
+
+    def call(self, inputs: tf.Tensor) -> tf.Tensor:
+        return tf.signal.stft(
+            signals=self.spec(inputs),
+            frame_length=self.fft_length,
+            frame_step=self.hop_length,
+            fft_length=self.fft_length,
+            window_fn=self.final_window_fn,
+            pad_end=self.pad_end,
+        )
+
+    def get_config(self) -> Any:
+        config = super().get_config().copy()
+        config.update(
+            {
+                "fft_length": self.fft_length,
+                "window_length": self.window_length,
+                "hop_length": self.hop_length,
+                "window_fn": self.window_fn,
+                "pad_end": self.pad_end,
+                "center": self.center,
+                "pad_mode": self.pad_mode,
+            }
+        )
+        return config
+
+
+class Spectrogram(Stft):
+    def __init__(
+        self,
+        power: int = 2,
+        *args: Any,
+        **kwargs: Any,
+    ):
+        """
+        A Tensorflow Keras layer that calculates the magnitude spectrogram.
+        The input is real-valued with shape (num_batches, num_samples).
+        The output is real-valued with shape (num_batches, time, fft_length // 2 + 1)
+
+        Args:
+            power: Exponent to raise abs(stft) to.
+            **kwargs: Any arguments that you'd pass to Stft
+        """
+        super().__init__(
+            *args,
+            **kwargs,
+        )
+        self.power = power
+
+    def call(self, inputs: tf.Tensor) -> tf.Tensor:
+        return tf.math.pow(
+            tf.math.abs(super().call(inputs)),
+            self.power,
+        )
+
+    def get_config(self) -> Any:
+        config = super().get_config().copy()
+        config.update(
+            {
+                "power": self.power,
+            }
+        )
+        return config
+
+
+class NormalizedLog(tf.keras.layers.Layer):
+    """
+    Takes an input with a shape of either (batch, x, y, z) or (batch, y, z)
+    and rescales each (y, z) to dB, scaled 0 - 1.
+    Only x=1 is supported.
+    This layer adds 1e-10 to all values as a way to avoid NaN math.
+    """
+
+    def build(self, input_shape: tf.Tensor) -> None:
+        self.squeeze_batch = lambda batch: batch
+        rank = input_shape.rank
+        if rank == 4:
+            assert input_shape[1] == 1, "If the rank is 4, the second dimension must be length 1"
+            self.squeeze_batch = lambda batch: tf.squeeze(batch, axis=1)
+        else:
+            assert rank == 3, f"Only ranks 3 and 4 are supported!. Received rank {rank} for {input_shape}."
+
+    def call(self, inputs: tf.Tensor) -> tf.Tensor:
+        inputs = self.squeeze_batch(inputs)  # type: ignore
+        # convert magnitude to power
+        power = tf.math.square(inputs)
+        log_power = 10 * log_base_b(power + 1e-10, 10)
+
+        log_power_min = tf.reshape(tf.math.reduce_min(log_power, axis=[1, 2]), [tf.shape(inputs)[0], 1, 1])
+        log_power_offset = log_power - log_power_min
+        log_power_offset_max = tf.reshape(
+            tf.math.reduce_max(log_power_offset, axis=[1, 2]),
+            [tf.shape(inputs)[0], 1, 1],
+        )
+        log_power_normalized = tf.math.divide_no_nan(log_power_offset, log_power_offset_max)
+
+        return tf.reshape(log_power_normalized, tf.shape(inputs))
+
+
+// File: basic_pitch_fork\basic_pitch\models.py
+----------------------------------------
+#!/usr/bin/env python
+# encoding: utf-8
+#
+# Copyright 2022 Spotify AB
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+from typing import Any, Callable, Dict
+import numpy as np
+import tensorflow as tf
+
+from basic_pitch import nn
+from basic_pitch.constants import (
+    ANNOTATIONS_BASE_FREQUENCY,
+    ANNOTATIONS_N_SEMITONES,
+    AUDIO_N_SAMPLES,
+    AUDIO_SAMPLE_RATE,
+    CONTOURS_BINS_PER_SEMITONE,
+    FFT_HOP,
+    N_FREQ_BINS_CONTOURS,
+)
+from basic_pitch.layers import signal, nnaudio
+
+tfkl = tf.keras.layers
+
+MAX_N_SEMITONES = int(np.floor(12.0 * np.log2(0.5 * AUDIO_SAMPLE_RATE / ANNOTATIONS_BASE_FREQUENCY)))
+
+
+def transcription_loss(y_true: tf.Tensor, y_pred: tf.Tensor, label_smoothing: float) -> tf.Tensor:
+    """Really a binary cross entropy loss. Used to calculate the loss between the predicted
+    posteriorgrams and the ground truth matrices.
+
+    Args:
+        y_true: The true labels.
+        y_pred: The predicted labels.
+        label_smoothing: Squeeze labels towards 0.5.
+
+    Returns:
+        The transcription loss.
+    """
+    bce = tf.keras.losses.binary_crossentropy(y_true, y_pred, label_smoothing=label_smoothing)
+    return bce
+
+
+def weighted_transcription_loss(
+    y_true: tf.Tensor, y_pred: tf.Tensor, label_smoothing: float, positive_weight: float = 0.5
+) -> tf.Tensor:
+    """The transcription loss where the positive and negative true labels are balanced by a weighting factor.
+
+    Args:
+        y_true: The true labels.
+        y_pred: The predicted labels.
+        label_smoothing: Smoothing factor. Squeezes labels towards 0.5.
+        positive_weight: Weighting factor for the positive labels.
+
+    Returns:
+        The weighted transcription loss.
+    """
+    negative_mask = tf.equal(y_true, 0)
+    nonnegative_mask = tf.logical_not(negative_mask)
+    bce_negative = tf.keras.losses.binary_crossentropy(
+        tf.boolean_mask(y_true, negative_mask),
+        tf.boolean_mask(y_pred, negative_mask),
+        label_smoothing=label_smoothing,
+    )
+    bce_nonnegative = tf.keras.losses.binary_crossentropy(
+        tf.boolean_mask(y_true, nonnegative_mask),
+        tf.boolean_mask(y_pred, nonnegative_mask),
+        label_smoothing=label_smoothing,
+    )
+    return ((1 - positive_weight) * bce_negative) + (positive_weight * bce_nonnegative)
+
+
+def onset_loss(
+    weighted: bool, label_smoothing: float, positive_weight: float
+) -> Callable[[tf.Tensor, tf.Tensor], tf.Tensor]:
+    """
+
+    Args:
+        weighted: Whether or not to use a weighted cross entropy loss.
+        label_smoothing: Smoothing factor. Squeezes labels towards 0.5.
+        positive_weight: Weighting factor for the positive labels.
+
+    Returns:
+        A function that calculates the transcription loss. The function will
+        return weighted_transcription_loss if weighted is true else it will return
+        transcription_loss.
+    """
+    if weighted:
+        return lambda x, y: weighted_transcription_loss(
+            x, y, label_smoothing=label_smoothing, positive_weight=positive_weight
+        )
+    return lambda x, y: transcription_loss(x, y, label_smoothing=label_smoothing)
+
+
+def loss(label_smoothing: float = 0.2, weighted: bool = False, positive_weight: float = 0.5) -> Dict[str, Any]:
+    """Creates a keras-compatible dictionary of loss functions to calculate
+    the loss for the contour, note and onset posteriorgrams.
+
+    Args:
+        label_smoothing: Smoothing factor. Squeezes labels towards 0.5.
+        weighted: Whether or not to use a weighted cross entropy loss.
+        positive_weight: Weighting factor for the positive labels.
+
+    Returns:
+        A dictionary with keys "contour," "note," and "onset" with functions as values to be used to calculate
+        transcription losses.
+
+    """
+    loss_fn = lambda x, y: transcription_loss(x, y, label_smoothing=label_smoothing)
+    loss_onset = onset_loss(weighted, label_smoothing, positive_weight)
+    return {
+        "contour": loss_fn,
+        "note": loss_fn,
+        "onset": loss_onset,
+    }
+
+
+def _initializer() -> tf.keras.initializers.VarianceScaling:
+    return tf.keras.initializers.VarianceScaling(scale=2.0, mode="fan_avg", distribution="uniform", seed=None)
+
+
+def _kernel_constraint() -> tf.keras.constraints.UnitNorm:
+    return tf.keras.constraints.UnitNorm(axis=[0, 1, 2])
+
+
+def get_cqt(inputs: tf.Tensor, n_harmonics: int, use_batchnorm: bool) -> tf.Tensor:
+    """Calculate the CQT of the input audio.
+
+    Input shape: (batch, number of audio samples, 1)
+    Output shape: (batch, number of frequency bins, number of time frames)
+
+    Args:
+        inputs: The audio input.
+        n_harmonics: The number of harmonics to capture above the maximum output frequency.
+            Used to calculate the number of semitones for the CQT.
+        use_batchnorm: If True, applies batch normalization after computing the CQT
+
+    Returns:
+        The log-normalized CQT of the input audio.
+    """
+    n_semitones = np.min(
+        [
+            int(np.ceil(12.0 * np.log2(n_harmonics)) + ANNOTATIONS_N_SEMITONES),
+            MAX_N_SEMITONES,
+        ]
+    )
+    x = nn.FlattenAudioCh()(inputs)
+    x = nnaudio.CQT(
+        sr=AUDIO_SAMPLE_RATE,
+        hop_length=FFT_HOP,
+        fmin=ANNOTATIONS_BASE_FREQUENCY,
+        n_bins=n_semitones * CONTOURS_BINS_PER_SEMITONE,
+        bins_per_octave=12 * CONTOURS_BINS_PER_SEMITONE,
+    )(x)
+    x = signal.NormalizedLog()(x)
+    x = tf.expand_dims(x, -1)
+    if use_batchnorm:
+        x = tfkl.BatchNormalization()(x)
+    return x
+
+
+def model(
+    n_harmonics: int = 8,
+    n_filters_contour: int = 32,
+    n_filters_onsets: int = 32,
+    n_filters_notes: int = 32,
+    no_contours: bool = False,
+) -> tf.keras.Model:
+    """Basic Pitch's model implementation.
+
+    Args:
+        n_harmonics: The number of harmonics to use in the harmonic stacking layer.
+        n_filters_contour: Number of filters for the contour convolutional layer.
+        n_filters_onsets: Number of filters for the onsets convolutional layer.
+        n_filters_notes: Number of filters for the notes convolutional layer.
+        no_contours: Whether or not to include contours in the output.
+    """
+    # input representation
+    inputs = tf.keras.Input(shape=(AUDIO_N_SAMPLES, 1))  # (batch, time, ch)
+    x = get_cqt(inputs, n_harmonics, True)
+
+    if n_harmonics > 1:
+        x = nn.HarmonicStacking(
+            CONTOURS_BINS_PER_SEMITONE,
+            [0.5] + list(range(1, n_harmonics)),
+            N_FREQ_BINS_CONTOURS,
+        )(x)
+    else:
+        x = nn.HarmonicStacking(
+            CONTOURS_BINS_PER_SEMITONE,
+            [1],
+            N_FREQ_BINS_CONTOURS,
+        )(x)
+
+    # contour layers - fully convolutional
+    x_contours = tfkl.Conv2D(
+        n_filters_contour,
+        (5, 5),
+        padding="same",
+        kernel_initializer=_initializer(),
+        kernel_constraint=_kernel_constraint(),
+    )(x)
+
+    x_contours = tfkl.BatchNormalization()(x_contours)
+    x_contours = tfkl.ReLU()(x_contours)
+
+    x_contours = tfkl.Conv2D(
+        8,
+        (3, 3 * 13),
+        padding="same",
+        kernel_initializer=_initializer(),
+        kernel_constraint=_kernel_constraint(),
+    )(x)
+
+    x_contours = tfkl.BatchNormalization()(x_contours)
+    x_contours = tfkl.ReLU()(x_contours)
+
+    if not no_contours:
+        contour_name = "contour"
+        x_contours = tfkl.Conv2D(
+            1,
+            (5, 5),
+            padding="same",
+            activation="sigmoid",
+            kernel_initializer=_initializer(),
+            kernel_constraint=_kernel_constraint(),
+            name="contours-reduced",
+        )(x_contours)
+        x_contours = nn.FlattenFreqCh(name=contour_name)(x_contours)  # contour output
+
+        # reduced contour output as input to notes
+        x_contours_reduced = tf.expand_dims(x_contours, -1)
+    else:
+        x_contours_reduced = x_contours
+
+    x_contours_reduced = tfkl.Conv2D(
+        n_filters_notes,
+        (7, 7),
+        padding="same",
+        strides=(1, 3),
+        kernel_initializer=_initializer(),
+        kernel_constraint=_kernel_constraint(),
+    )(x_contours_reduced)
+    x_contours_reduced = tfkl.ReLU()(x_contours_reduced)
+
+    # note output layer
+    note_name = "note"
+    x_notes_pre = tfkl.Conv2D(
+        1,
+        (7, 3),
+        padding="same",
+        kernel_initializer=_initializer(),
+        kernel_constraint=_kernel_constraint(),
+        activation="sigmoid",
+    )(x_contours_reduced)
+    x_notes = nn.FlattenFreqCh(name=note_name)(x_notes_pre)
+
+    # onset output layer
+
+    # onsets - fully convolutional
+    x_onset = tfkl.Conv2D(
+        n_filters_onsets,
+        (5, 5),
+        padding="same",
+        strides=(1, 3),
+        kernel_initializer=_initializer(),
+        kernel_constraint=_kernel_constraint(),
+    )(x)
+    x_onset = tfkl.BatchNormalization()(x_onset)
+    x_onset = tfkl.ReLU()(x_onset)
+    x_onset = tfkl.Concatenate(axis=3, name="concat")([x_notes_pre, x_onset])
+    x_onset = tfkl.Conv2D(
+        1,
+        (3, 3),
+        padding="same",
+        activation="sigmoid",
+        kernel_initializer=_initializer(),
+        kernel_constraint=_kernel_constraint(),
+    )(x_onset)
+
+    onset_name = "onset"
+    x_onset = nn.FlattenFreqCh(
+        name=onset_name,
+    )(x_onset)
+
+    outputs = {"onset": x_onset, "contour": x_contours, "note": x_notes}
+
+    return tf.keras.Model(inputs=inputs, outputs=outputs)
+
+
+// File: basic_pitch_fork\basic_pitch\nn.py
+----------------------------------------
+#!/usr/bin/env python
+# encoding: utf-8
+#
+# Copyright 2022 Spotify AB
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+from typing import Any, List
+
+import tensorflow as tf
+import tensorflow.keras.backend as K
+
+from basic_pitch.layers.math import log_base_b
+
+
+class HarmonicStacking(tf.keras.layers.Layer):
+    """Harmonic stacking layer
+
+    Input shape: (n_batch, n_times, n_freqs, 1)
+    Output shape: (n_batch, n_times, n_output_freqs, len(harmonics))
+
+    n_freqs should be much larger than n_output_freqs so that information from the upper
+    harmonics is captured.
+
+    Attributes:
+        bins_per_semitone: The number of bins per semitone of the input CQT
+        harmonics: List of harmonics to use. Should be positive numbers.
+        shifts: A list containing the number of bins to shift in frequency for each harmonic
+        n_output_freqs: The number of frequency bins in each harmonic layer.
+    """
+
+    def __init__(
+        self, bins_per_semitone: int, harmonics: List[float], n_output_freqs: int, name: str = "harmonic_stacking"
+    ):
+        """Downsample frequency by stride, upsample channels by 4."""
+        super().__init__(trainable=False, name=name)
+        self.bins_per_semitone = bins_per_semitone
+        self.harmonics = harmonics
+        self.shifts = [
+            int(tf.math.round(12.0 * self.bins_per_semitone * log_base_b(float(h), 2))) for h in self.harmonics
+        ]
+        self.n_output_freqs = n_output_freqs
+
+    def get_config(self) -> Any:
+        config = super().get_config().copy()
+        config.update(
+            {
+                "bins_per_semitone": self.bins_per_semitone,
+                "harmonics": self.harmonics,
+                "n_output_freqs": self.n_output_freqs,
+                "name": self.name,
+            }
+        )
+        return config
+
+    def call(self, x: tf.Tensor) -> tf.Tensor:
+        # (n_batch, n_times, n_freqs, 1)
+        tf.debugging.assert_equal(tf.shape(x).shape, 4)
+        channels = []
+        for shift in self.shifts:
+            if shift == 0:
+                padded = x
+            elif shift > 0:
+                paddings = tf.constant([[0, 0], [0, 0], [0, shift], [0, 0]])
+                padded = tf.pad(x[:, :, shift:, :], paddings)
+            elif shift < 0:
+                paddings = tf.constant([[0, 0], [0, 0], [-shift, 0], [0, 0]])
+                padded = tf.pad(x[:, :, :shift, :], paddings)
+            else:
+                raise ValueError
+
+            channels.append(padded)
+        x = tf.concat(channels, axis=-1)
+        x = x[:, :, : self.n_output_freqs, :]  # return only the first n_output_freqs frequency channels
+        return x
+
+
+class FlattenAudioCh(tf.keras.layers.Layer):
+    """Layer which removes a "channels" dimension of size 1.
+
+    Input shape: (batch, time, 1)
+    Output shape: (batch, time)
+    """
+
+    def call(self, x: tf.Tensor) -> tf.Tensor:
+        """x: (batch, time, ch)"""
+        shapes = K.int_shape(x)
+        tf.assert_equal(shapes[2], 1)
+        return tf.keras.layers.Reshape([shapes[1]])(x)  # ignore batch size
+
+
+class FlattenFreqCh(tf.keras.layers.Layer):
+    """Layer to flatten the frequency channel and make each channel
+    part of the frequency dimension.
+
+    Input shape: (batch, time, freq, ch)
+    Output shape: (batch, time, freq*ch)
+    """
+
+    def call(self, x: tf.Tensor) -> tf.Tensor:
+        shapes = K.int_shape(x)
+        return tf.keras.layers.Reshape([shapes[1], shapes[2] * shapes[3]])(x)  # ignore batch size
+
+
+// File: basic_pitch_fork\basic_pitch\note_creation.py
+----------------------------------------
+#!/usr/bin/env python
+# encoding: utf-8
+#
+# Copyright 2022 Spotify AB
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+import pathlib
+from collections import defaultdict
+from typing import DefaultDict, Dict, List, Optional, Tuple, Union
+import mir_eval
+import librosa
+import resampy
+import numpy as np
+import pretty_midi
+import scipy
+from scipy.io import wavfile
+
+from basic_pitch.constants import (
+    AUDIO_SAMPLE_RATE,
+    ANNOTATIONS_N_SEMITONES,
+    ANNOTATIONS_BASE_FREQUENCY,
+    AUDIO_N_SAMPLES,
+    ANNOT_N_FRAMES,
+    CONTOURS_BINS_PER_SEMITONE,
+    FFT_HOP,
+    N_FREQ_BINS_CONTOURS,
+)
+
+MIDI_OFFSET = 21
+SONIFY_FS = 3000
+N_PITCH_BEND_TICKS = 8192
+MAX_FREQ_IDX = 87
+
+
+def model_output_to_notes(
+    output: Dict[str, np.array],
+    onset_thresh: float,
+    frame_thresh: float,
+    infer_onsets: bool = True,
+    min_note_len: int = 11,
+    min_freq: Optional[float] = None,
+    max_freq: Optional[float] = None,
+    include_pitch_bends: bool = True,
+    multiple_pitch_bends: bool = False,
+    melodia_trick: bool = True,
+    midi_tempo: float = 120,
+) -> Tuple[pretty_midi.PrettyMIDI, List[Tuple[float, float, int, float, Optional[List[int]]]]]:
+    """Convert model output to MIDI
+
+    Args:
+        output: A dictionary with shape
+            {
+                'frame': array of shape (n_times, n_freqs),
+                'onset': array of shape (n_times, n_freqs),
+                'contour': array of shape (n_times, 3*n_freqs)
+            }
+            representing the output of the basic pitch model.
+        onset_thresh: Minimum amplitude of an onset activation to be considered an onset.
+        infer_onsets: If True, add additional onsets when there are large differences in frame amplitudes.
+        min_note_len: The minimum allowed note length in frames.
+        min_freq: Minimum allowed output frequency, in Hz. If None, all frequencies are used.
+        max_freq: Maximum allowed output frequency, in Hz. If None, all frequencies are used.
+        include_pitch_bends: If True, include pitch bends.
+        multiple_pitch_bends: If True, allow overlapping notes in midi file to have pitch bends.
+        melodia_trick: Use the melodia post-processing step.
+
+    Returns:
+        midi : pretty_midi.PrettyMIDI object
+        note_events: A list of note event tuples (start_time_s, end_time_s, pitch_midi, amplitude)
+    """
+    frames = output["StatefulPartitionedCall:1"]
+    onsets = output["StatefulPartitionedCall:2"]
+    contours = output["StatefulPartitionedCall:0"]
+
+    estimated_notes = output_to_notes_polyphonic(
+        frames,
+        onsets,
+        onset_thresh=onset_thresh,
+        frame_thresh=frame_thresh,
+        infer_onsets=infer_onsets,
+        min_note_len=min_note_len,
+        min_freq=min_freq,
+        max_freq=max_freq,
+        melodia_trick=melodia_trick,
+    )
+    if include_pitch_bends:
+        estimated_notes_with_pitch_bend = get_pitch_bends(contours, estimated_notes)
+    else:
+        estimated_notes_with_pitch_bend = [(note[0], note[1], note[2], note[3], None) for note in estimated_notes]
+
+    times_s = model_frames_to_time(contours.shape[0])
+    estimated_notes_time_seconds = [
+        (times_s[note[0]], times_s[note[1]], note[2], note[3], note[4]) for note in estimated_notes_with_pitch_bend
+    ]
+
+    return (
+        note_events_to_midi(estimated_notes_time_seconds, multiple_pitch_bends, midi_tempo),
+        estimated_notes_time_seconds,
+    )
+
+
+def sonify_midi(midi: pretty_midi.PrettyMIDI, save_path: Union[pathlib.Path, str], sr: Optional[int] = 44100) -> None:
+    """Sonify a pretty_midi midi object and save to a file.
+
+    Args:
+        midi: A pretty_midi.PrettyMIDI object that will be sonified.
+        save_path: Where to save the sonified midi.
+        sr: Sample rate for rendering audio from midi.
+    """
+    y = midi.synthesize(sr)
+    wavfile.write(save_path, sr, y)
+
+
+def sonify_salience(
+    gram: np.array, semitone_resolution: float, save_path: Optional[str] = None, thresh: float = 0.2
+) -> Tuple[np.array, int]:
+    """Sonify a salience matrix.
+
+    Args:
+        gram: A matrix of pitch salience values with range 0-1, with shape (n_freqs, n_times).
+            The frequencies are logarithmically spaced.
+        semitone_resolution: The number of bins per semitone in gram.
+        save_path: Optional location to save the sonified salience.
+        thresh: Salience values below thresh will not be sonified. Used to increase the speed of this function.
+
+    Returns:
+        A tuple of the sonified salience as an audio signal and the associated sample rate.
+    """
+    freqs = librosa.core.cqt_frequencies(
+        n_bins=ANNOTATIONS_N_SEMITONES * semitone_resolution,
+        fmin=ANNOTATIONS_BASE_FREQUENCY,
+        bins_per_octave=12 * semitone_resolution,
+    )
+    # this function is slow - for speed, only sonify frequencies below
+    # sonify_fs/2 Hz (e.g. 1000 Hz)
+    max_freq_idx = np.where(freqs > SONIFY_FS / 2)[0][0]
+    times = librosa.core.frames_to_time(
+        np.arange(gram.shape[1]),
+        sr=AUDIO_SAMPLE_RATE,
+        hop_length=AUDIO_N_SAMPLES / ANNOT_N_FRAMES,  # THIS IS THE CORRECT HOP!!
+    )
+    gram[gram < thresh] = 0
+    y = mir_eval.sonify.time_frequency(gram[:max_freq_idx, :], freqs[:max_freq_idx], times, fs=SONIFY_FS)
+    if save_path:
+        y_resamp = resampy.resample(y, SONIFY_FS, 44100)
+        wavfile.write(save_path, 44100, y_resamp)
+
+    return y, SONIFY_FS
+
+
+def midi_pitch_to_contour_bin(pitch_midi: int) -> np.array:
+    """Convert midi pitch to conrresponding index in contour matrix
+
+    Args:
+        pitch_midi: pitch in midi
+
+    Returns:
+        index in contour matrix
+
+    """
+    pitch_hz = librosa.midi_to_hz(pitch_midi)
+    return 12.0 * CONTOURS_BINS_PER_SEMITONE * np.log2(pitch_hz / ANNOTATIONS_BASE_FREQUENCY)
+
+
+def get_pitch_bends(
+    contours: np.ndarray, note_events: List[Tuple[int, int, int, float]], n_bins_tolerance: int = 25
+) -> List[Tuple[int, int, int, float, Optional[List[int]]]]:
+    """Given note events and contours, estimate pitch bends per note.
+    Pitch bends are represented as a sequence of evenly spaced midi pitch bend control units.
+    The time stamps of each pitch bend can be inferred by computing an evenly spaced grid between
+    the start and end times of each note event.
+
+    Args:
+        contours: Matrix of estimated pitch contours
+        note_events: note event tuple
+        n_bins_tolerance: Pitch bend estimation range. Defaults to 25.
+
+    Returns:
+        note events with pitch bends
+    """
+    window_length = n_bins_tolerance * 2 + 1
+    freq_gaussian = scipy.signal.windows.gaussian(window_length, std=5)
+    note_events_with_pitch_bends = []
+    for start_idx, end_idx, pitch_midi, amplitude in note_events:
+        freq_idx = int(np.round(midi_pitch_to_contour_bin(pitch_midi)))
+        freq_start_idx = np.max([freq_idx - n_bins_tolerance, 0])
+        freq_end_idx = np.min([N_FREQ_BINS_CONTOURS, freq_idx + n_bins_tolerance + 1])
+
+        pitch_bend_submatrix = (
+            contours[start_idx:end_idx, freq_start_idx:freq_end_idx]
+            * freq_gaussian[
+                np.max([0, n_bins_tolerance - freq_idx]) : window_length
+                - np.max([0, freq_idx - (N_FREQ_BINS_CONTOURS - n_bins_tolerance - 1)])
+            ]
+        )
+        pb_shift = n_bins_tolerance - np.max([0, n_bins_tolerance - freq_idx])
+
+        bends: Optional[List[int]] = list(
+            np.argmax(pitch_bend_submatrix, axis=1) - pb_shift
+        )  # this is in units of 1/3 semitones
+        note_events_with_pitch_bends.append((start_idx, end_idx, pitch_midi, amplitude, bends))
+    return note_events_with_pitch_bends
+
+
+def note_events_to_midi(
+    note_events_with_pitch_bends: List[Tuple[float, float, int, float, Optional[List[int]]]],
+    multiple_pitch_bends: bool = False,
+    midi_tempo: float = 120,
+) -> pretty_midi.PrettyMIDI:
+    """Create a pretty_midi object from note events
+
+    Args:
+        note_events : list of tuples [(start_time_seconds, end_time_seconds, pitch_midi, amplitude)]
+            where amplitude is a number between 0 and 1
+        multiple_pitch_bends : If True, allow overlapping notes to have pitch bends
+            Note: this will assign each pitch to its own midi instrument, as midi does not yet
+            support per-note pitch bends
+
+    Returns:
+        pretty_midi.PrettyMIDI() object
+
+    """
+    mid = pretty_midi.PrettyMIDI(initial_tempo=midi_tempo)
+    if not multiple_pitch_bends:
+        note_events_with_pitch_bends = drop_overlapping_pitch_bends(note_events_with_pitch_bends)
+
+    piano_program = pretty_midi.instrument_name_to_program("Electric Piano 1")
+    instruments: DefaultDict[int, pretty_midi.Instrument] = defaultdict(
+        lambda: pretty_midi.Instrument(program=piano_program)
+    )
+    for start_time, end_time, note_number, amplitude, pitch_bend in note_events_with_pitch_bends:
+        instrument = instruments[note_number] if multiple_pitch_bends else instruments[0]
+        note = pretty_midi.Note(
+            velocity=int(np.round(127 * amplitude)),
+            pitch=note_number,
+            start=start_time,
+            end=end_time,
+        )
+        instrument.notes.append(note)
+        if not pitch_bend:
+            continue
+        pitch_bend_times = np.linspace(start_time, end_time, len(pitch_bend))
+        pitch_bend_midi_ticks = np.round(np.array(pitch_bend) * 4096 / CONTOURS_BINS_PER_SEMITONE).astype(int)
+        # This supports pitch bends up to 2 semitones
+        # If we estimate pitch bends above/below 2 semitones, crop them here when adding them to the midi file
+        pitch_bend_midi_ticks[pitch_bend_midi_ticks > N_PITCH_BEND_TICKS - 1] = N_PITCH_BEND_TICKS - 1
+        pitch_bend_midi_ticks[pitch_bend_midi_ticks < -N_PITCH_BEND_TICKS] = -N_PITCH_BEND_TICKS
+        for pb_time, pb_midi in zip(pitch_bend_times, pitch_bend_midi_ticks):
+            instrument.pitch_bends.append(pretty_midi.PitchBend(pb_midi, pb_time))
+    mid.instruments.extend(instruments.values())
+
+    return mid
+
+
+def drop_overlapping_pitch_bends(
+    note_events_with_pitch_bends: List[Tuple[float, float, int, float, Optional[List[int]]]]
+) -> List[Tuple[float, float, int, float, Optional[List[int]]]]:
+    """Drop pitch bends from any notes that overlap in time with another note"""
+    note_events = sorted(note_events_with_pitch_bends)
+    for i in range(len(note_events) - 1):
+        for j in range(i + 1, len(note_events)):
+            if note_events[j][0] >= note_events[i][1]:  # start j > end i
+                break
+            note_events[i] = note_events[i][:-1] + (None,)  # last field is pitch bend
+            note_events[j] = note_events[j][:-1] + (None,)
+
+    return note_events
+
+
+def get_infered_onsets(onsets: np.array, frames: np.array, n_diff: int = 2) -> np.array:
+    """Infer onsets from large changes in frame amplitudes.
+
+    Args:
+        onsets: Array of note onset predictions.
+        frames: Audio frames.
+        n_diff: Differences used to detect onsets.
+
+    Returns:
+        The maximum between the predicted onsets and its differences.
+    """
+    diffs = []
+    for n in range(1, n_diff + 1):
+        frames_appended = np.concatenate([np.zeros((n, frames.shape[1])), frames])
+        diffs.append(frames_appended[n:, :] - frames_appended[:-n, :])
+    frame_diff = np.min(diffs, axis=0)
+    frame_diff[frame_diff < 0] = 0
+    frame_diff[:n_diff, :] = 0
+    frame_diff = np.max(onsets) * frame_diff / np.max(frame_diff)  # rescale to have the same max as onsets
+
+    max_onsets_diff = np.max([onsets, frame_diff], axis=0)  # use the max of the predicted onsets and the differences
+
+    return max_onsets_diff
+
+
+def constrain_frequency(
+    onsets: np.array, frames: np.array, max_freq: Optional[float], min_freq: Optional[float]
+) -> Tuple[np.array, np.array]:
+    """Zero out activations above or below the max/min frequencies
+
+    Args:
+        onsets: Onset activation matrix (n_times, n_freqs)
+        frames: Frame activation matrix (n_times, n_freqs)
+        max_freq: The maximum frequency to keep.
+        min_freq: the minimum frequency to keep.
+
+    Returns:
+       The onset and frame activation matrices, with frequencies outside the min and max
+       frequency set to 0.
+    """
+    if max_freq is not None:
+        max_freq_idx = int(np.round(librosa.hz_to_midi(max_freq) - MIDI_OFFSET))
+        onsets[:, max_freq_idx:] = 0
+        frames[:, max_freq_idx:] = 0
+    if min_freq is not None:
+        min_freq_idx = int(np.round(librosa.hz_to_midi(min_freq) - MIDI_OFFSET))
+        onsets[:, :min_freq_idx] = 0
+        frames[:, :min_freq_idx] = 0
+
+    return onsets, frames
+
+
+def model_frames_to_time(n_frames: int) -> np.ndarray:
+    original_times = librosa.core.frames_to_time(
+        np.arange(n_frames),
+        sr=AUDIO_SAMPLE_RATE,
+        hop_length=FFT_HOP,
+    )
+    window_numbers = np.floor(np.arange(n_frames) / ANNOT_N_FRAMES)
+    window_offset = (FFT_HOP / AUDIO_SAMPLE_RATE) * (
+        ANNOT_N_FRAMES - (AUDIO_N_SAMPLES / FFT_HOP)
+    ) + 0.0018  # this is a magic number, but it's needed for this to align properly
+    times = original_times - (window_offset * window_numbers)
+    return times
+
+
+def output_to_notes_polyphonic(
+    frames: np.array,
+    onsets: np.array,
+    onset_thresh: float,
+    frame_thresh: float,
+    min_note_len: int,
+    infer_onsets: bool,
+    max_freq: Optional[float],
+    min_freq: Optional[float],
+    melodia_trick: bool = True,
+    energy_tol: int = 11,
+) -> List[Tuple[int, int, int, float]]:
+    """Decode raw model output to polyphonic note events
+
+    Args:
+        frames: Frame activation matrix (n_times, n_freqs).
+        onsets: Onset activation matrix (n_times, n_freqs).
+        onset_thresh: Minimum amplitude of an onset activation to be considered an onset.
+        frame_thresh: Minimum amplitude of a frame activation for a note to remain "on".
+        min_note_len: Minimum allowed note length in frames.
+        infer_onsets: If True, add additional onsets when there are large differences in frame amplitudes.
+        max_freq: Maximum allowed output frequency, in Hz.
+        min_freq: Minimum allowed output frequency, in Hz.
+        melodia_trick : Whether to use the melodia trick to better detect notes.
+        energy_tol: Drop notes below this energy.
+
+    Returns:
+        list of tuples [(start_time_frames, end_time_frames, pitch_midi, amplitude)]
+        representing the note events, where amplitude is a number between 0 and 1
+    """
+
+    n_frames = frames.shape[0]
+
+    onsets, frames = constrain_frequency(onsets, frames, max_freq, min_freq)
+    # use onsets inferred from frames in addition to the predicted onsets
+    if infer_onsets:
+        onsets = get_infered_onsets(onsets, frames)
+
+    peak_thresh_mat = np.zeros(onsets.shape)
+    peaks = scipy.signal.argrelmax(onsets, axis=0)
+    peak_thresh_mat[peaks] = onsets[peaks]
+
+    onset_idx = np.where(peak_thresh_mat >= onset_thresh)
+    onset_time_idx = onset_idx[0][::-1]  # sort to go backwards in time
+    onset_freq_idx = onset_idx[1][::-1]  # sort to go backwards in time
+
+    remaining_energy = np.zeros(frames.shape)
+    remaining_energy[:, :] = frames[:, :]
+
+    # loop over onsets
+    note_events = []
+    for note_start_idx, freq_idx in zip(onset_time_idx, onset_freq_idx):
+        # if we're too close to the end of the audio, continue
+        if note_start_idx >= n_frames - 1:
+            continue
+
+        # find time index at this frequency band where the frames drop below an energy threshold
+        i = note_start_idx + 1
+        k = 0  # number of frames since energy dropped below threshold
+        while i < n_frames - 1 and k < energy_tol:
+            if remaining_energy[i, freq_idx] < frame_thresh:
+                k += 1
+            else:
+                k = 0
+            i += 1
+
+        i -= k  # go back to frame above threshold
+
+        # if the note is too short, skip it
+        if i - note_start_idx <= min_note_len:
+            continue
+
+        remaining_energy[note_start_idx:i, freq_idx] = 0
+        if freq_idx < MAX_FREQ_IDX:
+            remaining_energy[note_start_idx:i, freq_idx + 1] = 0
+        if freq_idx > 0:
+            remaining_energy[note_start_idx:i, freq_idx - 1] = 0
+
+        # add the note
+        amplitude = np.mean(frames[note_start_idx:i, freq_idx])
+        note_events.append(
+            (
+                note_start_idx,
+                i,
+                freq_idx + MIDI_OFFSET,
+                amplitude,
+            )
+        )
+
+    if melodia_trick:
+        energy_shape = remaining_energy.shape
+
+        while np.max(remaining_energy) > frame_thresh:
+            i_mid, freq_idx = np.unravel_index(np.argmax(remaining_energy), energy_shape)
+            remaining_energy[i_mid, freq_idx] = 0
+
+            # forward pass
+            i = i_mid + 1
+            k = 0
+            while i < n_frames - 1 and k < energy_tol:
+                if remaining_energy[i, freq_idx] < frame_thresh:
+                    k += 1
+                else:
+                    k = 0
+
+                remaining_energy[i, freq_idx] = 0
+                if freq_idx < MAX_FREQ_IDX:
+                    remaining_energy[i, freq_idx + 1] = 0
+                if freq_idx > 0:
+                    remaining_energy[i, freq_idx - 1] = 0
+
+                i += 1
+
+            i_end = i - 1 - k  # go back to frame above threshold
+
+            # backward pass
+            i = i_mid - 1
+            k = 0
+            while i > 0 and k < energy_tol:
+                if remaining_energy[i, freq_idx] < frame_thresh:
+                    k += 1
+                else:
+                    k = 0
+
+                remaining_energy[i, freq_idx] = 0
+                if freq_idx < MAX_FREQ_IDX:
+                    remaining_energy[i, freq_idx + 1] = 0
+                if freq_idx > 0:
+                    remaining_energy[i, freq_idx - 1] = 0
+
+                i -= 1
+
+            i_start = i + 1 + k  # go back to frame above threshold
+            assert i_start >= 0, "{}".format(i_start)
+            assert i_end < n_frames
+
+            if i_end - i_start <= min_note_len:
+                # note is too short, skip it
+                continue
+
+            # add the note
+            amplitude = np.mean(frames[i_start:i_end, freq_idx])
+            note_events.append(
+                (
+                    i_start,
+                    i_end,
+                    freq_idx + MIDI_OFFSET,
+                    amplitude,
+                )
+            )
+
+    return note_events
+
+
+// File: basic_pitch_fork\basic_pitch\predict.py
+----------------------------------------
+#!/usr/bin/env python
+# encoding: utf-8
+#
+# Copyright 2022 Spotify AB
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+import argparse
+import os
+import pathlib
+import traceback
+
+from basic_pitch import (
+    ICASSP_2022_MODEL_PATH,
+    FilenameSuffix,
+    build_icassp_2022_model_path,
+)
+from basic_pitch.inference import Model
+
+
+os.environ["TF_CPP_MIN_LOG_LEVEL"] = "3"
+
+
+def main() -> None:
+    """Handle command line arguments. Entrypoint for this script."""
+    parser = argparse.ArgumentParser(description="Predict midi from audio.")
+    parser.add_argument("output_dir", type=str, help="directory to save outputs")
+    parser.add_argument(
+        "audio_paths",
+        type=str,
+        nargs="+",
+        help="Space separated paths to the input audio files.",
+    )
+    parser.add_argument(
+        "--model-path",
+        type=str,
+        default=ICASSP_2022_MODEL_PATH,
+        help="path to the saved model directory. Defaults to a ICASSP 2022 model. "
+        "The preferred model is determined by the first library available in "
+        "[tensorflow, coreml, tensorflow-lite, onnx]",
+    )
+    parser.add_argument(
+        "--model-serialization",
+        type=str,
+        choices=["tf", "coreml", "tflite", "onnx"],
+        help="If used, --model-path is ignored and instead the model serialization type" "specified is used.",
+    )
+    parser.add_argument(
+        "--save-midi",
+        action="store_true",
+        default=True,
+        help="Create a MIDI file.",
+    )
+    parser.add_argument(
+        "--sonify-midi",
+        action="store_true",
+        help="Create an audio .wav file which sonifies the MIDI outputs.",
+    )
+    parser.add_argument(
+        "--save-model-outputs",
+        action="store_true",
+        help="Save the raw model output as an npz file.",
+    )
+    parser.add_argument(
+        "--save-note-events",
+        action="store_true",
+        help="Save the predicted note events as a csv file.",
+    )
+    parser.add_argument(
+        "--onset-threshold",
+        type=float,
+        default=0.5,
+        help="The minimum likelihood for an onset to occur, between 0 and 1.",
+    )
+    parser.add_argument(
+        "--frame-threshold",
+        type=float,
+        default=0.3,
+        help="The minimum likelihood for a frame to sustain, between 0 and 1.",
+    )
+    parser.add_argument(
+        "--minimum-note-length",
+        type=float,
+        default=127.70,
+        help="The minimum allowed note length, in miliseconds.",
+    )
+    parser.add_argument(
+        "--minimum-frequency",
+        type=float,
+        default=None,
+        help="The minimum allowed note frequency, in Hz.",
+    )
+    parser.add_argument(
+        "--maximum-frequency",
+        type=float,
+        default=None,
+        help="The maximum allowed note frequency, in Hz.",
+    )
+    parser.add_argument(
+        "--multiple-pitch-bends",
+        action="store_true",
+        help="Allow overlapping notes in midi file to have pitch bends. Note: this will map each "
+        "pitch to its own instrument",
+    )
+    parser.add_argument(
+        "--sonification-samplerate",
+        type=int,
+        default=44100,
+        help="The samplerate for sonified audio files.",
+    )
+    parser.add_argument(
+        "--midi-tempo",
+        type=float,
+        default=120,
+        help="The tempo for the midi file.",
+    )
+    parser.add_argument(
+        "--debug-file",
+        default=None,
+        help="Optional file for debug output for inference.",
+    )
+    parser.add_argument(
+        "--no-melodia",
+        default=False,
+        action="store_true",
+        help="Skip the melodia trick.",
+    )
+    args = parser.parse_args()
+
+    print("")
+    print("✨✨✨✨✨✨✨✨✨")
+    print("✨ Basic Pitch  ✨")
+    print("✨✨✨✨✨✨✨✨✨")
+    print("")
+
+    # tensorflow is very slow to import
+    # this import is here so that the help messages print faster
+    print("Importing the ML infrence library (this may take a few seconds)...")
+    from basic_pitch.inference import (
+        predict_and_save,
+        verify_output_dir,
+        verify_input_path,
+    )
+
+    output_dir = pathlib.Path(args.output_dir)
+    verify_output_dir(output_dir)
+
+    audio_path_list = [pathlib.Path(audio_path) for audio_path in args.audio_paths]
+    for audio_path in audio_path_list:
+        verify_input_path(audio_path)
+
+    if args.model_serialization:
+        model = Model(build_icassp_2022_model_path(FilenameSuffix[args.model_serialization]))
+    else:
+        model = Model(args.model_path)
+
+    try:
+        predict_and_save(
+            audio_path_list,
+            output_dir,
+            args.save_midi,
+            args.sonify_midi,
+            args.save_model_outputs,
+            args.save_note_events,
+            model,
+            args.onset_threshold,
+            args.frame_threshold,
+            args.minimum_note_length,
+            args.minimum_frequency,
+            args.maximum_frequency,
+            args.multiple_pitch_bends,
+            not args.no_melodia,
+            pathlib.Path(args.debug_file) if args.debug_file else None,
+            args.sonification_samplerate,
+            args.midi_tempo,
+        )
+        print("\n✨ Done ✨\n")
+    except IOError as ioe:
+        print(ioe)
+    except Exception as e:
+        print("🚨 Something went wrong 😔 - see the traceback below for details.")
+        print("")
+        print(e)
+        print(traceback.format_exc())
+
+
+if __name__ == "__main__":
+    main()
+
+
+// File: basic_pitch_fork\basic_pitch\train.py
+----------------------------------------
+#!/usr/bin/env python
+# encoding: utf-8
+#
+# Copyright 2024 Spotify AB
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+import argparse
+import os
+import logging
+from datetime import datetime, timezone
+from typing import List
+
+import numpy as np
+import tensorflow as tf
+
+from basic_pitch import models
+from basic_pitch.callbacks import VisualizeCallback
+from basic_pitch.constants import DATASET_SAMPLING_FREQUENCY
+from basic_pitch.data import tf_example_deserialization
+
+logging.basicConfig(level=logging.INFO)
+
+
+def main(
+    source: str,
+    output: str,
+    batch_size: int,
+    shuffle_size: int,
+    learning_rate: float,
+    epochs: int,
+    steps_per_epoch: int,
+    validation_steps: int,
+    size_evaluation_callback_datasets: int,
+    datasets_to_use: List[str],
+    dataset_sampling_frequency: np.ndarray,
+    no_sonify: bool,
+    no_contours: bool,
+    weighted_onset_loss: bool,
+    positive_onset_weight: float,
+) -> None:
+    """Parse config and run training or evaluation.
+
+    Args:
+        source: source directory for data
+        output: output directory for trained model / checkpoints / tensorboard
+        batch_size: batch size for data.
+        shuffle_size: size of shuffle buffer (only for training set) for the data shuffling mechanism
+        learning_rate: learning_rate for training
+        epochs: number of epochs to train for
+        steps_per_epoch: the number of batches to process per epoch during training
+        validation_steps: the number of validation batches to evaluate on per epoch
+        size_evaluation_callback_datasets: the batch size to use for visualization / logging
+        datasets_to_use: which datasets to train / evaluate on e.g. guitarset, medleydb_pitch, slakh
+        dataset_sampling_frequency: distribution weighting vector corresponding to datasets determining how they
+            are sampled from during training / validation dataset creation.
+        no_sonify: Whether or not to include sonifications in tensorboard.
+        no_contours: Whether or not to include contours in the output.
+        weighted_onset_loss: whether or not to use a weighted cross entropy loss.
+        positive_onset_weight: weighting factor for the positive labels.
+    """
+    # configuration.add_externals()
+    logging.info(f"source directory: {source}")
+    logging.info(f"output directory: {output}")
+    logging.info(f"tensorflow version: {tf.__version__}")
+    logging.info("parameters to train.main() function:")
+    logging.info(f"batch_size: {batch_size}")
+    logging.info(f"shuffle_size: {shuffle_size}")
+    logging.info(f"learning_rate: {learning_rate}")
+    logging.info(f"epochs: {epochs}")
+    logging.info(f"steps_per_epoch: {steps_per_epoch}")
+    logging.info(f"validation_steps: {validation_steps}")
+    logging.info(f"size_evaluation_callback_datasets: {size_evaluation_callback_datasets}")
+    logging.info(f"using datasets: {datasets_to_use} with frequencies {dataset_sampling_frequency}")
+    logging.info(f"no_contours: {no_contours}")
+    logging.info(f"weighted_onset_loss: {weighted_onset_loss}")
+    logging.info(f"positive_onset_weight: {positive_onset_weight}")
+
+    # model
+    model = models.model(no_contours=no_contours)
+    input_shape = list(model.input_shape)
+    if input_shape[0] is None:
+        input_shape[0] = batch_size
+    logging.info("input_shape" + str(input_shape))
+
+    output_shape = model.output_shape
+    for k, v in output_shape.items():
+        output_shape[k] = list(v)
+        if v[0] is None:
+            output_shape[k][0] = batch_size
+    logging.info("output_shape" + str(output_shape))
+    # data loaders
+    train_ds, validation_ds = tf_example_deserialization.prepare_datasets(
+        source,
+        shuffle_size,
+        batch_size,
+        validation_steps,
+        datasets_to_use,
+        dataset_sampling_frequency,
+    )
+
+    MAX_EVAL_CBF_BATCH_SIZE = 4
+    (
+        train_visualization_ds,
+        validation_visualization_ds,
+    ) = tf_example_deserialization.prepare_visualization_datasets(
+        source,
+        batch_size=min(size_evaluation_callback_datasets, MAX_EVAL_CBF_BATCH_SIZE),
+        validation_steps=max(1, size_evaluation_callback_datasets // MAX_EVAL_CBF_BATCH_SIZE),
+        datasets_to_use=datasets_to_use,
+        dataset_sampling_frequency=dataset_sampling_frequency,
+    )
+
+    timestamp = datetime.now(timezone.utc).strftime("%Y%m%d-%H%M")
+    tensorboard_log_dir = os.path.join(output, timestamp, "tensorboard")
+    callbacks = [
+        tf.keras.callbacks.TensorBoard(log_dir=tensorboard_log_dir, histogram_freq=1),
+        tf.keras.callbacks.EarlyStopping(patience=25, verbose=2),
+        tf.keras.callbacks.ReduceLROnPlateau(verbose=1, patience=10, factor=0.5),
+        tf.keras.callbacks.ModelCheckpoint(filepath=os.path.join(output, timestamp, "model.best"), save_best_only=True),
+        tf.keras.callbacks.ModelCheckpoint(
+            filepath=os.path.join(output, timestamp, "checkpoints", "model.{epoch:02d}")
+        ),
+        VisualizeCallback(
+            train_visualization_ds,
+            validation_visualization_ds,
+            tensorboard_log_dir,
+            not no_sonify,
+            not no_contours,
+        ),
+    ]
+
+    # if no_contours:
+    #     loss = models.loss_no_contour(weighted=weighted_onset_loss, positive_weight=positive_onset_weight)
+    # else:
+    #     loss = models.loss(weighted=weighted_onset_loss, positive_weight=positive_onset_weight)
+    loss = models.loss(weighted=weighted_onset_loss, positive_weight=positive_onset_weight)
+
+    # train
+    model.compile(
+        loss=loss,
+        optimizer=tf.keras.optimizers.Adam(learning_rate),
+        sample_weight_mode={"contour": None, "note": None, "onset": None},
+    )
+
+    logging.info("--- Model Training specs ---")
+    logging.info(f"  train_ds: {train_ds}")
+    logging.info(f"  validation_ds: {validation_ds}")
+    model.summary()
+
+    model.fit(
+        train_ds,
+        epochs=epochs,
+        callbacks=callbacks,
+        steps_per_epoch=steps_per_epoch,
+        validation_data=validation_ds,
+        validation_steps=validation_steps,
+    )
+
+
+def console_entry_point() -> None:
+    """From pip installed script."""
+    parser = argparse.ArgumentParser(description="")
+    parser.add_argument("--source", required=True, help="Path to directory containing train/validation splits.")
+    parser.add_argument("--output", required=True, help="Directory to save the model in.")
+    parser.add_argument("-e", "--epochs", type=int, default=500, help="Number of training epochs.")
+    parser.add_argument(
+        "-b",
+        "--batch-size",
+        type=int,
+        default=16,
+        help="batch size of training. Unlike Estimator API, this specifies the batch size per-GPU.",
+    )
+    parser.add_argument(
+        "-l",
+        "--learning-rate",
+        type=float,
+        default=0.001,
+        help="ADAM optimizer learning rate",
+    )
+    parser.add_argument(
+        "-s",
+        "--steps-per-epoch",
+        type=int,
+        default=100,
+        help="steps_per_epoch (batch) of each training loop",
+    )
+    parser.add_argument(
+        "-v",
+        "--validation-steps",
+        type=int,
+        default=10,
+        help="validation steps (number of BATCHES) for each validation run. MUST be a positive integer",
+    )
+    parser.add_argument(
+        "-z",
+        "--training-shuffle-size",
+        type=int,
+        default=100,
+        help="training dataset shuffle size",
+    )
+    parser.add_argument(
+        "--size-evaluation-callback-datasets",
+        type=int,
+        default=4,
+        help="number of elements in the dataset used by the evaluation callback function",
+    )
+    for dataset in DATASET_SAMPLING_FREQUENCY.keys():
+        parser.add_argument(
+            f"--{dataset.lower()}",
+            action="store_true",
+            default=False,
+            help=f"Use {dataset} dataset in training",
+        )
+    parser.add_argument(
+        "--no-sonify",
+        action="store_true",
+        default=False,
+        help="if given, exclude sonifications from the tensorboard / data visualization",
+    )
+    parser.add_argument(
+        "--no-contours",
+        action="store_true",
+        default=False,
+        help="if given, trains without supervising the contour layer",
+    )
+    parser.add_argument(
+        "--weighted-onset-loss",
+        action="store_true",
+        default=False,
+        help="if given, trains onsets with a class-weighted loss",
+    )
+    parser.add_argument(
+        "--positive-onset-weight",
+        type=float,
+        default=0.5,
+        help="Positive class onset weight. Only applies when weignted onset loss is true.",
+    )
+
+    args = parser.parse_args()
+    datasets_to_use = [
+        dataset.lower()
+        for dataset in DATASET_SAMPLING_FREQUENCY.keys()
+        if getattr(args, dataset.lower().replace("-", "_"))
+    ]
+    dataset_sampling_frequency = np.array(
+        [
+            frequency
+            for dataset, frequency in DATASET_SAMPLING_FREQUENCY.items()
+            if getattr(args, dataset.lower().replace("-", "_"))
+        ]
+    )
+    dataset_sampling_frequency = dataset_sampling_frequency / np.sum(dataset_sampling_frequency)
+
+    assert args.steps_per_epoch is not None
+    assert args.validation_steps > 0
+
+    main(
+        args.source,
+        args.output,
+        args.training_shuffle_size,
+        args.batch_size,
+        args.learning_rate,
+        args.epochs,
+        args.steps_per_epoch,
+        args.validation_steps,
+        args.size_evaluation_callback_datasets,
+        datasets_to_use,
+        dataset_sampling_frequency,
+        args.dont_sonify,
+        args.no_contours,
+        args.weighted_onset_loss,
+        args.positive_onset_weight,
+    )
+
+
+if __name__ == "__main__":
+    console_entry_point()
+
+
+// File: basic_pitch_fork\basic_pitch\visualize.py
+----------------------------------------
+#!/usr/bin/env python
+# encoding: utf-8
+#
+# Copyright 2022 Spotify AB
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+import numpy as np
+import tensorflow as tf
+import mir_eval
+import librosa
+
+from typing import Dict
+
+from basic_pitch.constants import (
+    AUDIO_SAMPLE_RATE,
+    ANNOTATIONS_FPS,
+    ANNOTATIONS_N_SEMITONES,
+    ANNOTATIONS_BASE_FREQUENCY,
+    ANNOT_N_FRAMES,
+    NOTES_BINS_PER_SEMITONE,
+    AUDIO_N_SAMPLES,
+)
+from basic_pitch import models
+
+SONIFY_FS = 3000
+MAX_OUTPUTS = 4
+
+FREQS = librosa.core.cqt_frequencies(
+    n_bins=ANNOTATIONS_N_SEMITONES * NOTES_BINS_PER_SEMITONE,
+    fmin=ANNOTATIONS_BASE_FREQUENCY,
+    bins_per_octave=12 * NOTES_BINS_PER_SEMITONE,
+)
+# this function is slow - for speed, only sonify frequencies below
+# sonify_fs/2 Hz (e.g. 1000 Hz)
+MAX_FREQ_INDEX = np.where(FREQS > SONIFY_FS / 2)[0][0]
+TIMES = librosa.core.frames_to_time(
+    np.arange(ANNOT_N_FRAMES),
+    sr=AUDIO_SAMPLE_RATE,
+    hop_length=AUDIO_SAMPLE_RATE // ANNOTATIONS_FPS,
+)
+
+
+def get_input_model() -> tf.keras.Model:
+    """define a model that generates the CQT (Constant-Q Transform) of input audio"""
+    inputs = tf.keras.Input(shape=(AUDIO_N_SAMPLES, 1))  # (batch, time, ch)
+    x = models.get_cqt(inputs, 1, False)
+    model = tf.keras.Model(inputs=inputs, outputs=x)
+    model.compile()
+    return model
+
+
+INPUT_MODEL = get_input_model()
+
+
+def visualize_transcription(
+    file_writer: tf.summary.SummaryWriter,
+    stage: str,
+    inputs: tf.Tensor,
+    targets: Dict[str, tf.Tensor],
+    outputs: Dict[str, tf.Tensor],
+    loss: float,
+    step: int,
+    sonify: bool = True,
+    contours: bool = True,
+) -> None:
+    """Create tf.summaries of transcription outputs to be plotted in tensorboard
+
+    Args:
+        file_writer: tensorboard filewriter object
+        stage: train or validation
+        inputs: batch of input data (audio)
+        targets: batch of target data (dictionary)
+        outputs: batch of output data (dictionary)
+        loss: loss value for epoch
+        step: which epoch this is
+        sonify: sonify outputs
+        contours: plot note contours
+    """
+    with file_writer.as_default():
+        # create audio player
+        tf.summary.audio(
+            f"{stage}/audio/inputs",
+            inputs,
+            sample_rate=AUDIO_SAMPLE_RATE,
+            step=step,
+            max_outputs=MAX_OUTPUTS,
+        )
+        # plot mel spectrograms
+        tf.summary.image(
+            f"{stage}/audio/input",
+            _audio_input(inputs),
+            step=step,
+            max_outputs=MAX_OUTPUTS,
+        )
+
+        # plot onsets
+        tf.summary.image(
+            f"{stage}/images/onsets/target",
+            _array_to_image(targets["onset"]),
+            step=step,
+            max_outputs=MAX_OUTPUTS,
+        )
+        tf.summary.image(
+            f"{stage}/images/onsets/output",
+            _array_to_image(outputs["onset"]),
+            step=step,
+            max_outputs=MAX_OUTPUTS,
+        )
+
+        if sonify:
+            tf.summary.audio(
+                f"{stage}/audio/onsets-output",
+                _array_to_sonification(outputs["onset"], MAX_OUTPUTS),
+                sample_rate=SONIFY_FS,
+                step=step,
+                max_outputs=MAX_OUTPUTS,
+            )
+
+        if contours:
+            # plot contours
+            tf.summary.image(
+                f"{stage}/images/contours/target",
+                _array_to_image(targets["contour"]),
+                step=step,
+                max_outputs=MAX_OUTPUTS,
+            )
+            tf.summary.image(
+                f"{stage}/images/contours/output",
+                _array_to_image(outputs["contour"]),
+                step=step,
+                max_outputs=MAX_OUTPUTS,
+            )
+
+        # plot notes
+        tf.summary.image(
+            f"{stage}/images/notes/target",
+            _array_to_image(targets["note"]),
+            step=step,
+            max_outputs=MAX_OUTPUTS,
+        )
+        tf.summary.image(
+            f"{stage}/images/notes/output",
+            _array_to_image(outputs["note"]),
+            step=step,
+            max_outputs=MAX_OUTPUTS,
+        )
+
+        if sonify:
+            # sonify notes
+            tf.summary.audio(
+                f"{stage}/audio/notes-output",
+                _array_to_sonification(outputs["note"], MAX_OUTPUTS),
+                sample_rate=SONIFY_FS,
+                step=step,
+                max_outputs=MAX_OUTPUTS,
+            )
+
+        # plot loss
+        tf.summary.scalar(f"{stage}/loss", loss, step=step)
+        # plot max
+        if contours:
+            tf.summary.scalar(f"{stage}/contour-max", np.max(outputs["contour"]), step=step)
+
+        tf.summary.scalar(f"{stage}/note-max", np.max(outputs["note"]), step=step)
+        tf.summary.scalar(f"{stage}/onset-max", np.max(outputs["onset"]), step=step)
+
+
+def _array_to_sonification(array: tf.Tensor, max_outputs: int, clip: float = 0.3) -> tf.Tensor:
+    """sonify time frequency representation of audio
+
+    Args:
+        array: time-frequency representation of audio
+        max_outputs: the number of grams / batches to process / append to the resulting output
+        clip: value below which signal is 0'd out.
+    """
+    gram_batch = tf.transpose(array, perm=[0, 2, 1]).numpy()
+    audio_list = []
+
+    for i, gram in enumerate(gram_batch):
+
+        gram[gram < clip] = 0.0
+        y = mir_eval.sonify.time_frequency(
+            gram[:MAX_FREQ_INDEX, :],
+            FREQS[:MAX_FREQ_INDEX],
+            TIMES,
+            fs=SONIFY_FS,
+        )
+        audio_list.append(y[:, np.newaxis])
+        if i + 1 >= max_outputs:
+            break
+
+    return tf.convert_to_tensor(np.array(audio_list), dtype=tf.float32)
+
+
+def _audio_input(audio: tf.Tensor) -> tf.Tensor:
+    """Gets the Constant-Q transform of audio input using the input model defined above.
+
+    Args:
+        audio: the audio signal to process
+
+    Returns:
+        constant-q transform of the audio (3 bins per semitone, ~11ms hop size.)
+    """
+    audio_in = INPUT_MODEL(audio)
+    return tf.transpose(audio_in, perm=[0, 2, 1, 3])
+
+
+def _array_to_image(array: tf.Tensor) -> tf.Tensor:
+    """Convert a time-frequency array shape=(batch, time, frequency) to
+    the shape expected by tf.summary.image (batch, frequency, time, 1)
+
+    Args:
+        array: a (batch, time, frequency) array
+
+    Returns:
+        reshaped array
+    """
+    return tf.expand_dims(tf.transpose(array, perm=[0, 2, 1]), 3)
+
+
+// File: basic_pitch_fork\basic_pitch.egg-info\dependency_links.txt
+----------------------------------------
+
+
+
+// File: basic_pitch_fork\basic_pitch.egg-info\entry_points.txt
+----------------------------------------
+[console_scripts]
+basic-pitch = basic_pitch.predict:main
+bp-download = basic_pitch.data.download:main
+
+
+// File: basic_pitch_fork\basic_pitch.egg-info\PKG-INFO
+----------------------------------------
+Metadata-Version: 2.2
+Name: basic-pitch
+Version: 0.4.0
+Summary: Basic Pitch, a lightweight yet powerful audio-to-MIDI converter with pitch bend detection.
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Natural Language :: English
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Description-Content-Type: text/markdown
+License-File: LICENSE
+License-File: NOTICE
+Requires-Dist: coremltools; platform_system == "Darwin"
+Requires-Dist: librosa>=0.8.0
+Requires-Dist: mir_eval>=0.6
+Requires-Dist: numpy>=1.18
+Requires-Dist: onnxruntime; platform_system == "Windows" and python_version < "3.11"
+Requires-Dist: pretty_midi>=0.2.9
+Requires-Dist: resampy<0.4.3,>=0.2.2
+Requires-Dist: scikit-learn
+Requires-Dist: scipy>=1.4.1
+Requires-Dist: tensorflow>=2.4.1; platform_system != "Darwin" and python_version >= "3.11"
+Requires-Dist: tensorflow-macos>=2.4.1; platform_system == "Darwin" and python_version > "3.11"
+Requires-Dist: tflite-runtime; platform_system == "Linux" and python_version < "3.11"
+Requires-Dist: typing_extensions
+Provides-Extra: data
+Requires-Dist: apache_beam; extra == "data"
+Requires-Dist: mirdata; extra == "data"
+Requires-Dist: smart_open; extra == "data"
+Requires-Dist: sox; extra == "data"
+Requires-Dist: ffmpeg-python; extra == "data"
+Provides-Extra: test
+Requires-Dist: basic_pitch[data]; extra == "test"
+Requires-Dist: coverage>=5.0.2; extra == "test"
+Requires-Dist: pytest>=6.1.1; extra == "test"
+Requires-Dist: pytest-mock; extra == "test"
+Requires-Dist: wave; extra == "test"
+Requires-Dist: mido; extra == "test"
+Provides-Extra: tf
+Requires-Dist: tensorflow<2.15.1,>=2.4.1; platform_system != "Darwin" and extra == "tf"
+Requires-Dist: tensorflow-macos<2.15.1,>=2.4.1; (platform_system == "Darwin" and python_version > "3.7") and extra == "tf"
+Provides-Extra: coreml
+Requires-Dist: coremltools; extra == "coreml"
+Provides-Extra: onnx
+Requires-Dist: onnxruntime; extra == "onnx"
+Provides-Extra: docs
+Requires-Dist: mkdocs>=1.0.4; extra == "docs"
+Provides-Extra: dev
+Requires-Dist: basic_pitch[coreml,data,docs,onnx,test,tf]; extra == "dev"
+Requires-Dist: mypy; extra == "dev"
+Requires-Dist: tox; extra == "dev"
+
+![Basic Pitch Logo](https://user-images.githubusercontent.com/213293/167478083-de988de2-9137-4325-8a5f-ceeb51233753.png)
+
+
+
+[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/basic-pitch)
+![Supported Platforms](https://img.shields.io/badge/platforms-macOS%20%7C%20Windows%20%7C%20Linux-green)
+
+
+Basic Pitch is a Python library for Automatic Music Transcription (AMT), using lightweight neural network developed by [Spotify's Audio Intelligence Lab](https://research.atspotify.com/audio-intelligence/). It's small, easy-to-use, `pip install`-able and `npm install`-able via its [sibling repo](https://github.com/spotify/basic-pitch-ts).
+
+Basic Pitch may be simple, but it's is far from "basic"! `basic-pitch` is efficient and easy to use, and its multipitch support, its ability to generalize across instruments, and its note accuracy competes with much larger and more resource-hungry AMT systems.
+
+Provide a compatible audio file and basic-pitch will generate a MIDI file, complete with pitch bends. Basic pitch is instrument-agnostic and supports polyphonic instruments, so you can freely enjoy transcription of all your favorite music, no matter what instrument is used.  Basic pitch works best on one instrument at a time.
+
+### Research Paper
+This library was released in conjunction with Spotify's publication at [ICASSP 2022](https://2022.ieeeicassp.org/). You can read more about this research in the paper, [A Lightweight Instrument-Agnostic Model for Polyphonic Note Transcription and Multipitch Estimation](https://arxiv.org/abs/2203.09893).
+
+If you use this library in academic research, consider citing it:
+```bibtex
+@inproceedings{2022_BittnerBRME_LightweightNoteTranscription_ICASSP,
+  author= {Bittner, Rachel M. and Bosch, Juan Jos\'e and Rubinstein, David and Meseguer-Brocal, Gabriel and Ewert, Sebastian},
+  title= {A Lightweight Instrument-Agnostic Model for Polyphonic Note Transcription and Multipitch Estimation},
+  booktitle= {Proceedings of the IEEE International Conference on Acoustics, Speech, and Signal Processing (ICASSP)},
+  address= {Singapore},
+  year= 2022,
+}
+```
+
+**Note that we have improved Basic Pitch beyond what was presented in this paper. Therefore, if you use the output of Basic Pitch in academic research,
+we recommend that you cite the version of the code that was used.**
+
+### Demo
+If, for whatever reason, you're not yet completely inspired, or you're just like so totally over the general vibe and stuff, checkout our snappy demo website, [basicpitch.io](https://basicpitch.io), to experiment with our model on whatever music audio you provide!
+
+
+## Installation
+
+`basic-pitch` is available via PyPI. To install the current release:
+
+    pip install basic-pitch
+
+To update Basic Pitch to the latest version, add `--upgrade` to the above command.
+
+#### Compatible Environments:
+- MacOS, Windows and Ubuntu operating systems
+- Python versions 3.7, 3.8, 3.9, 3.10, 3.11
+- **For Mac M1 hardware, we currently only support python version 3.10. Otherwise, we suggest using a virtual machine.**
+
+
+### Model Runtime
+
+Basic Pitch comes with the original TensorFlow model and the TensorFlow model converted to [CoreML](https://developer.apple.com/documentation/coreml), [TensorFlowLite](https://www.tensorflow.org/lite), and [ONNX](https://onnx.ai/). By default, Basic Pitch will _not_ install TensorFlow as a dependency *unless you are using Python>=3.11*. Instead, by default, CoreML will be installed on MacOS, TensorFlowLite will be installed on Linux and ONNX will be installed on Windows. If you want to install TensorFlow along with the default model inference runtime, you can install TensorFlow via `pip install basic-pitch[tf]`.
+
+## Usage
+
+### Model Prediction
+
+### Model Runtime
+
+By default, Basic Pitch will attempt to load a model in the following order:
+
+1. TensorFlow
+2. CoreML
+3. TensorFlowLite
+4. ONNX
+
+Additionally, the module variable ICASSP_2022_MODEL_PATH will default to the first available version in the list.
+
+We will explain how to override this priority list below. Because all other model serializations were converted from TensorFlow, we recommend using TensorFlow when possible. N.B. Basic Pitch does not install TensorFlow by default to save the user time when installing and running Basic Pitch.
+
+#### Command Line Tool
+
+This library offers a command line tool interface. A basic prediction command will generate and save a MIDI file transcription of audio at the `<input-audio-path>` to the `<output-directory>`:
+
+```bash
+basic-pitch <output-directory> <input-audio-path>
+```
+
+For example: 
+```
+basic-pitch /output/directory/path /input/audio/path
+```
+
+To process more than one audio file at a time:
+
+```bash
+basic-pitch <output-directory> <input-audio-path-1> <input-audio-path-2> <input-audio-path-3>
+```
+
+Optionally, you may append any of the following flags to your prediction command to save additional formats of the prediction output to the `<output-directory>`:
+
+- `--sonify-midi` to additionally save a `.wav` audio rendering of the MIDI file.
+- `--save-model-outputs` to additionally save raw model outputs as an NPZ file.
+- `--save-note-events` to additionally save the predicted note events as a CSV file.
+
+If you want to use a non-default model type (e.g., use CoreML instead of TF), use the `--model-serialization` argument. The CLI will change the loaded model to the type you prefer.
+
+To discover more parameter control, run:
+```bash
+basic-pitch --help
+```
+
+#### Programmatic
+
+**predict()**
+
+Import `basic-pitch` into your own Python code and run the [`predict`](basic_pitch/inference.py) functions directly, providing an `<input-audio-path>` and returning the model's prediction results:
+
+```python
+from basic_pitch.inference import predict
+from basic_pitch import ICASSP_2022_MODEL_PATH
+
+model_output, midi_data, note_events = predict(<input-audio-path>)
+```
+
+- `<minimum-frequency>` & `<maximum-frequency>` (*float*s) set the maximum and minimum allowed note frequency, in Hz, returned by the model. Pitch events with frequencies outside of this range will be excluded from the prediction results.
+- `model_output` is the raw model inference output
+- `midi_data` is the transcribed MIDI data derived from the `model_output`
+- `note_events` is a list of note events derived from the `model_output`
+
+Note: As mentioned previously, ICASSP_2022_MODEL_PATH will default to the runtime first supported in the list TensorFlow, CoreML, TensorFlowLite, ONNX.
+
+**predict() in a loop**
+
+To run prediction within a loop, you'll want to load the model yourself and provide `predict()` with the loaded model object itself to be used for repeated prediction calls, in order to avoid redundant and sluggish model loading.
+
+```python
+import tensorflow as tf
+
+from basic_pitch.inference import predict, Model
+from basic_pitch import ICASSP_2022_MODEL_PATH
+
+basic_pitch_model = Model(ICASSP_2022_MODEL_PATH))
+
+for x in range():
+    ...
+    model_output, midi_data, note_events = predict(
+        <loop-x-input-audio-path>,
+        basic_pitch_model,
+    )
+    ...
+```
+
+**predict_and_save()**
+
+If you would like `basic-pitch` orchestrate the generation and saving of our various supported output file types, you may use [`predict_and_save`](basic_pitch/inference.py) instead of using [`predict`](basic_pitch/inference.py) directly:
+
+```python
+from basic_pitch.inference import predict_and_save
+
+predict_and_save(
+    <input-audio-path-list>,
+    <output-directory>,
+    <save-midi>,
+    <sonify-midi>,
+    <save-model-outputs>,
+    <save-notes>,
+)
+```
+
+where:
+   - `<input-audio-path-list>` & `<output-directory>`
+        - directory paths for `basic-pitch` to read from/write to.
+   - `<save-midi>`
+        - *bool* to control generating and saving a MIDI file to the `<output-directory>`
+   - `<sonify-midi>`
+        - *bool* to control saving a WAV audio rendering of the MIDI file to the `<output-directory>`
+   - `<save-model-outputs>`
+        - *bool* to control saving the raw model output as a NPZ file to the `<output-directory>`
+   - `<save-notes>`
+        - *bool* to control saving predicted note events as a CSV file `<output-directory>`
+
+
+
+### Model Input
+
+**Supported Audio Codecs**
+
+   `basic-pitch` accepts all sound files that are compatible with its version of [`librosa`](https://librosa.org/doc/latest/index.html), including:
+
+- `.mp3`
+- `.ogg`
+- `.wav`
+- `.flac`
+- `.m4a`
+
+**Mono Channel Audio Only**
+
+While you may use stereo audio as an input to our model, at prediction time, the channels of the input will be down-mixed to mono, and then analyzed and transcribed.
+
+**File Size/Audio Length**
+
+This model can process any size or length of audio, but processing of larger/longer audio files could be limited by your machine's available disk space. To process these files, we recommend streaming the audio of the file, processing windows of audio at a time.
+
+**Sample Rate**
+
+Input audio maybe be of any sample rate, however, all audio will be resampled to 22050 Hz before processing.
+
+### VST
+
+Thanks to DamRsn for developing this working VST version of basic-pitch! - https://github.com/DamRsn/NeuralNote
+
+
+## Contributing
+
+Contributions to `basic-pitch` are welcomed! See [CONTRIBUTING.md](CONTRIBUTING.md) for details.
+
+## Copyright and License
+`basic-pitch` is Copyright 2022 Spotify AB.
+
+This software is licensed under the Apache License, Version 2.0 (the "Apache License"). You may choose either license to govern your use of this software only upon the condition that you accept all of the terms of either the Apache License.
+
+You may obtain a copy of the Apache License at:
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+
+Unless required by applicable law or agreed to in writing, software distributed under the Apache License or the GPL License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the Apache License for the specific language governing permissions and limitations under the Apache License.
+
+
+
+// File: basic_pitch_fork\basic_pitch.egg-info\requires.txt
+----------------------------------------
+librosa>=0.8.0
+mir_eval>=0.6
+numpy>=1.18
+pretty_midi>=0.2.9
+resampy<0.4.3,>=0.2.2
+scikit-learn
+scipy>=1.4.1
+typing_extensions
+
+[:platform_system != "Darwin" and python_version >= "3.11"]
+tensorflow>=2.4.1
+
+[:platform_system == "Darwin"]
+coremltools
+
+[:platform_system == "Darwin" and python_version > "3.11"]
+tensorflow-macos>=2.4.1
+
+[:platform_system == "Linux" and python_version < "3.11"]
+tflite-runtime
+
+[:platform_system == "Windows" and python_version < "3.11"]
+onnxruntime
+
+[coreml]
+coremltools
+
+[data]
+apache_beam
+mirdata
+smart_open
+sox
+ffmpeg-python
+
+[dev]
+basic_pitch[coreml,data,docs,onnx,test,tf]
+mypy
+tox
+
+[docs]
+mkdocs>=1.0.4
+
+[onnx]
+onnxruntime
+
+[test]
+basic_pitch[data]
+coverage>=5.0.2
+pytest>=6.1.1
+pytest-mock
+wave
+mido
+
+[tf]
+
+[tf:platform_system != "Darwin"]
+tensorflow<2.15.1,>=2.4.1
+
+[tf:platform_system == "Darwin" and python_version > "3.7"]
+tensorflow-macos<2.15.1,>=2.4.1
+
+
+// File: basic_pitch_fork\basic_pitch.egg-info\SOURCES.txt
+----------------------------------------
+.dockerignore
+CODE_OF_CONDUCT.md
+CONTRIBUTING.md
+Dockerfile
+LICENSE
+MANIFEST.in
+NOTICE
+OWNERS.md
+README.md
+SECURITY.md
+catalog-info.yaml
+pyproject.toml
+setup.py
+tox.ini
+basic_pitch/__init__.py
+basic_pitch/callbacks.py
+basic_pitch/commandline_printing.py
+basic_pitch/constants.py
+basic_pitch/inference.py
+basic_pitch/models.py
+basic_pitch/nn.py
+basic_pitch/note_creation.py
+basic_pitch/predict.py
+basic_pitch/train.py
+basic_pitch/visualize.py
+basic_pitch.egg-info/PKG-INFO
+basic_pitch.egg-info/SOURCES.txt
+basic_pitch.egg-info/dependency_links.txt
+basic_pitch.egg-info/entry_points.txt
+basic_pitch.egg-info/requires.txt
+basic_pitch.egg-info/top_level.txt
+basic_pitch/data/README.md
+basic_pitch/data/__init__.py
+basic_pitch/data/commandline.py
+basic_pitch/data/download.py
+basic_pitch/data/pipeline.py
+basic_pitch/data/tf_example_deserialization.py
+basic_pitch/data/tf_example_serialization.py
+basic_pitch/data/datasets/__init__.py
+basic_pitch/data/datasets/guitarset.py
+basic_pitch/data/datasets/ikala.py
+basic_pitch/data/datasets/maestro.py
+basic_pitch/data/datasets/medleydb_pitch.py
+basic_pitch/data/datasets/slakh.py
+basic_pitch/layers/__init__.py
+basic_pitch/layers/math.py
+basic_pitch/layers/nnaudio.py
+basic_pitch/layers/signal.py
+basic_pitch/saved_models/icassp_2022/nmp.onnx
+basic_pitch/saved_models/icassp_2022/nmp.tflite
+basic_pitch/saved_models/icassp_2022/nmp/saved_model.pb
+basic_pitch/saved_models/icassp_2022/nmp.mlpackage/Manifest.json
+basic_pitch/saved_models/icassp_2022/nmp.mlpackage/Data/com.apple.CoreML/model.mlmodel
+basic_pitch/saved_models/icassp_2022/nmp.mlpackage/Data/com.apple.CoreML/weights/weight.bin
+basic_pitch/saved_models/icassp_2022/nmp/variables/variables.data-00000-of-00001
+basic_pitch/saved_models/icassp_2022/nmp/variables/variables.index
+tests/test_callbacks.py
+tests/test_inference.py
+tests/test_nn.py
+tests/test_note_creation.py
+tests/data/test_guitarset.py
+tests/data/test_ikala.py
+tests/data/test_maestro.py
+tests/data/test_medleydb_pitch.py
+tests/data/test_pipeline.py
+tests/data/test_slakh.py
+tests/data/test_tf_example_deserialization.py
+tests/data/test_tf_example_serialization.py
+tests/data/utils.py
+tests/resources/vocadito_10.wav
+tests/resources/vocadito_14.wav
+tests/resources/data/guitarset/annotation/00_BN1-129-Eb_comp.jams
+tests/resources/data/guitarset/annotation/00_BN1-147-Gb_comp.jams
+tests/resources/data/maestro/maestro-v2.0.0.json
+tests/resources/data/slakh/slakh2100_flac_redux/omitted/Track00049/metadata.yaml
+tests/resources/data/slakh/slakh2100_flac_redux/test/Track01876/metadata.yaml
+tests/resources/data/slakh/slakh2100_flac_redux/train/Track00001/metadata.yaml
+tests/resources/data/slakh/slakh2100_flac_redux/validation/Track01501/metadata.yaml
+tests/resources/vocadito_10/model_output.npz
+tests/resources/vocadito_10/note_events.npz
+
+// File: basic_pitch_fork\basic_pitch.egg-info\top_level.txt
+----------------------------------------
+basic_pitch
+
+
+// File: basic_pitch_fork\catalog-info.yaml
+----------------------------------------
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: basic-pitch
+spec:
+  type: resource
+  owner: MIQ
+
+
+// File: basic_pitch_fork\CODE_OF_CONDUCT.md
+----------------------------------------
+# Code of Conduct
+
+This code of conduct outlines our expectations for participants within the **Spotify FOSS** community, as well as steps to reporting unacceptable behavior. We are committed to providing a welcoming and inspiring community for all and expect our code of conduct to be honored. Anyone who violates this code of conduct may be banned from the community.
+
+Our open source community strives to:
+
+* **Be friendly and patient.**
+* **Be welcoming**: We strive to be a community that welcomes and supports people of all backgrounds and identities. This includes, but is not limited to members of any race, ethnicity, culture, national origin, colour, immigration status, social and economic class, educational level, sex, sexual orientation, gender identity and expression, age, size, family status, political belief, religion, and mental and physical ability.
+* **Be considerate**: Your work will be used by other people, and you in turn will depend on the work of others. Any decision you take will affect users and colleagues, and you should take those consequences into account when making decisions. Remember that we're a world-wide community, so you might not be communicating in someone else's primary language.
+* **Be respectful**:  Not all of us will agree all the time, but disagreement is no excuse for poor behavior and poor manners. We might all experience some frustration now and then, but we cannot allow that frustration to turn into a personal attack. It’s important to remember that a community where people feel uncomfortable or threatened is not a productive one.
+* **Be careful in the words that we choose**: we are a community of professionals, and we conduct ourselves professionally. Be kind to others. Do not insult or put down other participants. Harassment and other exclusionary behavior aren't acceptable.
+* **Try to understand why we disagree**: Disagreements, both social and technical, happen all the time. It is important that we resolve disagreements and differing views constructively. Remember that we’re different. The strength of our community comes from its diversity, people from a wide range of backgrounds. Different people have different perspectives on issues. Being unable to understand why someone holds a viewpoint doesn’t mean that they’re wrong. Don’t forget that it is human to err and blaming each other doesn’t get us anywhere. Instead, focus on helping to resolve issues and learning from mistakes.
+
+## Definitions
+
+Harassment includes, but is not limited to:
+
+- Offensive comments related to gender, gender identity and expression, sexual orientation, disability, mental illness, neuro(a)typicality, physical appearance, body size, race, age, regional discrimination, political or religious affiliation
+- Unwelcome comments regarding a person’s lifestyle choices and practices, including those related to food, health, parenting, drugs, and employment
+- Deliberate misgendering. This includes deadnaming or persistently using a pronoun that does not correctly reflect a person's gender identity. You must address people by the name they give you when not addressing them by their username or handle
+- Physical contact and simulated physical contact (eg, textual descriptions like “*hug*” or “*backrub*”) without consent or after a request to stop
+- Threats of violence, both physical and psychological
+- Incitement of violence towards any individual, including encouraging a person to commit suicide or to engage in self-harm
+- Deliberate intimidation
+- Stalking or following
+- Harassing photography or recording, including logging online activity for harassment purposes
+- Sustained disruption of discussion
+- Unwelcome sexual attention, including gratuitous or off-topic sexual images or behaviour
+- Pattern of inappropriate social contact, such as requesting/assuming inappropriate levels of intimacy with others
+- Continued one-on-one communication after requests to cease
+- Deliberate “outing” of any aspect of a person’s identity without their consent except as necessary to protect others from intentional abuse
+- Publication of non-harassing private communication
+
+Our open source community prioritizes marginalized people’s safety over privileged people’s comfort. We will not act on complaints regarding:
+
+- ‘Reverse’ -isms, including ‘reverse racism,’ ‘reverse sexism,’ and ‘cisphobia’
+- Reasonable communication of boundaries, such as “leave me alone,” “go away,” or “I’m not discussing this with you”
+- Refusal to explain or debate social justice concepts
+- Communicating in a ‘tone’ you don’t find congenial
+- Criticizing racist, sexist, cissexist, or otherwise oppressive behavior or assumptions
+
+
+### Diversity Statement
+
+We encourage everyone to participate and are committed to building a community for all. Although we will fail at times, we seek to treat everyone both as fairly and equally as possible. Whenever a participant has made a mistake, we expect them to take responsibility for it. If someone has been harmed or offended, it is our responsibility to listen carefully and respectfully, and do our best to right the wrong.
+
+Although this list cannot be exhaustive, we explicitly honor diversity in age, gender, gender identity or expression, culture, ethnicity, language, national origin, political beliefs, profession, race, religion, sexual orientation, socioeconomic status, and technical ability. We will not tolerate discrimination based on any of the protected
+characteristics above, including participants with disabilities.
+
+### Reporting Issues
+
+If you experience or witness unacceptable behavior—or have any other concerns—please report it by contacting us via **fossboard@spotify.com**. All reports will be handled with discretion. In your report please include:
+
+- Your contact information.
+- Names (real, nicknames, or pseudonyms) of any individuals involved. If there are additional witnesses, please
+include them as well. Your account of what occurred, and if you believe the incident is ongoing. If there is a publicly available record (e.g. a mailing list archive or a public IRC logger), please include a link.
+- Any additional information that may be helpful.
+
+After filing a report, a representative will contact you personally, review the incident, follow up with any additional questions, and make a decision as to how to respond. If the person who is harassing you is part of the response team, they will recuse themselves from handling your incident. If the complaint originates from a member of the response team, it will be handled by a different member of the response team. We will respect confidentiality requests for the purpose of protecting victims of abuse.
+
+### Attribution & Acknowledgements
+
+We all stand on the shoulders of giants across many open source communities.  We'd like to thank the communities and projects that established code of conducts and diversity statements as our inspiration:
+
+* [Django](https://www.djangoproject.com/conduct/reporting/)
+* [Python](https://www.python.org/community/diversity/)
+* [Ubuntu](http://www.ubuntu.com/about/about-ubuntu/conduct)
+* [Contributor Covenant](http://contributor-covenant.org/)
+* [Geek Feminism](http://geekfeminism.org/about/code-of-conduct/)
+* [Citizen Code of Conduct](http://citizencodeofconduct.org/)
+
+
+// File: basic_pitch_fork\CONTRIBUTING.md
+----------------------------------------
+# How to Contribute
+
+Basic Pitch welcomes your contributions!
+
+## Getting Started
+
+To get your environment set up to build `basic-pitch`, you'll need Python and Pip installed on your machine.
+
+We recommend first installing the following non-python dependencies:
+
+- [libsndfile](http://libsndfile.github.io/libsndfile/) is a C library for reading and writing files containing sampled sound through one standard library interface.
+    - To install on MacOs, run `brew install libsndfile` using [Homebrew](https://brew.sh/)
+    - To install on Windows, run `choco install libsndfile` using [Chocolatey](https://chocolatey.org/)
+    - To install on Ubuntu, run `sudo apt-get update && sudo apt-get install --no-install-recommends -y --fix-missing pkg-config libsndfile1`
+- [ffmpeg](https://ffmpeg.org/) is a complete, cross-platform solution to record, convert and stream audio in all `basic-pitch` supported formats
+- [sox](https://sourceforge.net/projects/sox/) is a general purpose sound processing utility library used to process and transform training data used for training the `basic-pitch` model. 
+
+To compile a debug build of `basic-pitch` that allows using a debugger (like gdb or lldb), use the following command to build the package locally and install a symbolic link for debugging:
+```shell
+python3 setup.py build develop
+```
+
+Then, you can `import basic_pitch` from Python (or run the tests with `tox`) to test out your local changes.
+
+## Workflow
+
+We follow the [GitHub Flow Workflow](https://guides.github.com/introduction/flow/):
+
+1.  Fork the project
+1.  Check out the `main` branch
+1.  Create a feature branch
+1.  Write code and tests for your change
+1.  From your branch, make a pull request against `https://github.com/spotify/basic-pitch`
+1.  Work with repo maintainers to get your change reviewed
+1.  Wait for your change to be pulled into `https://github.com/spotify/basic-pitch/main`
+1.  Delete your feature branch
+
+## Testing
+
+We use `tox` for testing - running tests from end-to-end should be as simple as:
+
+```
+tox
+```
+
+## Style
+
+Use `black` with defaults for Python code.
+
+## Issues
+
+When creating an issue please try to ahere to the following format:
+
+    module-name: One line summary of the issue (less than 72 characters)
+
+    ### Expected behaviour
+
+    As concisely as possible, describe the expected behaviour.
+
+    ### Actual behaviour
+
+    As concisely as possible, describe the observed behaviour.
+
+    ### Steps to reproduce the behaviour
+
+    List all relevant steps to reproduce the observed behaviour.
+
+## Documentation
+
+We also welcome improvements to the project documentation or to the existing
+docs. Please file an [issue](https://github.com/spotify/basic-pitch/issues/new).
+
+## First Contributions
+
+If you are a first time contributor to `basic-pitch`, familiarize yourself with the:
+* [Code of Conduct](CODE_OF_CONDUCT.md)
+* [GitHub Flow Workflow](https://guides.github.com/introduction/flow/)
+<!-- * Issue and pull request style guides -->
+
+When you're ready, navigate to [issues](https://github.com/spotify/basic-pitch/issues/new). Some issues have been identified by community members as [good first issues](https://github.com/spotify/basic-pitch/labels/good%20first%20issue).
+
+There is a lot to learn when making your first contribution. As you gain experience, you will be able to make contributions faster. You can submit an issue using the [question](https://github.com/spotify/basic-pitch/labels/question) label if you encounter challenges.
+
+# License
+
+By contributing your code, you agree to license your contribution under the
+terms of the [LICENSE](https://github.com/spotify/basic-pitch/blob/main/LICENSE).
+
+# Code of Conduct
+
+Read our [Code of Conduct](CODE_OF_CONDUCT.md) for the project.
+
+
+// File: basic_pitch_fork\Dockerfile
+----------------------------------------
+FROM apache/beam_python3.10_sdk:2.51.0
+
+RUN --mount=type=cache,target=/var/cache/apt \
+  apt-get update \
+  && apt-get install --no-install-recommends -y --fix-missing \
+    sox \
+    libsndfile1 \
+    libsox-fmt-all \
+    ffmpeg \
+    libhdf5-dev \
+  && rm -rf /var/lib/apt/lists/*
+
+COPY . /basic-pitch
+WORKDIR basic-pitch
+RUN --mount=type=cache,target=/root/.cache \
+  pip3 install --upgrade pip && \
+  pip3 install --upgrade setuptools wheel && \
+  pip3 install -e '.[train]' 
+
+
+
+// File: basic_pitch_fork\LICENSE
+----------------------------------------
+Copyright 2022 Spotify AB
+
+                                 Apache License
+                           Version 2.0, January 2004
+                        http://www.apache.org/licenses/
+
+   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
+
+   1. Definitions.
+
+      "License" shall mean the terms and conditions for use, reproduction,
+      and distribution as defined by Sections 1 through 9 of this document.
+
+      "Licensor" shall mean the copyright owner or entity authorized by
+      the copyright owner that is granting the License.
+
+      "Legal Entity" shall mean the union of the acting entity and all
+      other entities that control, are controlled by, or are under common
+      control with that entity. For the purposes of this definition,
+      "control" means (i) the power, direct or indirect, to cause the
+      direction or management of such entity, whether by contract or
+      otherwise, or (ii) ownership of fifty percent (50%) or more of the
+      outstanding shares, or (iii) beneficial ownership of such entity.
+
+      "You" (or "Your") shall mean an individual or Legal Entity
+      exercising permissions granted by this License.
+
+      "Source" form shall mean the preferred form for making modifications,
+      including but not limited to software source code, documentation
+      source, and configuration files.
+
+      "Object" form shall mean any form resulting from mechanical
+      transformation or translation of a Source form, including but
+      not limited to compiled object code, generated documentation,
+      and conversions to other media types.
+
+      "Work" shall mean the work of authorship, whether in Source or
+      Object form, made available under the License, as indicated by a
+      copyright notice that is included in or attached to the work
+      (an example is provided in the Appendix below).
+
+      "Derivative Works" shall mean any work, whether in Source or Object
+      form, that is based on (or derived from) the Work and for which the
+      editorial revisions, annotations, elaborations, or other modifications
+      represent, as a whole, an original work of authorship. For the purposes
+      of this License, Derivative Works shall not include works that remain
+      separable from, or merely link (or bind by name) to the interfaces of,
+      the Work and Derivative Works thereof.
+
+      "Contribution" shall mean any work of authorship, including
+      the original version of the Work and any modifications or additions
+      to that Work or Derivative Works thereof, that is intentionally
+      submitted to Licensor for inclusion in the Work by the copyright owner
+      or by an individual or Legal Entity authorized to submit on behalf of
+      the copyright owner. For the purposes of this definition, "submitted"
+      means any form of electronic, verbal, or written communication sent
+      to the Licensor or its representatives, including but not limited to
+      communication on electronic mailing lists, source code control systems,
+      and issue tracking systems that are managed by, or on behalf of, the
+      Licensor for the purpose of discussing and improving the Work, but
+      excluding communication that is conspicuously marked or otherwise
+      designated in writing by the copyright owner as "Not a Contribution."
+
+      "Contributor" shall mean Licensor and any individual or Legal Entity
+      on behalf of whom a Contribution has been received by Licensor and
+      subsequently incorporated within the Work.
+
+   2. Grant of Copyright License. Subject to the terms and conditions of
+      this License, each Contributor hereby grants to You a perpetual,
+      worldwide, non-exclusive, no-charge, royalty-free, irrevocable
+      copyright license to reproduce, prepare Derivative Works of,
+      publicly display, publicly perform, sublicense, and distribute the
+      Work and such Derivative Works in Source or Object form.
+
+   3. Grant of Patent License. Subject to the terms and conditions of
+      this License, each Contributor hereby grants to You a perpetual,
+      worldwide, non-exclusive, no-charge, royalty-free, irrevocable
+      (except as stated in this section) patent license to make, have made,
+      use, offer to sell, sell, import, and otherwise transfer the Work,
+      where such license applies only to those patent claims licensable
+      by such Contributor that are necessarily infringed by their
+      Contribution(s) alone or by combination of their Contribution(s)
+      with the Work to which such Contribution(s) was submitted. If You
+      institute patent litigation against any entity (including a
+      cross-claim or counterclaim in a lawsuit) alleging that the Work
+      or a Contribution incorporated within the Work constitutes direct
+      or contributory patent infringement, then any patent licenses
+      granted to You under this License for that Work shall terminate
+      as of the date such litigation is filed.
+
+   4. Redistribution. You may reproduce and distribute copies of the
+      Work or Derivative Works thereof in any medium, with or without
+      modifications, and in Source or Object form, provided that You
+      meet the following conditions:
+
+      (a) You must give any other recipients of the Work or
+          Derivative Works a copy of this License; and
+
+      (b) You must cause any modified files to carry prominent notices
+          stating that You changed the files; and
+
+      (c) You must retain, in the Source form of any Derivative Works
+          that You distribute, all copyright, patent, trademark, and
+          attribution notices from the Source form of the Work,
+          excluding those notices that do not pertain to any part of
+          the Derivative Works; and
+
+      (d) If the Work includes a "NOTICE" text file as part of its
+          distribution, then any Derivative Works that You distribute must
+          include a readable copy of the attribution notices contained
+          within such NOTICE file, excluding those notices that do not
+          pertain to any part of the Derivative Works, in at least one
+          of the following places: within a NOTICE text file distributed
+          as part of the Derivative Works; within the Source form or
+          documentation, if provided along with the Derivative Works; or,
+          within a display generated by the Derivative Works, if and
+          wherever such third-party notices normally appear. The contents
+          of the NOTICE file are for informational purposes only and
+          do not modify the License. You may add Your own attribution
+          notices within Derivative Works that You distribute, alongside
+          or as an addendum to the NOTICE text from the Work, provided
+          that such additional attribution notices cannot be construed
+          as modifying the License.
+
+      You may add Your own copyright statement to Your modifications and
+      may provide additional or different license terms and conditions
+      for use, reproduction, or distribution of Your modifications, or
+      for any such Derivative Works as a whole, provided Your use,
+      reproduction, and distribution of the Work otherwise complies with
+      the conditions stated in this License.
+
+   5. Submission of Contributions. Unless You explicitly state otherwise,
+      any Contribution intentionally submitted for inclusion in the Work
+      by You to the Licensor shall be under the terms and conditions of
+      this License, without any additional terms or conditions.
+      Notwithstanding the above, nothing herein shall supersede or modify
+      the terms of any separate license agreement you may have executed
+      with Licensor regarding such Contributions.
+
+   6. Trademarks. This License does not grant permission to use the trade
+      names, trademarks, service marks, or product names of the Licensor,
+      except as required for reasonable and customary use in describing the
+      origin of the Work and reproducing the content of the NOTICE file.
+
+   7. Disclaimer of Warranty. Unless required by applicable law or
+      agreed to in writing, Licensor provides the Work (and each
+      Contributor provides its Contributions) on an "AS IS" BASIS,
+      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
+      implied, including, without limitation, any warranties or conditions
+      of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A
+      PARTICULAR PURPOSE. You are solely responsible for determining the
+      appropriateness of using or redistributing the Work and assume any
+      risks associated with Your exercise of permissions under this License.
+
+   8. Limitation of Liability. In no event and under no legal theory,
+      whether in tort (including negligence), contract, or otherwise,
+      unless required by applicable law (such as deliberate and grossly
+      negligent acts) or agreed to in writing, shall any Contributor be
+      liable to You for damages, including any direct, indirect, special,
+      incidental, or consequential damages of any character arising as a
+      result of this License or out of the use or inability to use the
+      Work (including but not limited to damages for loss of goodwill,
+      work stoppage, computer failure or malfunction, or any and all
+      other commercial damages or losses), even if such Contributor
+      has been advised of the possibility of such damages.
+
+   9. Accepting Warranty or Additional Liability. While redistributing
+      the Work or Derivative Works thereof, You may choose to offer,
+      and charge a fee for, acceptance of support, warranty, indemnity,
+      or other liability obligations and/or rights consistent with this
+      License. However, in accepting such obligations, You may act only
+      on Your own behalf and on Your sole responsibility, not on behalf
+      of any other Contributor, and only if You agree to indemnify,
+      defend, and hold each Contributor harmless for any liability
+      incurred by, or claims asserted against, such Contributor by reason
+      of your accepting any such warranty or additional liability.
+
+   END OF TERMS AND CONDITIONS
+
+   APPENDIX: How to apply the Apache License to your work.
+
+      To apply the Apache License to your work, attach the following
+      boilerplate notice, with the fields enclosed by brackets "[]"
+      replaced with your own identifying information. (Don't include
+      the brackets!)  The text should be enclosed in the appropriate
+      comment syntax for the file format. We also recommend that a
+      file or class name and description of purpose be included on the
+      same "printed page" as the copyright notice for easier
+      identification within third-party archives.
+
+   Copyright [yyyy] [name of copyright owner]
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+
+// File: basic_pitch_fork\MANIFEST.in
+----------------------------------------
+include *.txt tox.ini *.rst *.md LICENSE
+include catalog-info.yaml
+include Dockerfile .dockerignore
+recursive-include tests *.py *.wav *.npz *.jams *.zip *.mid *.flac *.yaml *.json
+recursive-include basic_pitch *.py *.md
+recursive-include basic_pitch/saved_models *.index *.pb variables.data* *.mlmodel *.json *.onnx *.tflite *.bin
+
+
+// File: basic_pitch_fork\NOTICE
+----------------------------------------
+Basic Pitch
+Copyright 2022 Spotify AB
+
+This product includes software developed at
+Spotify AB (http://www.spotify.com/).
+
+This product includes software from Librosa (ISC).
+* Copyright (C) 2013--2017, librosa development team.
+
+This product includes software from mir_eval (MIT)
+* Copyright (C) 2014 Colin Raffel
+
+This product includes software from numpy (BSD)
+* Copyright (C) 2005-2022, NumPy Developers.
+
+This product includes software from pretty-midi (MIT)
+* Copyright (C) 2014 Colin Raffel
+
+This product includes software from resampy (ISC)
+* Copyright (C) 2016, Brian McFee
+
+This product includes software from scipy (BSD)
+* Copyright (C) 2001-2002 Enthought, Inc. 2003-2022, SciPy Developers
+
+This product includes software from tensorflow (Apache 2.0)
+* Copyright (C) 2019 Google, LLC <packages@tensorflow.org>
+
+The tests for `basic-pitch` include audio files from the
+Vocadito dataset liscened under Creative Commons
+Attribution 4.0 International. The dataset can be found at:
+https://zenodo.org/record/5578807#.YnRm5vPMKDU
+
+
+// File: basic_pitch_fork\OWNERS.md
+----------------------------------------
+# Owners
+
+- See [CONTRIBUTING.md](CONTRIBUTING.md) for general contribution guidelines.
+
+## Core Developers
+
+- David Rubinstein (@drubinstein, Spotify)
+- Rachel Bittner (@rabitt, Spotify)
+
+## Triagers
+
+- David Rubinstein (@drubinstein, Spotify)
+- Rachel Bittner (@rabitt, Spotify)
+- Charae Tongg (@charaizlabs, Spotify)
+- Peter Sobot (@psobot, Spotify)
+- Juanjo Bosch (@juanjobosch, Spotify)
+- Vincent Degroote (@vinzentt, Spotify)
+
+## Contributors
+
+- Rachel Bittner (@rabitt, Spotify)
+- Juanjo Bosch (@juanjobosch, Spotify)
+- Vincent Degroote (@vinzentt, Spotify)
+- Simon Durand (@simondurand, Spotify)
+- David Rubinstein (@drubinstein, Spotify)
+- Gabriel Meseguer-Brocal (@gabolsgabs, Deezer)
+- Nicola Montecchio (@nicolamontecchio, Spotify)
+- Scott Sheffield (@scottsheffield, Spotify)
+- Peter Sobot (@psobot, Spotify)
+- Daniel Stoller (@f90, Spotify)
+- Ching Sung (@chingsungx, Spotify)
+- Charae Tongg (@charaizlabs, Spotify)
+- Jan Van Balen (@jvbalen, Spotify)
+
+The research and development of this project is led by [Spotify's Audio Intelligence Lab](https://research.atspotify.com/audio-intelligence/).
+
+
+// File: basic_pitch_fork\pyproject.toml
+----------------------------------------
+[project]
+name = "basic-pitch"
+version = "0.4.0"
+description = "Basic Pitch, a lightweight yet powerful audio-to-MIDI converter with pitch bend detection."
+readme = "README.md"
+keywords = []
+classifiers = [
+	"Development Status :: 5 - Production/Stable",
+	"Natural Language :: English",
+	"Operating System :: POSIX :: Linux",
+	"Operating System :: MacOS :: MacOS X",
+	"Operating System :: Microsoft :: Windows",
+	"Programming Language :: Python",
+	"Programming Language :: Python :: 3.8",
+	"Programming Language :: Python :: 3.9",
+	"Programming Language :: Python :: 3.10",
+	"Programming Language :: Python :: 3.11",
+	"Programming Language :: Python :: Implementation :: CPython",
+]
+dependencies = [
+	"coremltools; platform_system == 'Darwin'",
+	"librosa>=0.8.0",
+	"mir_eval>=0.6",
+	"numpy>=1.18",
+	"onnxruntime; platform_system == 'Windows' and python_version < '3.11'",
+	"pretty_midi>=0.2.9",
+	"resampy>=0.2.2,<0.4.3",
+	"scikit-learn",
+	"scipy>=1.4.1",
+	"tensorflow>=2.4.1; platform_system != 'Darwin' and python_version >= '3.11'",
+	"tensorflow-macos>=2.4.1; platform_system == 'Darwin' and python_version > '3.11'",
+	"tflite-runtime; platform_system == 'Linux' and python_version < '3.11'",
+	"typing_extensions",
+]
+
+[metadata]
+author = "Spotify"
+author_email = "basic-pitch@spotify.com"
+maintainer = "Spotify"
+maintainer_email = "basic-pitch@spotify.com"
+url = "https://github.com/spotify/basic-pitch"
+long_description = "Basic Pitch, a lightweight yet powerful audio-to-MIDI converter with pitch bend detection. See https://github.com/spotify/basic-pitch for more details."
+license = { file = "LICENSE" }
+
+[tool.setuptools.packages.find]
+where = ["."]
+exclude = ["tests"]
+namespaces = false
+
+[project.scripts]
+basic-pitch = "basic_pitch.predict:main"
+bp-download = "basic_pitch.data.download:main"
+
+[project.optional-dependencies]
+data = [
+    "apache_beam",
+    "mirdata",
+    "smart_open",
+    "sox",
+    "ffmpeg-python"
+]
+test = [
+	"basic_pitch[data]",
+	"coverage>=5.0.2",
+	"pytest>=6.1.1",
+	"pytest-mock",
+	"wave",
+	"mido"
+]
+tf = [
+	"tensorflow>=2.4.1,<2.15.1; platform_system != 'Darwin'",
+	"tensorflow-macos>=2.4.1,<2.15.1; platform_system == 'Darwin' and python_version > '3.7'",
+]
+coreml = ["coremltools"] 
+onnx = ["onnxruntime"]
+docs = ["mkdocs>=1.0.4"]
+dev = [
+	"basic_pitch[data,test,tf,coreml,onnx,docs]",
+	"mypy",
+	"tox",
+]
+
+[tool.distutils.bdist_wheel]
+universal = true
+
+[build-system]
+requires = [
+	"setuptools>=40.8.0",
+	"wheel",
+	"cython",
+]
+
+
+// File: basic_pitch_fork\README.md
+----------------------------------------
+![Basic Pitch Logo](https://user-images.githubusercontent.com/213293/167478083-de988de2-9137-4325-8a5f-ceeb51233753.png)
+
+
+
+[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/basic-pitch)
+![Supported Platforms](https://img.shields.io/badge/platforms-macOS%20%7C%20Windows%20%7C%20Linux-green)
+
+
+Basic Pitch is a Python library for Automatic Music Transcription (AMT), using lightweight neural network developed by [Spotify's Audio Intelligence Lab](https://research.atspotify.com/audio-intelligence/). It's small, easy-to-use, `pip install`-able and `npm install`-able via its [sibling repo](https://github.com/spotify/basic-pitch-ts).
+
+Basic Pitch may be simple, but it's is far from "basic"! `basic-pitch` is efficient and easy to use, and its multipitch support, its ability to generalize across instruments, and its note accuracy competes with much larger and more resource-hungry AMT systems.
+
+Provide a compatible audio file and basic-pitch will generate a MIDI file, complete with pitch bends. Basic pitch is instrument-agnostic and supports polyphonic instruments, so you can freely enjoy transcription of all your favorite music, no matter what instrument is used.  Basic pitch works best on one instrument at a time.
+
+### Research Paper
+This library was released in conjunction with Spotify's publication at [ICASSP 2022](https://2022.ieeeicassp.org/). You can read more about this research in the paper, [A Lightweight Instrument-Agnostic Model for Polyphonic Note Transcription and Multipitch Estimation](https://arxiv.org/abs/2203.09893).
+
+If you use this library in academic research, consider citing it:
+```bibtex
+@inproceedings{2022_BittnerBRME_LightweightNoteTranscription_ICASSP,
+  author= {Bittner, Rachel M. and Bosch, Juan Jos\'e and Rubinstein, David and Meseguer-Brocal, Gabriel and Ewert, Sebastian},
+  title= {A Lightweight Instrument-Agnostic Model for Polyphonic Note Transcription and Multipitch Estimation},
+  booktitle= {Proceedings of the IEEE International Conference on Acoustics, Speech, and Signal Processing (ICASSP)},
+  address= {Singapore},
+  year= 2022,
+}
+```
+
+**Note that we have improved Basic Pitch beyond what was presented in this paper. Therefore, if you use the output of Basic Pitch in academic research,
+we recommend that you cite the version of the code that was used.**
+
+### Demo
+If, for whatever reason, you're not yet completely inspired, or you're just like so totally over the general vibe and stuff, checkout our snappy demo website, [basicpitch.io](https://basicpitch.io), to experiment with our model on whatever music audio you provide!
+
+
+## Installation
+
+`basic-pitch` is available via PyPI. To install the current release:
+
+    pip install basic-pitch
+
+To update Basic Pitch to the latest version, add `--upgrade` to the above command.
+
+#### Compatible Environments:
+- MacOS, Windows and Ubuntu operating systems
+- Python versions 3.7, 3.8, 3.9, 3.10, 3.11
+- **For Mac M1 hardware, we currently only support python version 3.10. Otherwise, we suggest using a virtual machine.**
+
+
+### Model Runtime
+
+Basic Pitch comes with the original TensorFlow model and the TensorFlow model converted to [CoreML](https://developer.apple.com/documentation/coreml), [TensorFlowLite](https://www.tensorflow.org/lite), and [ONNX](https://onnx.ai/). By default, Basic Pitch will _not_ install TensorFlow as a dependency *unless you are using Python>=3.11*. Instead, by default, CoreML will be installed on MacOS, TensorFlowLite will be installed on Linux and ONNX will be installed on Windows. If you want to install TensorFlow along with the default model inference runtime, you can install TensorFlow via `pip install basic-pitch[tf]`.
+
+## Usage
+
+### Model Prediction
+
+### Model Runtime
+
+By default, Basic Pitch will attempt to load a model in the following order:
+
+1. TensorFlow
+2. CoreML
+3. TensorFlowLite
+4. ONNX
+
+Additionally, the module variable ICASSP_2022_MODEL_PATH will default to the first available version in the list.
+
+We will explain how to override this priority list below. Because all other model serializations were converted from TensorFlow, we recommend using TensorFlow when possible. N.B. Basic Pitch does not install TensorFlow by default to save the user time when installing and running Basic Pitch.
+
+#### Command Line Tool
+
+This library offers a command line tool interface. A basic prediction command will generate and save a MIDI file transcription of audio at the `<input-audio-path>` to the `<output-directory>`:
+
+```bash
+basic-pitch <output-directory> <input-audio-path>
+```
+
+For example: 
+```
+basic-pitch /output/directory/path /input/audio/path
+```
+
+To process more than one audio file at a time:
+
+```bash
+basic-pitch <output-directory> <input-audio-path-1> <input-audio-path-2> <input-audio-path-3>
+```
+
+Optionally, you may append any of the following flags to your prediction command to save additional formats of the prediction output to the `<output-directory>`:
+
+- `--sonify-midi` to additionally save a `.wav` audio rendering of the MIDI file.
+- `--save-model-outputs` to additionally save raw model outputs as an NPZ file.
+- `--save-note-events` to additionally save the predicted note events as a CSV file.
+
+If you want to use a non-default model type (e.g., use CoreML instead of TF), use the `--model-serialization` argument. The CLI will change the loaded model to the type you prefer.
+
+To discover more parameter control, run:
+```bash
+basic-pitch --help
+```
+
+#### Programmatic
+
+**predict()**
+
+Import `basic-pitch` into your own Python code and run the [`predict`](basic_pitch/inference.py) functions directly, providing an `<input-audio-path>` and returning the model's prediction results:
+
+```python
+from basic_pitch.inference import predict
+from basic_pitch import ICASSP_2022_MODEL_PATH
+
+model_output, midi_data, note_events = predict(<input-audio-path>)
+```
+
+- `<minimum-frequency>` & `<maximum-frequency>` (*float*s) set the maximum and minimum allowed note frequency, in Hz, returned by the model. Pitch events with frequencies outside of this range will be excluded from the prediction results.
+- `model_output` is the raw model inference output
+- `midi_data` is the transcribed MIDI data derived from the `model_output`
+- `note_events` is a list of note events derived from the `model_output`
+
+Note: As mentioned previously, ICASSP_2022_MODEL_PATH will default to the runtime first supported in the list TensorFlow, CoreML, TensorFlowLite, ONNX.
+
+**predict() in a loop**
+
+To run prediction within a loop, you'll want to load the model yourself and provide `predict()` with the loaded model object itself to be used for repeated prediction calls, in order to avoid redundant and sluggish model loading.
+
+```python
+import tensorflow as tf
+
+from basic_pitch.inference import predict, Model
+from basic_pitch import ICASSP_2022_MODEL_PATH
+
+basic_pitch_model = Model(ICASSP_2022_MODEL_PATH))
+
+for x in range():
+    ...
+    model_output, midi_data, note_events = predict(
+        <loop-x-input-audio-path>,
+        basic_pitch_model,
+    )
+    ...
+```
+
+**predict_and_save()**
+
+If you would like `basic-pitch` orchestrate the generation and saving of our various supported output file types, you may use [`predict_and_save`](basic_pitch/inference.py) instead of using [`predict`](basic_pitch/inference.py) directly:
+
+```python
+from basic_pitch.inference import predict_and_save
+
+predict_and_save(
+    <input-audio-path-list>,
+    <output-directory>,
+    <save-midi>,
+    <sonify-midi>,
+    <save-model-outputs>,
+    <save-notes>,
+)
+```
+
+where:
+   - `<input-audio-path-list>` & `<output-directory>`
+        - directory paths for `basic-pitch` to read from/write to.
+   - `<save-midi>`
+        - *bool* to control generating and saving a MIDI file to the `<output-directory>`
+   - `<sonify-midi>`
+        - *bool* to control saving a WAV audio rendering of the MIDI file to the `<output-directory>`
+   - `<save-model-outputs>`
+        - *bool* to control saving the raw model output as a NPZ file to the `<output-directory>`
+   - `<save-notes>`
+        - *bool* to control saving predicted note events as a CSV file `<output-directory>`
+
+
+
+### Model Input
+
+**Supported Audio Codecs**
+
+   `basic-pitch` accepts all sound files that are compatible with its version of [`librosa`](https://librosa.org/doc/latest/index.html), including:
+
+- `.mp3`
+- `.ogg`
+- `.wav`
+- `.flac`
+- `.m4a`
+
+**Mono Channel Audio Only**
+
+While you may use stereo audio as an input to our model, at prediction time, the channels of the input will be down-mixed to mono, and then analyzed and transcribed.
+
+**File Size/Audio Length**
+
+This model can process any size or length of audio, but processing of larger/longer audio files could be limited by your machine's available disk space. To process these files, we recommend streaming the audio of the file, processing windows of audio at a time.
+
+**Sample Rate**
+
+Input audio maybe be of any sample rate, however, all audio will be resampled to 22050 Hz before processing.
+
+### VST
+
+Thanks to DamRsn for developing this working VST version of basic-pitch! - https://github.com/DamRsn/NeuralNote
+
+
+## Contributing
+
+Contributions to `basic-pitch` are welcomed! See [CONTRIBUTING.md](CONTRIBUTING.md) for details.
+
+## Copyright and License
+`basic-pitch` is Copyright 2022 Spotify AB.
+
+This software is licensed under the Apache License, Version 2.0 (the "Apache License"). You may choose either license to govern your use of this software only upon the condition that you accept all of the terms of either the Apache License.
+
+You may obtain a copy of the Apache License at:
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+
+Unless required by applicable law or agreed to in writing, software distributed under the Apache License or the GPL License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the Apache License for the specific language governing permissions and limitations under the Apache License.
+
+
+
+// File: basic_pitch_fork\SECURITY.md
+----------------------------------------
+# Security Policy
+
+We're big believers in protecting your privacy and security. As a company, we not only have a vested interest, but also a deep desire to see the Internet remain as safe as possible for us all.
+
+So, needless to say, we take security issues very seriously.
+
+In our opinion, the practice of 'responsible disclosure' is the best way to safeguard the Internet. It allows individuals to notify companies like Spotify of any security threats before going public with the information. This gives us a fighting chance to resolve the problem before the criminally-minded become aware of it.
+
+Responsible disclosure is the industry best practice, and we recommend it as a procedure to anyone researching security vulnerabilities.
+
+## Reporting a Vulnerability
+
+If you have discovered a vulnerability in this open source project or another serious security issue,
+please submit it to the Spotify bounty program hosted by HackerOne.
+
+https://hackerone.com/spotify
+
+
+// File: basic_pitch_fork\setup.py
+----------------------------------------
+#!/usr/bin/env python
+# encoding: utf-8
+#
+# Copyright 2022 Spotify AB
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+from setuptools import setup
+
+if __name__ == "__main__":
+    setup()
+
+
+// File: basic_pitch_fork\tests\data\test_guitarset.py
+----------------------------------------
+#!/usr/bin/env python
+# encoding: utf-8
+#
+# Copyright 2022 Spotify AB
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+import apache_beam as beam
+import itertools
+import os
+import pathlib
+import shutil
+
+from apache_beam.testing.test_pipeline import TestPipeline
+from typing import List
+
+from basic_pitch.data.datasets.guitarset import (
+    GuitarSetToTfExample,
+    GuitarSetInvalidTracks,
+    create_input_data,
+)
+from basic_pitch.data.pipeline import WriteBatchToTfRecord
+
+from utils import create_mock_wav
+
+RESOURCES_PATH = pathlib.Path(__file__).parent.parent / "resources"
+TRACK_ID = "00_BN1-129-Eb_comp"
+
+
+def test_guitarset_to_tf_example(tmp_path: pathlib.Path) -> None:
+    mock_guitarset_home = tmp_path / "guitarset"
+    mock_guitarset_audio = mock_guitarset_home / "audio_mono-mic"
+    mock_guitarset_annotations = mock_guitarset_home / "annotation"
+    output_dir = tmp_path / "output"
+
+    mock_guitarset_audio.mkdir(parents=True)
+    mock_guitarset_annotations.mkdir(parents=True)
+    output_dir.mkdir()
+
+    create_mock_wav(mock_guitarset_audio / f"{TRACK_ID}_mic.wav", duration_min=1)
+    shutil.copy(
+        RESOURCES_PATH / "data" / "guitarset" / "annotation" / f"{TRACK_ID}.jams",
+        mock_guitarset_annotations / f"{TRACK_ID}.jams",
+    )
+
+    input_data: List[str] = [TRACK_ID]
+    with TestPipeline() as p:
+        (
+            p
+            | "Create PCollection of track IDs" >> beam.Create([input_data])
+            | "Create tf.Example" >> beam.ParDo(GuitarSetToTfExample(str(mock_guitarset_home), download=False))
+            | "Write to tfrecord" >> beam.ParDo(WriteBatchToTfRecord(str(output_dir)))
+        )
+
+    listdir = os.listdir(output_dir)
+    assert len(listdir) == 1
+    assert os.path.splitext(listdir[0])[-1] == ".tfrecord"
+    with open(output_dir / listdir[0], "rb") as fp:
+        data = fp.read()
+        assert len(data) != 0
+
+
+def test_guitarset_invalid_tracks(tmpdir: str) -> None:
+    split_labels = ["train", "test", "validation"]
+    input_data = [(str(i), split) for i, split in enumerate(split_labels)]
+    with TestPipeline() as p:
+        splits = (
+            p
+            | "Create PCollection" >> beam.Create(input_data)
+            | "Tag it" >> beam.ParDo(GuitarSetInvalidTracks()).with_outputs(*split_labels)
+        )
+
+        for split in split_labels:
+            (
+                getattr(splits, split)
+                | f"Write {split} to text"
+                >> beam.io.WriteToText(os.path.join(tmpdir, f"output_{split}.txt"), shard_name_template="")
+            )
+
+    for i, split in enumerate(split_labels):
+        with open(os.path.join(tmpdir, f"output_{split}.txt"), "r") as fp:
+            assert fp.read().strip() == str(i)
+
+
+def test_guitarset_create_input_data() -> None:
+    data = create_input_data(train_percent=0.33, validation_percent=0.33)
+    data.sort(key=lambda el: el[1])  # sort by split
+    tolerance = 0.1
+    for _, group in itertools.groupby(data, lambda el: el[1]):
+        assert (0.33 - tolerance) * len(data) <= len(list(group)) <= (0.33 + tolerance) * len(data)
+
+
+def test_guitarset_create_input_data_overallocate() -> None:
+    try:
+        create_input_data(train_percent=0.6, validation_percent=0.6)
+    except AssertionError:
+        assert True
+    else:
+        assert False
+
+
+// File: basic_pitch_fork\tests\data\test_ikala.py
+----------------------------------------
+#!/usr/bin/env python
+# encoding: utf-8
+#
+# Copyright 2024 Spotify AB
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+import apache_beam as beam
+import itertools
+import os
+
+from apache_beam.testing.test_pipeline import TestPipeline
+
+from basic_pitch.data.datasets.ikala import (
+    IkalaInvalidTracks,
+    create_input_data,
+)
+
+
+# TODO: Create test_ikala_to_tf_example
+
+
+def test_ikala_invalid_tracks(tmpdir: str) -> None:
+    split_labels = ["train", "validation"]
+    input_data = [(str(i), split) for i, split in enumerate(split_labels)]
+    with TestPipeline() as p:
+        splits = (
+            p
+            | "Create PCollection" >> beam.Create(input_data)
+            | "Tag it" >> beam.ParDo(IkalaInvalidTracks()).with_outputs(*split_labels)
+        )
+
+        for split in split_labels:
+            (
+                getattr(splits, split)
+                | f"Write {split} to text"
+                >> beam.io.WriteToText(os.path.join(tmpdir, f"output_{split}.txt"), shard_name_template="")
+            )
+
+    for i, split in enumerate(split_labels):
+        with open(os.path.join(tmpdir, f"output_{split}.txt"), "r") as fp:
+            assert fp.read().strip() == str(i)
+
+
+def test_ikala_create_input_data() -> None:
+    data = create_input_data(train_percent=0.5)
+    data.sort(key=lambda el: el[1])  # sort by split
+    tolerance = 0.1
+    for _, group in itertools.groupby(data, lambda el: el[1]):
+        assert (0.5 - tolerance) * len(data) <= len(list(group)) <= (0.5 + tolerance) * len(data)
+
+
+def test_ikala_create_input_data_overallocate() -> None:
+    try:
+        create_input_data(train_percent=1.1)
+    except AssertionError:
+        assert True
+    else:
+        assert False
+
+
+// File: basic_pitch_fork\tests\data\test_maestro.py
+----------------------------------------
+#!/usr/bin/env python
+# encoding: utf-8
+#
+# Copyright 2024 Spotify AB
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+import os
+import pathlib
+
+from typing import List
+
+import apache_beam as beam
+from apache_beam.testing.test_pipeline import TestPipeline
+
+from basic_pitch.data.datasets.maestro import (
+    MaestroToTfExample,
+    MaestroInvalidTracks,
+    create_input_data,
+)
+from basic_pitch.data.pipeline import WriteBatchToTfRecord
+
+from utils import create_mock_wav, create_mock_midi
+
+RESOURCES_PATH = pathlib.Path(__file__).parent.parent / "resources"
+MAESTRO_TEST_DATA_PATH = RESOURCES_PATH / "data" / "maestro"
+
+TRAIN_TRACK_ID = "2004/MIDI-Unprocessed_SMF_05_R1_2004_01_ORIG_MID--AUDIO_05_R1_2004_03_Track03_wav"
+VALID_TRACK_ID = "2004/MIDI-Unprocessed_SMF_02_R1_2004_01-05_ORIG_MID--AUDIO_02_R1_2004_06_Track06_wav"
+TEST_TRACK_ID = "2004/MIDI-Unprocessed_SMF_02_R1_2004_01-05_ORIG_MID--AUDIO_02_R1_2004_08_Track08_wav"
+GT_15M_TRACK_ID = "2004/MIDI-Unprocessed_SMF_02_R1_2004_01-05_ORIG_MID--AUDIO_02_R1_2004_05_Track05_wav"
+
+
+def test_maestro_to_tf_example(tmp_path: pathlib.Path) -> None:
+    mock_maestro_home = tmp_path / "maestro"
+    mock_maestro_ext = mock_maestro_home / "2004"
+    mock_maestro_ext.mkdir(parents=True, exist_ok=True)
+
+    create_mock_wav(mock_maestro_ext / f"{TRAIN_TRACK_ID.split('/')[1]}.wav", 3)
+    create_mock_midi(mock_maestro_ext / f"{TRAIN_TRACK_ID.split('/')[1]}.midi")
+
+    output_dir = tmp_path / "outputs"
+    output_dir.mkdir(parents=True, exist_ok=True)
+
+    input_data: List[str] = [TRAIN_TRACK_ID]
+    with TestPipeline() as p:
+        (
+            p
+            | "Create PCollection of track IDs" >> beam.Create([input_data])
+            | "Create tf.Example" >> beam.ParDo(MaestroToTfExample(str(mock_maestro_home), download=False))
+            | "Write to tfrecord" >> beam.ParDo(WriteBatchToTfRecord(str(output_dir)))
+        )
+
+    listdir = os.listdir(str(output_dir))
+    assert len(listdir) == 1
+    assert os.path.splitext(listdir[0])[-1] == ".tfrecord"
+    with open(os.path.join(str(output_dir), os.listdir(str(output_dir))[0]), "rb") as fp:
+        data = fp.read()
+        assert len(data) != 0
+
+
+def test_maestro_invalid_tracks(tmp_path: pathlib.Path) -> None:
+    mock_maestro_home = tmp_path / "maestro"
+    mock_maestro_ext = mock_maestro_home / "2004"
+    mock_maestro_ext.mkdir(parents=True, exist_ok=True)
+
+    input_data = [(TRAIN_TRACK_ID, "train"), (VALID_TRACK_ID, "validation"), (TEST_TRACK_ID, "test")]
+
+    for track_id, _ in input_data:
+        create_mock_wav(mock_maestro_ext / f"{track_id.split('/')[1]}.wav", 3)
+
+    split_labels = set([e[1] for e in input_data])
+    with TestPipeline() as p:
+        splits = (
+            p
+            | "Create PCollection" >> beam.Create(input_data)
+            | "Tag it" >> beam.ParDo(MaestroInvalidTracks(str(mock_maestro_home))).with_outputs(*split_labels)
+        )
+
+        for split in split_labels:
+            (
+                getattr(splits, split)
+                | f"Write {split} to text"
+                >> beam.io.WriteToText(str(tmp_path / f"output_{split}.txt"), shard_name_template="")
+            )
+
+    for track_id, split in input_data:
+        with open(tmp_path / f"output_{split}.txt", "r") as fp:
+            assert fp.read().strip() == track_id
+
+
+def test_maestro_invalid_tracks_over_15_min(tmp_path: pathlib.Path) -> None:
+    """
+    The track id used here is a real track id in maestro, and it is part of the train split, but we mock the data so as
+    not to store a large file in git, hence the variable name.
+    """
+
+    mock_maestro_home = tmp_path / "maestro"
+    mock_maestro_ext = mock_maestro_home / "2004"
+    mock_maestro_ext.mkdir(parents=True, exist_ok=True)
+
+    create_mock_wav(mock_maestro_ext / f"{GT_15M_TRACK_ID.split('/')[1]}.wav", 16)
+
+    input_data = [(GT_15M_TRACK_ID, "train")]
+    split_labels = set([e[1] for e in input_data])
+    with TestPipeline() as p:
+        splits = (
+            p
+            | "Create PCollection" >> beam.Create(input_data)
+            | "Tag it" >> beam.ParDo(MaestroInvalidTracks(str(mock_maestro_home))).with_outputs(*split_labels)
+        )
+
+        for split in split_labels:
+            (
+                getattr(splits, split)
+                | f"Write {split} to text"
+                >> beam.io.WriteToText(str(tmp_path / f"output_{split}.txt"), shard_name_template="")
+            )
+
+    for _, split in input_data:
+        with open(tmp_path / f"output_{split}.txt", "r") as fp:
+            assert fp.read().strip() == ""
+
+
+def test_maestro_create_input_data() -> None:
+    """
+    A commuted metadata file is included in the repo for testing. mirdata references the metadata file to
+    populate the tracklist with metadata. Since the file is commuted to only the filenames referenced here,
+    we only consider these when testing the metadata.
+    """
+    data = create_input_data(str(MAESTRO_TEST_DATA_PATH))
+    assert len(data)
+
+    test_fnames = {TRAIN_TRACK_ID, VALID_TRACK_ID, TEST_TRACK_ID, GT_15M_TRACK_ID}
+    splits = {d[1] for d in data if d[0].split(".")[0] in test_fnames}
+    assert splits == set(["train", "validation", "test"])
+
+
+// File: basic_pitch_fork\tests\data\test_medleydb_pitch.py
+----------------------------------------
+#!/usr/bin/env python
+# encoding: utf-8
+#
+# Copyright 2024 Spotify AB
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+import apache_beam as beam
+import itertools
+import os
+
+from apache_beam.testing.test_pipeline import TestPipeline
+
+from basic_pitch.data.datasets.medleydb_pitch import (
+    MedleyDbPitchInvalidTracks,
+    create_input_data,
+)
+
+
+# TODO: Create test_medleydb_pitch_to_tf_example
+
+
+def test_medleydb_pitch_invalid_tracks(tmpdir: str) -> None:
+    split_labels = ["train", "validation"]
+    input_data = [(str(i), split) for i, split in enumerate(split_labels)]
+    with TestPipeline() as p:
+        splits = (
+            p
+            | "Create PCollection" >> beam.Create(input_data)
+            | "Tag it" >> beam.ParDo(MedleyDbPitchInvalidTracks()).with_outputs(*split_labels)
+        )
+
+        for split in split_labels:
+            (
+                getattr(splits, split)
+                | f"Write {split} to text"
+                >> beam.io.WriteToText(os.path.join(tmpdir, f"output_{split}.txt"), shard_name_template="")
+            )
+
+    for i, split in enumerate(split_labels):
+        with open(os.path.join(tmpdir, f"output_{split}.txt"), "r") as fp:
+            assert fp.read().strip() == str(i)
+
+
+def test_medleydb_create_input_data() -> None:
+    data = create_input_data(train_percent=0.5)
+    data.sort(key=lambda el: el[1])  # sort by split
+    tolerance = 0.01
+    for _, group in itertools.groupby(data, lambda el: el[1]):
+        assert (0.5 - tolerance) * len(data) <= len(list(group)) <= (0.5 + tolerance) * len(data)
+
+
+def test_create_input_data_overallocate() -> None:
+    try:
+        create_input_data(train_percent=1.1)
+    except AssertionError:
+        assert True
+    else:
+        assert False
+
+
+// File: basic_pitch_fork\tests\data\test_pipeline.py
+----------------------------------------
+#!/usr/bin/env python
+# encoding: utf-8
+#
+# Copyright 2022 Spotify AB
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+import csv
+import os
+
+from itertools import islice
+
+import apache_beam as beam
+import numpy as np
+import tensorflow as tf
+
+from apache_beam.testing.test_pipeline import TestPipeline
+
+from basic_pitch.data.tf_example_serialization import bytes_feature, int64_feature
+from basic_pitch.data.pipeline import (
+    Batch,
+    WriteBatchToTfRecord,
+    transcription_dataset_writer,
+)
+
+
+def test_batch() -> None:
+    element_size = 10
+    batch_size = 3
+
+    element = np.random.random([element_size])
+    batcher = Batch(batch_size)
+    batches = list(batcher.process(element))
+    for batch in batches[:-1]:
+        assert len(batch) == element_size // batch_size
+
+    assert len(batches[-1]) == element_size % batch_size
+
+
+def test_write_batch_to_tf_record(tmpdir: str) -> None:
+    data = np.random.random([10, 10])
+    features = {f"feat{i}": bytes_feature(tf.io.serialize_tensor(vec)) for i, vec in enumerate(list(data))}
+    example = tf.train.Example(features=tf.train.Features(feature=features))
+
+    writer = WriteBatchToTfRecord(tmpdir)
+    writer.process([example])
+    assert len(os.listdir(tmpdir)) == 1
+    dataset = tf.data.TFRecordDataset([os.path.join(tmpdir, f) for f in os.listdir(tmpdir)])
+
+    for d in dataset:
+        ex = tf.train.Example()
+        ex.ParseFromString(d.numpy())
+
+    assert ex == example
+
+
+def test_transcription_dataset_writer(tmpdir: str) -> None:
+    input_data = [(f"track{i}", ("train", "test", "validation")[i % 3]) for i in range(9)] + [("foo", "bar")]
+    batch_size = 2
+
+    with TestPipeline() as p:
+        transcription_dataset_writer(
+            p=p,
+            input_data=input_data,
+            to_tf_example=lambda el: [tf.train.Example(features=tf.train.Features(feature={"foo": int64_feature(1)}))],
+            filter_invalid_tracks=lambda el: [beam.pvalue.TaggedOutput(el[1], el[0])],
+            destination=tmpdir,
+            batch_size=batch_size,
+        )
+
+    for i, split in enumerate(["train", "test", "validation"]):
+        assert os.path.exists(os.path.join(tmpdir, split, "index.csv"))
+        with open(os.path.join(tmpdir, split, "index.csv")) as fp:
+            reader = csv.reader(fp, delimiter=",")
+            for row in islice(reader, 1, None):
+                assert int(row[0][-1]) % 3 == i
+
+
+// File: basic_pitch_fork\tests\data\test_slakh.py
+----------------------------------------
+#!/usr/bin/env python
+# encoding: utf-8
+#
+# Copyright 2024 Spotify AB
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+import apache_beam as beam
+import itertools
+import os
+import pathlib
+import shutil
+
+from typing import List, Tuple
+
+from apache_beam.testing.test_pipeline import TestPipeline
+
+from basic_pitch.data.datasets.slakh import (
+    SlakhFilterInvalidTracks,
+    SlakhToTfExample,
+    create_input_data,
+)
+from basic_pitch.data.pipeline import WriteBatchToTfRecord
+
+from utils import create_mock_flac, create_mock_midi
+
+RESOURCES_PATH = pathlib.Path(__file__).parent.parent / "resources"
+SLAKH_PATH = RESOURCES_PATH / "data" / "slakh" / "slakh2100_flac_redux"
+
+TRAIN_PIANO_TRACK_ID = "Track00001-S02"
+TRAIN_DRUMS_TRACK_ID = "Track00001-S01"
+
+VALID_PIANO_TRACK_ID = "Track01501-S06"
+VALID_DRUMS_TRACK_ID = "Track01501-S03"
+
+TEST_PIANO_TRACK_ID = "Track01876-S01"
+TEST_DRUMS_TRACK_ID = "Track01876-S08"
+
+OMITTED_PIANO_TRACK_ID = "Track00049-S05"
+OMITTED_DRUMS_TRACK_ID = "Track00049-S06"
+
+
+# Function to generate a sine wave
+def create_mock_input_data(data_home: pathlib.Path, input_data: List[Tuple[str, str]]) -> None:
+    for track_id, split in input_data:
+        track_num, inst_num = track_id.split("-")
+        track_dir = data_home / split / track_num
+
+        stems_dir = track_dir / "stems"
+        stems_dir.mkdir(parents=True, exist_ok=True)
+        create_mock_flac(stems_dir / (inst_num + ".flac"))
+
+        midi_dir = track_dir / "MIDI"
+        midi_dir.mkdir(parents=True, exist_ok=True)
+        create_mock_midi(midi_dir / (inst_num + ".mid"))
+
+        shutil.copy(SLAKH_PATH / split / track_num / "metadata.yaml", track_dir / "metadata.yaml")
+
+
+def test_slakh_to_tf_example(tmp_path: pathlib.Path) -> None:
+    mock_slakh_home = tmp_path / "slakh"
+    mock_slakh_ext = mock_slakh_home / "slakh2100_flac_redux"
+
+    input_data: List[Tuple[str, str]] = [(TRAIN_PIANO_TRACK_ID, "train")]
+    create_mock_input_data(mock_slakh_ext, input_data)
+
+    output_dir = tmp_path / "outputs"
+    output_dir.mkdir(parents=True, exist_ok=True)
+
+    with TestPipeline() as p:
+        (
+            p
+            | "Create PCollection of track IDs" >> beam.Create([[track_id for track_id, _ in input_data]])
+            | "Create tf.Example" >> beam.ParDo(SlakhToTfExample(str(mock_slakh_home), download=False))
+            | "Write to tfrecord" >> beam.ParDo(WriteBatchToTfRecord(str(output_dir)))
+        )
+
+    listdir = os.listdir(output_dir)
+    assert len(listdir) == 1
+    assert os.path.splitext(listdir[0])[-1] == ".tfrecord"
+    with open(output_dir / listdir[0], "rb") as fp:
+        data = fp.read()
+        assert len(data) != 0
+
+
+def test_slakh_invalid_tracks(tmp_path: pathlib.Path) -> None:
+    mock_slakh_home = tmp_path / "slakh"
+    mock_slakh_ext = mock_slakh_home / "slakh2100_flac_redux"
+
+    split_labels = ["train", "validation", "test"]
+    input_data = [(TRAIN_PIANO_TRACK_ID, "train"), (VALID_PIANO_TRACK_ID, "validation"), (TEST_PIANO_TRACK_ID, "test")]
+    create_mock_input_data(mock_slakh_ext, input_data)
+
+    with TestPipeline() as p:
+        splits = (
+            p
+            | "Create PCollection" >> beam.Create(input_data)
+            | "Tag it" >> beam.ParDo(SlakhFilterInvalidTracks(str(mock_slakh_home))).with_outputs(*split_labels)
+        )
+
+        for split in split_labels:
+            (
+                getattr(splits, split)
+                | f"Write {split} to text"
+                >> beam.io.WriteToText(str(tmp_path / f"output_{split}.txt"), shard_name_template="")
+            )
+
+    for track_id, split in input_data:
+        with open(tmp_path / f"output_{split}.txt", "r") as fp:
+            assert fp.read().strip() == track_id
+
+
+def test_slakh_invalid_tracks_omitted(tmp_path: pathlib.Path) -> None:
+    mock_slakh_home = tmp_path / "slakh"
+    mock_slakh_ext = mock_slakh_home / "slakh2100_flac_redux"
+
+    split_labels = ["train", "omitted"]
+    input_data = [(TRAIN_PIANO_TRACK_ID, "train"), (OMITTED_PIANO_TRACK_ID, "omitted")]
+    create_mock_input_data(mock_slakh_ext, input_data)
+
+    with TestPipeline() as p:
+        splits = (
+            p
+            | "Create PCollection" >> beam.Create(input_data)
+            | "Tag it" >> beam.ParDo(SlakhFilterInvalidTracks(str(mock_slakh_home))).with_outputs(*split_labels)
+        )
+
+        for split in split_labels:
+            (
+                getattr(splits, split)
+                | f"Write {split} to text"
+                >> beam.io.WriteToText(str(tmp_path / f"output_{split}.txt"), shard_name_template="")
+            )
+
+    with open(tmp_path / "output_train.txt", "r") as fp:
+        assert fp.read().strip() == TRAIN_PIANO_TRACK_ID
+
+    with open(tmp_path / "output_omitted.txt", "r") as fp:
+        assert fp.read().strip() == ""
+
+
+def test_slakh_invalid_tracks_drums(tmp_path: pathlib.Path) -> None:
+    mock_slakh_home = tmp_path / "slakh"
+    mock_slakh_ext = mock_slakh_home / "slakh2100_flac_redux"
+
+    split_labels = ["train", "validation", "test"]
+    input_data = [(TRAIN_DRUMS_TRACK_ID, "train"), (VALID_DRUMS_TRACK_ID, "validation"), (TEST_DRUMS_TRACK_ID, "test")]
+    create_mock_input_data(mock_slakh_ext, input_data)
+
+    with TestPipeline() as p:
+        splits = (
+            p
+            | "Create PCollection" >> beam.Create(input_data)
+            | "Tag it" >> beam.ParDo(SlakhFilterInvalidTracks(str(mock_slakh_home))).with_outputs(*split_labels)
+        )
+
+        for split in split_labels:
+            (
+                getattr(splits, split)
+                | f"Write {split} to text"
+                >> beam.io.WriteToText(str(tmp_path / f"output_{split}.txt"), shard_name_template="")
+            )
+
+    for _, split in input_data:
+        with open(tmp_path / f"output_{split}.txt", "r") as fp:
+            assert fp.read().strip() == ""
+
+
+def test_create_input_data() -> None:
+    data = create_input_data()
+    for _, group in itertools.groupby(data, lambda el: el[1]):
+        assert len(list(group))
+
+
+// File: basic_pitch_fork\tests\data\test_tf_example_deserialization.py
+----------------------------------------
+#!/usr/bin/env python
+# encoding: utf-8
+#
+# Copyright 2024 Spotify AB
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+import apache_beam as beam
+import numpy as np
+import pathlib
+import shutil
+import tensorflow as tf
+
+from apache_beam.testing.test_pipeline import TestPipeline
+from typing import List
+
+from basic_pitch.constants import Split
+from basic_pitch.data.datasets.guitarset import GuitarSetToTfExample
+from basic_pitch.data.pipeline import WriteBatchToTfRecord
+from basic_pitch.data.tf_example_deserialization import (
+    prepare_datasets,
+    prepare_visualization_datasets,
+    sample_datasets,
+    transcription_file_generator,
+)
+
+from utils import create_mock_wav
+
+RESOURCES_PATH = pathlib.Path(__file__).parent.parent / "resources"
+TRAIN_TRACK_ID = "00_BN1-129-Eb_comp"
+VALID_TRACK_ID = "00_BN1-147-Gb_comp"
+
+
+def create_empty_tfrecord(filepath: pathlib.Path) -> None:
+    assert filepath.suffix == ".tfrecord"
+    with tf.io.TFRecordWriter(str(filepath)) as writer:
+        writer.write("")
+
+
+def create_tfrecord(input_data: List[str], dataset_home: str, output_dir: str) -> None:
+    with TestPipeline() as p:
+        (
+            p
+            | "Create PCollection of track IDs" >> beam.Create([input_data])
+            | "Create tf.Example" >> beam.ParDo(GuitarSetToTfExample(dataset_home, download=False))
+            | "Write to tfrecord" >> beam.ParDo(WriteBatchToTfRecord(output_dir))
+        )
+
+
+def setup_test_resources(tmp_path: pathlib.Path) -> pathlib.Path:
+    mock_guitarset_home = tmp_path / "guitarset"
+    mock_guitarset_audio = mock_guitarset_home / "audio_mono-mic"
+    mock_guitarset_annotations = mock_guitarset_home / "annotation"
+
+    mock_guitarset_audio.mkdir(parents=True)
+    mock_guitarset_annotations.mkdir(parents=True)
+
+    output_home = tmp_path / "data" / "basic_pitch"
+    output_splits_dir = output_home / "guitarset" / "splits"
+
+    def mock_and_process(split: str, track_id: str) -> None:
+        create_mock_wav(mock_guitarset_audio / f"{track_id}_mic.wav", duration_min=1)
+        shutil.copy(
+            RESOURCES_PATH / "data" / "guitarset" / "annotation" / f"{track_id}.jams",
+            mock_guitarset_annotations / f"{track_id}.jams",
+        )
+
+        output_dir = output_splits_dir / split
+        output_dir.mkdir(parents=True)
+
+        create_tfrecord(input_data=[track_id], dataset_home=str(mock_guitarset_home), output_dir=str(output_dir))
+
+    mock_and_process("train", TRAIN_TRACK_ID)
+    mock_and_process("validation", VALID_TRACK_ID)
+
+    return output_home
+
+
+def test_prepare_datasets(tmp_path: pathlib.Path) -> None:
+    datasets_home = setup_test_resources(tmp_path)
+
+    ds_train, ds_valid = prepare_datasets(
+        datasets_base_path=str(datasets_home),
+        training_shuffle_buffer_size=1,
+        batch_size=1,
+        validation_steps=1,
+        datasets_to_use=["guitarset"],
+        dataset_sampling_frequency=np.array([1]),
+    )
+
+    assert ds_train is not None and isinstance(ds_train, tf.data.Dataset)
+    assert ds_valid is not None and isinstance(ds_valid, tf.data.Dataset)
+
+
+def test_prepare_visualization_dataset(tmp_path: pathlib.Path) -> None:
+    datasets_home = setup_test_resources(tmp_path)
+
+    ds_train, ds_valid = prepare_visualization_datasets(
+        datasets_base_path=str(datasets_home),
+        batch_size=1,
+        validation_steps=1,
+        datasets_to_use=["guitarset"],
+        dataset_sampling_frequency=np.array([1]),
+    )
+
+    assert ds_train is not None and isinstance(ds_train, tf.data.Dataset)
+    assert ds_valid is not None and isinstance(ds_train, tf.data.Dataset)
+
+
+def test_sample_datasets(tmp_path: pathlib.Path) -> None:
+    """touches the following methods:
+    - transcription_dataset
+        - parse_transcription_tfexample
+        - is_not_bad_shape
+        - sparse2dense
+        - reduce_transcription_inputs
+        - get_sample_weights
+            - _infer_time_size
+        - get_transcription_chunks
+            - extract_random_window
+                - extract_window
+                    - trim_time
+        - is_not_all_silent_annotations
+        - to_transcription_training_input
+    """
+    datasets_home = setup_test_resources(tmp_path)
+
+    ds = sample_datasets(
+        split=Split.train,
+        datasets_base_path=str(datasets_home),
+        datasets=["guitarset"],
+        dataset_sampling_frequency=np.array([1]),
+        n_shuffle=1,
+        n_samples_per_track=1,
+        pairs=True,
+    )
+
+    assert ds is not None and isinstance(ds, tf.data.Dataset)
+
+
+def test_transcription_file_generator_train(tmp_path: pathlib.Path) -> None:
+    dataset_path = tmp_path / "test_ds" / "splits" / Split.train.name
+    dataset_path.mkdir(parents=True)
+    create_empty_tfrecord(dataset_path / "test.tfrecord")
+
+    file_gen, random_seed = transcription_file_generator(
+        Split.train, ["test_ds"], datasets_base_path=str(tmp_path), sample_weights=np.array([1])
+    )
+
+    assert random_seed is False
+
+    generator = file_gen()
+    assert next(generator).numpy().decode("utf-8") == str(dataset_path / "test.tfrecord")
+    try:
+        next(generator)
+    except Exception as e:
+        assert isinstance(e, StopIteration)
+
+
+def test_transcription_file_generator_valid(tmp_path: pathlib.Path) -> None:
+    dataset_path = tmp_path / "test_ds" / "splits" / Split.validation.name
+    dataset_path.mkdir(parents=True)
+    create_empty_tfrecord(dataset_path / "test.tfrecord")
+
+    file_gen, random_seed = transcription_file_generator(
+        Split.validation, ["test_ds"], datasets_base_path=str(tmp_path), sample_weights=np.array([1])
+    )
+
+    assert random_seed is True
+
+    generator = file_gen()
+    assert next(generator).numpy().decode("utf-8") == str(dataset_path / "test.tfrecord")
+    try:
+        next(generator)
+    except Exception as e:
+        assert isinstance(e, StopIteration)
+
+
+// File: basic_pitch_fork\tests\data\test_tf_example_serialization.py
+----------------------------------------
+#!/usr/bin/env python
+# encoding: utf-8
+#
+# Copyright 2024 Spotify AB
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+import pathlib
+import sox
+import tensorflow as tf
+
+from basic_pitch.constants import AUDIO_N_CHANNELS, AUDIO_SAMPLE_RATE
+from basic_pitch.data.tf_example_serialization import to_transcription_tfexample
+
+RESOURCES_PATH = pathlib.Path(__file__).parent.parent / "resources"
+
+
+def test_to_transcription_tfexample(tmpdir: str) -> None:
+    file_id = "test"
+    source = "maestro"
+    tmpfile = str(pathlib.Path(tmpdir) / "test.wav")
+    notes_indices = [(0, 1), (1, 2)]
+    notes_values = [30.0, 31.0]
+    onsets_indices = [1, 2]
+    onsets_values = [0.1, 0.2]
+    contours_indices = [1, 2]
+    contours_values = [0.1, 0.2]
+    notes_onsets_shape = (1, 1)
+    contours_shape = (1, 1)
+
+    tfm = sox.Transformer()
+    tfm.rate(AUDIO_SAMPLE_RATE)
+    tfm.channels(AUDIO_N_CHANNELS)
+    tfm.build(str(RESOURCES_PATH / "vocadito_10.wav"), tmpfile)
+    example = to_transcription_tfexample(
+        file_id=file_id,
+        source=source,
+        audio_wav_file_path=tmpfile,
+        notes_indices=notes_indices,
+        notes_values=notes_values,
+        onsets_indices=onsets_indices,
+        onsets_values=onsets_values,
+        contours_indices=contours_indices,
+        contours_values=contours_values,
+        notes_onsets_shape=notes_onsets_shape,
+        contours_shape=contours_shape,
+    )
+    assert type(example) is tf.train.Example
+    assert example.features.feature["file_id"].bytes_list.value[0].decode("utf-8") == file_id
+    assert example.features.feature["source"].bytes_list.value[0].decode("utf-8") == source
+    assert example.features.feature["audio_wav"].bytes_list.value[0] == open(tmpfile, "rb").read()
+    assert tf.reduce_all(
+        tf.io.parse_tensor(example.features.feature["notes_indices"].bytes_list.value[0], out_type=tf.int64)
+        == notes_indices
+    )
+    assert tf.reduce_all(
+        tf.io.parse_tensor(example.features.feature["notes_values"].bytes_list.value[0], out_type=tf.float32)
+        == notes_values
+    )
+    assert tf.reduce_all(
+        tf.io.parse_tensor(example.features.feature["onsets_indices"].bytes_list.value[0], out_type=tf.int64)
+        == onsets_indices
+    )
+    assert tf.reduce_all(
+        tf.io.parse_tensor(example.features.feature["onsets_values"].bytes_list.value[0], out_type=tf.float32)
+        == onsets_values
+    )
+    assert tf.reduce_all(
+        tf.io.parse_tensor(example.features.feature["contours_indices"].bytes_list.value[0], out_type=tf.int64)
+        == contours_indices
+    )
+    assert tf.reduce_all(
+        tf.io.parse_tensor(example.features.feature["contours_values"].bytes_list.value[0], out_type=tf.float32)
+        == contours_values
+    )
+    assert tf.reduce_all(
+        tf.io.parse_tensor(example.features.feature["notes_onsets_shape"].bytes_list.value[0], out_type=tf.int64)
+        == notes_onsets_shape
+    )
+    assert tf.reduce_all(
+        tf.io.parse_tensor(example.features.feature["contours_shape"].bytes_list.value[0], out_type=tf.int64)
+        == contours_shape
+    )
+
+
+// File: basic_pitch_fork\tests\data\utils.py
+----------------------------------------
+#!/usr/bin/env python
+# encoding: utf-8
+#
+# Copyright 2024 Spotify AB
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+import logging
+import numpy as np
+import pathlib
+import soundfile as sf
+import wave
+
+from mido import MidiFile, MidiTrack, Message
+
+
+def create_mock_wav(output_fpath: pathlib.Path, duration_min: int) -> None:
+    assert output_fpath.suffix == ".wav"
+
+    duration_seconds = duration_min * 60
+    sample_rate = 44100
+    n_channels = 2  # Stereo
+    sampwidth = 2  # 2 bytes per sample (16-bit audio)
+
+    # Generate a silent audio data array
+    num_samples = duration_seconds * sample_rate
+    audio_data = np.zeros((num_samples, n_channels), dtype=np.int16)
+
+    # Create the WAV file
+    with wave.open(str(output_fpath), "w") as wav_file:
+        wav_file.setnchannels(n_channels)
+        wav_file.setsampwidth(sampwidth)
+        wav_file.setframerate(sample_rate)
+        wav_file.writeframes(audio_data.tobytes())
+
+    logging.info(f"Mock {duration_min}-minute WAV file '{output_fpath}' created successfully.")
+
+
+def create_mock_flac(output_fpath: pathlib.Path) -> None:
+    assert output_fpath.suffix == ".flac"
+
+    frequency = 440  # A4
+    duration = 2  # seconds
+    sample_rate = 44100  # standard
+    amplitude = 0.5
+
+    t = np.linspace(0, duration, int(sample_rate * duration), endpoint=False)
+    sin_wave = amplitude * np.sin(duration * np.pi * frequency * t)
+
+    # Save as a FLAC file
+    sf.write(str(output_fpath), sin_wave, frequency, format="FLAC")
+
+    logging.info(f"Mock FLAC file {str(output_fpath)} created successfully.")
+
+
+def create_mock_midi(output_fpath: pathlib.Path) -> None:
+    assert output_fpath.suffix in (".mid", ".midi")
+    # Create a new MIDI file with one track
+    mid = MidiFile()
+    track = MidiTrack()
+    mid.tracks.append(track)
+
+    # Define a sequence of notes (time, type, note, velocity)
+    notes = [
+        (0, "note_on", 60, 64),  # C4
+        (500, "note_off", 60, 64),
+        (0, "note_on", 62, 64),  # D4
+        (500, "note_off", 62, 64),
+    ]
+
+    # Add the notes to the track
+    for time, type, note, velocity in notes:
+        track.append(Message(type, note=note, velocity=velocity, time=time))
+
+    # Save the MIDI file
+    mid.save(output_fpath)
+
+    logging.info(f"Mock MIDI file '{output_fpath}' created successfully.")
+
+
+// File: basic_pitch_fork\tests\resources\data\slakh\slakh2100_flac_redux\omitted\Track00049\metadata.yaml
+----------------------------------------
+UUID: 763348b79ed855fa294a7c980392178b
+audio_dir: Track00049/stems
+lmd_midi_dir: lmd_matched/G/J/U/TRGJUQY12903CF4754/763348b79ed855fa294a7c980392178b.mid
+midi_dir: Track00049/MIDI
+normalization_factor: -13.0
+normalized: true
+overall_gain: 0.22431102283631815
+stems:
+  S00:
+    audio_rendered: true
+    inst_class: Bass
+    integrated_loudness: -25.98403373639739
+    is_drum: false
+    midi_program_name: Electric Bass (finger)
+    midi_saved: true
+    plugin_name: funk_bass.nkm
+    program_num: 33
+  S01:
+    audio_rendered: true
+    inst_class: Guitar
+    integrated_loudness: -25.983388175138032
+    is_drum: false
+    midi_program_name: Acoustic Guitar (steel)
+    midi_saved: true
+    plugin_name: /Library/Audio/Plug-Ins/Components/AGML2.component
+    program_num: 25
+  S02:
+    audio_rendered: true
+    inst_class: Guitar
+    integrated_loudness: -25.984039857293364
+    is_drum: false
+    midi_program_name: Acoustic Guitar (steel)
+    midi_saved: true
+    plugin_name: /Library/Audio/Plug-Ins/Components/AGML2.component
+    program_num: 25
+  S03:
+    audio_rendered: true
+    inst_class: Synth Pad
+    integrated_loudness: -25.98327751795764
+    is_drum: false
+    midi_program_name: Pad 7 (halo)
+    midi_saved: true
+    plugin_name: dawn_chorus.nkm
+    program_num: 94
+  S04:
+    audio_rendered: true
+    inst_class: Synth Pad
+    integrated_loudness: -25.983253024644508
+    is_drum: false
+    midi_program_name: Pad 7 (halo)
+    midi_saved: true
+    plugin_name: dawn_chorus.nkm
+    program_num: 94
+  S05:
+    audio_rendered: true
+    inst_class: Piano
+    integrated_loudness: -25.984036521364235
+    is_drum: false
+    midi_program_name: Honky-tonk Piano
+    midi_saved: true
+    plugin_name: the_giant_vibrant.nkm
+    program_num: 3
+  S06:
+    audio_rendered: true
+    inst_class: Drums
+    integrated_loudness: -25.98383151293373
+    is_drum: true
+    midi_program_name: Drums
+    midi_saved: true
+    plugin_name: ar_modern_white_kit_full.nkm
+    program_num: 128
+target_peak: -1.0
+
+
+// File: basic_pitch_fork\tests\resources\data\slakh\slakh2100_flac_redux\test\Track01876\metadata.yaml
+----------------------------------------
+UUID: 0f12ae105c1dc821c287b74632748b4e
+audio_dir: Track01876/stems
+lmd_midi_dir: lmd_matched/D/K/S/TRDKSKE128F930A28A/0f12ae105c1dc821c287b74632748b4e.mid
+midi_dir: Track01876/MIDI
+normalization_factor: -13.0
+normalized: true
+overall_gain: 0.16864749590706057
+stems:
+  S00:
+    audio_rendered: true
+    inst_class: Bass
+    integrated_loudness: -28.460073236430883
+    is_drum: false
+    midi_program_name: Electric Bass (finger)
+    midi_saved: true
+    plugin_name: classic_bass.nkm
+    program_num: 33
+  S01:
+    audio_rendered: true
+    inst_class: Piano
+    integrated_loudness: -28.460021772170457
+    is_drum: false
+    midi_program_name: Electric Piano 2
+    midi_saved: true
+    plugin_name: scarbee_clavinet_full.nkm
+    program_num: 5
+  S02:
+    audio_rendered: true
+    inst_class: Guitar
+    integrated_loudness: -28.458875797653054
+    is_drum: false
+    midi_program_name: Overdriven Guitar
+    midi_saved: true
+    plugin_name: elektrik_guitar.nkm
+    program_num: 29
+  S03:
+    audio_rendered: true
+    inst_class: Guitar
+    integrated_loudness: -28.46020902027719
+    is_drum: false
+    midi_program_name: Electric Guitar (clean)
+    midi_saved: true
+    plugin_name: jazz_guitar4.nkm
+    program_num: 27
+  S04:
+    audio_rendered: true
+    inst_class: Guitar
+    integrated_loudness: -28.458899773214167
+    is_drum: false
+    midi_program_name: Electric Guitar (clean)
+    midi_saved: true
+    plugin_name: jazz_guitar4.nkm
+    program_num: 27
+  S05:
+    audio_rendered: true
+    inst_class: Organ
+    integrated_loudness: -28.46066978854643
+    is_drum: false
+    midi_program_name: Rock Organ
+    midi_saved: true
+    plugin_name: jazz_organ.nkm
+    program_num: 18
+  S06:
+    audio_rendered: true
+    inst_class: Strings (continued)
+    integrated_loudness: -28.460204931648803
+    is_drum: false
+    midi_program_name: Choir Aahs
+    midi_saved: true
+    plugin_name: choir_o.nkm
+    program_num: 52
+  S07:
+    audio_rendered: true
+    inst_class: Strings (continued)
+    integrated_loudness: -28.45890130413067
+    is_drum: false
+    midi_program_name: String Ensemble 1
+    midi_saved: true
+    plugin_name: session_strings_pro_2_ensemble_traditional.nkm
+    program_num: 48
+  S08:
+    audio_rendered: true
+    inst_class: Drums
+    integrated_loudness: -28.45937728423205
+    is_drum: true
+    midi_program_name: Drums
+    midi_saved: true
+    plugin_name: pop_kit.nkm
+    program_num: 128
+  S09:
+    audio_rendered: true
+    inst_class: Piano
+    integrated_loudness: -28.459772665926405
+    is_drum: false
+    midi_program_name: Acoustic Grand Piano
+    midi_saved: true
+    plugin_name: ragtime_piano.nkm
+    program_num: 0
+  S10:
+    audio_rendered: true
+    inst_class: Synth Pad
+    integrated_loudness: -28.458901985175242
+    is_drum: false
+    midi_program_name: Pad 1 (new age)
+    midi_saved: true
+    plugin_name: ambibella.nkm
+    program_num: 88
+  S11:
+    audio_rendered: true
+    inst_class: Guitar
+    integrated_loudness: -28.459927387976304
+    is_drum: false
+    midi_program_name: Electric Guitar (jazz)
+    midi_saved: true
+    plugin_name: jazz_guitar3.nkm
+    program_num: 26
+  S12:
+    audio_rendered: false
+    inst_class: Sound effects
+    is_drum: false
+    midi_program_name: Gunshot
+    midi_saved: false
+    plugin_name: None
+    program_num: 127
+  S13:
+    audio_rendered: false
+    inst_class: Sound effects
+    is_drum: false
+    midi_program_name: Bird Tweet
+    midi_saved: false
+    plugin_name: None
+    program_num: 123
+  S14:
+    audio_rendered: true
+    inst_class: Guitar
+    integrated_loudness: -28.458908904982668
+    is_drum: false
+    midi_program_name: Distortion Guitar
+    midi_saved: true
+    plugin_name: rock_guitar.nkm
+    program_num: 30
+target_peak: -1.0
+
+
+// File: basic_pitch_fork\tests\resources\data\slakh\slakh2100_flac_redux\train\Track00001\metadata.yaml
+----------------------------------------
+UUID: 1a81ae092884234f3264e2f45927f00a
+audio_dir: Track00001/stems
+lmd_midi_dir: lmd_matched/O/O/H/TROOHTB128F931F9DF/1a81ae092884234f3264e2f45927f00a.mid
+midi_dir: Track00001/MIDI
+normalization_factor: -13.0
+normalized: true
+overall_gain: 0.18270259567062658
+stems:
+  S00:
+    audio_rendered: true
+    inst_class: Guitar
+    integrated_loudness: -12.82074180245363
+    is_drum: false
+    midi_program_name: Distortion Guitar
+    midi_saved: true
+    plugin_name: elektrik_guitar.nkm
+    program_num: 30
+  S01:
+    audio_rendered: true
+    inst_class: Drums
+    integrated_loudness: -27.129534164015215
+    is_drum: true
+    midi_program_name: Drums
+    midi_saved: true
+    plugin_name: session_kit_full.nkm
+    program_num: 128
+  S02:
+    audio_rendered: true
+    inst_class: Piano
+    integrated_loudness: -16.590526818369444
+    is_drum: false
+    midi_program_name: Bright Acoustic Piano
+    midi_saved: true
+    plugin_name: the_giant_modern_studio.nkm
+    program_num: 1
+  S03:
+    audio_rendered: true
+    inst_class: Bass
+    integrated_loudness: -21.67617862105858
+    is_drum: false
+    midi_program_name: Electric Bass (finger)
+    midi_saved: true
+    plugin_name: scarbee_rickenbacker_bass_palm_muted.nkm
+    program_num: 33
+  S04:
+    audio_rendered: true
+    inst_class: Strings (continued)
+    integrated_loudness: -17.157877893943464
+    is_drum: false
+    midi_program_name: Choir Aahs
+    midi_saved: true
+    plugin_name: choir_o.nkm
+    program_num: 52
+  S05:
+    audio_rendered: true
+    inst_class: Organ
+    integrated_loudness: -16.600870078462915
+    is_drum: false
+    midi_program_name: Percussive Organ
+    midi_saved: true
+    plugin_name: fever.nkm
+    program_num: 17
+  S06:
+    audio_rendered: false
+    inst_class: Sound Effects
+    is_drum: false
+    midi_program_name: FX 8 (sci-fi)
+    midi_saved: false
+    plugin_name: None
+    program_num: 103
+  S07:
+    audio_rendered: true
+    inst_class: Guitar
+    integrated_loudness: -16.397404352891574
+    is_drum: false
+    midi_program_name: Electric Guitar (jazz)
+    midi_saved: true
+    plugin_name: jazz_guitar2.nkm
+    program_num: 26
+  S08:
+    audio_rendered: true
+    inst_class: Guitar
+    integrated_loudness: -14.950213772441467
+    is_drum: false
+    midi_program_name: Distortion Guitar
+    midi_saved: true
+    plugin_name: elektrik_guitar.nkm
+    program_num: 30
+  S09:
+    audio_rendered: true
+    inst_class: Organ
+    integrated_loudness: -15.014937669817032
+    is_drum: false
+    midi_program_name: Harmonica
+    midi_saved: true
+    plugin_name: transistor_compact.nkm
+    program_num: 22
+  S10:
+    audio_rendered: true
+    inst_class: Organ
+    integrated_loudness: -17.26720499762028
+    is_drum: false
+    midi_program_name: Harmonica
+    midi_saved: true
+    plugin_name: transistor_compact.nkm
+    program_num: 22
+target_peak: -1.0
+
+
+// File: basic_pitch_fork\tests\resources\data\slakh\slakh2100_flac_redux\validation\Track01501\metadata.yaml
+----------------------------------------
+UUID: 52dc589baea0c387807aa964094e0cba
+audio_dir: Track01501/stems
+lmd_midi_dir: lmd_matched/Y/C/E/TRYCEEK128F42A2C7B/52dc589baea0c387807aa964094e0cba.mid
+midi_dir: Track01501/MIDI
+normalization_factor: -13.0
+normalized: true
+overall_gain: 0.15755727075730824
+stems:
+  S00:
+    audio_rendered: true
+    inst_class: Piano
+    integrated_loudness: -22.121310057465305
+    is_drum: false
+    midi_program_name: Bright Acoustic Piano
+    midi_saved: true
+    plugin_name: ragtime_piano.nkm
+    program_num: 1
+  S01:
+    audio_rendered: true
+    inst_class: Strings (continued)
+    integrated_loudness: -24.49914258227348
+    is_drum: false
+    midi_program_name: String Ensemble 1
+    midi_saved: true
+    plugin_name: string_ensemble.nkm
+    program_num: 48
+  S02:
+    audio_rendered: true
+    inst_class: Chromatic Percussion
+    integrated_loudness: -26.533255386228614
+    is_drum: false
+    midi_program_name: Xylophone
+    midi_saved: true
+    plugin_name: hybrid_keys_futurebells.nkm
+    program_num: 13
+  S03:
+    audio_rendered: true
+    inst_class: Drums
+    integrated_loudness: -24.128849800212254
+    is_drum: true
+    midi_program_name: Drums
+    midi_saved: true
+    plugin_name: session_kit_full.nkm
+    program_num: 128
+  S04:
+    audio_rendered: true
+    inst_class: Bass
+    integrated_loudness: -18.10473562363928
+    is_drum: false
+    midi_program_name: Fretless Bass
+    midi_saved: true
+    plugin_name: scarbee_rickenbacker_bass_palm_muted.nkm
+    program_num: 35
+  S05:
+    audio_rendered: true
+    inst_class: Pipe
+    integrated_loudness: -13.90182238157093
+    is_drum: false
+    midi_program_name: Flute
+    midi_saved: true
+    plugin_name: flute_essential.nkm
+    program_num: 73
+  S06:
+    audio_rendered: true
+    inst_class: Piano
+    integrated_loudness: -19.73242818313494
+    is_drum: false
+    midi_program_name: Electric Piano 1
+    midi_saved: true
+    plugin_name: scarbee_pianet.nkm
+    program_num: 4
+  S07:
+    audio_rendered: true
+    inst_class: Pipe
+    integrated_loudness: -16.951648378470882
+    is_drum: false
+    midi_program_name: Flute
+    midi_saved: true
+    plugin_name: flute_essential.nkm
+    program_num: 73
+  S08:
+    audio_rendered: true
+    inst_class: Guitar
+    integrated_loudness: -14.33787711924181
+    is_drum: false
+    midi_program_name: Overdriven Guitar
+    midi_saved: true
+    plugin_name: elektrik_guitar.nkm
+    program_num: 29
+  S09:
+    audio_rendered: false
+    inst_class: Strings
+    is_drum: false
+    midi_program_name: Timpani
+    midi_saved: true
+    plugin_name: timpani.nkm
+    program_num: 47
+  S10:
+    audio_rendered: true
+    inst_class: Pipe
+    integrated_loudness: -11.448306981147374
+    is_drum: false
+    midi_program_name: Pan Flute
+    midi_saved: true
+    plugin_name: flutes_essential.nkm
+    program_num: 75
+target_peak: -1.0
+
+
+// File: basic_pitch_fork\tests\test_callbacks.py
+----------------------------------------
+#!/usr/bin/env python
+# encoding: utf-8
+#
+# Copyright 2024 Spotify AB
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+import numpy as np
+import tensorflow as tf
+
+from typing import Dict
+
+from basic_pitch.callbacks import VisualizeCallback
+from basic_pitch.constants import AUDIO_N_SAMPLES, ANNOTATIONS_N_SEMITONES, ANNOT_N_FRAMES
+
+
+class MockModel(tf.keras.Model):
+    def __init__(self) -> None:
+        super(MockModel, self).__init__()
+
+    def call(self, inputs: tf.Tensor) -> Dict[str, tf.Tensor]:
+        return {
+            key: tf.random.normal((1, ANNOTATIONS_N_SEMITONES, ANNOT_N_FRAMES)) for key in ["onset", "contour", "note"]
+        }
+
+
+def create_mock_dataset() -> tf.data.Dataset:
+    batch_size = 1
+    inputs = tf.random.normal((batch_size, AUDIO_N_SAMPLES, 1))
+    targets = {
+        key: tf.random.normal((batch_size, ANNOTATIONS_N_SEMITONES, ANNOT_N_FRAMES))
+        for key in ["onset", "contour", "note"]
+    }
+    dataset = tf.data.Dataset.from_tensor_slices((inputs, targets))
+    dataset = dataset.batch(batch_size)
+    return dataset
+
+
+def test_visualize_callback_on_epoch_end(tmpdir: str) -> None:
+
+    vc = VisualizeCallback(
+        train_ds=create_mock_dataset(),
+        validation_ds=create_mock_dataset(),
+        tensorboard_dir=str(tmpdir),
+        sonify=True,
+        contours=True,
+    )
+
+    vc.model = MockModel()
+
+    vc.on_epoch_end(1, {"loss": np.random.random(), "val_loss": np.random.random()})
+
+
+// File: basic_pitch_fork\tests\test_inference.py
+----------------------------------------
+#!/usr/bin/env python
+# encoding: utf-8
+#
+# Copyright 2022 Spotify AB
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+import faulthandler
+import os
+import pathlib
+import tempfile
+from typing import Dict, List
+
+import librosa
+import pretty_midi
+import numpy as np
+import numpy.typing as npt
+
+from basic_pitch import ICASSP_2022_MODEL_PATH, inference
+from basic_pitch.constants import (
+    AUDIO_SAMPLE_RATE,
+    AUDIO_N_SAMPLES,
+    ANNOTATIONS_N_SEMITONES,
+    FFT_HOP,
+)
+
+RESOURCES_PATH = pathlib.Path(__file__).parent / "resources"
+
+faulthandler.enable()
+
+
+def test_predict() -> None:
+    test_audio_path = RESOURCES_PATH / "vocadito_10.wav"
+    model_output, midi_data, note_events = inference.predict(
+        test_audio_path,
+        inference.Model(ICASSP_2022_MODEL_PATH),
+    )
+    assert set(model_output.keys()) == set(["note", "onset", "contour"])
+    assert model_output["note"].shape == model_output["onset"].shape
+    assert isinstance(midi_data, pretty_midi.PrettyMIDI)
+    lowest_supported_midi = 21
+    note_pitch_min = [n[2] >= lowest_supported_midi for n in note_events]
+    note_pitch_max = [n[2] <= lowest_supported_midi + ANNOTATIONS_N_SEMITONES for n in note_events]
+    assert all(note_pitch_min)
+    assert all(note_pitch_max)
+    assert isinstance(note_events, list)
+
+    expected_model_output = np.load(RESOURCES_PATH / "vocadito_10" / "model_output.npz", allow_pickle=True)[
+        "arr_0"
+    ].item()
+    for k in expected_model_output.keys():
+        np.testing.assert_allclose(expected_model_output[k], model_output[k], atol=1e-4, rtol=0)
+
+    expected_note_events = np.load(RESOURCES_PATH / "vocadito_10" / "note_events.npz", allow_pickle=True)["arr_0"]
+    assert len(expected_note_events) == len(note_events)
+    for expected, calculated in zip(expected_note_events, note_events):
+        for i in range(len(expected)):
+            np.testing.assert_allclose(expected[i], calculated[i], atol=1e-4, rtol=0)
+
+
+def test_predict_with_saves() -> None:
+    test_audio_path = RESOURCES_PATH / "vocadito_10.wav"
+    with tempfile.TemporaryDirectory() as tmpdir:
+        inference.predict_and_save(
+            [test_audio_path],
+            tmpdir,
+            True,
+            True,
+            True,
+            True,
+            model_or_model_path=ICASSP_2022_MODEL_PATH,
+        )
+        expected_midi_path = tmpdir / pathlib.Path("vocadito_10_basic_pitch.mid")
+        expected_csv_path = tmpdir / pathlib.Path("vocadito_10_basic_pitch.csv")
+        expected_npz_path = tmpdir / pathlib.Path("vocadito_10_basic_pitch.npz")
+        expected_sonif_path = tmpdir / pathlib.Path("vocadito_10_basic_pitch.wav")
+
+        for output_path in [
+            expected_midi_path,
+            expected_csv_path,
+            expected_npz_path,
+            expected_sonif_path,
+        ]:
+            assert os.path.exists(output_path)
+
+
+def test_predict_onset_threshold() -> None:
+    test_audio_path = RESOURCES_PATH / "vocadito_10.wav"
+    for onset_threshold in [0, 0.3, 0.8, 1]:
+        inference.predict(
+            test_audio_path,
+            ICASSP_2022_MODEL_PATH,
+            onset_threshold=onset_threshold,
+        )
+
+
+def test_predict_frame_threshold() -> None:
+    test_audio_path = RESOURCES_PATH / "vocadito_10.wav"
+    for frame_threshold in [0, 0.3, 0.8, 1]:
+        inference.predict(
+            test_audio_path,
+            ICASSP_2022_MODEL_PATH,
+            frame_threshold=frame_threshold,
+        )
+
+
+def test_predict_min_note_length() -> None:
+    test_audio_path = RESOURCES_PATH / "vocadito_10.wav"
+    for minimum_note_length in [10, 100, 1000]:
+        _, _, note_events = inference.predict(
+            test_audio_path,
+            ICASSP_2022_MODEL_PATH,
+            minimum_note_length=minimum_note_length,
+        )
+        min_len_s = minimum_note_length / 1000.0
+        note_lengths = [n[1] - n[0] >= min_len_s for n in note_events]
+        assert all(note_lengths)
+
+
+def test_predict_min_freq() -> None:
+    test_audio_path = RESOURCES_PATH / "vocadito_10.wav"
+    for minimum_frequency in [40, 80, 200, 2000]:
+        _, _, note_events = inference.predict(
+            test_audio_path,
+            ICASSP_2022_MODEL_PATH,
+            minimum_frequency=minimum_frequency,
+        )
+        min_freq_midi = np.round(librosa.hz_to_midi(minimum_frequency))
+        note_pitch = [n[2] >= min_freq_midi for n in note_events]
+        assert all(note_pitch)
+
+
+def test_predict_max_freq() -> None:
+    test_audio_path = RESOURCES_PATH / "vocadito_10.wav"
+    for maximum_frequency in [40, 80, 200, 2000]:
+        _, _, note_events = inference.predict(
+            test_audio_path,
+            ICASSP_2022_MODEL_PATH,
+            maximum_frequency=maximum_frequency,
+        )
+        max_freq_midi = np.round(librosa.hz_to_midi(maximum_frequency))
+        note_pitch = [n[2] <= max_freq_midi for n in note_events]
+        assert all(note_pitch)
+
+
+def test_window_audio_file() -> None:
+    test_audio_path = RESOURCES_PATH / "vocadito_10.wav"
+    audio, _ = librosa.load(str(test_audio_path), sr=AUDIO_SAMPLE_RATE, mono=True)
+    audio_windowed, window_times = zip(*inference.window_audio_file(audio, AUDIO_N_SAMPLES - 30 * FFT_HOP))
+    assert len(audio_windowed) == 6
+    assert len(window_times) == 6
+    for time in window_times:
+        assert time["start"] <= time["end"]
+    np.testing.assert_equal(audio[:AUDIO_N_SAMPLES], np.squeeze(audio_windowed[0]))
+
+
+def test_get_audio_input() -> None:
+    test_audio_path = RESOURCES_PATH / "vocadito_10.wav"
+    audio, _ = librosa.load(str(test_audio_path), sr=AUDIO_SAMPLE_RATE, mono=True)
+    overlap_len = 30 * FFT_HOP
+    audio = np.concatenate([np.zeros((overlap_len // 2,), dtype=np.float32), audio])
+    audio_windowed: List[npt.NDArray[np.float32]] = []
+    window_times: List[Dict[str, float]] = []
+    for audio_window, window_time, original_length in inference.get_audio_input(
+        test_audio_path, overlap_len, AUDIO_N_SAMPLES - overlap_len
+    ):
+        audio_windowed.append(audio_window)
+        window_times.append(window_time)
+    audio_windowed = np.array(audio_windowed)
+    assert len(audio_windowed) == 6
+    assert len(window_times) == 6
+    for time in window_times:
+        assert time["start"] <= time["end"]
+    np.testing.assert_equal(audio[:AUDIO_N_SAMPLES], np.squeeze(audio_windowed[0]))
+
+    assert original_length == 200607
+
+
+// File: basic_pitch_fork\tests\test_nn.py
+----------------------------------------
+#!/usr/bin/env python
+# encoding: utf-8
+#
+# Copyright 2022 Spotify AB
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+from typing import Iterator, Tuple
+import unittest
+
+import numpy as np
+import tensorflow as tf
+
+from basic_pitch import models, nn
+from basic_pitch.constants import (
+    ANNOT_N_FRAMES,
+    ANNOTATIONS_N_SEMITONES,
+    AUDIO_N_SAMPLES,
+    N_FREQ_BINS_CONTOURS,
+)
+
+BATCH_SIZE = 3
+
+tfkl = tf.keras.layers
+
+
+class TestHarmonicStacking(unittest.TestCase):
+    def _audio_data_gen(self) -> Iterator[Tuple[np.array, np.array]]:
+        while True:
+            audio = np.random.uniform(size=(BATCH_SIZE, AUDIO_N_SAMPLES, 1)).astype(np.float32)
+            output = np.random.uniform(size=(BATCH_SIZE, ANNOT_N_FRAMES, ANNOTATIONS_N_SEMITONES * 3, 1)).astype(
+                np.float32
+            )
+            yield (audio, output)
+
+    def _dummy_dataset(self) -> tf.data.Dataset:
+        ds = tf.data.Dataset.from_generator(
+            self._audio_data_gen,
+            (tf.float32, tf.float32),
+            (
+                tf.TensorShape([BATCH_SIZE, AUDIO_N_SAMPLES, 1]),
+                tf.TensorShape([BATCH_SIZE, ANNOT_N_FRAMES, ANNOTATIONS_N_SEMITONES * 3, 1]),
+            ),
+        )
+        return ds
+
+    def test_defaults(self) -> None:
+        inputs = tf.keras.Input(shape=(AUDIO_N_SAMPLES, 1))
+        x = models.get_cqt(inputs, 5, True)
+        conv = nn.HarmonicStacking(3, [1, 2, 3, 4, 5], N_FREQ_BINS_CONTOURS)(x)
+        outputs = tfkl.Conv2D(1, (3, 3), padding="same")(conv)
+        model = tf.keras.Model(inputs=inputs, outputs=outputs)
+
+        train_ds = self._dummy_dataset()
+        valid_ds = self._dummy_dataset()
+
+        model.compile(
+            loss="binary_crossentropy",
+            optimizer=tf.keras.optimizers.Adam(0.1),
+            sample_weight_mode=None,
+        )
+
+        model.fit(
+            train_ds,
+            epochs=2,
+            steps_per_epoch=2,
+            validation_data=valid_ds,
+            validation_steps=1,
+        )
+
+        for element in train_ds:
+            in_vals = element[0]
+            out_vals = model(in_vals)
+            assert out_vals.shape == (
+                BATCH_SIZE,
+                ANNOT_N_FRAMES,
+                ANNOTATIONS_N_SEMITONES * 3,
+                1,
+            )
+            break
+
+    def test_fractions(self) -> None:
+        inputs = tf.keras.Input(shape=(AUDIO_N_SAMPLES, 1))
+        x = models.get_cqt(inputs, 2, True)
+        conv = nn.HarmonicStacking(3, [0.5, 1, 2], N_FREQ_BINS_CONTOURS)(x)
+        outputs = tfkl.Conv2D(1, (3, 3), padding="same")(conv)
+        model = tf.keras.Model(inputs=inputs, outputs=outputs)
+
+        train_ds = self._dummy_dataset()
+        valid_ds = self._dummy_dataset()
+
+        model.compile(
+            loss="binary_crossentropy",
+            optimizer=tf.keras.optimizers.Adam(0.1),
+            sample_weight_mode=None,
+        )
+
+        model.fit(
+            train_ds,
+            epochs=2,
+            steps_per_epoch=2,
+            validation_data=valid_ds,
+            validation_steps=1,
+        )
+
+        for element in train_ds:
+            inputs = element[0]
+            output = model(inputs)
+            assert output.shape == (
+                BATCH_SIZE,
+                ANNOT_N_FRAMES,
+                ANNOTATIONS_N_SEMITONES * 3,
+                1,
+            )
+            break
+
+
+// File: basic_pitch_fork\tests\test_note_creation.py
+----------------------------------------
+#!/usr/bin/env python
+# encoding: utf-8
+#
+# Copyright 2022 Spotify AB
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+from basic_pitch.note_creation import drop_overlapping_pitch_bends
+
+
+def test_drop_overlapping_pitch_bends() -> None:
+    # events are: (start, end, pitch, amplitude, pitch_bend)
+    note_events_with_pitch_bends = [
+        (0.0, 0.1, 60, 1.0, None),
+        (2.0, 2.1, 62, 1.0, [0, 1, 2]),  # οverlaps w next
+        (2.0, 2.1, 64, 1.0, [0, 1, 2]),  # overlaps w prev
+        (1.0, 1.1, 65, 1.0, [0, 1, 2]),
+        (1.1, 1.2, 67, 1.0, [0, 1, 2]),
+        (3.0, 3.2, 69, 1.0, [0, 1, 2]),  # overlaps w next
+        (3.1, 3.3, 71, 1.0, [0, 1, 2]),  # overlaps w prev
+        (5.0, 5.1, 72, 1.0, [0, 1, 2]),  # overlaps w next
+        (5.0, 5.2, 74, 1.0, [0, 1, 2]),  # overlaps w prev
+        (4.0, 4.2, 76, 1.0, [0, 1, 2]),  # overlaps w next
+        (4.1, 4.2, 77, 1.0, [0, 1, 2]),  # overlaps w prev
+    ]
+    expected = [
+        (0.0, 0.1, 60, 1.0, None),
+        (2.0, 2.1, 62, 1.0, None),  # overlaps w next
+        (2.0, 2.1, 64, 1.0, None),  # overlaps w prev
+        (1.0, 1.1, 65, 1.0, [0, 1, 2]),
+        (1.1, 1.2, 67, 1.0, [0, 1, 2]),
+        (3.0, 3.2, 69, 1.0, None),  # overlaps w next
+        (3.1, 3.3, 71, 1.0, None),  # overlaps w prev
+        (5.0, 5.1, 72, 1.0, None),  # overlaps w next
+        (5.0, 5.2, 74, 1.0, None),  # overlaps w prev
+        (4.0, 4.2, 76, 1.0, None),  # overlaps w next
+        (4.1, 4.2, 77, 1.0, None),  # overlaps w prev
+    ]
+    result = drop_overlapping_pitch_bends(note_events_with_pitch_bends)
+    assert sorted(result) == sorted(expected)
+
+
+// File: basic_pitch_fork\tox.ini
+----------------------------------------
+[tox]
+envlist = py38,py39,py310,py311,full,data,manifest,check-formatting,lint,mypy
+skipsdist = True
+usedevelop = True
+requires =
+    setuptools>=60
+    wheel
+    pip>=24
+
+# Tests with the minimal package (either coreml/onnx/tflite)
+[testenv]
+deps = -e .[test]
+commands =
+    pytest tests --ignore tests/test_nn.py --ignore tests/data {posargs}
+setenv =
+    SOURCE = {toxinidir}/basic_pitch
+    TEST_SOURCE = {toxinidir}/tests
+    LINE_LENGTH = "120"
+
+# Tests with TF
+[testenv:full]
+deps = -e .[dev]
+commands =
+    pytest tests {posargs}
+setenv =
+    SOURCE = {toxinidir}/basic_pitch
+    TEST_SOURCE = {toxinidir}/tests
+    LINE_LENGTH = "120"
+
+[testenv:data]
+deps = -e .[data]
+commands = 
+    pytest tests/data {posargs}
+
+[testenv:manifest]
+deps = check-manifest
+skip_install = true
+commands = check-manifest --ignore 'tests'
+
+[testenv:check-formatting]
+basepython = python3.10
+deps = black
+skip_install = true
+commands =
+    black {env:SOURCE} tests --line-length {env:LINE_LENGTH} --diff --check
+
+[testenv:format]
+basepython = python3.10
+deps = black
+skip_install = true
+commands =
+    black {env:SOURCE} tests --line-length {env:LINE_LENGTH}
+
+[testenv:lint]
+basepython = python3.10
+deps = flake8
+skip_install = true
+commands = flake8
+
+[testenv:mypy]
+basepython = python3.10
+deps =
+    mypy
+commands = mypy basic_pitch tests --strict --ignore-missing-imports --allow-subclassing-any
+
+[flake8]
+show-source = true
+max-line-length = 120
+exclude = .venv,.tox,.git,dist,doc,*.egg,build
+ignore = E203,E731,W503,E231
+per-file-ignores = __init__.py:F401
+
+[pytest]
+addopts = -v
+testpaths = tests
+
+
+// File: create_test_audio.py
+----------------------------------------
+import numpy as np
+import soundfile as sf
+
+# Generate a simple sine wave
+duration = 2.0  # seconds
+sample_rate = 44100
+t = np.linspace(0, duration, int(sample_rate * duration))
+frequency = 440.0  # A4 note
+amplitude = 0.5
+
+# Create sine wave
+audio_data = amplitude * np.sin(2 * np.pi * frequency * t)
+
+# Create test directory if it doesn't exist
+import os
+os.makedirs('test/resources', exist_ok=True)
+
+# Save as WAV file
+sf.write('test/resources/test_audio.wav', audio_data, sample_rate)
+print("Created test audio file: test/resources/test_audio.wav")
+
+// File: midi_extractor.py
+----------------------------------------
+import os
+import sys
+import json
+import numpy as np
+import librosa
+import pretty_midi
+from basic_pitch.inference import predict_and_save
+from basic_pitch import ICASSP_2022_MODEL_PATH
+from basic_pitch import ICASSP_2022_MODEL_PATH
+
+def log_info(message):
+    """Log info message to stderr for Flutter to capture"""
+    print(f"INFO: {message}", file=sys.stderr)
+
+def extract_midi_from_audio(audio_path, output_path):
+    """Extract MIDI data from audio file using Basic Pitch"""
+    try:
+        log_info(f"Loading audio file: {audio_path}")
+        
+        # Create output directory if it doesn't exist
+        output_dir = os.path.dirname(output_path)
+        if not os.path.exists(output_dir):
+            os.makedirs(output_dir)
+            log_info(f"Created output directory: {output_dir}")
+
+        # Use Basic Pitch's predict_and_save function
+        log_info("Starting MIDI extraction...")
+        predict_and_save(
+            audio_path_list=[audio_path],  # List of audio files
+            output_directory=output_dir,    # Output directory
+            model_or_model_path=ICASSP_2022_MODEL_PATH,  # Model path
+            minimum_note_length=0.05,
+            minimum_frequency=20,
+            maximum_frequency=2000,
+            multiple_pitch_bends=False,
+            melodia_trick=True,
+            save_midi=True,
+            sonify_midi=False,
+            save_model_outputs=False,
+            save_notes=False
+        )
+
+        # Get the generated MIDI file path
+        midi_filename = os.path.splitext(os.path.basename(audio_path))[0] + '.mid'
+        generated_midi_path = os.path.join(output_dir, midi_filename)
+
+        # Move the file to the requested output path if different
+        if generated_midi_path != output_path:
+            os.rename(generated_midi_path, output_path)
+            log_info(f"Moved MIDI file to requested location: {output_path}")
+
+        # Load and validate the MIDI file
+        midi_data = pretty_midi.PrettyMIDI(output_path)
+        total_notes = sum(len(instrument.notes) for instrument in midi_data.instruments)
+        
+        log_info(f"Successfully generated MIDI file with {total_notes} notes")
+        log_info(f"MIDI duration: {midi_data.get_end_time():.2f} seconds")
+        
+        # Return success response
+        result = {
+            "status": "success",
+            "result": {
+                "midi_path": output_path,
+                "details": {
+                    "num_notes": total_notes,
+                    "duration": midi_data.get_end_time(),
+                    "instruments": len(midi_data.instruments)
+                }
+            }
+        }
+        
+        print(json.dumps(result))
+        return 0
+        
+    except Exception as e:
+        # Log error and return error response
+        log_info(f"Error during MIDI extraction: {str(e)}")
+        error_result = {
+            "status": "error",
+            "error": str(e)
+        }
+        print(json.dumps(error_result))
+        return 1
+
+def check_capabilities():
+    """Check if all required libraries are available"""
+    try:
+        import torch
+        log_info("PyTorch loaded successfully")
+        
+        import soundfile
+        log_info("SoundFile loaded successfully")
+        
+        import tensorflow
+        log_info("TensorFlow loaded successfully")
+        
+        # Test Basic Pitch model loading
+        from basic_pitch.inference import load_model
+        model = load_model(ICASSP_2022_MODEL_PATH)
+        log_info("Basic Pitch model loaded successfully")
+        
+        log_info("All required libraries loaded successfully")
+        return 0
+    except Exception as e:
+        log_info(f"Error checking capabilities: {str(e)}")
+        return 1
+
+if __name__ == "__main__":
+    if len(sys.argv) < 2:
+        print("Error: No command specified")
+        sys.exit(1)
+        
+    command = sys.argv[1]
+    
+    if command == "check_capabilities":
+        sys.exit(check_capabilities())
+    elif command == "extract_midi":
+        if len(sys.argv) < 4:
+            print("Error: Missing required arguments for MIDI extraction")
+            sys.exit(1)
+            
+        # Parse arguments
+        args = {}
+        for arg in sys.argv[2:]:
+            if "=" in arg:
+                key, value = arg.split("=", 1)
+                # Remove quotes if present
+                value = value.strip('"')
+                args[key] = value
+        
+        if "input_path" not in args or "output_path" not in args:
+            print("Error: Missing input_path or output_path argument")
+            sys.exit(1)
+            
+        sys.exit(extract_midi_from_audio(args["input_path"], args["output_path"]))
+    else:
+        print(f"Error: Unknown command '{command}'")
+        sys.exit(1)
+
+// File: processor.py
+----------------------------------------
+import os
+import json
+import sys
+import logging
+import tempfile
+from typing import Dict, Any, List
+
+# Set up logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(levelname)s: %(message)s',
+    stream=sys.stderr  # Send logs to stderr to keep stdout clean for JSON
+)
+logger = logging.getLogger(__name__)
+
+def write_json_response(data: Dict[str, Any]) -> None:
+    """Write JSON response using a temporary file to ensure proper formatting."""
+    with tempfile.NamedTemporaryFile(mode='w', delete=False, suffix='.json') as f:
+        json.dump(data, f)
+        temp_path = f.name
+    
+    try:
+        with open(temp_path, 'r') as f:
+            print(f.read().strip(), flush=True)
+    finally:
+        try:
+            os.unlink(temp_path)
+        except:
+            pass
+
+def format_json_response(status: str, data: Any = None, error: str = None) -> Dict[str, Any]:
+    """Format response as JSON object."""
+    response = {'status': status}
+    if data is not None:
+        response['result'] = data
+    if error is not None:
+        response['error'] = error
+    return response
+
+def parse_args(args: List[str]) -> Dict[str, str]:
+    """Parse command line arguments in the format key=value."""
+    result = {}
+    for arg in args:
+        if '=' in arg:
+            key, value = arg.split('=', 1)
+            # Handle quoted paths more robustly
+            value = value.strip()
+            if value.startswith('"') and value.endswith('"'):
+                value = value[1:-1]  # Remove surrounding quotes
+            # Unescape any escaped quotes within the path
+            value = value.replace('\\"', '"')
+            # Log the parsed argument
+            logger.info(f"Parsed argument - {key}: {value}")
+            result[key] = value
+    return result
+
+class DependencyManager:
+    def __init__(self):
+        self.torch_available = False
+        self.torchaudio_available = False
+        self.demucs_available = False
+        self.soundfile_available = False
+        self._check_dependencies()
+        
+    def _check_dependencies(self):
+        """Check which dependencies are available."""
+        try:
+            import torch
+            import torchaudio
+            self.torch_available = True
+            self.torchaudio_available = True
+            logger.info(f"PyTorch loaded successfully (device: {torch.device('cuda' if torch.cuda.is_available() else 'cpu')})")
+        except ImportError as e:
+            logger.error(f"Failed to import PyTorch/torchaudio: {e}")
+            
+        try:
+            import soundfile
+            self.soundfile_available = True
+            logger.info("SoundFile loaded successfully")
+        except ImportError:
+            logger.error("Failed to import soundfile")
+            
+        try:
+            from demucs.pretrained import get_model
+            from demucs.apply import apply_model
+            self.demucs_available = True
+            logger.info("Demucs loaded successfully")
+        except ImportError:
+            logger.error("Failed to import demucs")
+
+    def get_missing_dependencies(self) -> List[str]:
+        """Get list of missing dependencies."""
+        missing = []
+        if not self.torch_available or not self.torchaudio_available:
+            missing.extend(['torch', 'torchaudio'])
+        if not self.soundfile_available:
+            missing.append('soundfile')
+        if not self.demucs_available:
+            missing.append('demucs')
+        return missing
+
+    def can_separate_stems(self) -> bool:
+        """Check if stem separation is possible."""
+        return all([
+            self.torch_available,
+            self.torchaudio_available,
+            self.soundfile_available,
+            self.demucs_available
+        ])
+
+class AudioProcessor:
+    def __init__(self):
+        self.deps = DependencyManager()
+        self.device = None
+        self.demucs_model = None
+        
+        if self.deps.torch_available:
+            import torch
+            self.device = 'cuda' if torch.cuda.is_available() else 'cpu'
+            logger.info(f"AudioProcessor initialized (device: {self.device})")
+        
+    def load_models(self):
+        """Load all required models."""
+        if not self.deps.can_separate_stems():
+            raise ImportError("Required dependencies for stem separation not available")
+            
+        if self.demucs_model is None:
+            from demucs.pretrained import get_model
+            logger.info("Loading Demucs model...")
+            self.demucs_model = get_model('htdemucs')
+            self.demucs_model.to(self.device)
+            logger.info("Demucs model loaded successfully")
+    
+    def load_audio(self, audio_path: str):
+        """Load audio file with proper format handling."""
+        import soundfile as sf
+        import torch
+        import numpy as np
+        
+        logger.info(f"Attempting to load audio file: {audio_path}")
+        logger.info(f"File exists: {os.path.exists(audio_path)}")
+        logger.info(f"File size: {os.path.getsize(audio_path) if os.path.exists(audio_path) else 'N/A'} bytes")
+        
+        if not os.path.exists(audio_path):
+            raise FileNotFoundError(f"Audio file not found: {audio_path}")
+        
+        if not os.access(audio_path, os.R_OK):
+            raise PermissionError(f"Cannot read audio file: {audio_path}")
+        
+        try:
+            # Try loading with soundfile first
+            data, sr = sf.read(audio_path)
+            # Convert to float32 tensor
+            if data.dtype != np.float32:
+                data = data.astype(np.float32)
+            # Ensure stereo format
+            if len(data.shape) == 1:  # Mono
+                data = np.stack([data, data])  # Duplicate channel for stereo
+            elif len(data.shape) == 2:
+                if data.shape[1] == 2:  # Already stereo with channels as second dim
+                    data = data.T  # Transpose to get channels first
+                elif data.shape[0] == 2:  # Already stereo with channels as first dim
+                    pass  # Already in correct format
+                else:  # Mono as column vector
+                    data = np.stack([data[:, 0], data[:, 0]])  # Duplicate channel for stereo
+            # Convert to torch tensor (channels, samples)
+            wav = torch.from_numpy(data)
+            logger.info(f"Audio loaded successfully with soundfile (sample rate: {sr}Hz)")
+            return wav, sr
+        except Exception as e:
+            logger.error(f"Failed to load audio with soundfile: {e}")
+            try:
+                # Fallback to torchaudio
+                import torchaudio
+                wav, sr = torchaudio.load(audio_path)
+                if wav.shape[0] == 1:  # Convert mono to stereo
+                    wav = wav.repeat(2, 1)  # Duplicate mono channel for stereo
+                logger.info(f"Audio loaded successfully with torchaudio (sample rate: {sr}Hz)")
+                return wav, sr
+            except Exception as e:
+                logger.error(f"Failed to load audio with torchaudio: {e}")
+                raise ValueError(f"Could not load audio file {audio_path}. Supported formats: WAV, FLAC, OGG, MP3")
+    
+    def separate_stems(self, audio_path: str, output_dir: str) -> dict:
+        """Separate audio into stems using Demucs."""
+        if not self.deps.can_separate_stems():
+            raise ImportError("Required dependencies for stem separation not available")
+            
+        import torch
+        import torchaudio
+        from demucs.apply import apply_model
+        
+        logger.info("=== Starting Stem Separation ===")
+        logger.info(f"Input file: {audio_path}")
+        logger.info(f"Output directory: {output_dir}")
+        logger.info(f"Device: {self.device}")
+        logger.info(f"Available memory: {torch.cuda.get_device_properties(0).total_memory if torch.cuda.is_available() else 'N/A'}")
+        
+        # Verify output directory
+        try:
+            os.makedirs(output_dir, exist_ok=True)
+            logger.info(f"Created output directory: {output_dir}")
+            if not os.access(output_dir, os.W_OK):
+                raise PermissionError(f"Cannot write to output directory: {output_dir}")
+        except Exception as e:
+            logger.error(f"Error creating output directory: {e}")
+            raise
+        
+        self.load_models()
+        
+        # Load audio
+        wav, sr = self.load_audio(audio_path)
+        wav = wav.to(self.device)
+        
+        # Apply separation
+        logger.info("Starting source separation...")
+        logger.info(f"Input audio shape: {wav.shape}")
+        
+        try:
+            # Ensure wav is in the correct shape (batch, channels, samples)
+            if len(wav.shape) == 2:  # (channels, samples)
+                wav = wav.unsqueeze(0)  # Add batch dimension
+                logger.info("Added batch dimension to audio")
+            
+            logger.info(f"Processed audio shape: {wav.shape}")
+            logger.info("Applying Demucs model...")
+            
+            sources = apply_model(self.demucs_model, wav, shifts=1, split=True, overlap=0.25)
+            sources = sources.cpu()
+            
+            logger.info(f"Separation complete. Output shape: {sources.shape}")
+            
+            # Save stems
+            stem_paths = {}
+            stem_names = ['drums', 'bass', 'other', 'vocals']
+            
+            try:
+                # sources shape should be (batch, stems, channels, samples)
+                sources = sources.squeeze(0)  # Remove batch dimension
+                logger.info(f"Processing stems. Shape after squeeze: {sources.shape}")
+                
+                for i, (source, name) in enumerate(zip(sources, stem_names)):
+                    output_path = os.path.join(output_dir, f"{name}.wav")
+                    logger.info(f"Saving {name} stem ({i+1}/{len(stem_names)})")
+                    logger.info(f"Stem shape: {source.shape}, Sample rate: {sr}")
+                    
+                    try:
+                        torchaudio.save(output_path, source, sr)
+                        stem_paths[name] = output_path
+                        logger.info(f"Successfully saved {name} stem to {output_path}")
+                    except Exception as e:
+                        logger.error(f"Error saving {name} stem: {e}")
+                        raise
+                
+                # Convert paths to use forward slashes for consistency
+                stem_paths = {
+                    name: path.replace('\\', '/')
+                    for name, path in stem_paths.items()
+                }
+                logger.info("All stems saved successfully")
+                logger.info(f"Final stem paths: {stem_paths}")
+                return stem_paths
+                
+            except Exception as e:
+                logger.error(f"Error processing stems: {e}")
+                raise
+                
+        except RuntimeError as e:
+            if "out of memory" in str(e):
+                logger.error("GPU out of memory error. Try processing a shorter audio file or using CPU.")
+                raise MemoryError("Not enough GPU memory for audio processing")
+            raise
+        except Exception as e:
+            logger.error(f"Error during source separation: {e}")
+            raise
+
+def get_capabilities() -> Dict[str, Any]:
+    """Get current capabilities based on available dependencies."""
+    deps = DependencyManager()
+    return {
+        'can_separate_stems': deps.can_separate_stems(),
+        'missing_dependencies': deps.get_missing_dependencies()
+    }
+
+def process_command(action: str, args: Dict[str, str]) -> Dict[str, Any]:
+    """Process command and return response object."""
+    try:
+        processor = AudioProcessor()
+        
+        if action == 'get_capabilities':
+            return format_json_response('success', get_capabilities())
+        elif action == 'separate_stems':
+            if not processor.deps.can_separate_stems():
+                missing_deps = processor.deps.get_missing_dependencies()
+                error_msg = {
+                    'message': 'Stem separation not available due to missing dependencies',
+                    'details': {
+                        'missing_dependencies': missing_deps
+                    }
+                }
+                return format_json_response('error', error=error_msg)
+                
+            if 'input_path' not in args or 'output_dir' not in args:
+                error_msg = {
+                    'message': 'Missing required arguments',
+                    'details': {
+                        'required': ['input_path', 'output_dir'],
+                        'provided': list(args.keys())
+                    }
+                }
+                return format_json_response('error', error=error_msg)
+            
+            try:
+                result = processor.separate_stems(args['input_path'], args['output_dir'])
+                return format_json_response('success', {
+                    'stems': result,
+                    'details': {
+                        'input_file': args['input_path'],
+                        'output_directory': args['output_dir']
+                    }
+                })
+            except Exception as e:
+                error_msg = {
+                    'message': str(e),
+                    'details': {
+                        'input_file': args['input_path'],
+                        'output_directory': args['output_dir'],
+                        'error_type': e.__class__.__name__
+                    }
+                }
+                return format_json_response('error', error=error_msg)
+        else:
+            error_msg = {
+                'message': 'Invalid action specified',
+                'details': {
+                    'provided_action': action,
+                    'valid_actions': ['get_capabilities', 'separate_stems']
+                }
+            }
+            return format_json_response('error', error=error_msg)
+    except Exception as e:
+        logger.exception("Error processing command")
+        error_msg = {
+            'message': str(e),
+            'details': {
+                'error_type': e.__class__.__name__,
+                'action': action,
+                'args': args
+            }
+        }
+        return format_json_response('error', error=error_msg)
+
+if __name__ == '__main__':
+    if len(sys.argv) > 1:
+        action = sys.argv[1]
+        kwargs = parse_args(sys.argv[2:])
+        write_json_response(process_command(action, kwargs))
+    else:
+        write_json_response(format_json_response('error', error='No arguments provided'))
+
+// File: requirements.txt
+----------------------------------------
+# Build tools
+setuptools>=65.5.1
+wheel>=0.38.4
+
+# Core dependencies - using pre-built wheels
+numpy==1.26.4
+scipy>=1.12.0
+librosa>=0.10.1
+pretty_midi>=0.2.10
+
+# ML dependencies - CPU versions
+tensorflow==2.16.1
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch==2.2.0+cpu
+
+# Audio processing
+soundfile>=0.12.1
+resampy==0.4.2
+scikit-learn>=1.4.0
+
+# Additional dependencies
+joblib>=1.3.2
+numba>=0.58.1
+
+# Basic Pitch dependencies
+mir_eval>=0.7
+
+
+
+---
+## Summary
+
+Total included files: 73
+Total excluded files: 54
+Total included content size: 356886 bytes
+
+
+
+
+deeply analyze this code for potential improvements and fixes as well as a new set of features and a .md file with DETAILED step by step instructions that also includes updating that .md between each step with both documentation and further instructions or notes from the last step 
+

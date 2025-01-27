@@ -1,0 +1,3020 @@
+// File: main.dart
+----------------------------------------
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:window_manager/window_manager.dart';
+import 'package:just_audio/just_audio.dart';
+import 'package:audio_session/audio_session.dart';
+import 'dart:io';
+import 'ui/app.dart';
+
+Future<void> main() async {
+  // Ensure Flutter is initialized
+  WidgetsFlutterBinding.ensureInitialized();
+  
+  // Initialize audio session
+  try {
+    final session = await AudioSession.instance;
+    await session.configure(const AudioSessionConfiguration.music());
+    debugPrint('Audio session configured successfully');
+  } catch (e) {
+    debugPrint('Failed to configure audio session: $e');
+  }
+  
+  // Initialize window settings for desktop
+  await windowManager.ensureInitialized();
+  await windowManager.setTitle('MidiStems');
+  await windowManager.setMinimumSize(const Size(800, 600));
+  await windowManager.setSize(const Size(1200, 800));
+
+  runApp(const MidiStemsApp());
+}
+
+
+// File: script4.py
+----------------------------------------
+import os
+import mimetypes
+from pathlib import Path
+from typing import List, Optional
+
+class ProjectContextGenerator:
+    """
+    Scans the current directory, creates:
+      1) A "project tree" listing all files (with Included/Excluded).
+      2) Appends the content of included files (text-based, not ignored,
+         and total combined size stays under a given max).
+      3) Shows how many files were excluded overall (no detailed list).
+      4) Adds an introductory section to the output file describing the purpose and process.
+    """
+
+    def __init__(
+        self,
+        output_file: str = "project_context.txt",
+        max_total_combined_size: int = 1_024 * 1_024,  # 1 MB total combined
+        ignore_files: Optional[List[str]] = None,
+        ignore_dirs: Optional[List[str]] = None,
+        verbose: bool = False
+    ) -> None:
+        """
+        :param output_file: Name of the output file.
+        :param max_total_combined_size: The limit for total bytes of included content.
+        :param ignore_files: Specific file names to ignore (e.g. 'script.py', 'package-lock.json').
+        :param ignore_dirs: Directory names to ignore (e.g. '.git', 'node_modules').
+        :param verbose: Whether to print logging info to stdout.
+        """
+        self.output_file = output_file
+        self.max_total_combined_size = max_total_combined_size
+        self.verbose = verbose
+
+        # Determine the name of this script, so we can exclude it
+        self_script_name = Path(__file__).name if "__file__" in globals() else ""
+
+        # Default ignored files & directories
+        self.ignore_files = set(ignore_files or [])
+        # Ensure the output file is excluded
+        self.ignore_files.add(self.output_file)
+        # Ensure this script is also excluded
+        if self_script_name:
+            self.ignore_files.add(self_script_name)
+
+        self.ignore_dirs = set(ignore_dirs or [
+            ".git", "node_modules", "dist", "build", ".next", ".cache", ".venv",
+            "build_backup", "build_new", "dataconnect-generated", "fav", "public"
+        ])
+
+        # For storing metadata about each file: included/excluded, reason, etc.
+        self.file_info = {}  # dict: Path -> {"included": bool, "reason": str, "size": int}
+        self.total_included_size = 0
+
+    def log(self, message: str) -> None:
+        """Helper method for optional verbose logging."""
+        if self.verbose:
+            print(message)
+
+    def is_text_file(self, file_path: Path) -> bool:
+        """
+        Check if a file is likely text-based:
+          - Skip known binary extensions.
+          - Check mimetypes.
+          - Do a quick binary sniff for null bytes or high non-ASCII ratio.
+        """
+        # Common known binary extensions to skip
+        binary_exts = {
+            '.png', '.jpg', '.jpeg', '.gif', '.ico', '.svg',
+            '.woff', '.woff2', '.ttf', '.eot', '.otf',
+            '.mp3', '.mp4', '.webm', '.ogg', '.pdf',
+            '.zip', '.gz', '.rar', '.7z'
+        }
+        if file_path.suffix.lower() in binary_exts:
+            return False
+
+        mime_type, _ = mimetypes.guess_type(file_path)
+        if mime_type and not mime_type.startswith("text"):
+            # .js might come back as "text/javascript", which is fine.
+            # But if it’s application/octet-stream or something else, sniff deeper.
+            if mime_type == "application/octet-stream":
+                # Double-check via sniff
+                return not self._binary_sniff(file_path)
+            return False if not mime_type.startswith("text") else True
+
+        # Final fallback: sniff
+        return not self._binary_sniff(file_path)
+
+    def _binary_sniff(self, file_path: Path, chunk_size: int = 1024) -> bool:
+        """Return True if file appears to be binary by quick inspection."""
+        try:
+            with open(file_path, 'rb') as f:
+                chunk = f.read(chunk_size)
+                # Null byte => likely binary
+                if b'\x00' in chunk:
+                    return True
+                # Check ratio of non-ASCII
+                non_ascii = sum(b > 127 for b in chunk)
+                if len(chunk) > 0 and (non_ascii / len(chunk)) > 0.3:
+                    return True
+            return False
+        except:
+            # If unreadable, treat as binary
+            return True
+
+    def should_ignore(self, file_path: Path) -> bool:
+        """Check if the file should be ignored by name or by any parent directory."""
+        if file_path.name in self.ignore_files:
+            return True
+        for part in file_path.parts:
+            if part in self.ignore_dirs:
+                return True
+        return False
+
+    def gather_files(self, base_path: Path) -> List[Path]:
+        """
+        Gather all files from base_path (recursively).
+        Returns a sorted list of file paths.
+        """
+        all_files = list(base_path.rglob("*"))
+        all_files = [f for f in all_files if f.is_file()]
+        # Sort by path (so the tree print is consistent)
+        all_files.sort()
+        return all_files
+
+    def decide_inclusion(self, file_path: Path) -> None:
+        """
+        Decide whether to include a single file. Populates self.file_info[file_path] with:
+         {
+           "included": bool,
+           "reason": str,
+           "size": int
+         }
+        """
+        stat = file_path.stat()
+        size = stat.st_size
+
+        # Default file_info
+        self.file_info[file_path] = {
+            "included": False,
+            "reason": "",
+            "size": size
+        }
+
+        # Check ignore
+        if self.should_ignore(file_path):
+            self.file_info[file_path]["reason"] = "Excluded: ignored by name/dir"
+            return
+
+        # Check text
+        if not self.is_text_file(file_path):
+            self.file_info[file_path]["reason"] = "Excluded: binary or non-text"
+            return
+
+        # Check if we'd exceed total allowed combined size
+        if self.total_included_size + size > self.max_total_combined_size:
+            self.file_info[file_path]["reason"] = (
+                f"Excluded: adding this would exceed {self.max_total_combined_size} bytes limit"
+            )
+            return
+
+        # If we get here, we can include this file
+        self.file_info[file_path]["included"] = True
+        self.file_info[file_path]["reason"] = "Included"
+        self.total_included_size += size
+        self.log(f"Including: {file_path} (size={size} bytes)")
+
+    def build_project_tree(self, base_path: Path) -> str:
+        """
+        Build a simple text "tree" listing all files and marking them
+        as [Included] or [Excluded: reason].
+        """
+        from collections import defaultdict
+
+        dir_map = defaultdict(list)
+        all_paths = sorted(self.file_info.keys(), key=lambda p: p.parts)
+
+        for path in all_paths:
+            rel = path.relative_to(base_path)
+            parent = rel.parent
+            dir_map[parent].append((path.name, path.is_dir(), path))
+
+        lines = []
+        lines.append(f"{base_path.resolve().name}/")
+        self._print_tree_recursive(lines, base_path, Path("."), dir_map, level=1)
+        return "\n".join(lines)
+
+    def _print_tree_recursive(
+        self,
+        lines: List[str],
+        base_path: Path,
+        rel_dir: Path,
+        dir_map,
+        level: int
+    ):
+        """Recursively build lines for the project tree."""
+        if rel_dir in dir_map:
+            entries = dir_map[rel_dir]
+            entries.sort(key=lambda e: e[0])  # sort by name
+            for name, is_dir, full_path_obj in entries:
+                indent = "   " * level
+                file_info = self.file_info.get(full_path_obj, {})
+                included = file_info.get("included", False)
+                reason = file_info.get("reason", "")
+                if is_dir:
+                    # If directories appear, just list them
+                    lines.append(f"{indent}{name}/ [DIR]")
+                    self._print_tree_recursive(
+                        lines,
+                        base_path,
+                        rel_dir / name,
+                        dir_map,
+                        level + 1
+                    )
+                else:
+                    status_str = "[Included]" if included else f"[{reason}]"
+                    lines.append(f"{indent}{name} {status_str}")
+
+    def generate_context_file(self) -> None:
+        """
+        Main entry point:
+          1) Gather all files.
+          2) Decide inclusion for each.
+          3) Build a text tree listing all files (included/excluded).
+          4) Append the content of included files, ensuring total stays < max limit.
+          5) Include a summary count of excluded files (no detailed list).
+          6) Write to `self.output_file`.
+        """
+        base_path = Path(".")
+
+        # 1) Gather all files
+        all_files = self.gather_files(base_path)
+
+        # 2) Decide inclusion for each file
+        for f in all_files:
+            self.decide_inclusion(f)
+
+        # 3) Build the "project tree" text
+        tree_text = self.build_project_tree(base_path)
+
+        # 4) Gather content for included files
+        included_content_lines = []
+        included_content_lines.append("\n\n---\n## Included Files Content\n\n")
+        for f in all_files:
+            info = self.file_info[f]
+            if info["included"]:
+                try:
+                    with f.open("r", encoding="utf-8", errors="ignore") as fp:
+                        file_text = fp.read()
+                    included_content_lines.append(
+                        f"// File: {f}\n{'-'*40}\n{file_text}\n\n"
+                    )
+                except Exception as e:
+                    self.log(f"Error reading {f}: {e}")
+
+        # 5) Build excluded files count (no detailed list)
+        excluded_count = sum(
+            1 for info in self.file_info.values()
+            if not info["included"]
+        )
+        excluded_count_info = (
+            f"\n\n---\n## Summary\n\n"
+            f"Total included files: {len(self.file_info) - excluded_count}\n"
+            f"Total excluded files: {excluded_count}\n"
+            f"Total included content size: {self.total_included_size} bytes\n"
+        )
+
+        # Introduction lines
+        introduction = (
+            "# Introduction\n\n"
+            "This file was automatically generated by the ProjectContextGenerator script.\n"
+            "It scans the current codebase, excludes certain files/directories (e.g. binary files, large files, or those explicitly ignored),\n"
+            "and includes the content of text-based files that fit within a specified size limit.\n\n"
+            "Below is a tree view of all files (showing included or excluded status), followed by the content of included files.\n"
+            "Finally, a summary provides the total number of files included/excluded and the total size of included content.\n\n"
+        )
+
+        # 6) Combine into final output
+        output = (
+            introduction
+            + tree_text
+            + "".join(included_content_lines)
+            + excluded_count_info
+        )
+
+        with open(self.output_file, "w", encoding="utf-8") as out:
+            out.write(output)
+
+        print(
+            f"Context file generated: {self.output_file}\n"
+            f"Total included content size: {self.total_included_size} bytes\n"
+            f"Total excluded files: {excluded_count}\n"
+        )
+
+
+if __name__ == "__main__":
+    generator = ProjectContextGenerator(
+        output_file="project_context.txt",
+        max_total_combined_size=1_024 * 1_024,  # 1 MB
+        ignore_files=[".env"],  # Additional files you want to ignore
+        ignore_dirs=[".git", "node_modules", "dist", "build", ".next", ".cache",
+                     "build_backup", "build_new", "dataconnect-generated", "fav", "public"],
+        verbose=True
+    )
+    generator.generate_context_file()
+
+
+// File: data\lol_taglines.dart
+----------------------------------------
+import 'dart:math';
+
+/// A collection of random domain + tagline combos from the .lol multiverse.
+final List<String> domainTaglines = [
+  'Disclosure.lol => "We disclose everything except the important parts"',
+  'Whistleblower.lol => "We blow whistles—loudly—so you can\'t ignore it"',
+  'NHI.lol => "Non-Human Intelligence? Sure, we\'ll try anything once"',
+  'NRK.lol => "Norwegian Ridiculous Komedy, streaming 24/7"',
+  'Sticknation.lol => "We\'re building a nation. Out of sticks. Duh"',
+  'elonwyd.lol => "The world\'s biggest question: why, Elon, why?"'
+];
+
+/// Extract domain from a tagline.
+String getDomain(String tagline) {
+  return tagline.split(' => ').first;
+}
+
+/// Extract message from a tagline.
+String getMessage(String tagline) {
+  return tagline.split(' => ').last.replaceAll('"', '');
+}
+
+/// Fetch a random domain + tagline string from [domainTaglines].
+String getRandomLolTagline() {
+  final random = Random();
+  return domainTaglines[random.nextInt(domainTaglines.length)];
+}
+
+// File: ui\app.dart
+----------------------------------------
+import 'package:flutter/material.dart';
+import 'screens/home_screen.dart';
+
+class MidiStemsApp extends StatelessWidget {
+  const MidiStemsApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'MidiStems',
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Colors.blue,
+          brightness: Brightness.dark,
+        ),
+        useMaterial3: true,
+      ),
+      home: const HomeScreen(),
+    );
+  }
+}
+
+// File: core\midi_engine\IMPLEMENTATION.md
+----------------------------------------
+# MIDI Engine Implementation
+
+## Overview
+The MIDI engine will be responsible for extracting MIDI data from audio files, providing a crucial feature alongside the existing stem separation functionality. This document outlines the technical implementation details for the MIDI extraction and processing capabilities.
+
+## Architecture Components
+
+### 1. Core Components
+- **MidiExtractor**: Main class responsible for audio-to-MIDI conversion
+- **MidiProcessor**: Handles post-processing of extracted MIDI data
+- **MidiPlayer**: Manages MIDI playback functionality
+- **MidiExporter**: Handles exporting MIDI to standard MIDI file format (.mid)
+
+### 2. Integration Points
+- Integration with `AudioService` for synchronized audio/MIDI playback
+- Connection to `MultiStemPlayer` for visual MIDI track representation
+- FFI bridge for Python-based MIDI extraction (similar to current audio processing)
+
+## Technical Requirements
+
+### 1. Dependencies
+- **Python Libraries**
+  - `librosa`: Audio processing and feature extraction
+  - `pretty_midi`: MIDI file creation and manipulation
+  - `basic_pitch` (Spotify's ML model): For monophonic pitch detection
+  - `tensorflow`: Required for ML-based MIDI extraction
+
+### 2. Flutter Dependencies
+```yaml
+dependencies:
+  flutter_midi: ^1.0.0  # For MIDI playback
+  midi_util: ^1.0.0    # MIDI file manipulation
+```
+
+## Implementation Progress
+
+### Completed Components
+1. **Core Architecture**
+   - Implemented data models with JSON serialization
+   - Created FFI bridge structure for Dart-Python communication
+   - Added progress reporting system
+   - Implemented MIDI file writer
+   - Set up test infrastructure
+
+2. **Data Models**
+   - MidiProject: Top-level container with JSON support
+   - MidiTrack: Represents individual MIDI tracks
+   - MidiNote: Contains note data (pitch, velocity, timing)
+   - Settings models for extraction and playback
+   - Progress reporting models
+
+3. **Test Infrastructure**
+   - Integration test framework
+   - Test audio file generation
+   - MIDI extraction test cases
+   - Mock audio files for testing
+
+### Current Issues
+1. **Python Environment Setup**
+   ```
+   ModuleNotFoundError: No module named 'basic_pitch'
+   ```
+   - Basic Pitch module not found during initialization
+   - Need to install Basic Pitch from forked repository
+   - Python virtual environment needs proper setup
+
+2. **Path Resolution**
+   - Fixed script path resolution in MidiExtractorBridge
+   - Now using project's working directory for Python scripts
+
+3. **Integration Testing**
+   - Tests failing due to Python module issues
+   - Need to ensure consistent test environment
+   - Add more comprehensive test cases
+
+### Next Immediate Steps
+1. Fix Python environment:
+   ```bash
+   cd python/basic_pitch_fork
+   pip install -e .
+   ```
+
+2. Complete MIDI extraction implementation:
+   - Finish Python extractor implementation
+   - Add proper error handling
+   - Implement progress reporting
+
+3. Enhance test coverage:
+   - Add unit tests for all components
+   - Implement integration tests
+   - Add performance benchmarks
+
+### TODO List
+
+1. **Code Issues to Fix**
+   - midi_engine.dart (6 issues)
+     - [x] Fix unused import: 'dart:typed_data'
+     - [x] Implement usage of _extractionSettings field in MIDI extraction
+     - [x] Implement usage of _playbackSettings field in playback
+     - [x] Use midiPath variable in extractFromAudio method
+     - [x] Implement MIDI file parsing for note extraction
+     - [x] Implement MIDI file export functionality
+
+   - midi_extractor_bridge.dart (4 issues)
+     - [x] Review and optimize FFI memory management
+     - [x] Add error handling for Python initialization failures
+     - [x] Add proper cleanup of Python resources
+     - [x] Implement progress reporting for long operations
+
+   - midi_parser.dart (New Component)
+     - [x] Implement MIDI file header parsing
+     - [x] Implement MIDI track chunk parsing
+     - [x] Extract note data with timing information
+     - [x] Handle variable-length quantities
+     - [x] Add error handling and validation
+
+   - midi_writer.dart (New Component)
+     - [x] Implement MIDI file header writing
+     - [x] Implement MIDI track chunk writing
+     - [x] Support tempo and time signature metadata
+     - [x] Handle variable-length quantities
+     - [x] Add error handling and validation
+
+   - progress_reporter.dart (New Component)
+     - [x] Implement progress update stream
+     - [x] Add progress reporting for MIDI extraction
+     - [x] Add progress reporting for MIDI playback
+     - [x] Add progress reporting for MIDI export
+     - [x] Handle error reporting and completion states
+     - [x] Implement MIDI file header writing
+     - [x] Implement MIDI track chunk writing
+     - [x] Support tempo and time signature metadata
+     - [x] Handle variable-length quantities
+     - [x] Add error handling and validation
+
+   - home_screen.dart (15 issues)
+     - [x] Add MidiEngine initialization
+     - [x] Handle MIDI generation errors
+     - [x] Add progress reporting for MIDI operations
+     - [x] Implement proper error handling
+
+   - multi_stem_player.dart (22 issues)
+     - [x] Integrate MIDI controls with audio playback
+     - [x] Add MIDI visualization
+     - [x] Implement MIDI track controls
+     - [x] Add export functionality
+
+   - stem_midi_controls.dart (3 issues)
+     - [x] Add progress indicators
+     - [x] Implement error handling
+     - [x] Add MIDI preview functionality
+
+   - midi_engine_test.dart (2 issues)
+     - [ ] Implement comprehensive test suite
+     - [ ] Add mock audio files for testing
+
+2. **Feature Implementation**
+    - [x] Implement piano roll visualization
+    - [x] Add MIDI file parsing
+    - [x] Add MIDI export functionality
+    - [x] Implement playback parameter controls
+    - [ ] Add batch processing support
+
+3. **Integration Tasks**
+    - [x] Synchronize audio and MIDI playback
+    - [x] Add MIDI visualization to stem player
+    - [x] Implement export settings dialog
+    - [x] Add progress reporting system
+
+4. **UI Components**
+    - [x] Piano roll visualization widget
+    - [x] MIDI controls integration
+    - [x] Progress reporting UI
+    - [x] Error handling and feedback
+    - [x] File export dialogs
+
+4. **Testing and Optimization**
+   - [ ] Add unit tests for all components
+   - [ ] Add integration tests
+   - [ ] Optimize memory usage
+   - [ ] Add performance benchmarks
+
+## Next Steps
+1. Fix code issues in order of dependency (bottom-up):
+   1. Fix midi_engine.dart core functionality
+   2. Implement midi_extractor_bridge.dart improvements
+   3. Add UI components and integration
+   4. Complete testing infrastructure
+
+2. Focus on essential features first:
+   - MIDI file parsing and export
+   - Basic piano roll visualization
+   - Progress reporting
+   - Error handling
+
+3. Then move to enhancement features:
+   - Advanced visualization
+   - Batch processing
+   - Performance optimization
+
+## Notes
+- Using Spotify's Basic Pitch model for initial implementation
+- Need to implement proper error handling for failed extractions
+- Add progress reporting for long-running operations
+- Consider adding batch processing for multiple files
+
+// File: core\midi_engine\midi_engine.dart
+----------------------------------------
+import 'dart:async';
+import 'dart:io';
+import 'package:path/path.dart' as path;
+import 'midi_extractor_bridge.dart';
+import 'midi_writer.dart';
+import 'models.dart';
+import 'progress_reporter.dart';
+
+/// Main MIDI engine class
+class MidiEngine {
+  final _extractorBridge = MidiExtractorBridge();
+  final _progressReporter = ProgressReporter();
+  final _projectController = StreamController<MidiProject>.broadcast();
+  
+  MidiProject? _currentProject;
+  MidiExtractionSettings _extractionSettings = const MidiExtractionSettings();
+  MidiPlaybackSettings _playbackSettings = const MidiPlaybackSettings();
+
+  /// Stream of project updates
+  Stream<MidiProject> get projectUpdates => _projectController.stream;
+
+  /// Stream of progress updates
+  Stream<ProgressUpdate> get progress => _progressReporter.updates;
+
+  /// Initialize the MIDI engine
+  Future<void> initialize() async {
+    try {
+      await _extractorBridge.initialize();
+    } catch (e) {
+      throw Exception('Failed to initialize MIDI engine: $e');
+    }
+  }
+
+  /// Extract MIDI data from audio file
+  Future<MidiProject> extractFromAudio(String audioPath) async {
+    _progressReporter.start();
+    _progressReporter.report('Starting MIDI extraction...', 0.0);
+
+    try {
+      // Create output directory if it doesn't exist
+      final outputDir = path.join(
+        path.dirname(audioPath),
+        'midi_output',
+      );
+      await Directory(outputDir).create(recursive: true);
+
+      // Generate output path
+      final outputPath = path.join(
+        outputDir,
+        '${path.basenameWithoutExtension(audioPath)}.mid',
+      );
+
+      // Extract MIDI
+      final result = await _extractorBridge.extractMidi(
+        audioPath,
+        outputPath,
+        onProgress: (message) {
+          _progressReporter.report(message, 0.5);
+        },
+      );
+
+      // Create project from extraction result
+      final project = MidiProject(
+        id: DateTime.now().millisecondsSinceEpoch.toString(),
+        tracks: [
+          MidiTrack(
+            id: 'track-1',
+            name: path.basenameWithoutExtension(audioPath),
+            notes: _parseNotes(result['result']['details']['notes']),
+            channel: 0,
+          ),
+        ],
+        metadata: MidiMetadata(
+          title: path.basenameWithoutExtension(audioPath),
+          tempo: result['result']['details']['tempo'] ?? 120,
+        ),
+      );
+
+      _currentProject = project;
+      _projectController.add(project);
+      _progressReporter.complete('MIDI extraction complete');
+
+      return project;
+    } catch (e) {
+      _progressReporter.error('Failed to extract MIDI: $e');
+      rethrow;
+    }
+  }
+
+  /// Play a specific track
+  Future<void> playTrack(String trackId) async {
+    if (_currentProject == null) {
+      throw Exception('No project loaded');
+    }
+
+    final track = _currentProject!.tracks
+        .firstWhere((t) => t.id == trackId);
+
+    // TODO: Implement MIDI playback
+    throw UnimplementedError('MIDI playback not implemented');
+  }
+
+  /// Stop playback
+  Future<void> stopPlayback() async {
+    // TODO: Implement MIDI playback
+    throw UnimplementedError('MIDI playback not implemented');
+  }
+
+  /// Export project to MIDI file
+  Future<void> exportToFile(String outputPath) async {
+    if (_currentProject == null) {
+      throw Exception('No project loaded');
+    }
+
+    try {
+      await MidiWriter.writeFile(_currentProject!, outputPath);
+    } catch (e) {
+      throw Exception('Failed to export MIDI file: $e');
+    }
+  }
+
+  /// Update extraction settings
+  void setExtractionSettings(MidiExtractionSettings settings) {
+    _extractionSettings = settings;
+  }
+
+  /// Update playback settings
+  void setPlaybackSettings(MidiPlaybackSettings settings) {
+    _playbackSettings = settings;
+  }
+
+  /// Parse notes from extraction result
+  List<MidiNote> _parseNotes(List<dynamic> noteData) {
+    return noteData.map((note) => MidiNote(
+      pitch: note['pitch'] as int,
+      velocity: note['velocity'] as int,
+      startTime: (note['start_time'] as num).toDouble(),
+      duration: (note['duration'] as num).toDouble(),
+    )).toList();
+  }
+
+  /// Clean up resources
+  void dispose() {
+    _extractorBridge.dispose();
+    _progressReporter.dispose();
+    _projectController.close();
+  }
+}
+
+// File: core\midi_engine\midi_extractor_bridge.dart
+----------------------------------------
+import 'dart:async';
+import 'dart:convert';
+import 'dart:io';
+import 'package:path/path.dart' as path;
+
+/// Bridge for communicating with Python MIDI extractor
+class MidiExtractorBridge {
+  String get _pythonScript {
+    // During tests, use the current working directory
+    final workingDir = Directory.current.path;
+    return path.join(workingDir, 'python', 'midi_extractor.py');
+  }
+  Process? _process;
+  bool _isInitialized = false;
+
+  /// Initialize the MIDI extractor
+  Future<void> initialize() async {
+    if (_isInitialized) return;
+
+    try {
+      // Check Python environment
+      print('Checking Python environment...');
+      final result = await Process.run('python', ['--version']);
+      print('Python version check result: ${result.stdout}');
+      if (result.exitCode != 0) {
+        print('Python version check failed: ${result.stderr}');
+        throw Exception('Python not found');
+      }
+
+      // Verify capabilities
+      print('Verifying MIDI extractor capabilities...');
+      print('Script path: $_pythonScript');
+      final process = await Process.start('python', [
+        _pythonScript,
+        'check_capabilities',
+      ]);
+
+      // Capture output for debugging
+      process.stdout.transform(utf8.decoder).listen((data) {
+        print('MIDI extractor stdout: $data');
+      });
+      process.stderr.transform(utf8.decoder).listen((data) {
+        print('MIDI extractor stderr: $data');
+      });
+
+      final exitCode = await process.exitCode;
+      if (exitCode != 0) {
+        print('MIDI extractor capability check failed with exit code: $exitCode');
+        throw Exception('Failed to initialize MIDI extractor');
+      }
+      print('MIDI extractor initialized successfully');
+
+      _isInitialized = true;
+    } catch (e) {
+      throw Exception('Failed to initialize MIDI extractor: $e');
+    }
+  }
+
+  /// Extract MIDI data from audio file
+  Future<Map<String, dynamic>> extractMidi(
+    String inputPath,
+    String outputPath, {
+    void Function(String)? onProgress,
+  }) async {
+    if (!_isInitialized) {
+      throw Exception('MIDI extractor not initialized');
+    }
+
+    try {
+      // Start Python process
+      _process = await Process.start('python', [
+        _pythonScript,
+        'extract_midi',
+        'input_path=$inputPath',
+        'output_path=$outputPath',
+      ]);
+
+      // Listen for progress updates
+      _process!.stderr.transform(utf8.decoder).listen((data) {
+        if (data.startsWith('INFO: ')) {
+          onProgress?.call(data.substring(6).trim());
+        }
+      });
+
+      // Get result
+      final output = await _process!.stdout
+          .transform(utf8.decoder)
+          .transform(const LineSplitter())
+          .where((line) => line.isNotEmpty)
+          .last;
+
+      final result = json.decode(output) as Map<String, dynamic>;
+
+      if (result['status'] == 'error') {
+        throw Exception(result['error']);
+      }
+
+      return result;
+    } catch (e) {
+      throw Exception('Failed to extract MIDI: $e');
+    } finally {
+      _process?.kill();
+      _process = null;
+    }
+  }
+
+  /// Clean up resources
+  void dispose() {
+    _process?.kill();
+    _process = null;
+    _isInitialized = false;
+  }
+}
+
+// File: core\midi_engine\midi_parser.dart
+----------------------------------------
+import 'dart:io';
+import 'dart:typed_data';
+import 'models.dart';
+
+/// Class responsible for parsing MIDI files and extracting note data
+class MidiParser {
+  /// Parse a MIDI file and extract note data
+  static Future<List<MidiNote>> parseFile(String filePath) async {
+    final file = File(filePath);
+    if (!await file.exists()) {
+      throw Exception('MIDI file not found: $filePath');
+    }
+
+    final bytes = await file.readAsBytes();
+    final data = ByteData.view(bytes.buffer);
+    final notes = <MidiNote>[];
+
+    try {
+      var offset = 0;
+      
+      // Read MIDI header
+      final headerChunk = _readChunk(data, offset);
+      offset = headerChunk.nextOffset;
+
+      // Verify MIDI format
+      if (headerChunk.id != 'MThd') {
+        throw Exception('Invalid MIDI file: Missing MThd header');
+      }
+
+      // Read track chunks
+      while (offset < data.lengthInBytes) {
+        final trackChunk = _readChunk(data, offset);
+        if (trackChunk.id == 'MTrk') {
+          final trackNotes = _parseTrackChunk(data, trackChunk);
+          notes.addAll(trackNotes);
+        }
+        offset = trackChunk.nextOffset;
+      }
+
+      return notes;
+    } catch (e) {
+      throw Exception('Failed to parse MIDI file: $e');
+    }
+  }
+
+  /// Read a MIDI chunk header
+  static ({String id, int length, int nextOffset}) _readChunk(ByteData data, int offset) {
+    final id = String.fromCharCodes([
+      data.getUint8(offset),
+      data.getUint8(offset + 1),
+      data.getUint8(offset + 2),
+      data.getUint8(offset + 3),
+    ]);
+
+    final length = data.getUint32(offset + 4);
+    final nextOffset = offset + 8 + length;
+
+    return (
+      id: id,
+      length: length,
+      nextOffset: nextOffset,
+    );
+  }
+
+  /// Parse a MIDI track chunk and extract notes
+  static List<MidiNote> _parseTrackChunk(ByteData data, ({String id, int length, int nextOffset}) chunk) {
+    final notes = <MidiNote>[];
+    var offset = chunk.nextOffset - chunk.length;
+    var time = 0.0;
+    final activeNotes = <int, ({int pitch, int velocity, double startTime})>{};
+
+    while (offset < chunk.nextOffset) {
+      // Read delta time
+      final deltaTime = _readVariableLengthQuantity(data, offset);
+      offset = deltaTime.nextOffset;
+      time += deltaTime.value / 480; // Assuming standard PPQN
+
+      // Read event
+      final status = data.getUint8(offset++);
+      final isNoteOn = (status & 0xF0) == 0x90;
+      final isNoteOff = (status & 0xF0) == 0x80;
+      
+      // Note on/off events
+      if (isNoteOn || isNoteOff) {
+        final pitch = data.getUint8(offset++);
+        final velocity = data.getUint8(offset++);
+        
+        // Note on with velocity > 0
+        if (isNoteOn && velocity > 0) {
+          activeNotes[pitch] = (
+            pitch: pitch,
+            velocity: velocity,
+            startTime: time,
+          );
+        }
+        // Note off or note on with velocity 0
+        else {
+          final startNote = activeNotes.remove(pitch);
+          if (startNote != null) {
+            notes.add(MidiNote(
+              pitch: startNote.pitch,
+              velocity: startNote.velocity,
+              startTime: startNote.startTime,
+              duration: time - startNote.startTime,
+            ));
+          }
+        }
+      }
+      // Skip other events
+      else if (status == 0xFF) {
+        // Meta event
+        offset++; // Skip type
+        final length = data.getUint8(offset++);
+        offset += length;
+      }
+      else if ((status & 0xF0) == 0xC0 || (status & 0xF0) == 0xD0) {
+        // Program change or Channel pressure
+        offset++;
+      }
+      else {
+        // Other events with 2 data bytes
+        offset += 2;
+      }
+    }
+
+    return notes;
+  }
+
+  /// Read a variable-length quantity from MIDI data
+  static ({int value, int nextOffset}) _readVariableLengthQuantity(ByteData data, int offset) {
+    var value = 0;
+    var currentByte = 0;
+    
+    do {
+      currentByte = data.getUint8(offset++);
+      value = (value << 7) | (currentByte & 0x7F);
+    } while ((currentByte & 0x80) != 0);
+
+    return (
+      value: value,
+      nextOffset: offset,
+    );
+  }
+}
+
+// File: core\midi_engine\midi_writer.dart
+----------------------------------------
+import 'dart:io';
+import 'dart:typed_data';
+import 'models.dart';
+
+/// Class responsible for writing MIDI files
+class MidiWriter {
+  static const int _midiFormat = 1; // Multiple tracks
+  static const int _division = 480; // Standard PPQN
+
+  /// Write a MidiProject to a MIDI file
+  static Future<void> writeFile(MidiProject project, String filePath) async {
+    final builder = BytesBuilder();
+    
+    try {
+      // Write header chunk
+      _writeHeaderChunk(builder, project.tracks.length);
+
+      // Write track chunks
+      for (final track in project.tracks) {
+        _writeTrackChunk(builder, track, project.metadata);
+      }
+
+      // Write to file
+      final file = File(filePath);
+      await file.writeAsBytes(builder.takeBytes());
+    } catch (e) {
+      throw Exception('Failed to write MIDI file: $e');
+    }
+  }
+
+  /// Write MIDI header chunk
+  static void _writeHeaderChunk(BytesBuilder builder, int numTracks) {
+    // Chunk ID: MThd
+    builder.add([0x4D, 0x54, 0x68, 0x64]);
+    
+    // Chunk length: 6
+    builder.add([0x00, 0x00, 0x00, 0x06]);
+    
+    // Format: 1 (multiple tracks)
+    builder.add([0x00, _midiFormat]);
+    
+    // Number of tracks
+    builder.add([0x00, numTracks]);
+    
+    // Division (PPQN)
+    builder.add([(_division >> 8) & 0xFF, _division & 0xFF]);
+  }
+
+  /// Write MIDI track chunk
+  static void _writeTrackChunk(
+    BytesBuilder builder,
+    MidiTrack track,
+    MidiMetadata metadata,
+  ) {
+    final trackBuilder = BytesBuilder();
+    
+    // Write tempo meta event
+    _writeMetaEvent(
+      trackBuilder,
+      0, // Delta time
+      0x51, // Tempo
+      _tempoToBytes(metadata.tempo),
+    );
+
+    // Write time signature if specified
+    final numerator = metadata.timeSignatureNumerator;
+    final denominator = metadata.timeSignatureDenominator;
+    if (numerator != null && denominator != null &&
+        numerator > 0 && denominator > 0) {
+      _writeMetaEvent(
+        trackBuilder,
+        0,
+        0x58, // Time signature
+        [
+          numerator,
+          _log2(denominator),
+          24, // MIDI clocks per metronome click
+          8,  // 32nd notes per quarter note
+        ],
+      );
+    }
+
+    // Sort notes by start time
+    final sortedNotes = List<MidiNote>.from(track.notes)
+      ..sort((a, b) => a.startTime.compareTo(b.startTime));
+
+    // Write note events
+    var currentTime = 0.0;
+    for (final note in sortedNotes) {
+      final deltaTime = (note.startTime - currentTime) * _division;
+      currentTime = note.startTime;
+
+      // Note on
+      _writeVarLength(trackBuilder, deltaTime.round());
+      trackBuilder.add([
+        0x90 | (track.channel & 0x0F), // Note on, channel
+        note.pitch & 0x7F,
+        note.velocity & 0x7F,
+      ]);
+
+      // Note off
+      final duration = note.duration * _division;
+      _writeVarLength(trackBuilder, duration.round());
+      trackBuilder.add([
+        0x80 | (track.channel & 0x0F), // Note off, channel
+        note.pitch & 0x7F,
+        0x40, // Release velocity
+      ]);
+    }
+
+    // Write end of track
+    _writeMetaEvent(trackBuilder, 0, 0x2F, []);
+
+    // Write track chunk header
+    builder.add([0x4D, 0x54, 0x72, 0x6B]); // MTrk
+    final length = trackBuilder.length;
+    builder.add([
+      (length >> 24) & 0xFF,
+      (length >> 16) & 0xFF,
+      (length >> 8) & 0xFF,
+      length & 0xFF,
+    ]);
+
+    // Write track data
+    builder.add(trackBuilder.takeBytes());
+  }
+
+  /// Write variable length value
+  static void _writeVarLength(BytesBuilder builder, int value) {
+    if (value < 0) value = 0;
+    
+    final bytes = <int>[];
+    bytes.add(value & 0x7F);
+    
+    while ((value >>= 7) > 0) {
+      bytes.add((value & 0x7F) | 0x80);
+    }
+
+    // Convert reversed bytes to list
+    builder.add(bytes.reversed.toList());
+  }
+
+  /// Write meta event
+  static void _writeMetaEvent(
+    BytesBuilder builder,
+    int deltaTime,
+    int type,
+    List<int> data,
+  ) {
+    _writeVarLength(builder, deltaTime);
+    builder.add([0xFF, type]); // Meta event marker and type
+    _writeVarLength(builder, data.length);
+    builder.add(data);
+  }
+
+  /// Convert tempo (BPM) to MIDI tempo bytes (microseconds per quarter note)
+  static List<int> _tempoToBytes(int bpm) {
+    final microsecondsPerBeat = (60000000 / bpm).round();
+    return [
+      (microsecondsPerBeat >> 16) & 0xFF,
+      (microsecondsPerBeat >> 8) & 0xFF,
+      microsecondsPerBeat & 0xFF,
+    ];
+  }
+
+  /// Calculate log base 2 of a number (for time signature)
+  static int _log2(int value) {
+    var result = 0;
+    while (value > 1) {
+      value ~/= 2;
+      result++;
+    }
+    return result;
+  }
+}
+
+// File: core\midi_engine\models.dart
+----------------------------------------
+/// Settings for MIDI extraction
+class MidiExtractionSettings {
+  /// Onset detection threshold (0.0 to 1.0)
+  final double onsetThreshold;
+
+  /// Frame-level threshold (0.0 to 1.0)
+  final double frameThreshold;
+
+  /// Minimum note length in milliseconds
+  final double minNoteLength;
+
+  /// Minimum frequency in Hz
+  final double minimumFrequency;
+
+  /// Maximum frequency in Hz
+  final double maximumFrequency;
+
+  /// Whether to use multiple pitch bends
+  final bool multiplePitchBends;
+
+  /// Whether to use the Melodia trick for better melody extraction
+  final bool melodiaTrick;
+
+  const MidiExtractionSettings({
+    this.onsetThreshold = 0.5,
+    this.frameThreshold = 0.3,
+    this.minNoteLength = 50.0,
+    this.minimumFrequency = 20.0,
+    this.maximumFrequency = 2000.0,
+    this.multiplePitchBends = false,
+    this.melodiaTrick = true,
+  });
+}
+
+/// Settings for MIDI playback
+class MidiPlaybackSettings {
+  /// Playback tempo in BPM
+  final double tempo;
+
+  /// Whether to loop playback
+  final bool loopEnabled;
+
+  /// Playback volume (0.0 to 1.0)
+  final double volume;
+
+  const MidiPlaybackSettings({
+    this.tempo = 120.0,
+    this.loopEnabled = false,
+    this.volume = 1.0,
+  });
+}
+
+/// Represents a MIDI project containing multiple tracks
+class MidiProject {
+  /// Unique identifier for the project
+  final String id;
+
+  /// List of MIDI tracks in the project
+  final List<MidiTrack> tracks;
+
+  /// Project metadata
+  final MidiMetadata metadata;
+
+  const MidiProject({
+    required this.id,
+    required this.tracks,
+    required this.metadata,
+  });
+
+  /// Create a MidiProject from JSON
+  factory MidiProject.fromJson(Map<String, dynamic> json) {
+    return MidiProject(
+      id: json['id'] as String,
+      tracks: (json['tracks'] as List)
+          .map((track) => MidiTrack.fromJson(track as Map<String, dynamic>))
+          .toList(),
+      metadata: MidiMetadata.fromJson(json['metadata'] as Map<String, dynamic>),
+    );
+  }
+
+  /// Convert MidiProject to JSON
+  Map<String, dynamic> toJson() {
+    return {
+      'id': id,
+      'tracks': tracks.map((track) => track.toJson()).toList(),
+      'metadata': metadata.toJson(),
+    };
+  }
+}
+
+/// Represents a single MIDI track
+class MidiTrack {
+  /// Unique identifier for the track
+  final String id;
+
+  /// Track name
+  final String name;
+
+  /// List of MIDI notes in the track
+  final List<MidiNote> notes;
+
+  /// MIDI channel (0-15)
+  final int channel;
+
+  /// Whether the track is muted
+  final bool muted;
+
+  /// Whether the track is soloed
+  final bool soloed;
+
+  const MidiTrack({
+    required this.id,
+    required this.name,
+    required this.notes,
+    this.channel = 0,
+    this.muted = false,
+    this.soloed = false,
+  });
+
+  /// Create a MidiTrack from JSON
+  factory MidiTrack.fromJson(Map<String, dynamic> json) {
+    return MidiTrack(
+      id: json['id'] as String,
+      name: json['name'] as String,
+      notes: (json['notes'] as List)
+          .map((note) => MidiNote.fromJson(note as Map<String, dynamic>))
+          .toList(),
+      channel: json['channel'] as int? ?? 0,
+      muted: json['muted'] as bool? ?? false,
+      soloed: json['soloed'] as bool? ?? false,
+    );
+  }
+
+  /// Convert MidiTrack to JSON
+  Map<String, dynamic> toJson() {
+    return {
+      'id': id,
+      'name': name,
+      'notes': notes.map((note) => note.toJson()).toList(),
+      'channel': channel,
+      'muted': muted,
+      'soloed': soloed,
+    };
+  }
+}
+
+/// Represents a single MIDI note
+class MidiNote {
+  /// MIDI note number (0-127)
+  final int pitch;
+
+  /// Note velocity (0-127)
+  final int velocity;
+
+  /// Start time in seconds
+  final double startTime;
+
+  /// Duration in seconds
+  final double duration;
+
+  const MidiNote({
+    required this.pitch,
+    required this.velocity,
+    required this.startTime,
+    required this.duration,
+  });
+
+  /// Create a MidiNote from JSON
+  factory MidiNote.fromJson(Map<String, dynamic> json) {
+    return MidiNote(
+      pitch: json['pitch'] as int,
+      velocity: json['velocity'] as int,
+      startTime: (json['startTime'] as num).toDouble(),
+      duration: (json['duration'] as num).toDouble(),
+    );
+  }
+
+  /// Convert MidiNote to JSON
+  Map<String, dynamic> toJson() {
+    return {
+      'pitch': pitch,
+      'velocity': velocity,
+      'startTime': startTime,
+      'duration': duration,
+    };
+  }
+}
+
+/// Metadata for a MIDI project
+class MidiMetadata {
+  /// Project title
+  final String title;
+
+  /// Artist name
+  final String? artist;
+
+  /// Project tempo in BPM
+  final int tempo;
+
+  /// Time signature numerator
+  final int? timeSignatureNumerator;
+
+  /// Time signature denominator
+  final int? timeSignatureDenominator;
+
+  const MidiMetadata({
+    required this.title,
+    this.artist,
+    this.tempo = 120,
+    this.timeSignatureNumerator,
+    this.timeSignatureDenominator,
+  });
+
+  /// Create MidiMetadata from JSON
+  factory MidiMetadata.fromJson(Map<String, dynamic> json) {
+    return MidiMetadata(
+      title: json['title'] as String,
+      artist: json['artist'] as String?,
+      tempo: json['tempo'] as int? ?? 120,
+      timeSignatureNumerator: json['timeSignatureNumerator'] as int?,
+      timeSignatureDenominator: json['timeSignatureDenominator'] as int?,
+    );
+  }
+
+  /// Convert MidiMetadata to JSON
+  Map<String, dynamic> toJson() {
+    return {
+      'title': title,
+      'artist': artist,
+      'tempo': tempo,
+      'timeSignatureNumerator': timeSignatureNumerator,
+      'timeSignatureDenominator': timeSignatureDenominator,
+    };
+  }
+}
+
+
+// File: core\midi_engine\progress_reporter.dart
+----------------------------------------
+import 'dart:async';
+
+/// Progress reporter for MIDI operations
+class ProgressReporter {
+  final StreamController<ProgressUpdate> _controller = StreamController<ProgressUpdate>.broadcast();
+  bool _isActive = false;
+
+  /// Stream of progress updates
+  Stream<ProgressUpdate> get updates => _controller.stream;
+
+  /// Start a new operation
+  void start() {
+    _isActive = true;
+  }
+
+  /// Report progress for the current operation
+  void report(String message, double progress) {
+    if (!_isActive) return;
+    
+    _controller.add(ProgressUpdate(
+      message: message,
+      progress: progress.clamp(0.0, 1.0),
+    ));
+  }
+
+  /// Report an error
+  void error(String message) {
+    if (!_isActive) return;
+    
+    _controller.add(ProgressUpdate(
+      message: message,
+      progress: 1.0,
+      error: message,
+    ));
+    _isActive = false;
+  }
+
+  /// Mark the current operation as complete
+  void complete(String message) {
+    if (!_isActive) return;
+    
+    _controller.add(ProgressUpdate(
+      message: message,
+      progress: 1.0,
+      isComplete: true,
+    ));
+    _isActive = false;
+  }
+
+  /// Clean up resources
+  void dispose() {
+    _controller.close();
+  }
+}
+
+/// Progress update for MIDI operations
+class ProgressUpdate {
+  /// Current status message
+  final String message;
+
+  /// Progress value (0.0 to 1.0)
+  final double progress;
+
+  /// Error message if operation failed
+  final String? error;
+
+  /// Whether the operation is complete
+  final bool isComplete;
+
+  const ProgressUpdate({
+    required this.message,
+    required this.progress,
+    this.error,
+    this.isComplete = false,
+  });
+}
+
+// File: services\audio_processing\audio_service.dart
+----------------------------------------
+import 'dart:convert';
+import 'dart:io';
+import 'package:path/path.dart' as path;
+import 'package:path_provider/path_provider.dart';
+
+class AudioService {
+  static const String _pythonScript = 'processor.py';
+  static const String _pythonCommand = 'python';
+  static const String _venvPath = 'venv';
+
+  Future<void> _verifyPythonSetup() async {
+    try {
+      final result = await _runPythonCommand(['--version']);
+      print('Python version check result: $result');
+
+      // Check Python capabilities
+      final capabilities = await _runPythonCommand([
+        path.join(Directory.current.path, 'python', _pythonScript),
+        'check_capabilities',
+      ]);
+      print('Capabilities check result: $capabilities');
+
+      if (capabilities.contains('ERROR:')) {
+        throw Exception('Failed to verify Python capabilities: $capabilities');
+      }
+    } catch (e) {
+      print('Error verifying Python setup: $e');
+      // Don't throw here, just log the error
+      // This allows the app to continue even if verification fails
+    }
+  }
+
+  Future<String> _runPythonCommand(List<String> args) async {
+    String pythonPath;
+    if (Platform.isWindows) {
+      pythonPath = path.join(Directory.current.path, _venvPath, 'Scripts', 'python.exe');
+    } else {
+      pythonPath = path.join(Directory.current.path, _venvPath, 'bin', 'python');
+    }
+
+    try {
+      final result = await Process.run(pythonPath, args);
+      if (result.exitCode != 0) {
+        throw Exception('Command failed with exit code ${result.exitCode}: ${result.stderr}');
+      }
+      return result.stdout.toString();
+    } catch (e) {
+      print('Error running Python command: $e');
+      rethrow;
+    }
+  }
+
+  Future<Map<String, dynamic>> separateStems({
+    required String inputPath,
+    required String outputDir,
+  }) async {
+    try {
+      // Verify Python setup (but don't fail if it fails)
+      await _verifyPythonSetup();
+
+      print('Input file: $inputPath');
+      print('Output directory: $outputDir');
+
+      // Prepare command arguments
+      final args = [
+        path.join(Directory.current.path, 'python', _pythonScript),
+        'separate_stems',
+        'input_path="$inputPath"',
+        'output_dir="$outputDir"',
+      ];
+
+      print('Processing audio file: "$inputPath"');
+      print('Output directory: "$outputDir"');
+      print('\n=== Audio Processing Debug Info ===');
+      print('Command: ${[pythonPath, ...args].join(' ')}');
+      print('\nWorking directory: ${Directory.current.path}');
+
+      // Run the command and capture output
+      final result = await Process.run(pythonPath, args);
+      
+      print('\nPython stderr output:');
+      print(result.stderr);
+      print('\nPython stdout output:');
+      print(result.stdout);
+      print('\nExit code: ${result.exitCode}');
+      print('================================\n');
+
+      if (result.exitCode != 0) {
+        throw Exception(result.stderr.toString());
+      }
+
+      // Parse JSON output
+      final jsonStr = result.stdout.toString().trim();
+      final jsonResult = json.decode(jsonStr);
+
+      if (jsonResult['status'] != 'success') {
+        throw Exception(jsonResult['error'] ?? 'Unknown error during stem separation');
+      }
+
+      return jsonResult['result'] as Map<String, dynamic>;
+    } catch (e) {
+      print('Error during stem separation: $e');
+      rethrow;
+    }
+  }
+
+  String get pythonPath {
+    if (Platform.isWindows) {
+      return path.join(Directory.current.path, _venvPath, 'Scripts', 'python.exe');
+    } else {
+      return path.join(Directory.current.path, _venvPath, 'bin', 'python');
+    }
+  }
+}
+
+// File: ui\screens\home_screen.dart
+----------------------------------------
+import 'package:flutter/material.dart';
+import 'package:file_picker/file_picker.dart';
+import 'package:path_provider/path_provider.dart';
+import 'package:path/path.dart' as path;
+import 'dart:io';
+import '../../services/audio_processing/audio_service.dart';
+import '../../core/midi_engine/midi_engine.dart';
+import '../widgets/lol_loading_dialog.dart';
+import '../widgets/multi_stem_player.dart';
+import '../../data/lol_taglines.dart';
+
+const _processingMessages = [
+  'Loading PyTorch engine...',
+  'Initializing SoundFile processor...',
+  'Loading Demucs model...',
+  'Starting stem separation...',
+  'Processing audio file...',
+  'Applying source separation...',
+  'Almost there, hang tight...',
+];
+
+class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key});
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  final AudioService _audioService = AudioService();
+  final MidiEngine _midiEngine = MidiEngine();
+  String? _selectedFilePath;
+  String _statusMessage = '';
+
+  @override
+  void initState() {
+    super.initState();
+    _initializeMidiEngine();
+  }
+
+  Future<void> _initializeMidiEngine() async {
+    try {
+      await _midiEngine.initialize();
+    } catch (e) {
+      setState(() {
+        _statusMessage = 'Error initializing MIDI engine: $e';
+      });
+    }
+  }
+
+  @override
+  void dispose() {
+    _midiEngine.dispose();
+    super.dispose();
+  }
+
+  Future<void> _selectFile() async {
+    try {
+      FilePickerResult? result = await FilePicker.platform.pickFiles(
+        type: FileType.custom,
+        allowedExtensions: ['wav', 'mp3', 'flac', 'ogg'],
+      );
+
+      if (result != null) {
+        final filePath = result.files.single.path;
+        // Normalize the file path
+        final normalizedPath = path.normalize(filePath!);
+        
+        // Verify file exists and is readable
+        final file = File(normalizedPath);
+        if (!await file.exists()) {
+          setState(() {
+            _statusMessage = 'Error: Selected file does not exist';
+          });
+          return;
+        }
+
+        setState(() {
+          _selectedFilePath = normalizedPath;
+          _statusMessage = 'Selected file: ${result.files.single.name}';
+        });
+      }
+    } catch (e) {
+      setState(() {
+        _statusMessage = 'Error selecting file: $e';
+      });
+    }
+  }
+
+  Future<void> _showStemPlayer(Map<String, dynamic> result) async {
+    try {
+      print('Preparing to show stem player with result: $result');
+      final Map<String, String> stems = (result['stems']! as Map<String, dynamic>).cast<String, String>();
+      print('Converted stems map: $stems');
+      
+      final stemsList = stems.entries.map((e) {
+        final name = path.basenameWithoutExtension(e.key);
+        // Convert forward slashes to platform-specific separator
+        final stemPath = e.value.replaceAll('/', Platform.pathSeparator);
+        print('Processing stem - name: $name, path: $stemPath');
+        
+        // Verify the stem file exists
+        final stemFile = File(stemPath);
+        if (!stemFile.existsSync()) {
+          throw Exception('Stem file not found: $stemPath');
+        }
+        
+        // Verify the file is readable
+        if (!stemFile.lengthSync().isFinite) {
+          throw Exception('Invalid stem file: $stemPath');
+        }
+        
+        return {
+          'name': name,
+          'path': stemPath
+        };
+      }).toList();
+
+      print('Created stemsList with ${stemsList.length} items: $stemsList');
+
+      if (!mounted) {
+        print('Widget no longer mounted before showing dialog');
+        return;
+      }
+
+      print('Showing stem player dialog');
+      await showDialog(
+        context: context,
+        barrierDismissible: true,
+        builder: (_) => Dialog(
+          child: LayoutBuilder(
+            builder: (context, constraints) {
+              return Container(
+                width: constraints.maxWidth * 0.8,
+                height: constraints.maxHeight * 0.8,
+                padding: const EdgeInsets.all(16.0),
+                child: Column(
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        const Text(
+                          'Separated Stems',
+                          style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        IconButton(
+                          icon: const Icon(Icons.close),
+                          onPressed: () => Navigator.of(context).pop(),
+                        ),
+                      ],
+                    ),
+                    const Divider(),
+                    Expanded(
+                      child: MultiStemPlayer(
+                        stemPaths: stemsList,
+                        midiEngine: _midiEngine,
+                      ),
+                    ),
+                  ],
+                ),
+              );
+            },
+          ),
+        ),
+      );
+    } catch (e) {
+      print('Error showing stem player: $e');
+      setState(() {
+        _statusMessage = 'Error showing stem player: $e';
+      });
+    }
+  }
+
+  Future<void> _processStemSeparation() async {
+    if (_selectedFilePath == null) {
+      setState(() {
+        _statusMessage = 'Please select an audio file first';
+      });
+      return;
+    }
+
+    // Show the loading dialog
+    if (!mounted) return;
+    showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (_) => LolLoadingDialog(
+        title: 'Separating Stems',
+        messages: [
+          ...domainTaglines,
+          ..._processingMessages,
+        ],
+      ),
+    );
+
+    setState(() {
+      _statusMessage = 'Starting stem separation...';
+    });
+
+    String? errorMessage;
+    String? resultMessage;
+    Map<String, dynamic>? result;
+    
+    try {
+      // Get application documents directory and create stems subdirectory
+      final appDir = await getApplicationDocumentsDirectory();
+      final stemsBaseDir = Directory(path.join(appDir.path, 'stems'));
+      await stemsBaseDir.create(recursive: true);
+
+      // Create a unique directory for this file's stems
+      final fileName = path.basenameWithoutExtension(_selectedFilePath!);
+      final timestamp = DateTime.now().millisecondsSinceEpoch;
+      final stemsDir = path.join(stemsBaseDir.path, '${fileName}_$timestamp');
+      
+      print('Input file: $_selectedFilePath');
+      print('Output directory: $stemsDir');
+
+      result = await _audioService.separateStems(
+        inputPath: _selectedFilePath!,
+        outputDir: stemsDir,
+      );
+
+      resultMessage = 'Stem separation complete!\n'
+          'Stems saved to: $stemsDir\n'
+          'Generated stems: ${(result['stems'] as Map).keys.join(', ')}';
+    } catch (e) {
+      // Extract actual error message from the full exception
+      final fullError = e.toString();
+      final errorMatch = RegExp(r'Exception: (.+?)\nINFO:').firstMatch(fullError);
+      errorMessage = errorMatch?.group(1) ?? 'Failed to separate stems';
+      
+      // Extract progress messages
+      final infoMessages = RegExp(r'INFO: ([^\n]+)')
+          .allMatches(fullError)
+          .map((m) => m.group(1) ?? '')
+          .where((msg) => msg.isNotEmpty)
+          .toList();
+
+      if (!mounted) return;
+
+      // Close the current dialog
+      Navigator.of(context).pop();
+
+      // Show error dialog with progress info
+      showDialog(
+        context: context,
+        barrierDismissible: false,
+        builder: (_) => LolLoadingDialog(
+          title: 'Separation Failed',
+          messages: [
+            ...infoMessages,
+            'Oops! Something went wrong...',
+            'Checking the error logs...',
+            'Attempting to recover...',
+          ],
+          errorMessage: errorMessage,
+          onClose: () {
+            Navigator.of(context).pop();
+            setState(() {
+              _statusMessage = 'Error processing audio: $errorMessage';
+            });
+          },
+        ),
+      );
+      return;
+    }
+
+    if (!mounted) return;
+
+    // Close the current dialog and wait for animation
+    Navigator.of(context).pop();
+    await Future.delayed(const Duration(milliseconds: 300));
+
+    setState(() {
+      _statusMessage = resultMessage ?? 'Stem separation completed';
+    });
+
+    print('Loading dialog dismissed, preparing to show stem player');
+    // Show the MultiStemPlayer dialog
+    if (!mounted || result == null || result['stems'] == null) {
+      print('Cannot show stem player - mounted: $mounted, result: ${result?.toString()}, stems: ${result?['stems']}');
+      return;
+    }
+
+    await _showStemPlayer(result);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('MidiStems'),
+        centerTitle: true,
+      ),
+      body: Center(
+        child: Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Text(
+                'Separate Audio into Stems',
+                style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              const SizedBox(height: 10),
+              const Text(
+                'Supported formats: WAV, MP3, FLAC, OGG',
+                style: TextStyle(
+                  fontSize: 14,
+                  color: Colors.grey,
+                ),
+              ),
+              const SizedBox(height: 30),
+              ElevatedButton.icon(
+                icon: const Icon(Icons.audio_file),
+                label: const Text('Select Audio File'),
+                onPressed: _selectFile,
+                style: ElevatedButton.styleFrom(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 30,
+                    vertical: 15,
+                  ),
+                ),
+              ),
+              const SizedBox(height: 20),
+              ElevatedButton.icon(
+                icon: const Icon(Icons.splitscreen),
+                label: const Text('Separate Stems'),
+                onPressed: _selectedFilePath == null ? null : _processStemSeparation,
+                style: ElevatedButton.styleFrom(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 30,
+                    vertical: 15,
+                  ),
+                ),
+              ),
+              const SizedBox(height: 30),
+              if (_statusMessage.isNotEmpty)
+                Container(
+                  margin: const EdgeInsets.only(top: 20),
+                  padding: const EdgeInsets.all(16.0),
+                  decoration: BoxDecoration(
+                    color: Theme.of(context).colorScheme.surfaceVariant,
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  child: Text(
+                    _statusMessage,
+                    textAlign: TextAlign.center,
+                    style: Theme.of(context).textTheme.bodyLarge,
+                  ),
+                ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+// File: ui\widgets\lol_loading_dialog.dart
+----------------------------------------
+import 'dart:async';
+import 'package:flutter/material.dart';
+import 'package:flutter/gestures.dart';
+import 'package:url_launcher/url_launcher.dart';
+import '../../data/lol_taglines.dart';
+
+class LolLoadingDialog extends StatefulWidget {
+  final String title;
+  final Duration messageInterval;
+  final List<String> messages;
+  final String? errorMessage;
+  final VoidCallback? onClose;
+
+  const LolLoadingDialog({
+    Key? key,
+    required this.title,
+    required this.messages,
+    this.messageInterval = const Duration(seconds: 3),
+    this.errorMessage,
+    this.onClose,
+  }) : super(key: key);
+
+  @override
+  _LolLoadingDialogState createState() => _LolLoadingDialogState();
+}
+
+class _LolLoadingDialogState extends State<LolLoadingDialog> {
+  late Timer _timer;
+  int _currentMessageIndex = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    // Cycle through the messages periodically
+    _timer = Timer.periodic(widget.messageInterval, (timer) {
+      setState(() {
+        _currentMessageIndex = (_currentMessageIndex + 1) % widget.messages.length;
+      });
+    });
+  }
+
+  @override
+  void dispose() {
+    _timer.cancel();
+    super.dispose();
+  }
+
+  Future<void> _launchUrl(String domain) async {
+    final url = Uri.parse('https://$domain');
+    if (!await launchUrl(url, mode: LaunchMode.externalApplication)) {
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Could not launch $domain')),
+        );
+      }
+    }
+  }
+
+  Widget _buildMessage(String message, ThemeData theme) {
+    if (message.contains('=>')) {
+      final domain = getDomain(message);
+      final text = getMessage(message);
+      
+      return RichText(
+        textAlign: TextAlign.center,
+        text: TextSpan(
+          children: [
+            TextSpan(
+              text: domain,
+              style: theme.textTheme.titleMedium?.copyWith(
+                color: Colors.lightBlueAccent,
+                decoration: TextDecoration.underline,
+              ),
+              recognizer: TapGestureRecognizer()
+                ..onTap = () => _launchUrl(domain),
+            ),
+            TextSpan(
+              text: ' => $text',
+              style: theme.textTheme.titleMedium?.copyWith(
+                color: Colors.white70,
+                fontStyle: FontStyle.italic,
+              ),
+            ),
+          ],
+        ),
+      );
+    }
+
+    return Text(
+      message,
+      textAlign: TextAlign.center,
+      style: theme.textTheme.titleMedium?.copyWith(
+        color: Colors.white70,
+        fontStyle: FontStyle.italic,
+      ),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final hasError = widget.errorMessage != null;
+
+    return Dialog(
+      elevation: 10,
+      backgroundColor: Colors.black87,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+      child: Padding(
+        padding: const EdgeInsets.all(24.0),
+        child: IntrinsicHeight(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text(
+                widget.title,
+                textAlign: TextAlign.center,
+                style: theme.textTheme.titleLarge?.copyWith(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
+                ),
+              ),
+              const SizedBox(height: 16),
+              if (!hasError) ...[
+                // Custom progress indicator
+                const _LolProgressIndicator(),
+                const SizedBox(height: 16),
+                // The rotating message with clickable domain
+                _buildMessage(widget.messages[_currentMessageIndex], theme),
+              ] else ...[
+                const Icon(
+                  Icons.error_outline,
+                  color: Colors.redAccent,
+                  size: 48,
+                ),
+                const SizedBox(height: 16),
+                Text(
+                  widget.errorMessage!,
+                  textAlign: TextAlign.center,
+                  style: theme.textTheme.titleMedium?.copyWith(
+                    color: Colors.redAccent,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+                const SizedBox(height: 16),
+                TextButton(
+                  onPressed: widget.onClose ?? () => Navigator.of(context).pop(),
+                  child: Text(
+                    'Close',
+                    style: theme.textTheme.bodyMedium?.copyWith(
+                      color: Colors.redAccent,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+              ],
+              if (!hasError) ...[
+                const SizedBox(height: 16),
+                Text(
+                  'A proud product of the lol multiverse!',
+                  textAlign: TextAlign.center,
+                  style: theme.textTheme.bodySmall?.copyWith(color: Colors.white54),
+                ),
+                TextButton(
+                  onPressed: () => _launchUrl('loltiverse.com/lol'),
+                  child: Text(
+                    'Visit loltiverse.com/lol',
+                    style: theme.textTheme.bodyMedium?.copyWith(
+                      color: Colors.lightBlueAccent,
+                      decoration: TextDecoration.underline,
+                    ),
+                  ),
+                ),
+              ],
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+/// A custom progress indicator that stands out visually.
+class _LolProgressIndicator extends StatelessWidget {
+  const _LolProgressIndicator();
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: 50,
+      width: 50,
+      child: Stack(
+        alignment: Alignment.center,
+        children: [
+          CircularProgressIndicator(
+            strokeWidth: 6,
+            valueColor: AlwaysStoppedAnimation<Color>(
+              Colors.pinkAccent,
+            ),
+            backgroundColor: Colors.white24,
+          ),
+          const Icon(
+            Icons.tag_faces,
+            color: Colors.pinkAccent,
+            size: 24,
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+// File: ui\widgets\multi_stem_player.dart
+----------------------------------------
+import 'package:flutter/material.dart';
+import 'package:just_audio/just_audio.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'dart:async';
+import 'dart:io';
+import '../../core/midi_engine/midi_engine.dart';
+import 'stem_midi_controls.dart';
+
+class MultiStemPlayer extends StatefulWidget {
+  final List<Map<String, String>> stemPaths;
+  final MidiEngine midiEngine;
+
+  const MultiStemPlayer({
+    Key? key,
+    required this.stemPaths,
+    required this.midiEngine,
+  }) : super(key: key);
+
+  @override
+  State<MultiStemPlayer> createState() => _MultiStemPlayerState();
+}
+
+class _MultiStemPlayerState extends State<MultiStemPlayer> {
+  final List<AudioPlayer> _players = [];
+  StreamSubscription<Duration>? _positionSubscription;
+  String? _error;
+  bool _isInitialized = false;
+  String? _currentlyLoadingStem;
+
+  AudioPlayer? get masterPlayer => _players.isNotEmpty ? _players[0] : null;
+  Duration _currentPosition = Duration.zero;
+
+  @override
+  void initState() {
+    super.initState();
+    _initializePlayers();
+  }
+
+  Future<void> _initializePlayers() async {
+    try {
+      print('Starting player initialization');
+      print('Number of stems to load: ${widget.stemPaths.length}');
+
+      for (var i = 0; i < widget.stemPaths.length; i++) {
+        final stem = widget.stemPaths[i];
+        setState(() {
+          _currentlyLoadingStem = stem['name'];
+        });
+        
+        try {
+          print('Initializing stem ${i + 1}/${widget.stemPaths.length}: ${stem['name']}');
+          await _initializePlayer(stem).timeout(
+            const Duration(seconds: 10),
+            onTimeout: () {
+              throw TimeoutException('Audio initialization timed out');
+            },
+          );
+          
+          if (i < widget.stemPaths.length - 1) {
+            print('Adding delay before next stem');
+            await Future.delayed(const Duration(milliseconds: 300));
+          }
+        } catch (e) {
+          print('Error initializing player: $e');
+          rethrow;
+        }
+      }
+
+      print('All players loaded successfully');
+
+      if (masterPlayer != null) {
+        print('Setting up master player position subscription');
+        _positionSubscription = masterPlayer!.positionStream.listen((Duration newPos) {
+          if (mounted) {
+            setState(() {
+              _currentPosition = newPos;
+              for (int i = 1; i < _players.length; i++) {
+                final isPlaying = _players[i].playing;
+                if (isPlaying) {
+                  _players[i].seek(_currentPosition);
+                }
+              }
+            });
+          }
+        });
+      }
+
+      if (mounted) {
+        setState(() {
+          _isInitialized = true;
+          _currentlyLoadingStem = null;
+          print('Player initialization complete');
+        });
+      } else {
+        print('Widget no longer mounted after initialization');
+      }
+    } catch (e) {
+      print('Error initializing audio players: $e');
+      if (mounted) {
+        setState(() {
+          _error = 'Error loading audio files: $e';
+          _currentlyLoadingStem = null;
+        });
+      }
+    }
+  }
+
+  Future<void> _initializePlayer(Map<String, String> stem) async {
+    final player = AudioPlayer();
+    try {
+      final filePath = stem['path']!.replaceAll(r'\', '/');
+      
+      final file = File(filePath);
+      if (!await file.exists()) {
+        throw Exception('Audio file not found: $filePath');
+      }
+
+      final uri = Uri.file(filePath, windows: Platform.isWindows);
+      print('Creating audio source for: ${uri.toFilePath()}');
+      
+      final completer = Completer<void>();
+      
+      player.playbackEventStream.listen(
+        (event) {},
+        onError: (Object e, StackTrace st) {
+          if (!completer.isCompleted) {
+            completer.completeError(e);
+          }
+        },
+      );
+      
+      Timer(const Duration(seconds: 10), () {
+        if (!completer.isCompleted) {
+          completer.completeError(TimeoutException('Audio initialization timed out'));
+        }
+      });
+
+      final audioSource = AudioSource.uri(uri);
+      print('Setting audio source with initial position');
+      
+      await player.setAudioSource(
+        audioSource,
+        initialPosition: Duration.zero,
+      ).then((_) {
+        if (!completer.isCompleted) {
+          completer.complete();
+        }
+      }).catchError((e) {
+        if (!completer.isCompleted) {
+          completer.completeError(e);
+        }
+      });
+
+      await completer.future;
+      
+      final duration = await player.duration;
+      if (duration == null) {
+        throw Exception('Failed to load audio file - invalid format or corrupted file');
+      }
+      
+      print('Successfully loaded audio file: ${uri.toFilePath()}');
+      print('Duration: $duration');
+      
+      if (Platform.isWindows && !player.playing) {
+        await player.seek(Duration.zero);
+      }
+      
+      _players.add(player);
+    } catch (e) {
+      await player.dispose();
+      print('Error loading individual audio file: $e');
+      throw Exception('Failed to load audio file: ${stem['path']} - $e');
+    }
+  }
+
+  @override
+  void dispose() {
+    _positionSubscription?.cancel();
+    for (var player in _players) {
+      player.dispose();
+    }
+    super.dispose();
+  }
+
+  Future<void> _togglePlay(int index) async {
+    if (!_isInitialized) return;
+
+    try {
+      final player = _players[index];
+      final isPlaying = player.playing;
+
+      if (!isPlaying) {
+        if (masterPlayer != null && masterPlayer!.playing) {
+          await player.seek(_currentPosition);
+        }
+        await player.play();
+      } else {
+        await player.pause();
+      }
+      setState(() {});
+    } catch (e) {
+      print('Error toggling playback: $e');
+      setState(() {
+        _error = 'Error playing audio: $e';
+      });
+    }
+  }
+
+  Future<void> _openFileLocation(String filePath) async {
+    try {
+      if (Platform.isWindows) {
+        await Process.run('explorer', ['/select,', filePath]);
+      } else {
+        final uri = Uri.file(filePath);
+        if (!await launchUrl(uri)) {
+          debugPrint("Could not open file location: $filePath");
+        }
+      }
+    } catch (e) {
+      print('Error opening file location: $e');
+      setState(() {
+        _error = 'Error opening file location: $e';
+      });
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    if (_error != null) {
+      return Center(
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              const Icon(Icons.error_outline, color: Colors.red, size: 48),
+              const SizedBox(height: 16),
+              Text(
+                _error!,
+                textAlign: TextAlign.center,
+                style: const TextStyle(color: Colors.red),
+              ),
+              const SizedBox(height: 24),
+              ElevatedButton.icon(
+                onPressed: () {
+                  setState(() {
+                    _error = null;
+                    _isInitialized = false;
+                    _players.clear();
+                  });
+                  _initializePlayers();
+                },
+                icon: const Icon(Icons.refresh),
+                label: const Text('Retry Loading'),
+              ),
+            ],
+          ),
+        ),
+      );
+    }
+
+    if (!_isInitialized) {
+      return Center(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            const CircularProgressIndicator(),
+            const SizedBox(height: 16),
+            Text(
+              'Loading audio files...',
+              style: Theme.of(context).textTheme.titleMedium,
+            ),
+            const SizedBox(height: 16),
+            ...widget.stemPaths.asMap().entries.map((entry) {
+              final index = entry.key;
+              final stem = entry.value;
+              final isLoaded = index < _players.length;
+              final isLoading = index == _players.length;
+              
+              return Padding(
+                padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 16),
+                child: Row(
+                  children: [
+                    SizedBox(
+                      width: 24,
+                      height: 24,
+                      child: isLoaded
+                          ? const Icon(Icons.check_circle, color: Colors.green)
+                          : isLoading
+                              ? const SizedBox(
+                                  width: 20,
+                                  height: 20,
+                                  child: CircularProgressIndicator(strokeWidth: 2),
+                                )
+                              : const Icon(Icons.pending, color: Colors.grey),
+                    ),
+                    const SizedBox(width: 12),
+                    Text(
+                      '${stem['name']} stem',
+                      style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                        color: isLoaded
+                            ? null
+                            : Theme.of(context).textTheme.bodySmall?.color,
+                      ),
+                    ),
+                  ],
+                ),
+              );
+            }).toList(),
+          ],
+        ),
+      );
+    }
+
+    if (widget.stemPaths.isEmpty) {
+      return const Center(child: Text('No stems to play.'));
+    }
+    
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        return SingleChildScrollView(
+          child: ConstrainedBox(
+            constraints: BoxConstraints(
+              minHeight: constraints.maxHeight,
+              maxWidth: constraints.maxWidth,
+            ),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: List.generate(widget.stemPaths.length, (index) {
+                final stem = widget.stemPaths[index];
+                final isPlaying = _players[index].playing;
+                final name = stem['name']!;
+                final path = stem['path']!;
+                
+                return Card(
+                  margin: const EdgeInsets.symmetric(vertical: 6, horizontal: 16),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      ListTile(
+                        title: Text('$name stem'),
+                        subtitle: Text(File(path).path),
+                        trailing: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            IconButton(
+                              icon: Icon(isPlaying ? Icons.pause : Icons.play_arrow),
+                              onPressed: () => _togglePlay(index),
+                              tooltip: 'Play/Pause Audio',
+                            ),
+                            IconButton(
+                              icon: const Icon(Icons.folder_open),
+                              onPressed: () => _openFileLocation(path),
+                              tooltip: 'Open File Location',
+                            ),
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: StemMidiControls(
+                          stemPath: path,
+                          stemName: name,
+                          midiEngine: widget.midiEngine,
+                        ),
+                      ),
+                    ],
+                  ),
+                );
+              }),
+            ),
+          ),
+        );
+      },
+    );
+  }
+}
+
+// File: ui\widgets\piano_roll_view.dart
+----------------------------------------
+import 'package:flutter/material.dart';
+import '../../core/midi_engine/models.dart';
+
+/// Widget for displaying MIDI notes in a piano roll format
+class PianoRollView extends StatelessWidget {
+  final MidiTrack track;
+  final bool isPlaying;
+  final double currentTime;
+  final double height;
+  final double pixelsPerSecond;
+  final double noteHeight;
+
+  const PianoRollView({
+    Key? key,
+    required this.track,
+    this.isPlaying = false,
+    this.currentTime = 0.0,
+    this.height = 300.0,
+    this.pixelsPerSecond = 100.0,
+    this.noteHeight = 8.0,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: height,
+      decoration: BoxDecoration(
+        color: Theme.of(context).colorScheme.surface,
+        border: Border.all(
+          color: Theme.of(context).colorScheme.outline,
+        ),
+        borderRadius: BorderRadius.circular(8),
+      ),
+      child: Stack(
+        children: [
+          // Piano keys background
+          _buildPianoKeys(context),
+          
+          // Grid lines
+          _buildGridLines(context),
+          
+          // MIDI notes
+          _buildNotes(context),
+          
+          // Playhead
+          if (isPlaying) _buildPlayhead(context),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildPianoKeys(BuildContext context) {
+    return Row(
+      children: [
+        Container(
+          width: 40,
+          decoration: BoxDecoration(
+            color: Theme.of(context).colorScheme.surfaceVariant,
+            border: Border(
+              right: BorderSide(
+                color: Theme.of(context).colorScheme.outline,
+              ),
+            ),
+          ),
+          child: Column(
+            children: List.generate(128, (index) {
+              final isBlackKey = [1, 3, 6, 8, 10].contains(index % 12);
+              return Container(
+                height: noteHeight,
+                color: isBlackKey
+                    ? Colors.black87
+                    : Colors.white,
+                child: index % 12 == 0
+                    ? Center(
+                        child: Text(
+                          'C${index ~/ 12 - 1}',
+                          style: TextStyle(
+                            fontSize: 8,
+                            color: isBlackKey ? Colors.white : Colors.black,
+                          ),
+                        ),
+                      )
+                    : null,
+              );
+            }),
+          ),
+        ),
+        Expanded(
+          child: Container(
+            color: Theme.of(context).colorScheme.surface,
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildGridLines(BuildContext context) {
+    return CustomPaint(
+      painter: GridPainter(
+        color: Theme.of(context).colorScheme.outlineVariant.withOpacity(0.3),
+        pixelsPerSecond: pixelsPerSecond,
+        noteHeight: noteHeight,
+      ),
+    );
+  }
+
+  Widget _buildNotes(BuildContext context) {
+    return Positioned.fill(
+      left: 40, // Piano keys width
+      child: CustomPaint(
+        painter: NotesPainter(
+          notes: track.notes,
+          pixelsPerSecond: pixelsPerSecond,
+          noteHeight: noteHeight,
+          color: Theme.of(context).colorScheme.primary,
+        ),
+      ),
+    );
+  }
+
+  Widget _buildPlayhead(BuildContext context) {
+    return Positioned(
+      left: 40 + currentTime * pixelsPerSecond,
+      top: 0,
+      bottom: 0,
+      child: Container(
+        width: 2,
+        color: Theme.of(context).colorScheme.primary,
+      ),
+    );
+  }
+}
+
+/// Painter for grid lines
+class GridPainter extends CustomPainter {
+  final Color color;
+  final double pixelsPerSecond;
+  final double noteHeight;
+
+  GridPainter({
+    required this.color,
+    required this.pixelsPerSecond,
+    required this.noteHeight,
+  });
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    final paint = Paint()
+      ..color = color
+      ..strokeWidth = 1;
+
+    // Vertical lines (time divisions)
+    for (var x = 0.0; x < size.width; x += pixelsPerSecond / 4) {
+      canvas.drawLine(
+        Offset(x, 0),
+        Offset(x, size.height),
+        paint,
+      );
+    }
+
+    // Horizontal lines (note divisions)
+    for (var y = 0.0; y < size.height; y += noteHeight) {
+      canvas.drawLine(
+        Offset(0, y),
+        Offset(size.width, y),
+        paint,
+      );
+    }
+  }
+
+  @override
+  bool shouldRepaint(GridPainter oldDelegate) =>
+      color != oldDelegate.color ||
+      pixelsPerSecond != oldDelegate.pixelsPerSecond ||
+      noteHeight != oldDelegate.noteHeight;
+}
+
+/// Painter for MIDI notes
+class NotesPainter extends CustomPainter {
+  final List<MidiNote> notes;
+  final double pixelsPerSecond;
+  final double noteHeight;
+  final Color color;
+
+  NotesPainter({
+    required this.notes,
+    required this.pixelsPerSecond,
+    required this.noteHeight,
+    required this.color,
+  });
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    final paint = Paint()
+      ..color = color
+      ..style = PaintingStyle.fill;
+
+    for (final note in notes) {
+      final rect = Rect.fromLTWH(
+        note.startTime * pixelsPerSecond,
+        (127 - note.pitch) * noteHeight,
+        note.duration * pixelsPerSecond,
+        noteHeight,
+      );
+
+      canvas.drawRRect(
+        RRect.fromRectAndRadius(rect, const Radius.circular(2)),
+        paint,
+      );
+    }
+  }
+
+  @override
+  bool shouldRepaint(NotesPainter oldDelegate) =>
+      notes != oldDelegate.notes ||
+      pixelsPerSecond != oldDelegate.pixelsPerSecond ||
+      noteHeight != oldDelegate.noteHeight ||
+      color != oldDelegate.color;
+}
+
+// File: ui\widgets\stem_midi_controls.dart
+----------------------------------------
+import 'dart:async';
+import 'package:flutter/material.dart';
+import '../../core/midi_engine/midi_engine.dart';
+import '../../core/midi_engine/models.dart';
+import '../../core/midi_engine/progress_reporter.dart';
+import 'piano_roll_view.dart';
+
+class StemMidiControls extends StatefulWidget {
+  final String stemPath;
+  final String stemName;
+  final MidiEngine midiEngine;
+
+  const StemMidiControls({
+    Key? key,
+    required this.stemPath,
+    required this.stemName,
+    required this.midiEngine,
+  }) : super(key: key);
+
+  @override
+  State<StemMidiControls> createState() => _StemMidiControlsState();
+}
+
+class _StemMidiControlsState extends State<StemMidiControls> {
+  MidiProject? _midiProject;
+  bool _isGenerating = false;
+  bool _isPlaying = false;
+  String? _error;
+  double _currentTime = 0.0;
+  StreamSubscription? _progressSubscription;
+
+  @override
+  void initState() {
+    super.initState();
+    _subscribeToProgress();
+  }
+
+  @override
+  void dispose() {
+    _progressSubscription?.cancel();
+    super.dispose();
+  }
+
+  void _subscribeToProgress() {
+    _progressSubscription = widget.midiEngine.progress.listen(
+      (update) {
+        setState(() {
+          if (update.error?.isNotEmpty == true) {
+            _error = update.error;
+            _isGenerating = false;
+          } else if (update.isComplete == true) {
+            _isGenerating = false;
+          }
+        });
+      },
+    );
+  }
+
+  Future<void> _generateMidi() async {
+    if (_isGenerating) return;
+
+    setState(() {
+      _isGenerating = true;
+      _error = null;
+    });
+
+    try {
+      final project = await widget.midiEngine.extractFromAudio(widget.stemPath);
+      if (mounted) {
+        setState(() {
+          _midiProject = project;
+          _isGenerating = false;
+        });
+      }
+    } catch (e) {
+      if (mounted) {
+        setState(() {
+          _error = 'Failed to generate MIDI: $e';
+          _isGenerating = false;
+        });
+      }
+    }
+  }
+
+  Future<void> _togglePlayback() async {
+    if (_midiProject == null || _midiProject!.tracks.isEmpty) return;
+
+    try {
+      if (_isPlaying) {
+        await widget.midiEngine.stopPlayback();
+        setState(() {
+          _isPlaying = false;
+        });
+      } else {
+        setState(() {
+          _isPlaying = true;
+          _currentTime = 0.0;
+        });
+        await widget.midiEngine.playTrack(_midiProject!.tracks.first.id);
+        setState(() {
+          _isPlaying = false;
+        });
+      }
+    } catch (e) {
+      setState(() {
+        _error = 'Playback error: $e';
+        _isPlaying = false;
+      });
+    }
+  }
+
+  Future<void> _exportMidi() async {
+    if (_midiProject == null) return;
+
+    try {
+      final outputPath = '${widget.stemPath}_generated.mid';
+      await widget.midiEngine.exportToFile(outputPath);
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text('MIDI exported to: $outputPath'),
+          ),
+        );
+      }
+    } catch (e) {
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text('Failed to export MIDI: $e'),
+            backgroundColor: Colors.red,
+          ),
+        );
+      }
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        // MIDI Generation Button
+        if (_midiProject == null)
+          ElevatedButton.icon(
+            onPressed: _isGenerating ? null : _generateMidi,
+            icon: _isGenerating
+                ? const SizedBox(
+                    width: 20,
+                    height: 20,
+                    child: CircularProgressIndicator(strokeWidth: 2),
+                  )
+                : const Icon(Icons.music_note),
+            label: Text(_isGenerating ? 'Generating MIDI...' : 'Generate MIDI'),
+          ),
+
+        // Error Display
+        if (_error != null)
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text(
+              _error!,
+              style: const TextStyle(color: Colors.red),
+              textAlign: TextAlign.center,
+            ),
+          ),
+
+        // MIDI Controls and Piano Roll
+        if (_midiProject != null && _midiProject!.tracks.isNotEmpty) ...[
+          const Divider(),
+          // Playback Controls
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              IconButton(
+                icon: Icon(_isPlaying ? Icons.pause : Icons.play_arrow),
+                onPressed: _togglePlayback,
+                tooltip: _isPlaying ? 'Pause' : 'Play',
+              ),
+              IconButton(
+                icon: const Icon(Icons.stop),
+                onPressed: _isPlaying ? () => widget.midiEngine.stopPlayback() : null,
+                tooltip: 'Stop',
+              ),
+              IconButton(
+                icon: const Icon(Icons.download),
+                onPressed: _exportMidi,
+                tooltip: 'Export MIDI',
+              ),
+            ],
+          ),
+          const SizedBox(height: 8),
+          // Piano Roll View
+          PianoRollView(
+            track: _midiProject!.tracks.first,
+            isPlaying: _isPlaying,
+            currentTime: _currentTime,
+            height: 200,
+          ),
+        ],
+      ],
+    );
+  }
+}
+
