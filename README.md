@@ -2,7 +2,7 @@
 
 A Flutter application for separating audio into stems and extracting MIDI. MidiStems allows you to take any audio file and split it into separate instrument tracks while also generating MIDI data for each instrument.
 
-![MidiStems Demo](docs/images/demo.png) *(Coming soon)*
+![MidiStems Demo] *(Coming soon)*
 
 ## Features
 
