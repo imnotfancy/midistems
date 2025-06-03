@@ -4,6 +4,7 @@ import 'package:window_manager/window_manager.dart';
 import 'package:audio_session/audio_session.dart';
 import 'package:logging/logging.dart';
 import 'ui/app.dart';
+import 'rust_service.dart'; // Import the Rust service
 
 Future<void> main() async {
   // Ensure Flutter is initialized
@@ -37,4 +38,14 @@ Future<void> main() async {
   await windowManager.setSize(const Size(1200, 800));
 
   runApp(const MidiStemsApp());
+
+  // Run the Rust FFI example
+  // Adding a try-catch in case of issues during FFI loading/calling for robustness
+  try {
+    logger.info("Attempting to run Rust FFI example...");
+    await RustService.runExample();
+    logger.info("Rust FFI example completed.");
+  } catch (e, s) {
+    logger.severe("Error running Rust FFI example:", e, s);
+  }
 }

@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:path_provider/path_provider.dart';
-import 'package:path/path.dart' as path;
+import 'package:path/path.dart' as p; // Aliased to p to avoid conflict
 import 'dart:io';
-import '../../services/audio_processing/audio_service.dart';
+// import '../../services/audio_processing/audio_service.dart'; // Replaced by RustService
+import '../../services/rust_service.dart'; // Import RustService
 import '../../core/midi_engine/midi_engine.dart';
 import '../widgets/lol_loading_dialog.dart';
 import '../widgets/multi_stem_player.dart';
@@ -27,8 +28,9 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  final AudioService _audioService = AudioService();
-  final MidiEngine _midiEngine = MidiEngine();
+  // final AudioService _audioService = AudioService(); // Replaced by RustService
+  final RustService _rustService = RustService(); // Instantiate RustService
+  final MidiEngine _midiEngine = MidiEngine(); // Still needed for MIDI playback/parsing
   String? _selectedFilePath;
   String _statusMessage = '';
 
@@ -64,7 +66,7 @@ class _HomeScreenState extends State<HomeScreen> {
       if (result != null) {
         final filePath = result.files.single.path;
         // Normalize the file path
-        final normalizedPath = path.normalize(filePath!);
+        final normalizedPath = p.normalize(filePath!); // Use alias p
         
         // Verify file exists and is readable
         final file = File(normalizedPath);
@@ -89,12 +91,21 @@ class _HomeScreenState extends State<HomeScreen> {
 
   Future<void> _showStemPlayer(Map<String, dynamic> result) async {
     try {
-      final Map<String, String> stems = (result['stems']! as Map<String, dynamic>).cast<String, String>();
+      // The result from RustService.separateStems is expected to be Map<String, dynamic>
+      // where the actual stems map is under a 'stems' key: {'stems': {'vocals': 'path/to/vocals.wav', ...}}
+      final Map<String, dynamic>? stemsData = result['stems'] as Map<String, dynamic>?;
+
+      if (stemsData == null) {
+        throw Exception("Stem data is missing in the result from Rust service.");
+      }
+      final Map<String, String> stems = stemsData.cast<String, String>();
       
       final stemsList = stems.entries.map((e) {
-        final name = path.basenameWithoutExtension(e.key);
-        // Convert forward slashes to platform-specific separator
-        final stemPath = e.value.replaceAll('/', Platform.pathSeparator);
+        // e.key is the stem name (e.g., "vocals"), e.value is the path
+        final name = e.key;
+        // Paths from Rust/Python should ideally be absolute and correct.
+        // Normalization might still be good.
+        final stemPath = p.normalize(e.value.replaceAll('/', Platform.pathSeparator));
         
         // Verify the stem file exists
         final stemFile = File(stemPath);
@@ -192,56 +203,61 @@ class _HomeScreenState extends State<HomeScreen> {
 
     String? errorMessage;
     String? resultMessage;
-    Map<String, dynamic>? result;
+    Map<String, dynamic>? rustCallResult; // This will hold {'stems': {...}}
     
     try {
-      // Get application documents directory and create stems subdirectory
+      // Get application documents directory and create stems subdirectory for output
       final appDir = await getApplicationDocumentsDirectory();
-      final stemsBaseDir = Directory(path.join(appDir.path, 'stems'));
+      final stemsBaseDir = Directory(p.join(appDir.path, 'stems_output')); // Changed name slightly
       await stemsBaseDir.create(recursive: true);
 
-      // Create a unique directory for this file's stems
-      final fileName = path.basenameWithoutExtension(_selectedFilePath!);
+      // Create a unique directory for this specific separation task's stems
+      final fileName = p.basenameWithoutExtension(_selectedFilePath!);
       final timestamp = DateTime.now().millisecondsSinceEpoch;
-      final stemsDir = path.join(stemsBaseDir.path, '${fileName}_$timestamp');
+      // The output directory that Rust/Python will write into
+      final outputDirForStems = p.join(stemsBaseDir.path, '${fileName}_$timestamp');
+      await Directory(outputDirForStems).create(recursive: true);
       
-      result = await _audioService.separateStems(
-        inputPath: _selectedFilePath!,
-        outputDir: stemsDir,
+      // Call the Rust FFI service
+      rustCallResult = await _rustService.separateStems(
+        inputAudioPath: _selectedFilePath!,
+        outputDirPath: outputDirForStems, // Pass the created directory
       );
 
+      // The structure of rustCallResult is expected to be: {'stems': {'vocals': 'path/to/vocals.wav', ...}}
+      // The paths within 'stems' should be absolute paths to the files written by the Python script.
+      if (rustCallResult['stems'] == null || (rustCallResult['stems'] as Map).isEmpty) {
+        throw Exception("Stem separation via Rust FFI did not return any stem paths.");
+      }
+
       resultMessage = 'Stem separation complete!\n'
-          'Stems saved to: $stemsDir\n'
-          'Generated stems: ${(result['stems'] as Map).keys.join(', ')}';
+          'Stems saved in: $outputDirForStems\n' // The Python script saves them inside this dir
+          'Generated stems: ${(rustCallResult['stems'] as Map).keys.join(', ')}';
+
     } catch (e) {
-      // Extract actual error message from the full exception
       final fullError = e.toString();
-      final errorMatch = RegExp(r'Exception: (.+?)\nINFO:').firstMatch(fullError);
-      errorMessage = errorMatch?.group(1) ?? 'Failed to separate stems';
+      // errorMessage = fullError; // Simpler error message handling for now
+      // Let's try to make it more specific if it's an Exception from RustService
+      if (e is Exception) {
+        errorMessage = e.toString().replaceFirst("Exception: ", "");
+      } else {
+        errorMessage = 'Failed to separate stems: $fullError';
+      }
       
-      // Extract progress messages
-      final infoMessages = RegExp(r'INFO: ([^\n]+)')
-          .allMatches(fullError)
-          .map((m) => m.group(1) ?? '')
-          .where((msg) => msg.isNotEmpty)
-          .toList();
+      List<String> infoMessages = []; // Placeholder if needed for LolLoadingDialog
 
       if (!mounted) return;
+      Navigator.of(context).pop(); // Close loading dialog
 
-      // Close the current dialog
-      Navigator.of(context).pop();
-
-      // Show error dialog with progress info
       showDialog(
         context: context,
-        barrierDismissible: false,
-        builder: (_) => LolLoadingDialog(
+        barrierDismissible: false, // Keep it consistent
+        builder: (_) => LolLoadingDialog( // Reusing for error display
           title: 'Separation Failed',
-          messages: [
-            ...infoMessages,
-            'Oops! Something went wrong...',
-            'Checking the error logs...',
-            'Attempting to recover...',
+          messages: [ // Simplified messages for FFI error
+            'An error occurred during stem separation.',
+            'Please check the details below.',
+            ...infoMessages, // if any were populated
           ],
           errorMessage: errorMessage,
           onClose: () {
@@ -256,18 +272,17 @@ class _HomeScreenState extends State<HomeScreen> {
     }
 
     if (!mounted) return;
-
-    // Close the current dialog and wait for animation
-    Navigator.of(context).pop();
-    await Future.delayed(const Duration(milliseconds: 300));
+    Navigator.of(context).pop(); // Close loading dialog
+    await Future.delayed(const Duration(milliseconds: 300)); // Keep delay
 
     setState(() {
-      _statusMessage = resultMessage ?? 'Stem separation completed';
+      _statusMessage = resultMessage ?? 'Stem separation completed (Rust FFI)';
     });
 
-    // Show the MultiStemPlayer dialog
+    // Show the MultiStemPlayer dialog with the result from Rust FFI
     if (!mounted) return;
-    await _showStemPlayer(result);
+    // rustCallResult already contains {'stems': {...}}
+    await _showStemPlayer(rustCallResult!);
   }
 
   @override

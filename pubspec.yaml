@@ -17,6 +17,7 @@ dependencies:
   flutter_midi: ^1.1.0
   # FFI for Python integration
   ffi: ^2.1.0
+  flutter_rust_bridge: ^1.60.0 # Trying a much older version
   # File management
   path_provider: ^2.1.2
   file_picker: ^8.1.7
@@ -40,6 +41,7 @@ dev_dependencies:
     sdk: flutter
   flutter_lints: ^5.0.0
   ffigen: ^16.1.0
+  flutter_rust_bridge_codegen: ^1.60.0 # Trying a much older version
 
 flutter:
   uses-material-design: true
