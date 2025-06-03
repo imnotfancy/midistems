@@ -49,9 +49,11 @@ def parse_args(args: List[str]) -> Dict[str, str]:
                 value = value[1:-1]  # Remove surrounding quotes
             # Unescape any escaped quotes within the path
             value = value.replace('\\"', '"')
-            # Log the parsed argument
-            logger.info(f"Parsed argument - {key}: {value}")
-            result[key] = value
+            # Sanitize and log the parsed argument
+            sanitized_key = key.replace('\n', '').replace('\r', '')
+            sanitized_value = value.replace('\n', '').replace('\r', '')
+            logger.info(f"Parsed argument - {sanitized_key}: {sanitized_value}")
+            result[sanitized_key] = sanitized_value
     return result
 
 class DependencyManager:
