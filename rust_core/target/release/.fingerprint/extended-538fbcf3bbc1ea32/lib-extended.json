@@ -1,0 +1,1 @@
+{"rustc":15597765236515928571,"features":"[]","declared_features":"[]","target":15581295438872181261,"profile":2040997289075261528,"path":15640319558314737310,"deps":[],"local":[{"CheckDepInfo":{"dep_info":"release/.fingerprint/extended-538fbcf3bbc1ea32/dep-lib-extended","checksum":false}}],"rustflags":["-C","link-arg=-fuse-ld=lld"],"config":2069994364910194474,"compile_kind":0}
