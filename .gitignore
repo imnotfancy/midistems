@@ -52,7 +52,7 @@ venv.bak/
 # The .vscode folder contains launch configuration and tasks you configure in
 # VS Code which you may wish to be included in version control, so this line
 # is commented out by default.
-#.vscode/
+.vscode/
 
 # Flutter/Dart/Pub related
 **/doc/api/
@@ -75,3 +75,13 @@ app.*.map.json
 /android/app/profile
 /android/app/release
 /rust_core/target/
+
+# Generated context files
+*.context
+*.project_context
+project_context.txt
+context.md
+combined_output.txt
+
+# Windows thumbnail cache
+Thumbs.db
