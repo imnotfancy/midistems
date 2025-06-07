@@ -80,6 +80,8 @@ Based on the comprehensive analysis of the reports, this document outlines a det
 - [ ] Optimize audio processing for different hardware configurations
 - [ ] Create audio visualization components for real-time feedback
 - [ ] Implement MIDI extraction functionality in Rust core
+- [ ] Evaluate and document the trade-offs of different Demucs model variants (e.g., computational cost vs. separation quality, number of steps for multi-step models like Hybrid Demucs or FlowSep if ONNX versions become available).
+- [ ] Research Task: Investigate the impact of input segment size on separation quality and performance for the chosen ONNX models, and determine optimal chunking strategies for processing full-length audio tracks.
 
 ### Month 3: Integration and Performance Optimization
 
@@ -125,6 +127,7 @@ Based on the comprehensive analysis of the reports, this document outlines a det
 - Implement comprehensive automated testing for audio processing
 - Establish quality benchmarks for stem separation and MIDI generation
 - Create regression testing framework for core functionality
+- Long-term research: Explore advancements in phase processing for stem separation. While complex, the provided research report indicates this is crucial for significant artifact reduction and achieving higher perceptual quality (e.g., referencing models like LALAL.AI's Phoenix). This could be a topic for future dedicated research sprints, academic collaborations, or when aiming to push beyond current state-of-the-art quality.
 
 ### 4. Community Building
 - Engage with potential users throughout development process
@@ -145,16 +148,30 @@ Based on the comprehensive analysis of the reports, this document outlines a det
 The Rust audio core will be implemented as a standalone library that can be integrated with Flutter through FFI. The core architecture will include:
 
 1. **Audio I/O Layer**
-   - Cross-platform audio device access using `cpal`
-   - File format support (WAV, MP3, FLAC) using `symphonia`
-   - Real-time audio buffer management
+   - Cross-platform audio device access using `cpal`.
+   - File format support (WAV, MP3, FLAC) using `symphonia`.
+   - Utilize `hound` for dedicated WAV file encoding and decoding, complementing `symphonia`'s broader format support, especially for ensuring robustness with WAV files.
+   - Incorporate `rubato` for high-quality asynchronous sample rate conversion. Add a sub-task: "Integrate `rubato` for sample rate normalization if models require fixed sample rates."
+   - Consider `basic_dsp_vector` for efficient operations on audio buffers if developing custom DSP routines that require optimized vector math, due to its focus on type safety and avoiding allocations in loops.
+   - Utilize lock-free ring buffers (e.g., from the `rtrb` crate) for efficient and non-blocking data transfer between audio I/O threads (e.g., `cpal` callbacks) and any separate audio processing threads. This is crucial for preventing audio glitches caused by thread contention.
 
 2. **DSP Processing Pipeline**
-   - Stem separation using Demucs algorithm (Rust port)
-   - MIDI extraction using pitch detection algorithms
+   - Stem separation using Demucs algorithm (Rust integration).
+   - Primary approach for Rust-based stem separation: Investigate and implement using pre-trained ONNX models (e.g., Demucs variants compatible with ONNX) via a Rust ONNX runtime like `ort` (onnxruntime-rs) or `tract`.
+   - Secondary/research task for stem separation: Explore feasibility of using Rust ML frameworks like `Burn` or `Candle` for potentially running custom or re-implemented lightweight separation models in pure Rust in the future (long-term R&D).
+   - MIDI extraction using pitch detection algorithms:
+     - Primary candidate for Rust-based MIDI extraction: Investigate `aubio-rs` (Rust bindings for the Aubio C library) for its established pitch detection and onset detection capabilities.
+     - Alternative approach: Research and prototype pure Rust pitch detection algorithms if `aubio-rs` proves unsuitable for the project's needs (e.g., due to FFI overhead, licensing, or specific feature requirements) or if minimizing FFI dependencies is a priority for this component.
    - Real-time audio effects and processing
+   - For general DSP functionalities beyond what pre-trained models provide (e.g., custom filters, audio effects): Evaluate `fundsp` for building complex audio processing graphs. For simpler block-based processing or signal generation needs, consider the `dsp` crate.
+   - For any direct Fast Fourier Transform (FFT) requirements (e.g., for spectral analysis, custom spectral processing, or as a component in other DSP algorithms), evaluate `rustfft` and `phastft`. Refer to available performance benchmarks (e.g., from the project's research report) when choosing.
 
-3. **FFI Interface Layer**
+3. **Real-time Processing and Low-Latency Design**
+   - Enforce a strict pre-allocation strategy for all critical audio buffers and data structures used within the real-time audio path. Avoid any dynamic memory allocations (heap allocations) inside audio callbacks or tight processing loops. Investigate helper crates like `audio-blocks` for managing views and operations on pre-allocated audio data.
+   - For complex processing chains or if significant computation is needed per audio block, design with dedicated mixer or processing threads that operate separately from the OS audio I/O threads. This helps keep the primary audio callback (e.g., from `cpal`) as lightweight and quick as possible.
+   - Where the operating system allows, ensure that real-time audio processing threads are configured with elevated priority to minimize the risk of preemption by other system processes, thus reducing latency and jitter.
+
+4. **FFI Interface Layer**
    - C-compatible API for Flutter integration
    - Serialization/deserialization of complex data types
    - Error handling and resource management
@@ -181,6 +198,11 @@ The integration with Flutter will be implemented in phases:
 ### Performance Benchmarking Framework
 
 To ensure the new implementation meets performance targets, a comprehensive benchmarking framework will be developed:
+
+- **Benchmarking Tools:** Utilize command-line tools such as `Hyperfine` for systematic macro-benchmarking of larger processing stages (e.g., full stem separation pipeline) and `Bencher` (or `criterion.rs`) for micro-benchmarking specific Rust functions and critical code paths to guide fine-grained optimizations.
+- **Code-Level Optimization Focus:** When optimizing critical DSP code, systematically evaluate the performance implications of data structures, such as `Vec` versus fixed-size `Array`/slices, particularly within tight loops or frequently called functions. The project's research report indicates potential significant gains with fixed-size structures.
+- **Profiling:** Regularly profile the Rust audio core using platform-appropriate tools (e.g., `perf` on Linux, Instruments on macOS, or other profilers) to identify performance bottlenecks ('hot spots') in the code.
+- **Compilation Mode:** Always conduct performance tests and benchmarks on code compiled in release mode with optimizations enabled (i.e., using `cargo build --release` or equivalent profiles).
 
 1. **Audio Latency Testing**
    - Round-trip latency measurement
