@@ -77,11 +77,15 @@ Based on the comprehensive analysis of the reports, this document outlines a det
 ### Month 2: Enhanced Audio Processing
 
 - [ ] Implement advanced stem separation algorithms in Rust
+  - ` (This primarily involves leveraging more sophisticated ONNX model variants of Demucs as identified in the evaluation task. May also include initial experiments with simple multi-step techniques like training-free iterative refinement if deemed feasible after preliminary research).`
 - [ ] Optimize audio processing for different hardware configurations
 - [ ] Create audio visualization components for real-time feedback
 - [ ] Implement MIDI extraction functionality in Rust core
 - [ ] Evaluate and document the trade-offs of different Demucs model variants (e.g., computational cost vs. separation quality, number of steps for multi-step models like Hybrid Demucs or FlowSep if ONNX versions become available).
 - [ ] Research Task: Investigate the impact of input segment size on separation quality and performance for the chosen ONNX models, and determine optimal chunking strategies for processing full-length audio tracks.
+- [ ] Research Task: Preliminary investigation into training-free iterative refinement (e.g., iterative blending as described in the multi-step separation report) using the selected ONNX Demucs models. Assess potential for quality improvement and identify key challenges, particularly the 'oracle metric bottleneck'.
+- [ ] Research Task: Survey and evaluate available non-intrusive perceptual audio quality metrics (or libraries/tools implementing them) that could potentially guide iterative separation processes or provide more human-aligned quality assessment than SDR alone.
+- [ ] During ONNX model integration for stem separation, document the default phase handling characteristics and any consistently noticeable artifacts produced by the chosen Demucs variants.
 
 ### Month 3: Integration and Performance Optimization
 
