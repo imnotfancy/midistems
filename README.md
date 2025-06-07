@@ -89,11 +89,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Architecture
 
-The application is built using:
+The application utilizes a hybrid architecture combining Flutter for the UI, Python for specific AI-driven audio processing tasks, and Rust for core audio functionalities and future performance enhancements via FFI.
 
-- **Flutter**: For the cross-platform UI
-- **Rust**: For high-performance audio processing via FFI
-- **FFI (Foreign Function Interface)**: To bridge Flutter and Rust
+For more details on the technical architecture and the roles of different components, please see the [ARCHITECTURE.md](ARCHITECTURE.md) file.
 
 ## Project Status
 

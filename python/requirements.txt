@@ -12,9 +12,11 @@ pretty_midi>=0.2.10
 tensorflow==2.16.1
 --extra-index-url https://download.pytorch.org/whl/cpu
 torch==2.2.0+cpu
+torchaudio==2.2.0+cpu
 
 # Audio processing
 soundfile>=0.12.1
+demucs
 resampy==0.4.2
 scikit-learn>=1.4.0
 
@@ -24,3 +26,4 @@ numba>=0.58.1
 
 # Basic Pitch dependencies
 mir_eval>=0.7
+basic_pitch

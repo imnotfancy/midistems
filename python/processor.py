@@ -340,6 +340,8 @@ def process_command(action: str, args: Dict[str, str]) -> Dict[str, Any]:
             return format_json_response('error', error=error_msg)
     except Exception as e:
         logger.exception("Error processing command")
+        # This top-level error in process_command will be returned and handled by main's write_json_response
+        # or, if separate_stems_command_handler was called, it would have already exited.
         error_msg = {
             'message': str(e),
             'details': {
@@ -350,10 +352,126 @@ def process_command(action: str, args: Dict[str, str]) -> Dict[str, Any]:
         }
         return format_json_response('error', error=error_msg)
 
+# New handler for separate_stems
+def separate_stems_command_handler(processor: AudioProcessor, args: Dict[str, str]) -> None:
+    """Handles the 'separate_stems' command, prints JSON output, and exits."""
+    try:
+        if not processor.deps.can_separate_stems():
+            missing_deps = processor.deps.get_missing_dependencies()
+            error_msg = {
+                'message': 'Stem separation not available due to missing dependencies',
+                'details': {'missing_dependencies': missing_deps}
+            }
+            response = format_json_response('error', error=error_msg)
+        elif 'input_path' not in args or 'output_dir' not in args:
+            error_msg = {
+                'message': 'Missing required arguments for separate_stems',
+                'details': {
+                    'required': ['input_path', 'output_dir'],
+                    'provided': list(args.keys())
+                }
+            }
+            response = format_json_response('error', error=error_msg)
+        else:
+            # Actual stem separation logic
+            result_data = processor.separate_stems(args['input_path'], args['output_dir'])
+            response = format_json_response('success', {
+                'stems': result_data,
+                'details': {
+                    'input_file': args['input_path'],
+                    'output_directory': args['output_dir']
+                }
+            })
+
+    except Exception as e:
+        # Catch exceptions from processor.separate_stems or other issues
+        logger.error(f"Error during stem separation: {str(e)}", exc_info=True)
+        error_msg = {
+            'message': str(e),
+            'details': {
+                'input_file': args.get('input_path', 'N/A'),
+                'output_directory': args.get('output_dir', 'N/A'),
+                'error_type': e.__class__.__name__
+            }
+        }
+        response = format_json_response('error', error=error_msg)
+
+    try:
+        print(json.dumps(response), flush=True)
+        sys.exit(0)
+    except Exception as e_json:
+        logger.critical(f"Failed to print JSON response to stdout: {str(e_json)}", exc_info=True)
+        sys.exit(1)
+
+
+def process_command(action: str, args: Dict[str, str]) -> Dict[str, Any]:
+    """Process command and return response object or exit."""
+    try:
+        processor = AudioProcessor() # Instantiated here, passed to handler
+
+        if action == 'get_capabilities':
+            return format_json_response('success', get_capabilities())
+        elif action == 'separate_stems':
+            # This function will now handle printing and exiting
+            separate_stems_command_handler(processor, args)
+            # separate_stems_command_handler calls sys.exit, so code below here for this action won't run.
+            return None # Should not be reached for separate_stems
+
+        # ... (other actions, if any, would go here and return a dict) ...
+        else: # Unknown action
+            error_msg = {
+                'message': 'Invalid action specified',
+                'details': {
+                    'provided_action': action,
+                    'valid_actions': ['get_capabilities', 'separate_stems']
+                }
+            }
+            return format_json_response('error', error=error_msg)
+
+    except Exception as e:
+        logger.exception("Critical error in process_command dispatch")
+        # This handles errors like AudioProcessor instantiation failure
+        error_msg = {
+            'message': f"Critical error processing action '{action}': {str(e)}",
+            'details': {
+                'error_type': e.__class__.__name__,
+                'action': action,
+                'args': args
+            }
+        }
+        # For critical errors before command-specific handling, we might need to print & exit here too,
+        # or ensure main handles it. For now, let's assume main will print if a dict is returned.
+        # However, the subtask specified that argument/unknown command errors should print to stderr and exit 1.
+        # This is a bit different. This is an error *within* process_command but *before* specific command logic.
+        # Let's make it conform: print to stderr and exit 1 for such critical internal errors.
+        # Actually, the original code returns a dict, and main prints it. Let's keep that for now for errors
+        # not covered by separate_stems_command_handler or arg parsing in main.
+        return format_json_response('error', error=error_msg)
+
+
 if __name__ == '__main__':
-    if len(sys.argv) > 1:
-        action = sys.argv[1]
-        kwargs = parse_args(sys.argv[2:])
-        write_json_response(process_command(action, kwargs))
-    else:
-        write_json_response(format_json_response('error', error='No arguments provided'))
+    if len(sys.argv) < 2:
+        # Argument parsing errors print to stderr and exit 1
+        print("Error: No action specified. Usage: python processor.py <action> [key=value...]", file=sys.stderr)
+        sys.exit(1)
+
+    action = sys.argv[1]
+
+    # Basic check for unknown command before even parsing args for it
+    # More robust checking happens in process_command, which returns JSON for unknown commands.
+    # The subtask asks for stderr print and exit 1 for unknown commands *before JSON generation*.
+    # This is a bit of a grey area. The current process_command returns JSON for "Invalid action".
+    # Let's adjust main to handle this specific case (unknown command) by printing to stderr.
+
+    if action not in ['get_capabilities', 'separate_stems']:
+        print(f"Error: Unknown action '{action}'. Valid actions are 'get_capabilities', 'separate_stems'.", file=sys.stderr)
+        sys.exit(1)
+
+    kwargs = parse_args(sys.argv[2:])
+
+    # process_command will call sys.exit() if the action is 'separate_stems'
+    # Otherwise, it returns a dict that should be printed.
+    response_dict = process_command(action, kwargs)
+
+    if response_dict: # Only print if process_command returned something (i.e., didn't exit)
+        write_json_response(response_dict)
