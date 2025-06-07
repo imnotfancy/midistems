@@ -174,16 +174,70 @@ pub unsafe extern "C" fn separate_stems(
         return ERROR_INVALID_INPUT;
     }
     
-    // Unsafe block for dereferencing raw pointers
-    unsafe {
-        let _input_slice = slice::from_raw_parts(input_buffer, input_length);
-        
-        println!("Processing audio data with {} samples into {} stems", input_length, num_stems);
+    // --- Input Validation ---
+    if input_buffer.is_null() {
+        set_last_error("Input buffer was null.".to_string());
+        return ERROR_INVALID_INPUT;
     }
-    
-    // In a real implementation, this would perform stem separation
-    // using DSP algorithms or machine learning models
-    SUCCESS
+    if output_buffers.is_null() {
+        set_last_error("Output buffers pointer was null.".to_string());
+        return ERROR_INVALID_INPUT;
+    }
+    if output_lengths.is_null() {
+        set_last_error("Output lengths pointer was null.".to_string());
+        return ERROR_INVALID_INPUT;
+    }
+    if num_stems != 4 { // For now, we rigidly expect 4 stems.
+        set_last_error(format!("Expected num_stems to be 4, but got {}.", num_stems));
+        return ERROR_INVALID_INPUT;
+    }
+
+    // --- Convert input buffer to slice ---
+    let input_slice: &[f32] = unsafe { slice::from_raw_parts(input_buffer, input_length) };
+
+    // --- Hardcoded parameters (to be passed from Dart later) ---
+    let channels: u16 = 2; // Assuming stereo input
+    let sample_rate: u32 = 44100; // Assuming 44.1 kHz sample rate
+
+    // --- Call the DSP function ---
+    match dsp::separate_stems(input_slice, channels, sample_rate) {
+        Ok(separated_stems) => {
+            // --- Prepare and copy stem data to output buffers ---
+            // We need to allocate memory that Dart can own.
+            // Vec::into_raw_parts gives us a pointer, length (capacity), and capacity.
+            // We must use std::mem::forget so Rust doesn't deallocate this memory.
+
+            let stems_to_process = [
+                (&separated_stems.vocals, 0, "vocals"),
+                (&separated_stems.drums, 1, "drums"),
+                (&separated_stems.bass, 2, "bass"),
+                (&separated_stems.other, 3, "other"),
+            ];
+
+            for (stem_array, index, stem_name) in stems_to_process.iter() {
+                if *index >= num_stems { // Should not happen with num_stems == 4 check, but good for safety
+                    set_last_error(format!("Stem index {} out of bounds for num_stems {}.", index, num_stems));
+                    // This case requires careful cleanup of already allocated stems if we were to support dynamic num_stems
+                    return ERROR_PROCESSING_FAILED;
+                }
+
+                let mut stem_vec = stem_array.to_vec(); // Clone Array1 into a Vec
+                let (ptr, len_cap, _cap_actual) = stem_vec.into_raw_parts(); // len_cap is capacity here
+                std::mem::forget(stem_vec); // Dart will own this memory
+
+                unsafe {
+                    *output_buffers.add(*index) = ptr;
+                    *output_lengths.add(*index) = stem_array.len(); // Use the original length of the stem data
+                }
+                println!("Stem '{}' ({} samples) data pointer {:p} passed to Dart.", stem_name, stem_array.len(), ptr);
+            }
+            SUCCESS
+        }
+        Err(e) => {
+            set_last_error(format!("Failed to separate stems: {}", e));
+            ERROR_PROCESSING_FAILED
+        }
+    }
 }
 
 /// Extract MIDI data from audio
@@ -290,6 +344,35 @@ pub unsafe extern "C" fn free_string(string: *mut c_char) {
         }
     }
 }
+
+/// Frees a memory buffer previously allocated by Rust for a single audio stem.
+///
+/// # Safety
+/// This function is unsafe because it's exposed via FFI.
+/// It reconstructs a Vec<f32> from the provided pointer, length, and capacity (assumed to be length)
+/// and then lets it go out of scope, causing Rust's allocator to free the memory.
+/// The caller (Dart) must ensure that:
+/// 1. The pointer was originally allocated by Rust via Vec::into_raw_parts.
+/// 2. The length matches the original length at allocation.
+/// 3. This function is called exactly once for each such pointer.
+#[no_mangle]
+pub unsafe extern "C" fn free_stem_memory(buffer_ptr: *mut f32, length: usize) {
+    if buffer_ptr.is_null() {
+        // Optionally, log this attempt to free a null pointer if you have logging infrastructure.
+        // eprintln!("Attempted to free a null pointer in free_stem_memory.");
+        return;
+    }
+    // Reconstruct the Vec. The capacity is assumed to be the same as length,
+    // which is true if the Vec was created from an Array1 using .to_vec() and then into_raw_parts(),
+    // and no reallocation occurred that might change capacity independently of length.
+    // The original `separate_stems` used `stem_array.len()` for `output_lengths`,
+    // and `stem_vec.into_raw_parts()` where `stem_vec` was from `stem_array.to_vec()`.
+    // In this scenario, `len` and `capacity` of `stem_vec` would be `stem_array.len()`.
+    let _vec_to_drop: Vec<f32> = Vec::from_raw_parts(buffer_ptr, length, length);
+    // Memory is freed when _vec_to_drop goes out of scope here.
+    // println!("Rust: Freed stem buffer at {:p} with length {}", buffer_ptr, length);
+}
+
 
 #[cfg(test)]
 mod tests {

@@ -26,21 +26,37 @@ impl SeparatedStems {
 
 /// Separate audio into stems (vocals, drums, bass, other)
 pub fn separate_stems(audio_data: &[f32], channels: u16, sample_rate: u32) -> Result<SeparatedStems, String> {
-    // In a real implementation, this would use a machine learning model
-    // or DSP algorithms to separate the audio into stems
-    
-    // For now, we'll just create dummy stems with silence
-    let num_samples = audio_data.len() / channels as usize;
-    
-    let mut stems = SeparatedStems::new(sample_rate);
-    
-    // Create dummy stems (all silence)
-    stems.vocals = Array1::zeros(num_samples);
-    stems.drums = Array1::zeros(num_samples);
-    stems.bass = Array1::zeros(num_samples);
-    stems.other = Array1::zeros(num_samples);
-    
-    Ok(stems)
+    let mono_audio: Array1<f32>;
+
+    if channels == 2 {
+        // Convert stereo to mono by averaging channels
+        mono_audio = audio_data
+            .chunks_exact(2)
+            .map(|chunk| (chunk[0] + chunk[1]) / 2.0)
+            .collect();
+    } else if channels == 1 {
+        // Use mono audio as is
+        mono_audio = Array1::from_vec(audio_data.to_vec());
+    } else {
+        return Err(format!(
+            "Unsupported number of channels: {}. Only mono (1) and stereo (2) are supported.",
+            channels
+        ));
+    }
+
+    // Create four identical stems from the mono audio
+    let vocals_stem = mono_audio.clone();
+    let drums_stem = mono_audio.clone();
+    let bass_stem = mono_audio.clone();
+    let other_stem = mono_audio.clone();
+
+    Ok(SeparatedStems {
+        vocals: vocals_stem,
+        drums: drums_stem,
+        bass: bass_stem,
+        other: other_stem,
+        sample_rate,
+    })
 }
 
 /// Compute the Short-Time Fourier Transform (STFT) of an audio signal
