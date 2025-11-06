@@ -8,6 +8,7 @@ class RustAudioService {
   static const String _libName = 'rust_core';
   static late final DynamicLibrary _lib;
   static late final RustAudioService _instance;
+  static bool _isInitialized = false;
 
   // FFI function signatures
   late final int Function() _initializeAudioEngine;
@@ -35,7 +36,10 @@ class RustAudioService {
 
   /// Get the singleton instance of the service
   factory RustAudioService() {
-    _instance = RustAudioService._();
+    if (!_isInitialized) {
+      _instance = RustAudioService._();
+      _isInitialized = true;
+    }
     return _instance;
   }
 

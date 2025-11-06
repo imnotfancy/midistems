@@ -170,10 +170,6 @@ pub unsafe extern "C" fn separate_stems(
     output_lengths: *mut usize,
     num_stems: usize
 ) -> c_int {
-    if input_buffer.is_null() || output_buffers.is_null() || output_lengths.is_null() || num_stems == 0 {
-        return ERROR_INVALID_INPUT;
-    }
-    
     // --- Input Validation ---
     if input_buffer.is_null() {
         set_last_error("Input buffer was null.".to_string());
@@ -223,7 +219,7 @@ pub unsafe extern "C" fn separate_stems(
 
                 let mut stem_vec = stem_array.to_vec(); // Clone Array1 into a Vec
                 let (ptr, len_cap, _cap_actual) = stem_vec.into_raw_parts(); // len_cap is capacity here
-                std::mem::forget(stem_vec); // Dart will own this memory
+                // into_raw_parts() already transfers ownership without deallocating
 
                 unsafe {
                     *output_buffers.add(*index) = ptr;
