@@ -70,7 +70,7 @@ def extract_midi_from_audio(audio_path, output_path):
         }
         
         print(json.dumps(result))
-        return 0
+        sys.exit(0) # Ensure exit 0 after successful JSON output
         
     except Exception as e:
         # Log error and return error response
@@ -79,44 +79,60 @@ def extract_midi_from_audio(audio_path, output_path):
             "status": "error",
             "error": str(e)
         }
-        print(json.dumps(error_result))
-        return 1
+        try:
+            print(json.dumps(error_result), file=sys.stdout)
+            sys.exit(0) # Script ran and reported error correctly
+        except Exception as e_json:
+            log_info(f"Critical error: Failed to print JSON error to stdout: {str(e_json)}")
+            sys.exit(1) # Error in error handling itself
 
 def check_capabilities():
-    """Check if all required libraries are available"""
+    """Check if all required libraries are available and print JSON to stdout"""
     try:
+        # These imports are for checking, so we don't need to log them individually to stderr anymore
+        # if Flutter/caller relies on stdout JSON.
         import torch
-        log_info("PyTorch loaded successfully")
-        
         import soundfile
-        log_info("SoundFile loaded successfully")
-        
         import tensorflow
-        log_info("TensorFlow loaded successfully")
+        from basic_pitch.inference import predict_and_save # Check if main function can be imported
+        from basic_pitch import ICASSP_2022_MODEL_PATH # Check if model path can be imported
         
-        # Test Basic Pitch model loading
-        from basic_pitch.inference import load_model
-        model = load_model(ICASSP_2022_MODEL_PATH)
-        log_info("Basic Pitch model loaded successfully")
+        # If these imports work, we assume basic_pitch is functional enough.
+        # The actual model loading integrity will be tested by extract_midi_from_audio
         
-        log_info("All required libraries loaded successfully")
-        return 0
+        success_result = {
+            "status": "success",
+            "message": "All required libraries loaded successfully"
+        }
+        print(json.dumps(success_result), file=sys.stdout)
+        sys.exit(0)
     except Exception as e:
-        log_info(f"Error checking capabilities: {str(e)}")
-        return 1
+        error_result = {
+            "status": "error",
+            "error": f"Error checking capabilities: {str(e)}"
+        }
+        try:
+            print(json.dumps(error_result), file=sys.stdout)
+            sys.exit(0) # Script ran and reported error correctly
+        except Exception as e_json:
+            # If we can't even print the JSON error, log to stderr and exit 1
+            print(f"Critical error: Failed to print JSON error to stdout during capability check: {str(e_json)}", file=sys.stderr)
+            sys.exit(1)
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
-        print("Error: No command specified")
+        # For argument errors before JSON can be formed, print to stderr and exit 1
+        print("Error: No command specified", file=sys.stderr)
         sys.exit(1)
         
     command = sys.argv[1]
     
     if command == "check_capabilities":
-        sys.exit(check_capabilities())
+        check_capabilities() # Function now handles JSON output and exit
     elif command == "extract_midi":
         if len(sys.argv) < 4:
-            print("Error: Missing required arguments for MIDI extraction")
+            # For argument errors before JSON can be formed, print to stderr and exit 1
+            print("Error: Missing required arguments for MIDI extraction", file=sys.stderr)
             sys.exit(1)
             
         # Parse arguments
@@ -129,10 +145,12 @@ if __name__ == "__main__":
                 args[key] = value
         
         if "input_path" not in args or "output_path" not in args:
-            print("Error: Missing input_path or output_path argument")
+            # For argument errors before JSON can be formed, print to stderr and exit 1
+            print("Error: Missing input_path or output_path argument", file=sys.stderr)
             sys.exit(1)
             
-        sys.exit(extract_midi_from_audio(args["input_path"], args["output_path"]))
+        extract_midi_from_audio(args["input_path"], args["output_path"]) # Function now handles JSON output and exit
     else:
-        print(f"Error: Unknown command '{command}'")
+        # For argument errors before JSON can be formed, print to stderr and exit 1
+        print(f"Error: Unknown command '{command}'", file=sys.stderr)
         sys.exit(1)
