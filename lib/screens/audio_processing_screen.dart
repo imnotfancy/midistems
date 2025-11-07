@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:file_picker/file_picker.dart';
 import 'package:midistems/services/rust_audio_service.dart';
 
 class AudioProcessingScreen extends StatefulWidget {
@@ -12,6 +13,7 @@ class _AudioProcessingScreenState extends State<AudioProcessingScreen> {
   final RustAudioService _audioService = RustAudioService();
   bool _isInitialized = false;
   String _statusMessage = 'Initializing...';
+  String? _selectedFilePath;
 
   @override
   void initState() {
@@ -56,19 +58,44 @@ class _AudioProcessingScreenState extends State<AudioProcessingScreen> {
       return;
     }
 
-    // In a real app, you would use a file picker here
-    const filePath = '/path/to/audio/file.mp3';
-
     try {
+      // Open file picker for audio files
+      final result = await FilePicker.platform.pickFiles(
+        type: FileType.custom,
+        allowedExtensions: ['mp3', 'wav', 'flac', 'ogg', 'm4a', 'aac'],
+        dialogTitle: 'Select Audio File',
+      );
+
+      if (result == null || result.files.isEmpty) {
+        // User cancelled the picker
+        setState(() {
+          _statusMessage = 'No file selected';
+        });
+        return;
+      }
+
+      final filePath = result.files.single.path;
+      if (filePath == null || filePath.isEmpty) {
+        setState(() {
+          _statusMessage = 'Error: Invalid file path';
+        });
+        return;
+      }
+
+      // Store the selected file path
+      _selectedFilePath = filePath;
+
+      // Attempt to load the audio file
       final success = _audioService.loadAudioFile(filePath);
       setState(() {
         _statusMessage = success
-            ? 'Audio file loaded successfully'
+            ? 'Audio file loaded successfully: ${result.files.single.name}'
             : 'Failed to load audio file: ${_audioService.getLastErrorMessage()}';
       });
     } catch (e) {
       setState(() {
         _statusMessage = 'Error loading audio file: $e';
+        _selectedFilePath = null;
       });
     }
   }
