@@ -12,7 +12,7 @@ Provides detailed guides for setting up the development environment, including F
 
 ## Key Documents
 
-- [Implementation Plan](../implementation_plan.md) - Detailed project roadmap and task breakdown
+- [Implementation Plan](../IMPLEMENTATION_PLAN.md) - Detailed project roadmap and task breakdown
 - [MidiStems Validation Report](./analysis/midistems_validation_report.md) - Comprehensive analysis and strategic recommendations
 - [FFI Setup Guide](./setup/ffi_setup_guide.md) - Guide for configuring Flutter-Rust integration
 
@@ -38,7 +38,7 @@ The project follows a hybrid architecture:
 
 ## Getting Started
 
-1. Review the [Implementation Plan](../implementation_plan.md) to understand the project roadmap
+1. Review the [Implementation Plan](../IMPLEMENTATION_PLAN.md) to understand the project roadmap
 2. Follow the [Setup Guides](./setup/) to configure your development environment
 3. Explore the [Analysis Documents](./analysis/) for background on project decisions
 
