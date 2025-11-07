@@ -1,7 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
-// Assuming your package name is 'my_app'. Adjust if necessary.
-// If RustAudioService is in lib/services/rust_audio_service.dart
-import 'package:my_app/services/rust_audio_service.dart';
+// RustAudioService is in lib/services/rust_audio_service.dart
+import 'package:midistems/services/rust_audio_service.dart';
 
 void main() {
   late RustAudioService rustAudioService;

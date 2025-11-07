@@ -35,14 +35,21 @@ void main() {
   
   // Call the test_audio_system function
   final resultPointer = testAudioSystem();
-  
+
+  // Check for null pointer before dereferencing
+  if (resultPointer == nullptr) {
+    print('Error: Received null pointer from test_audio_system()');
+    print('FFI call failed - the Rust function may have encountered an error');
+    exit(1);
+  }
+
   // Convert the result to a Dart string
   final result = resultPointer.toDartString();
   print('Audio system test result: $result');
-  
+
   // Free the string allocated by Rust
   freeString(resultPointer);
-  
+
   print('Audio test completed');
 }
 
