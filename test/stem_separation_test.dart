@@ -53,9 +53,8 @@ void main() {
 
     // Assertions
     expect(stems, isNotNull, reason: "Stems should not be null.");
-    if (stems == null) return; // Guard for null safety, though expect would fail
 
-    expect(stems.length, 4, reason: "There should be 4 stems.");
+    expect(stems!.length, 4, reason: "There should be 4 stems.");
 
     final expectedMonoLength = sampleAudioData.length ~/ 2;
     expect(expectedMonoLength, 3, reason: "Expected mono length calculation is incorrect.");

@@ -25,7 +25,7 @@ MidiStems is a Flutter-based cross-platform application that combines audio stem
 ### High-Level Structure
 The project follows a hybrid architecture combining Flutter frontend with Python backend processing:
 
-```
+```text
 midistems/
 ├── lib/                    # Flutter application code (2,167 LOC Dart)
 │   ├── core/              # Core business logic
@@ -45,19 +45,19 @@ midistems/
 
 ### Technology Stack
 
-**Frontend (Flutter/Dart)**
+#### Frontend (Flutter/Dart)
 - Flutter SDK for cross-platform UI
 - Dart language (2,167 lines of code)
 - Platform-specific build configurations for Windows, macOS, Linux
 
-**Backend (Python)**
+#### Backend (Python)
 - Python 3.8+ requirement
 - Key dependencies likely include:
   - Spotify's Basic Pitch for MIDI extraction
   - Facebook's Demucs for stem separation
   - Audio processing libraries
 
-**Build & Deployment**
+#### Build & Deployment
 - CMake for native platform builds
 - PowerShell scripts for Windows setup
 - Cross-platform build system

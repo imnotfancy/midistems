@@ -60,7 +60,8 @@ String _getLibraryPath() {
     return envPath;
   }
 
-  final isRelease = true; // Set to false for debug builds
+  // Check BUILD_TYPE environment variable; default to release
+  final isRelease = Platform.environment['BUILD_TYPE']?.toLowerCase() != 'debug';
   final buildType = isRelease ? 'release' : 'debug';
   final fileName = _getLibraryFileName();
 

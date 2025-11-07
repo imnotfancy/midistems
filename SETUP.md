@@ -29,7 +29,7 @@ This document outlines the setup process for the MidiStems project, which uses F
 
 ## Flutter Setup
 
-1. Install Flutter by following the official guide: https://flutter.dev/docs/get-started/install
+1. Install Flutter by following the [official guide](https://flutter.dev/docs/get-started/install)
 
 2. Verify Flutter installation:
    ```bash

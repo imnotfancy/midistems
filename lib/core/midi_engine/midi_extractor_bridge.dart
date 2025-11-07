@@ -143,9 +143,12 @@ class MidiExtractorBridge {
       _process = await Process.start('python', args);
 
       // Listen for progress updates
-      _process!.stderr.transform(utf8.decoder).listen((data) {
-        if (data.startsWith('INFO: ')) {
-          final message = data.substring(6).trim();
+      _process!.stderr
+          .transform(utf8.decoder)
+          .transform(const LineSplitter())
+          .listen((line) {
+        if (line.startsWith('INFO: ')) {
+          final message = line.substring(6).trim();
           _logger.info(message);
           onProgress?.call(message);
         }

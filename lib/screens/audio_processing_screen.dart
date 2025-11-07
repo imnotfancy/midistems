@@ -27,7 +27,7 @@ class _AudioProcessingScreenState extends State<AudioProcessingScreen> {
     super.dispose();
   }
 
-  Future<void> _initializeAudioEngine() async {
+  void _initializeAudioEngine() {
     try {
       final success = _audioService.initialize();
       setState(() {

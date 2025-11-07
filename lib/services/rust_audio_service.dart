@@ -57,15 +57,32 @@ class RustAudioService {
 
   /// Get the path to the Rust dynamic library
   String _getLibraryPath() {
-    // This is a simplified version - in a real app, you'd need more robust path handling
-    // based on the platform and whether you're in development or production
-    
+    final String fileName;
     if (Platform.isWindows) {
-      return path.join(Directory.current.path, 'rust_core', 'target', 'release', 'rust_core.dll');
+      fileName = 'rust_core.dll';
     } else if (Platform.isMacOS) {
-      return path.join(Directory.current.path, 'rust_core', 'target', 'release', 'librust_core.dylib');
+      fileName = 'librust_core.dylib';
     } else {
-      return path.join(Directory.current.path, 'rust_core', 'target', 'release', 'librust_core.so');
+      fileName = 'librust_core.so';
+    }
+
+    // Try release build first, then debug
+    final releasePath = path.join(Directory.current.path, 'rust_core', 'target', 'release', fileName);
+    final debugPath = path.join(Directory.current.path, 'rust_core', 'target', 'debug', fileName);
+
+    if (File(releasePath).existsSync()) {
+      return releasePath;
+    } else if (File(debugPath).existsSync()) {
+      return debugPath;
+    } else {
+      throw Exception(
+        'Rust library not found. Please build it first:\n'
+        '  cd rust_core\n'
+        '  cargo build --release\n'
+        'Searched paths:\n'
+        '  - $releasePath\n'
+        '  - $debugPath'
+      );
     }
   }
 
