@@ -54,20 +54,50 @@ void main() {
 }
 
 String _getLibraryPath() {
-  // Get the path to the dynamic library
-  final scriptDir = Directory.current.path;
+  // Check for environment variable first
+  final envPath = Platform.environment['RUST_CORE_LIB_PATH'];
+  if (envPath != null && envPath.isNotEmpty) {
+    return envPath;
+  }
+
   final isRelease = true; // Set to false for debug builds
-  
-  final libraryPath = path.normalize(path.join(
-    scriptDir,
+  final buildType = isRelease ? 'release' : 'debug';
+  final fileName = _getLibraryFileName();
+
+  // Try from test_ffi directory first (when running from test_ffi/)
+  var libPath = path.normalize(path.join(
+    Directory.current.path,
     '..',
     'rust_core',
     'target',
-    isRelease ? 'release' : 'debug',
-    _getLibraryFileName(),
+    buildType,
+    fileName,
   ));
-  
-  return libraryPath;
+  if (File(libPath).existsSync()) {
+    return libPath;
+  }
+
+  // Try from repo root (when running from project root)
+  libPath = path.normalize(path.join(
+    Directory.current.path,
+    'rust_core',
+    'target',
+    buildType,
+    fileName,
+  ));
+  if (File(libPath).existsSync()) {
+    return libPath;
+  }
+
+  // Default to relative path from test_ffi directory
+  return path.normalize(path.join(
+    Directory.current.path,
+    '..',
+    'rust_core',
+    'target',
+    buildType,
+    fileName,
+  ));
 }
 
 String _getLibraryFileName() {

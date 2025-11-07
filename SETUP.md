@@ -118,7 +118,7 @@ The project includes a simple audio system test to verify that the audio subsyst
 2. Using the test_ffi project:
    ```bash
    cd test_ffi
-   /workspace/run_dart.sh run bin/test_audio.dart
+   dart run bin/test_audio.dart
    ```
 
 This test verifies that:
@@ -151,13 +151,20 @@ Flutter should not be run as root for security reasons. If you're running in an 
    chown -R flutteruser:flutteruser /path/to/project
    ```
 
-3. Use the provided scripts to run Flutter and Dart commands:
+3. Switch to the non-root user and run Flutter and Dart commands:
    ```bash
+   # Switch to the non-root user
+   su - flutteruser
+
+   # Navigate to the project directory
+   cd /path/to/project
+
    # For Flutter commands
-   /workspace/run_flutter.sh run
-   
-   # For Dart commands
-   /workspace/run_dart.sh run bin/test_ffi.dart
+   flutter run
+
+   # For Dart commands (from project root)
+   cd test_ffi
+   dart run bin/test_ffi.dart
    ```
 
 ## Troubleshooting

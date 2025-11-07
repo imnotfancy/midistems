@@ -59,6 +59,12 @@ void main() {
 }
 
 String _getLibraryPath() {
+  // Check for environment variable first
+  final envPath = Platform.environment['RUST_CORE_LIB_PATH'];
+  if (envPath != null && envPath.isNotEmpty) {
+    return envPath;
+  }
+
   final String fileName;
   if (Platform.isWindows) {
     fileName = 'rust_core.dll';
@@ -67,6 +73,19 @@ String _getLibraryPath() {
   } else {
     fileName = 'librust_core.so';
   }
-  
+
+  // Try from test_ffi directory first (when running from test_ffi/)
+  var libPath = '${Directory.current.path}/../rust_core/target/release/$fileName';
+  if (File(libPath).existsSync()) {
+    return libPath;
+  }
+
+  // Try from repo root (when running from project root)
+  libPath = '${Directory.current.path}/rust_core/target/release/$fileName';
+  if (File(libPath).existsSync()) {
+    return libPath;
+  }
+
+  // Default to relative path from test_ffi directory
   return '${Directory.current.path}/../rust_core/target/release/$fileName';
 }
