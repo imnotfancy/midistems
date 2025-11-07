@@ -217,18 +217,17 @@ pub unsafe extern "C" fn separate_stems(
                     return ERROR_PROCESSING_FAILED;
                 }
 
-                let mut stem_vec = stem_array.to_vec(); // Clone Array1 into a Vec
-                // Ensure capacity equals length to match the assumption in free_stem_memory
-                stem_vec.shrink_to_fit();
-                let (ptr, len, cap) = stem_vec.into_raw_parts();
-                // into_raw_parts() already transfers ownership without deallocating
-
-                // Verify our assumption that shrink_to_fit worked
-                debug_assert_eq!(len, cap, "Vec capacity must equal length for correct deallocation");
+                // Convert Vec to boxed slice to avoid capacity metadata issues
+                let stem_vec = stem_array.to_vec(); // Clone Array1 into a Vec
+                let stem_boxed: Box<[f32]> = stem_vec.into_boxed_slice();
+                let len = stem_boxed.len();
+                let ptr = Box::into_raw(stem_boxed) as *mut f32;
+                // Box<[T]> only has pointer + length, no capacity field
+                // This matches exactly what we pass to Dart and later reconstruct
 
                 unsafe {
                     *output_buffers.add(*index) = ptr;
-                    *output_lengths.add(*index) = len; // Use the actual Vec length
+                    *output_lengths.add(*index) = len;
                 }
                 println!("Stem '{}' ({} samples) data pointer {:p} passed to Dart.", stem_name, stem_array.len(), ptr);
             }
@@ -350,10 +349,10 @@ pub unsafe extern "C" fn free_string(string: *mut c_char) {
 ///
 /// # Safety
 /// This function is unsafe because it's exposed via FFI.
-/// It reconstructs a Vec<f32> from the provided pointer, length, and capacity (assumed to be length)
+/// It reconstructs a Box<[f32]> from the provided pointer and length,
 /// and then lets it go out of scope, causing Rust's allocator to free the memory.
 /// The caller (Dart) must ensure that:
-/// 1. The pointer was originally allocated by Rust via Vec::into_raw_parts.
+/// 1. The pointer was originally allocated by Rust via Box::into_raw on a Box<[f32]>.
 /// 2. The length matches the original length at allocation.
 /// 3. This function is called exactly once for each such pointer.
 #[no_mangle]
@@ -363,12 +362,12 @@ pub unsafe extern "C" fn free_stem_memory(buffer_ptr: *mut f32, length: usize) {
         // eprintln!("Attempted to free a null pointer in free_stem_memory.");
         return;
     }
-    // Reconstruct the Vec with capacity equal to length.
-    // This is safe because separate_stems() calls shrink_to_fit() before into_raw_parts(),
-    // ensuring the Vec's capacity equals its length. This guarantees the allocator metadata
-    // matches what was used during allocation, preventing allocator corruption.
-    let _vec_to_drop: Vec<f32> = Vec::from_raw_parts(buffer_ptr, length, length);
-    // Memory is freed when _vec_to_drop goes out of scope here.
+    // Reconstruct the Box<[f32]> using the same pointer + length metadata.
+    // This is safe because separate_stems() created a Box<[f32]> with these exact
+    // pointer and length values, ensuring the allocator metadata matches perfectly.
+    let slice_ptr = std::ptr::slice_from_raw_parts_mut(buffer_ptr, length);
+    let _box_to_drop: Box<[f32]> = Box::from_raw(slice_ptr);
+    // Memory is freed when _box_to_drop goes out of scope here.
     // println!("Rust: Freed stem buffer at {:p} with length {}", buffer_ptr, length);
 }
 
