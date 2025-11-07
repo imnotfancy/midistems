@@ -164,7 +164,7 @@ Flutter should not be run as root for security reasons. If you're running in an 
 
    # For Dart commands (from project root)
    cd test_ffi
-   dart run bin/test_ffi.dart
+   dart run bin/test_audio.dart
    ```
 
 ## Troubleshooting
