@@ -218,12 +218,17 @@ pub unsafe extern "C" fn separate_stems(
                 }
 
                 let mut stem_vec = stem_array.to_vec(); // Clone Array1 into a Vec
-                let (ptr, len_cap, _cap_actual) = stem_vec.into_raw_parts(); // len_cap is capacity here
+                // Ensure capacity equals length to match the assumption in free_stem_memory
+                stem_vec.shrink_to_fit();
+                let (ptr, len, cap) = stem_vec.into_raw_parts();
                 // into_raw_parts() already transfers ownership without deallocating
+
+                // Verify our assumption that shrink_to_fit worked
+                debug_assert_eq!(len, cap, "Vec capacity must equal length for correct deallocation");
 
                 unsafe {
                     *output_buffers.add(*index) = ptr;
-                    *output_lengths.add(*index) = stem_array.len(); // Use the original length of the stem data
+                    *output_lengths.add(*index) = len; // Use the actual Vec length
                 }
                 println!("Stem '{}' ({} samples) data pointer {:p} passed to Dart.", stem_name, stem_array.len(), ptr);
             }
@@ -358,12 +363,10 @@ pub unsafe extern "C" fn free_stem_memory(buffer_ptr: *mut f32, length: usize) {
         // eprintln!("Attempted to free a null pointer in free_stem_memory.");
         return;
     }
-    // Reconstruct the Vec. The capacity is assumed to be the same as length,
-    // which is true if the Vec was created from an Array1 using .to_vec() and then into_raw_parts(),
-    // and no reallocation occurred that might change capacity independently of length.
-    // The original `separate_stems` used `stem_array.len()` for `output_lengths`,
-    // and `stem_vec.into_raw_parts()` where `stem_vec` was from `stem_array.to_vec()`.
-    // In this scenario, `len` and `capacity` of `stem_vec` would be `stem_array.len()`.
+    // Reconstruct the Vec with capacity equal to length.
+    // This is safe because separate_stems() calls shrink_to_fit() before into_raw_parts(),
+    // ensuring the Vec's capacity equals its length. This guarantees the allocator metadata
+    // matches what was used during allocation, preventing allocator corruption.
     let _vec_to_drop: Vec<f32> = Vec::from_raw_parts(buffer_ptr, length, length);
     // Memory is freed when _vec_to_drop goes out of scope here.
     // println!("Rust: Freed stem buffer at {:p} with length {}", buffer_ptr, length);
