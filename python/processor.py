@@ -355,8 +355,8 @@ def process_command(action: str, args: Dict[str, str]) -> Dict[str, Any]:
         return format_json_response('error', error=error_msg)
 
 # New handler for separate_stems
-def separate_stems_command_handler(processor: AudioProcessor, args: Dict[str, str]) -> None:
-    """Handles the 'separate_stems' command, prints JSON output, and exits."""
+def separate_stems_command_handler(processor: AudioProcessor, args: Dict[str, str]) -> Dict[str, Any]:
+    """Handles the 'separate_stems' command and returns response dict."""
     try:
         if not processor.deps.can_separate_stems():
             missing_deps = processor.deps.get_missing_dependencies()
@@ -364,7 +364,7 @@ def separate_stems_command_handler(processor: AudioProcessor, args: Dict[str, st
                 'message': 'Stem separation not available due to missing dependencies',
                 'details': {'missing_dependencies': missing_deps}
             }
-            response = format_json_response('error', error=error_msg)
+            return format_json_response('error', error=error_msg)
         elif 'input_path' not in args or 'output_dir' not in args:
             error_msg = {
                 'message': 'Missing required arguments for separate_stems',
@@ -373,11 +373,11 @@ def separate_stems_command_handler(processor: AudioProcessor, args: Dict[str, st
                     'provided': list(args.keys())
                 }
             }
-            response = format_json_response('error', error=error_msg)
+            return format_json_response('error', error=error_msg)
         else:
             # Actual stem separation logic
             result_data = processor.separate_stems(args['input_path'], args['output_dir'])
-            response = format_json_response('success', {
+            return format_json_response('success', {
                 'stems': result_data,
                 'details': {
                     'input_file': args['input_path'],
@@ -396,28 +396,18 @@ def separate_stems_command_handler(processor: AudioProcessor, args: Dict[str, st
                 'error_type': e.__class__.__name__
             }
         }
-        response = format_json_response('error', error=error_msg)
-
-    try:
-        print(json.dumps(response), flush=True)
-        sys.exit(0)
-    except Exception as e_json:
-        logger.critical(f"Failed to print JSON response to stdout: {str(e_json)}", exc_info=True)
-        sys.exit(1)
+        return format_json_response('error', error=error_msg)
 
 
 def process_command(action: str, args: Dict[str, str]) -> Dict[str, Any]:
-    """Process command and return response object or exit."""
+    """Process command and return response dict."""
     try:
         processor = AudioProcessor() # Instantiated here, passed to handler
 
         if action == 'get_capabilities':
             return format_json_response('success', get_capabilities())
         elif action == 'separate_stems':
-            # This function will now handle printing and exiting
-            separate_stems_command_handler(processor, args)
-            # separate_stems_command_handler calls sys.exit, so code below here for this action won't run.
-            return None # Should not be reached for separate_stems
+            return separate_stems_command_handler(processor, args)
 
         # ... (other actions, if any, would go here and return a dict) ...
         else: # Unknown action
@@ -471,9 +461,15 @@ if __name__ == '__main__':
 
     kwargs = parse_args(sys.argv[2:])
 
-    # process_command will call sys.exit() if the action is 'separate_stems'
-    # Otherwise, it returns a dict that should be printed.
+    # Process command and get response dict
     response_dict = process_command(action, kwargs)
 
-    if response_dict: # Only print if process_command returned something (i.e., didn't exit)
-        write_json_response(response_dict)
+    # Print the response
+    try:
+        print(json.dumps(response_dict), flush=True)
+        # Exit with appropriate code based on response status
+        exit_code = 0 if response_dict.get('status') == 'success' else 1
+        sys.exit(exit_code)
+    except Exception as e:
+        logger.critical(f"Failed to print JSON response to stdout: {str(e)}", exc_info=True)
+        sys.exit(1)
