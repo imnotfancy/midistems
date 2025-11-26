@@ -1,0 +1,1 @@
+/workspace/midistems/rust_core/target/release/librust_core.so: /workspace/midistems/rust_core/build.rs /workspace/midistems/rust_core/src/audio_io.rs /workspace/midistems/rust_core/src/dsp.rs /workspace/midistems/rust_core/src/lib.rs /workspace/midistems/rust_core/src/midi.rs

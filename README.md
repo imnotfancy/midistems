@@ -34,7 +34,8 @@ A Flutter application for separating audio into stems and extracting MIDI. MidiS
 #### Prerequisites
 
 - Flutter SDK (latest stable version)
-- Python 3.8 or higher
+- Rust (1.87.0 or later)
+- Cargo (comes with Rust)
 - Git
 
 #### Setup Steps
@@ -50,21 +51,19 @@ A Flutter application for separating audio into stems and extracting MIDI. MidiS
    flutter pub get
    ```
 
-3. Set up Python environment:
+3. Build the Rust library:
    ```bash
-   # Windows
-   .\setup_venv.ps1
-
-   # macOS/Linux
-   python3 -m venv venv
-   source venv/bin/activate
-   pip install -r python/requirements.txt
+   cd rust_core
+   cargo build --release
+   cd ..
    ```
 
 4. Run the app:
    ```bash
    flutter run
    ```
+
+For more detailed setup instructions, see [SETUP.md](SETUP.md).
 
 ## Usage
 
@@ -88,8 +87,33 @@ We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) f
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
+## Architecture
+
+The application is built using:
+
+- **Flutter**: For the cross-platform UI
+- **Rust**: For high-performance audio processing via FFI
+- **FFI (Foreign Function Interface)**: To bridge Flutter and Rust
+
+## Project Status
+
+- ✅ **Week 1**: Setup and Basic Infrastructure
+  - Development environment setup complete
+  - Rust library structure created
+  - FFI bridge implemented
+  - Basic Flutter UI created
+  - Audio system test functionality implemented
+
+- 🔄 **Week 2**: Audio I/O (In Progress)
+  - Audio file loading
+  - Audio playback
+  - UI for file selection
+
+See [IMPLEMENTATION_PLAN.md](IMPLEMENTATION_PLAN.md) for the full roadmap.
+
 ## Acknowledgments
 
-- [Basic Pitch](https://github.com/spotify/basic-pitch) for MIDI extraction
-- [Demucs](https://github.com/facebookresearch/demucs) for stem separation
+- [Basic Pitch](https://github.com/spotify/basic-pitch) for MIDI extraction algorithms
+- [Demucs](https://github.com/facebookresearch/demucs) for stem separation techniques
 - The Flutter team for the amazing framework
+- The Rust community for excellent audio processing libraries
